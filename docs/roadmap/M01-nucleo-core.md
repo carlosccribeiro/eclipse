@@ -1,5 +1,5 @@
 # M01 — Núcleo C# (StableId, Tags, RNG, Event Bus)
-Fase 0 · Onda 1 · Status: ⏳ não iniciado
+Fase 0 · Onda 1 · Status: ✅ concluído (2026-11-07)
 Depende de: M00 · Desbloqueia: M02, M03, M04, M15 · Paralelo com: — (onda solo)
 Branch: modulo/M01-nucleo-core
 Docs de referência: 00 §3.4 (vocabulário de tags), §5 R02 (HitFlags), R04 (60 Hz), R07 (Generation), R52 (Core puro); 06 §3.3 (tabela de HitFlags); 11 §2 decisões 4, 5, 8, 16, 18; §3.4.1 (Definition, StableId, IdRemapTable, convenção de ID); §3.7 (Event Bus).
@@ -32,14 +32,14 @@ Entregar os blocos básicos de `Eclipse.Core` em C# puro, sem `UnityEngine`, cob
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | StableId e IdRemapTable | execução | executor | — | `Assets/_Project/Code/Core/Ids/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Ids/*Tests.cs` | ⏳ |
-| T2 | TagMask e HitFlags | execução | executor | T1 | `Assets/_Project/Code/Core/Tags/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Tags/*Tests.cs` | ⏳ |
-| T3 | RNG xoshiro128** + streams | execução | executor | T2 | `Assets/_Project/Code/Core/Random/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Random/*Tests.cs` | ⏳ |
-| T4 | SimulationClock | execução | executor | T3 | `Assets/_Project/Code/Core/Time/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Time/*Tests.cs` | ⏳ |
-| T5 | EventBus e FrameEventBuffer | execução | executor | T4 | `Assets/_Project/Code/Core/Events/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Events/*Tests.cs` | ⏳ |
-| T6 | Registro de definições | execução | executor | T5 | `Assets/_Project/Code/Core/Definitions/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Definitions/*Tests.cs` | ⏳ |
-| T7 | Revisão independente do Core | investigação | investigador | T6 | — (relatório na resposta) | ⏳ |
-| T8 | Integrar, corrigir apontamentos, atualizar docs | integração | principal | T7 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ⏳ |
+| T1 | StableId e IdRemapTable | execução | executor | — | `Assets/_Project/Code/Core/Ids/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Ids/*Tests.cs` | ✅ |
+| T2 | TagMask e HitFlags | execução | executor | T1 | `Assets/_Project/Code/Core/Tags/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Tags/*Tests.cs` | ✅ |
+| T3 | RNG xoshiro128** + streams | execução | executor | T2 | `Assets/_Project/Code/Core/Random/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Random/*Tests.cs` | ✅ |
+| T4 | SimulationClock | execução | executor | T3 | `Assets/_Project/Code/Core/Time/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Time/*Tests.cs` | ✅ |
+| T5 | EventBus e FrameEventBuffer | execução | executor | T4 | `Assets/_Project/Code/Core/Events/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Events/*Tests.cs` | ✅ |
+| T6 | Registro de definições | execução | executor | T5 | `Assets/_Project/Code/Core/Definitions/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Definitions/*Tests.cs` | ✅ |
+| T7 | Revisão independente do Core | investigação | investigador | T6 | — (relatório na resposta) | ✅ |
+| T8 | Integrar, corrigir apontamentos, atualizar docs | integração | principal | T7 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ✅ |
 
 ## Ondas internas
 1. T1 → T2 → T3 → T4 → T5 → T6 (sequencial; ver Premissas)
@@ -128,3 +128,6 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 plano criado.
+- 2026-11-07 T1–T6 executados em sequência (executor), cada um verificado com `dotnet test` e commitado (`feat(M01)`). Decisões: StableId com validação manual por char equivalente à regex (2–4 segmentos); `IdRemapTable.Add` rejeita entradas que fecham ciclo; parse de `TagMask` por `|`/`,`, case-sensitive e sem números; seeds dos streams `SplitMix64(runSeed ^ ((i+1)·0xD1B54A32D192ED03))`; `Fork` = seed do stream ^ FNV-1a 64 do id (^ salt·φ64); `Chance` sempre consome 1 saída; delegate `InEventHandler<T>` (evita colisão com `System.EventHandler<T>`); prioridade maior roda primeiro, empate por ordem de inscrição; inscrição durante dispatch é adiada; `FrameEventBuffer` sobrescreve o mais antigo e conta `DroppedCount`; `SimulationClock` com acumulador em double (ε 1e-9 s), `MaxTicksPerAdvance` 8 e `DroppedTicks`.
+- 2026-11-07 T7 (revisão independente): critérios 1–9 atendidos. 2 bugs corrigidos na T8: `Advance(+∞/float.MaxValue)` corrompia o relógio, e um token de outro bus removia a inscrição errada. `Fork` ganhou salt. Os riscos de API para M02/M05/M12/M18 estão em ROADMAP §9.
+- 2026-11-07 T8: `dotnet test tools/CoreTests` 132/132; EditMode no Unity 131/131 (sem os testes de alocação, que são só do dotnet); nenhum `using UnityEngine` em Core; build sem warnings. Testes de alocação 0 B só rodam no dotnet (`#if !UNITY_5_3_OR_NEWER`).

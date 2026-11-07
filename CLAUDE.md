@@ -47,6 +47,7 @@ Regra: **nenhum número de balanceamento é inventado no código.** Valores vêm
 - Anti-recursão: modelo **Generation** (nada dispara em Gen ≥ 2), exceção só `EchoRecursion1x` declarada.
 - RNG por streams com seed (`Map`, `Encounter`, `Loot`, `Combat`, `Cosmetic`); nunca `UnityEngine.Random` em regras.
 - Código, identificadores e comentários em **inglês**; docs em **português** (termos de jogo em inglês como no GDD).
+- Blocos do Core (M01), use em vez de reinventar: `StableId`/`IdRemapTable` (`Eclipse.Core.Ids`), `Tag`/`TagMask`/`HitFlags` (`Eclipse.Core.Tags`), `RngStreams`/`Xoshiro128StarStar` (`Eclipse.Core.Random`), `SimulationClock` (`Eclipse.Core.Time`), `EventBus<T>`/`FrameEventBuffer<T>` (`Eclipse.Core.Events`), `IDefinition`/`IDefinitionRegistry` (`Eclipse.Core.Definitions`). Hash estável de string = `RngStreams.Fnv1a64`; nunca `string.GetHashCode` em regra/seed (é randomizado no .NET).
 
 ## 5. Estrutura
 
@@ -57,7 +58,7 @@ DataSource/            CSV versionados (fonte dos SOs)
 tools/CoreTests/       projeto dotnet que compila Eclipse.Core e roda os testes rápidos
 docs/                  GDD (docs/gdd), roadmap (docs/ROADMAP.md), planos de módulo (docs/roadmap), relatórios (docs/roadmap/reports)
 ```
-(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/` (compilados também por `tools/CoreTests`).
+(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/<Área>/` com namespace `Eclipse.Core.<Área>.Tests` (compilados também por `tools/CoreTests`; filtro `--filter FullyQualifiedName~Eclipse.Core.<Área>`). Subpastas do Core: `Ids, Tags, Random, Time, Events, Definitions`.
 
 ## 6. Comandos de verificação
 
@@ -109,4 +110,8 @@ Não coloque aqui status de módulo (vai no ROADMAP) nem detalhes de design (vã
 - Arquivos gerados por script saem com CRLF no Windows; `.gitattributes` normaliza para LF no commit (avisos de CRLF são esperados).
 - O Hub pode abrir o Editor no projeto sozinho; confira `tasklist | grep -i unity` antes do batchmode.
 - CI (GameCI): secrets `UNITY_LICENSE` (conteúdo de `C:\ProgramData\Unity\Unity_lic.ulf`), `UNITY_EMAIL`, `UNITY_PASSWORD`. O Hub 3.x com licença Personal por entitlement não gera o `.ulf`; gere com Hub → Configurações → Licenças → Adicionar licença → licença Personal gratuita. No runner o `.ulf` não bate com a máquina e o GameCI cai para ativação por e-mail/senha (aviso esperado).
+- Testes de alocação (`GC.GetAllocatedBytesForCurrentThread`) ficam em `#if !UNITY_5_3_OR_NEWER`: só valem no `dotnet test`, porque o Mono/instrumentação do Unity aloca.
+- Subagents que editam `Eclipse.Core` rodam **em sequência**: todos compilam o mesmo `tools/CoreTests/obj` e builds concorrentes falham.
+- Arquivos `.cs` criados fora do Editor não têm `.meta`; rode um batchmode (EditMode ou `-quit`) para gerá-los e commite junto.
+- Dentro de `Eclipse.Core`, `Random` resolve para o namespace `Eclipse.Core.Random`, não `System.Random` (que nem deve ser usado em regras).
 - Job com `game-ci/unity-test-runner` + `githubToken` precisa de `permissions: checks: write`, senão falha com "Resource not accessible by integration" mesmo com testes verdes.

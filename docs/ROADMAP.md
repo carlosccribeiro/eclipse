@@ -129,7 +129,8 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | D01 | ✅ concluído | 2026-11-07 | 206 revisados (02/04 atualizados), 0 IDs removidos; script verde. 10 renomeações (LYR-SR-08 → Inward Spiral). Pendências P2–P13 em `reports/D01-divergencias.md` |
 | D02 | ✅ concluído | 2026-11-07 | R53–R58 em 00 §5.6; pendências em §9 |
 | M00 | ✅ concluído | 2026-11-07 | Unity 6000.3.28f1; CI GameCI verde (Core + EditMode + PlayMode). `build.yml` ativa após merge em `main` |
-| M01–M32 | ⏳ não iniciado | 2026-11-07 | |
+| M01 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Ids, Tags/HitFlags, RNG xoshiro128** + 5 streams, SimulationClock 60 Hz, EventBus 0 B, Definitions. dotnet 132/132, EditMode 131/131 |
+| M02–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
 Legenda: ⏳ não iniciado · 🔄 em andamento · ✅ concluído · ❌ bloqueado (com motivo).
@@ -167,6 +168,7 @@ Executores: `investigador` (leitura/investigação), `executor` (implementação
 Regras que os planos assumem uns dos outros. Cada módulo confere as que o afetam na sua primeira tarefa.
 
 **Contratos e donos de arquivo**
+- **M01 (Core) para M02–M05/M18:** `StableId` não é serializável pelo Unity; o SO guarda `string` e expõe o `StableId` em cache (validar no import). As seeds de `RngStreams` são `ulong`, mas 11 §3.4.3 define `DropSeed` como `uint`, então o M12/M18 decide o truncamento. `RngStreams.Fork(stream, id, salt)` exige salt (contador) para que dois drops do mesmo item não rolem igual. `RngStreams` ainda não tem restore de estado para o suspend-save (o M18 adiciona, usando `Xoshiro128StarStar.GetState()` e o ctor de estado). `Get()` devolve `ref`, e `var g = streams.Get(...)` copia sem avançar o pai. `EventBus<T>` é classe com arrays e `Unsubscribe` O(n); se o M05 usar um bus por entidade, faça pooling.
 - **M02:** importadores (`[TableImporter]`) e regras do validador (`[ValidationRule]`) são descobertos por atributo, um arquivo por tabela; nenhum módulo edita um arquivo central do pipeline. A partir do M10, modificador com ID inexistente vira erro (no M12 é aviso).
 - **M03:** `DamageInstance` já nasce com todos os campos de 11 §3.5.2 (Generation, HitFlags, ProcCoefficient, HitGroupId) e o `StatId` inclui Status Potency, Status Resistance e Duration of Effects.
 - **M05** congela `Gameplay/Combat/Contracts`, os asmdefs de teste e o `TagManager`; M07 e M08 não os editam. Cenas: `CombatSandbox` é do M08, `AISandbox` é do M07, e a cena do Marco A é do M06. O M05 entrega um `StatusStub` de Burning, substituído no M11.
