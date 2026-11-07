@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: cb0fef4582d743c7a579dc9ab4b3f6ce
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
+  m_NativeWrapperClassName: 
+  m_GenerateWrapperCode: 0
+  m_WrapperCodePath: Assets/_Project/Code/Gameplay/Input/EclipseInput.cs
+  m_WrapperClassName: EclipseInput
+  m_WrapperCodeNamespace: Eclipse.Gameplay.Input
+  m_GenerateActionEvents: 0
