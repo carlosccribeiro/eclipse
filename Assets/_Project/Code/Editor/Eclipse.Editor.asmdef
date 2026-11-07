@@ -12,7 +12,10 @@
         "Eclipse.UI",
         "Eclipse.Audio",
         "Eclipse.Platform",
-        "Unity.RenderPipelines.Universal.Runtime"
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.Localization",
+        "Unity.Localization.Editor",
+        "Unity.Addressables"
     ],
     "includePlatforms": [
         "Editor"
