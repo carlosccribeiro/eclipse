@@ -1,0 +1,5 @@
+id,name_pt,name_en,band,lo_pct,hi_pct,source_doc
+band.core.envelope,Envelope,Envelope,Envelope,70,115,02 §3.9.1; 01 §3.9.1; 00 R24
+band.core.default,Faixa padrão,Default band,Default,80,100,02 §3.9.1; 00 R24
+band.core.high,Faixa alta,High band,High,95,115,02 §3.9.1; 00 R24
+band.core.low,Faixa baixa,Low band,Low,70,80,02 §3.9.1; 00 R24

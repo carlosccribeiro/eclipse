@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebae9249e264d404aa3c69e252322ca9, type: 3}
+  m_Name: shattered_expanse
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Loot.IlvlRangeDefinition
+  stableId: ilvl.normal.shattered_expanse
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: ilvl.normal.shattered_expanse.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 3dc11c2bc8b6951e
+  sourceDoc: "05 \xA74.1"
+  nameEn: Normal iLvl Shattered Expanse
+  difficulty: 0
+  regionId: shattered_expanse
+  ilvlMin: 11
+  ilvlMax: 15
+  references:
+    version: 2
+    RefIds: []

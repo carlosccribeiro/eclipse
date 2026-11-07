@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: band_of_twin_eclipses
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.universal.band_of_twin_eclipses
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.universal.band_of_twin_eclipses.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: cdb08c79f0d0f082
+  sourceDoc: "02 \xA73.12.5"
+  nameEn: Band of Twin Eclipses
+  catalogNo: U2
+  itemKind: 3
+  baseId: base.ring.band
+  heroId: 
+  effectId: effect.band_of_twin_eclipses
+  fixedAffixes:
+  - affixId: affix.core.critical_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.critical_chance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.skill_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.resource_generation
+    band: 2
+    offPool: 0
+  - affixId: affix.core.echo_damage
+    band: 2
+    offPool: 0
+  openOptions: []
+  modifierIds:
+  - GEN-27
+  - GEN-28
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 1
+  uniqueSourceRef: the_first_forgotten
+  minDropILvl: 35
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "Dois eclipses, um \xFAnico instante."
+  loreEn: Two eclipses, a single instant.
+  build: 
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

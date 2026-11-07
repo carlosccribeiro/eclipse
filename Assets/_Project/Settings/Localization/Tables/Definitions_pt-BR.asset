@@ -66,6 +66,1242 @@ MonoBehaviour:
     m_Localized: "Enfraquecimento, deteriora\xE7\xE3o e detona\xE7\xE3o."
     m_Metadata:
       m_Items: []
+  - m_Id: 28631224582144
+    m_Localized: "For\xE7a"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28631815979008
+    m_Localized: Destreza
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28632185077760
+    m_Localized: "Intelig\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28632596119552
+    m_Localized: "Vida M\xE1xima"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28632990384128
+    m_Localized: Armadura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28633355288576
+    m_Localized: "Regenera\xE7\xE3o de Vida"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28633690832896
+    m_Localized: Velocidade de Ataque
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28634051543040
+    m_Localized: "Velocidade de Conjura\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28634399670272
+    m_Localized: "Chance de Cr\xEDtico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28634756186112
+    m_Localized: "Dano Cr\xEDtico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28635100119040
+    m_Localized: "Dano F\xEDsico"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28635410497536
+    m_Localized: Dano de Ember
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28635729264640
+    m_Localized: Dano de Frost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28636119334912
+    m_Localized: Dano de Storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28636526182400
+    m_Localized: Dano de Void
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28636857532416
+    m_Localized: Dano de Echo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28637214048256
+    m_Localized: Dano de Ruin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28637541203968
+    m_Localized: Dano ao Longo do Tempo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28637880942592
+    m_Localized: "Dano em \xC1rea"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28638216486912
+    m_Localized: "Dano de Proj\xE9til"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28638568808448
+    m_Localized: "Dano de Invoca\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28638929518592
+    m_Localized: Dano de Habilidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28639281840128
+    m_Localized: "Penetra\xE7\xE3o de Armadura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28639629967360
+    m_Localized: Dano de Stagger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28640015843328
+    m_Localized: "Resist\xEAncia F\xEDsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28640372359168
+    m_Localized: "Resist\xEAncia Elemental"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28640745652224
+    m_Localized: "Resist\xEAncia a Void"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28641127333888
+    m_Localized: Chance de Esquiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28641550958592
+    m_Localized: Chance de Bloqueio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28641932640256
+    m_Localized: "Redu\xE7\xE3o de Dano"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28642339487744
+    m_Localized: "Efic\xE1cia de Cura"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28642763112448
+    m_Localized: "For\xE7a de Escudo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28643174154240
+    m_Localized: "Resist\xEAncia a Status"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28643560030208
+    m_Localized: "Recurso M\xE1ximo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28643882991616
+    m_Localized: Velocidade de Movimento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28644243701760
+    m_Localized: "Redu\xE7\xE3o de Recarga"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28644633772032
+    m_Localized: "Gera\xE7\xE3o de Recurso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28644998676480
+    m_Localized: "Redu\xE7\xE3o de Custo de Recurso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28645317443584
+    m_Localized: Raio de Coleta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28645690736640
+    m_Localized: "Ganho de Experi\xEAncia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28646101778432
+    m_Localized: Ganho de Ouro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28646458294272
+    m_Localized: "Dura\xE7\xE3o de Efeitos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28646798032896
+    m_Localized: "Dura\xE7\xE3o de Invoca\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28647171325952
+    m_Localized: "Pot\xEAncia de Status"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28647548813312
+    m_Localized: "Infus\xE3o de Ember (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28647884357632
+    m_Localized: "Infus\xE3o de Ember (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28648232484864
+    m_Localized: "Infus\xE3o de Frost (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28648593195008
+    m_Localized: "Infus\xE3o de Frost (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28649192980480
+    m_Localized: "Infus\xE3o de Storm (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28649545302016
+    m_Localized: "Infus\xE3o de Storm (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28649897623552
+    m_Localized: "Infus\xE3o de Void (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28650308665344
+    m_Localized: "Infus\xE3o de Void (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28650694541312
+    m_Localized: "Infus\xE3o de Echo (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28651122360320
+    m_Localized: "Infus\xE3o de Echo (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28651583733760
+    m_Localized: "Infus\xE3o de Ruin (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28652003164160
+    m_Localized: "Infus\xE3o de Ruin (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28656709173248
+    m_Localized: Pool de strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28657103437824
+    m_Localized: Pool de dexterity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28657459953664
+    m_Localized: Pool de intelligence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28657824858112
+    m_Localized: Pool de maximum_health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658152013824
+    m_Localized: Pool de armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658500141056
+    m_Localized: Pool de health_regeneration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658877628416
+    m_Localized: Pool de attack_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28659255115776
+    m_Localized: Pool de cast_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28659578077184
+    m_Localized: Pool de critical_chance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28659913621504
+    m_Localized: Pool de critical_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28660236582912
+    m_Localized: Pool de physical_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28660593098752
+    m_Localized: Pool de ember_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28660962197504
+    m_Localized: Pool de frost_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28661314519040
+    m_Localized: Pool de storm_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28661637480448
+    m_Localized: Pool de void_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28662010773504
+    m_Localized: Pool de echo_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28662346317824
+    m_Localized: Pool de ruin_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28662727999488
+    m_Localized: Pool de damage_over_time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28663071932416
+    m_Localized: Pool de area_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28663428448256
+    m_Localized: Pool de projectile_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28663768186880
+    m_Localized: Pool de summon_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28664107925504
+    m_Localized: Pool de skill_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28664472829952
+    m_Localized: Pool de armor_penetration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28664837734400
+    m_Localized: Pool de stagger_damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28665160695808
+    m_Localized: Pool de physical_resistance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28665517211648
+    m_Localized: Pool de elemental_resistance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28665873727488
+    m_Localized: Pool de void_resistance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28666200883200
+    m_Localized: Pool de dodge_chance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28666561593344
+    m_Localized: Pool de block_chance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28666913914880
+    m_Localized: Pool de damage_reduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28667266236416
+    m_Localized: Pool de healing_effectiveness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28667614363648
+    m_Localized: Pool de shield_strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28667962490880
+    m_Localized: Pool de status_resistance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28668331589632
+    m_Localized: Pool de maximum_resource
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28668662939648
+    m_Localized: Pool de movement_speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28669002678272
+    m_Localized: Pool de cooldown_reduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28669325639680
+    m_Localized: Pool de resource_generation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28669669572608
+    m_Localized: Pool de resource_cost_reduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28670030282752
+    m_Localized: Pool de pickup_radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28670365827072
+    m_Localized: Pool de experience_gain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28670705565696
+    m_Localized: Pool de gold_acquisition
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28671036915712
+    m_Localized: Pool de duration_of_effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28671439568896
+    m_Localized: Pool de summon_duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28671791890432
+    m_Localized: Pool de status_potency
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28672160989184
+    m_Localized: Pool de infusion_ember_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28672509116416
+    m_Localized: Pool de infusion_ember_strikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28672857243648
+    m_Localized: Pool de infusion_frost_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28673184399360
+    m_Localized: Pool de infusion_frost_strikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28673524137984
+    m_Localized: Pool de infusion_storm_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28673876459520
+    m_Localized: Pool de infusion_storm_strikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28674232975360
+    m_Localized: Pool de infusion_void_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28674597879808
+    m_Localized: Pool de infusion_void_strikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28674925035520
+    m_Localized: Pool de infusion_echo_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28675285745664
+    m_Localized: Pool de infusion_echo_strikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28675680010240
+    m_Localized: Pool de infusion_ruin_added
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28676057497600
+    m_Localized: Pool de infusion_ruin_strikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28680193081344
+    m_Localized: "Infus\xE3o de Ember (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28680583151616
+    m_Localized: "Infus\xE3o de Ember (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28680906113024
+    m_Localized: "Infus\xE3o de Frost (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28681237463040
+    m_Localized: "Infus\xE3o de Frost (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28681602367488
+    m_Localized: "Infus\xE3o de Storm (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28681954689024
+    m_Localized: "Infus\xE3o de Storm (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28682332176384
+    m_Localized: "Infus\xE3o de Void (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28682667720704
+    m_Localized: "Infus\xE3o de Void (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28682982293504
+    m_Localized: "Infus\xE3o de Echo (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28683330420736
+    m_Localized: "Infus\xE3o de Echo (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28683678547968
+    m_Localized: "Infus\xE3o de Ruin (Added)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28684009897984
+    m_Localized: "Infus\xE3o de Ruin (Strikes)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28685842808832
+    m_Localized: Envelope
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686220296192
+    m_Localized: "Faixa padr\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686576812032
+    m_Localized: Faixa alta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686920744960
+    m_Localized: Faixa baixa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28688439083008
+    m_Localized: Common
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28688845930496
+    m_Localized: Rare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28689227612160
+    m_Localized: Epic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28689550573568
+    m_Localized: Legendary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28690905333760
+    m_Localized: Dano em Main Hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28691261849600
+    m_Localized: Flats defensivos em OffHand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28691626754048
+    m_Localized: Flats defensivos em Head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28691958104064
+    m_Localized: Flats defensivos em Chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28692310425600
+    m_Localized: Flats defensivos em Legs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28692666941440
+    m_Localized: Flats defensivos em Hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28693019262976
+    m_Localized: Flats defensivos em Feet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28693388361728
+    m_Localized: Flats defensivos em Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28693753266176
+    m_Localized: Flats defensivos em Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28694109782016
+    m_Localized: Flats defensivos em Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28694420160512
+    m_Localized: Bloqueio na Warbrand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28694755704832
+    m_Localized: Velocidade de Movimento em Feet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28695124803584
+    m_Localized: "Prim\xE1rios e resist\xEAncias em Amulet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28695481319424
+    m_Localized: Afinidades e afins em Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28695825252352
+    m_Localized: Infusions em Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28697779798016
+    m_Localized: Espada Grande
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28698148896768
+    m_Localized: Machados Duplos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28698463469568
+    m_Localized: Martelo de Guerra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28698849345536
+    m_Localized: Espada Longa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28699256193024
+    m_Localized: "L\xE2mina Pesada"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28699595931648
+    m_Localized: Warbrand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28699956641792
+    m_Localized: Elmo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28700334129152
+    m_Localized: Capuz
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28700745170944
+    m_Localized: Diadema
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701072326656
+    m_Localized: Peitoral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701416259584
+    m_Localized: "Gib\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701739220992
+    m_Localized: Manto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28702095736832
+    m_Localized: Manoplas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28702464835584
+    m_Localized: Luvas de Couro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28702808768512
+    m_Localized: Faixas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28703224004608
+    m_Localized: Grevas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28703697960960
+    m_Localized: "Cal\xE7as de Couro"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704054476800
+    m_Localized: Escarcelas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704402604032
+    m_Localized: Sabatons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704796868608
+    m_Localized: Botas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28705182744576
+    m_Localized: "Sand\xE1lias de Tecido"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28705564426240
+    m_Localized: Band
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28705916747776
+    m_Localized: Signet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28706277457920
+    m_Localized: Loop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28706604613632
+    m_Localized: Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28706935963648
+    m_Localized: Torc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28707288285184
+    m_Localized: Locket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28707632218112
+    m_Localized: Cinder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28707984539648
+    m_Localized: Rime Shard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28708353638400
+    m_Localized: Stormglass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28708672405504
+    m_Localized: Lodestone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28709037309952
+    m_Localized: Bell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28709410603008
+    m_Localized: Reliquary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28709800673280
+    m_Localized: Keystone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28712686354432
+    m_Localized: Ashfang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28713038675968
+    m_Localized: Twinmaw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28713361637376
+    m_Localized: Colossus Knell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28713718153216
+    m_Localized: Oathkeeper's Edge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28714083057664
+    m_Localized: Headsman's Ember
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28714401824768
+    m_Localized: Brand of the Pyre-King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28714766729216
+    m_Localized: Crown of Cinders
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28715110662144
+    m_Localized: Hide of the Unyielding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28715425234944
+    m_Localized: Grips of the Sundered Oath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28715785945088
+    m_Localized: Greaves of the Charging Bull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28716150849536
+    m_Localized: Treads of Scorched Earth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28716528336896
+    m_Localized: Ring of the Last Stand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28716876464128
+    m_Localized: Pendant of the Ashbound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28717262340096
+    m_Localized: Ember of the First Pillar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28717593690112
+    m_Localized: Ordeal Greaves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28717954400256
+    m_Localized: Sunderbrand, the First Fault
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28718315110400
+    m_Localized: Aetherbound Loop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28718633877504
+    m_Localized: Band of Twin Eclipses
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28718977810432
+    m_Localized: Seal of the Remnants
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28719338520576
+    m_Localized: Vestments of the Sanctuary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28719703425024
+    m_Localized: Hands of the Pillarwright
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28720051552256
+    m_Localized: Gauntlets of Steady Hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28720395485184
+    m_Localized: Rift Runner's Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28720747806720
+    m_Localized: Helm of the Forgotten King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28721163042816
+    m_Localized: Legplates of the Long Road
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28721527947264
+    m_Localized: Cinder of the Sundering
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28721892851712
+    m_Localized: Tear of the Frozen Choir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28722245173248
+    m_Localized: Stormglass Prism
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28722652020736
+    m_Localized: Hollow Lodestone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28723071451136
+    m_Localized: Bell of Second Hours
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28723465715712
+    m_Localized: Furnace of the Colossus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28723901923328
+    m_Localized: Shroud of the Still Court
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28724283604992
+    m_Localized: Cinderwake Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28724673675264
+    m_Localized: Prism of the Six Pillars
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28725046968320
+    m_Localized: Keystone of the Sundering
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28728796676096
+    m_Localized: Ashen Sovereign
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28729199329280
+    m_Localized: Death's Pursuit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28729593593856
+    m_Localized: Frozen Empress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28729992052736
+    m_Localized: Eternal Bastion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28730373734400
+    m_Localized: Storm Phantom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28730826719232
+    m_Localized: Abyssal Legion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28731220983808
+    m_Localized: Ruinbreaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28731640414208
+    m_Localized: Void Oracle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28732068233216
+    m_Localized: Hollow Sovereign
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28732529606656
+    m_Localized: Arcane Paradox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28733041311744
+    m_Localized: Thousand Echoes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28733557211136
+    m_Localized: Eternal Warden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28734035361792
+    m_Localized: Ashen Wastes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28734530289664
+    m_Localized: Frozen Cathedral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28735029411840
+    m_Localized: Shattered Expanse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28735494979584
+    m_Localized: Hollow Depths
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28735914409984
+    m_Localized: Astral Citadel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28738259025920
+    m_Localized: iLvl Normal Ashen Wastes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28738636513280
+    m_Localized: iLvl Normal Frozen Cathedral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28739060137984
+    m_Localized: iLvl Normal Shattered Expanse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28739454402560
+    m_Localized: iLvl Normal Hollow Depths
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28739768975360
+    m_Localized: iLvl Normal Astral Citadel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28740104519680
+    m_Localized: iLvl Veteran Ashen Wastes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28740419092480
+    m_Localized: iLvl Veteran Frozen Cathedral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28740779802624
+    m_Localized: iLvl Veteran Shattered Expanse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28741157289984
+    m_Localized: iLvl Veteran Hollow Depths
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28741530583040
+    m_Localized: iLvl Veteran Astral Citadel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28741933236224
+    m_Localized: iLvl Nightmare Ashen Wastes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28742310723584
+    m_Localized: iLvl Nightmare Frozen Cathedral
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28742663045120
+    m_Localized: iLvl Nightmare Shattered Expanse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28743044726784
+    m_Localized: iLvl Nightmare Hollow Depths
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28743434797056
+    m_Localized: iLvl Nightmare Astral Citadel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28743795507200
+    m_Localized: iLvl Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28744156217344
+    m_Localized: iLvl Ascension
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28746333061120
+    m_Localized: Inimigo comum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28746718937088
+    m_Localized: Elite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28747109007360
+    m_Localized: Guardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28747561992192
+    m_Localized: Recompensa de Arena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28747943673856
+    m_Localized: Tesouro (entregues)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28748384075776
+    m_Localized: Reliquary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28748778340352
+    m_Localized: Challenge Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28749155827712
+    m_Localized: Event Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28749520732160
+    m_Localized: Chefe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28749940162560
+    m_Localized: Rift Cache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28752314138624
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28752762929152
+    m_Localized: Veteran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28753211719680
+    m_Localized: Nightmare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28753719230464
+    m_Localized: Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28754218352640
+    m_Localized: Ascension
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28756101595136
+    m_Localized: Teto de Quantidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28756512636928
+    m_Localized: "Peso de Unique n\xE3o descoberto"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28756869152768
+    m_Localized: "Fator de requisito de n\xEDvel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28757208891392
+    m_Localized: "Requisito de n\xEDvel m\xE1ximo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28757586378752
+    m_Localized: "Smart loot her\xF3i atual (gen\xE9rico)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28757951283200
+    m_Localized: "Smart loot her\xF3i atual (Legendary)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28758307799040
+    m_Localized: Peso de afixo irrelevante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28758664314880
+    m_Localized: "Peso de prim\xE1rio Core"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28759012442112
+    m_Localized: "Peso de prim\xE1rio Secund\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28759347986432
+    m_Localized: "Peso de prim\xE1rio Terci\xE1rio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28759700307968
+    m_Localized: "Parcela de modificador de her\xF3i em Epic"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28760056823808
+    m_Localized: Multiplicador de habilidade equipada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28760446894080
+    m_Localized: "Armor impl\xEDcito por iLvl"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28760853741568
+    m_Localized: "Upgrade por n\xEDvel"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28761256394752
+    m_Localized: Peso de slot main_hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28761638076416
+    m_Localized: Peso de slot off_hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28762023952384
+    m_Localized: Peso de slot head
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28762363691008
+    m_Localized: Peso de slot chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28762757955584
+    m_Localized: Peso de slot hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763131248640
+    m_Localized: Peso de slot legs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763496153088
+    m_Localized: Peso de slot feet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763852668928
+    m_Localized: Peso de slot ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764251127808
+    m_Localized: Peso de slot amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764628615168
+    m_Localized: Peso de slot relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764997713920
+    m_Localized: "M\xE1x. prim\xE1rios por item"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28765316481024
+    m_Localized: "M\xE1x. prim\xE1rios em Amulet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28765672996864
+    m_Localized: "M\xE1x. afixos de afinidade por item"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28766016929792
+    m_Localized: "M\xE1x. afixos de conforto por item"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28766360862720
+    m_Localized: "M\xE1x. resist\xEAncias \xFAnicas em Common/Rare"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28769414316032
+    m_Localized: Inimigo comum
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28769758248960
+    m_Localized: Elite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28770127347712
+    m_Localized: Guardian
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28770492252160
+    m_Localized: Recompensa de Arena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28770878128128
+    m_Localized: Tesouro (entregues)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28771310141440
+    m_Localized: Reliquary
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28771763126272
+    m_Localized: Challenge Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28772190945280
+    m_Localized: Event Room
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28772618764288
+    m_Localized: Chefe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28773025611776
+    m_Localized: Rift Cache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28774757859328
+    m_Localized: Pity Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28775114375168
+    m_Localized: Pity Veteran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28775470891008
+    m_Localized: Pity Nightmare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28775802241024
+    m_Localized: Pity Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28776150368256
+    m_Localized: Pity Ascension
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

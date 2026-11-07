@@ -1,0 +1,13 @@
+id,name_pt,name_en,affix_id,affinity,form,hit_filter,counts_as_affinity,pool_rule,source_doc
+infusion.ember.added,Infusão de Ember (Added),Ember Infusion (Added),affix.core.infusion_ember_added,Ember,Added,,true,any,02 §3.9.4
+infusion.ember.strikes,Infusão de Ember (Strikes),Ember Infusion (Strikes),affix.core.infusion_ember_strikes,Ember,Strikes,,true,any,02 §3.9.4
+infusion.frost.added,Infusão de Frost (Added),Frost Infusion (Added),affix.core.infusion_frost_added,Frost,Added,,true,any,02 §3.9.4
+infusion.frost.strikes,Infusão de Frost (Strikes),Frost Infusion (Strikes),affix.core.infusion_frost_strikes,Frost,Strikes,,true,any,02 §3.9.4
+infusion.storm.added,Infusão de Storm (Added),Storm Infusion (Added),affix.core.infusion_storm_added,Storm,Added,,true,any,02 §3.9.4
+infusion.storm.strikes,Infusão de Storm (Strikes),Storm Infusion (Strikes),affix.core.infusion_storm_strikes,Storm,Strikes,,true,any,02 §3.9.4
+infusion.void.added,Infusão de Void (Added),Void Infusion (Added),affix.core.infusion_void_added,Void,Added,,true,any,02 §3.9.4
+infusion.void.strikes,Infusão de Void (Strikes),Void Infusion (Strikes),affix.core.infusion_void_strikes,Void,Strikes,,true,any,02 §3.9.4
+infusion.echo.added,Infusão de Echo (Added),Echo Infusion (Added),affix.core.infusion_echo_added,Echo,Added,,true,any,02 §3.9.4
+infusion.echo.strikes,Infusão de Echo (Strikes),Echo Infusion (Strikes),affix.core.infusion_echo_strikes,Echo,Strikes,,true,any,02 §3.9.4
+infusion.ruin.added,Infusão de Ruin (Added),Ruin Infusion (Added),affix.core.infusion_ruin_added,Ruin,Added,,true,any,02 §3.9.4
+infusion.ruin.strikes,Infusão de Ruin (Strikes),Ruin Infusion (Strikes),affix.core.infusion_ruin_strikes,Ruin,Strikes,,true,any,02 §3.9.4

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: colossus_knell
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.kael.colossus_knell
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.kael.colossus_knell.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: f522ae1ffc111fe3
+  sourceDoc: "02 \xA73.12.1"
+  nameEn: Colossus Knell
+  catalogNo: K3
+  itemKind: 3
+  baseId: base.kael.warhammer
+  heroId: kael
+  effectId: effect.colossus_knell
+  fixedAffixes:
+  - affixId: affix.core.strength
+    band: 2
+    offPool: 0
+  - affixId: affix.core.stagger_damage
+    band: 3
+    offPool: 0
+  - affixId: affix.core.physical_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.area_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.maximum_health
+    band: 2
+    offPool: 1
+  openOptions: []
+  modifierIds:
+  - KAE-WB-01
+  - KAE-IL-09
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 1
+  uniqueSourceRef: the_ashen_colossus
+  minDropILvl: 35
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: Seu dobre anunciou a queda do primeiro Colosso.
+  loreEn: Its knell announced the fall of the first Colossus.
+  build: Juggernaut
+  effectMoreDeclared: 25
+  references:
+    version: 2
+    RefIds: []

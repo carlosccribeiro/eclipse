@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ec2183ebc550e42aec0f003206094f, type: 3}
+  m_Name: affinity_utility
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.SlotMultiplierDefinition
+  stableId: slotmult.relic.affinity_utility
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: slotmult.relic.affinity_utility.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 5d3d2420a1a50a1a
+  sourceDoc: "01 \xA73.9.3"
+  nameEn: Relic affinities and related
+  slot: 9
+  affixIds:
+  - affix.core.ember_damage
+  - affix.core.frost_damage
+  - affix.core.storm_damage
+  - affix.core.void_damage
+  - affix.core.echo_damage
+  - affix.core.ruin_damage
+  - affix.core.damage_over_time
+  - affix.core.summon_damage
+  - affix.core.summon_duration
+  - affix.core.duration_of_effects
+  - affix.core.status_potency
+  baseId: 
+  multiplier: 1.25
+  appliesToImplicit: 0
+  references:
+    version: 2
+    RefIds: []

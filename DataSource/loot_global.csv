@@ -1,0 +1,30 @@
+id,name_pt,name_en,key,value,value_kind,source_doc
+lootglobal.core.quantity_cap,Teto de Quantidade,Quantity cap,quantity_cap,2.0,Number,05 R45; 05 §3.2
+lootglobal.core.undiscovered_unique_weight,Peso de Unique não descoberto,Undiscovered Unique weight,undiscovered_unique_weight,2,Number,05 §6 passo 5
+lootglobal.core.required_level_factor,Fator de requisito de nível,Required level factor,required_level_factor,0.5,Number,05 §4.3
+lootglobal.core.required_level_max,Requisito de nível máximo,Required level max,required_level_max,50,Number,05 §4.3
+lootglobal.core.smart_current_hero_generic,Smart loot herói atual (genérico),Smart loot current hero (generic),smart_current_hero_generic,75,Percent,05 §7.1
+lootglobal.core.smart_current_hero_legendary,Smart loot herói atual (Legendary),Smart loot current hero (Legendary),smart_current_hero_legendary,85,Percent,05 §7.1
+lootglobal.core.weight_irrelevant_affix,Peso de afixo irrelevante,Irrelevant affix weight,weight_irrelevant_affix,0.25,Number,05 §6.2
+lootglobal.core.weight_primary_core,Peso de primário Core,Core primary weight,weight_primary_core,2,Number,05 §6.2; 00 R30
+lootglobal.core.weight_primary_secondary,Peso de primário Secundário,Secondary primary weight,weight_primary_secondary,1,Number,05 §6.2; 00 R30
+lootglobal.core.weight_primary_tertiary,Peso de primário Terciário,Tertiary primary weight,weight_primary_tertiary,0.5,Number,05 §6.2; 00 R30
+lootglobal.core.epic_hero_modifier_share,Parcela de modificador de herói em Epic,Epic hero modifier share,epic_hero_modifier_share,0.75,Number,05 §7.2
+lootglobal.core.equipped_skill_multiplier,Multiplicador de habilidade equipada,Equipped skill multiplier,equipped_skill_multiplier,3,Number,05 §7.2
+lootglobal.core.armor_implicit_per_ilvl,Armor implícito por iLvl,Armor implicit per iLvl,armor_implicit_per_ilvl,4,Number,01 §3.9.3
+lootglobal.core.upgrade_per_level,Upgrade por nível,Upgrade per level,upgrade_per_level,3,Percent,01 §3.9.5; 00 R31
+lootglobal.core.slot_weight.main_hand,Peso de slot main_hand,Slot weight main_hand,slot_weight.main_hand,10,Number,05 §6.1
+lootglobal.core.slot_weight.off_hand,Peso de slot off_hand,Slot weight off_hand,slot_weight.off_hand,7,Number,05 §6.1
+lootglobal.core.slot_weight.head,Peso de slot head,Slot weight head,slot_weight.head,8,Number,05 §6.1
+lootglobal.core.slot_weight.chest,Peso de slot chest,Slot weight chest,slot_weight.chest,8,Number,05 §6.1
+lootglobal.core.slot_weight.hands,Peso de slot hands,Slot weight hands,slot_weight.hands,8,Number,05 §6.1
+lootglobal.core.slot_weight.legs,Peso de slot legs,Slot weight legs,slot_weight.legs,8,Number,05 §6.1
+lootglobal.core.slot_weight.feet,Peso de slot feet,Slot weight feet,slot_weight.feet,8,Number,05 §6.1
+lootglobal.core.slot_weight.ring,Peso de slot ring,Slot weight ring,slot_weight.ring,9,Number,05 §6.1
+lootglobal.core.slot_weight.amulet,Peso de slot amulet,Slot weight amulet,slot_weight.amulet,6,Number,05 §6.1
+lootglobal.core.slot_weight.relic,Peso de slot relic,Slot weight relic,slot_weight.relic,7,Number,05 §6.1
+lootglobal.core.max_primary_per_item,Máx. primários por item,Max primaries per item,max_primary_per_item,1,Number,02 §3.9.3; 00 R23
+lootglobal.core.max_primary_amulet,Máx. primários em Amulet,Max primaries on Amulet,max_primary_amulet,2,Number,02 §3.9.3; 00 R23
+lootglobal.core.max_affinity_per_item,Máx. afixos de afinidade por item,Max affinity affixes per item,max_affinity_per_item,2,Number,02 §3.9.3 regra 1; 05 §6.2
+lootglobal.core.max_comfort_per_item,Máx. afixos de conforto por item,Max comfort affixes per item,max_comfort_per_item,1,Number,05 §6.2
+lootglobal.core.max_single_resistance_common_rare,Máx. resistências únicas em Common/Rare,Max single resistances on Common/Rare,max_single_resistance_common_rare,1,Number,05 §6.2

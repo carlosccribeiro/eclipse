@@ -132,6 +132,7 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | M01 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Ids, Tags/HitFlags, RNG xoshiro128** + 5 streams, SimulationClock 60 Hz, EventBus 0 B, Definitions. dotnet 132/132, EditMode 131/131 |
 | M02 | ✅ concluído | 2026-11-07 | CSV→SO→registro→validador; piloto Affinities (6) + String Table `Definitions`. dotnet 144/144, EditMode 188/188. Comando: `…DataPipeline.DataPipeline.ImportAndValidate`. `data-validate` no CI a confirmar |
 | M03 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Stats (StatBlock, DR/caps), Attributes, Damage (ofensivo/recebido), CrowdControl, Procs. Exemplo 01 §3.12 reproduzido. dotnet 299/299, EditMode 297/297. Pendências no Log do M03 |
+| M12 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Items (modelo, `ItemMath`) e Loot (gerador de 12 passos, pity); 15 CSVs + 35 nomeados (K1–K16, U1–U19). dotnet 460/460, EditMode 564/564, validador 0 erros. Raridade com chances absolutas de 05 §5.4; pendências no Log do M12 |
 | M04–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 

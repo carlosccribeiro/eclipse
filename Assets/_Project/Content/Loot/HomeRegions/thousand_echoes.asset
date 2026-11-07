@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7d5243364b7a24e849fa2af720b231, type: 3}
+  m_Name: thousand_echoes
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Loot.HomeRegionDefinition
+  stableId: homeregion.set.thousand_echoes
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: homeregion.set.thousand_echoes.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 38e9dfbeca276249
+  sourceDoc: "05 \xA79.1, \xA79.4; 00 R32, R39"
+  nameEn: Thousand Echoes
+  rowKind: 0
+  setId: thousand_echoes
+  heroId: nyx
+  regionId: astral_citadel
+  homeWeight: 4
+  homeBossWeight: 6
+  attunementMultiplier: 3
+  dominantAffinityBits: 0
+  affinityWeight: 0
+  uniqueBonus: 0
+  references:
+    version: 2
+    RefIds: []

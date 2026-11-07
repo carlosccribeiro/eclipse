@@ -1,0 +1,6 @@
+id,name_pt,name_en,difficulty,quantity_bonus_pct,quantity_bonus_per_ascension_pct,set_share_pct,standard_share_pct,unique_share_pct,roll_floor_pct,roll_floor_per_ascension_pct,ascension_base_ilvl,ascension_max_ilvl,ascension_ilvl_cap_level,ascension_primal_min_level,primal_base_chance_pct,primal_chance_per_level_pct,primal_roll_min_pct,source_doc
+lootdiff.core.normal,Normal,Normal,Normal,0,0,0,100,0,0,0,0,0,0,0,0,0,0,"05 §3.2, §4.1, §5.5, §10.1, §10.3"
+lootdiff.core.veteran,Veteran,Veteran,Veteran,10,0,40,45,15,0,0,0,0,0,0,0,0,0,"05 §3.2, §4.1, §5.5, §10.1, §10.3"
+lootdiff.core.nightmare,Nightmare,Nightmare,Nightmare,20,0,40,45,15,10,0,0,0,0,0,0,0,0,"05 §3.2, §4.1, §5.5, §10.1, §10.3"
+lootdiff.core.eclipse,Eclipse,Eclipse,Eclipse,30,0,40,45,15,20,0,0,0,0,0,0,0,0,"05 §3.2, §4.1, §5.5, §10.1, §10.3"
+lootdiff.core.ascension,Ascension,Ascension,Ascension,30,0.4,40,42,18,25,0.4,85,100,90,50,2,0.16,85,"05 §3.2, §4.1, §5.5, §10.1, §10.3"

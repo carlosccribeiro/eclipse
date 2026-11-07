@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: greaves_of_the_charging_bull
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.kael.greaves_of_the_charging_bull
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.kael.greaves_of_the_charging_bull.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 86f39ccfa5ed9894
+  sourceDoc: "02 \xA73.12.1"
+  nameEn: Greaves of the Charging Bull
+  catalogNo: K10
+  itemKind: 1
+  baseId: base.armor.greaves
+  heroId: kael
+  effectId: effect.greaves_of_the_charging_bull
+  fixedAffixes:
+  - affixId: affix.core.strength
+    band: 2
+    offPool: 0
+  - affixId: affix.core.maximum_health
+    band: 2
+    offPool: 0
+  - affixId: affix.core.area_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.dodge_chance
+    band: 2
+    offPool: 0
+  openOptions:
+  - affixId: affix.core.armor
+    band: 2
+    offPool: 0
+  - affixId: affix.core.damage_over_time
+    band: 2
+    offPool: 0
+  - affixId: affix.core.duration_of_effects
+    band: 2
+    offPool: 0
+  modifierIds:
+  - KAE-IL-06
+  - KAE-IL-02
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 0
+  uniqueSourceRef: 
+  minDropILvl: 10
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "Quem corre com elas n\xE3o sabe parar."
+  loreEn: Whoever runs in them cannot stop.
+  build: Inferno
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

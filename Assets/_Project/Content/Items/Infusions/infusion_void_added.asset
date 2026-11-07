@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974be83efe60b9146a0307b0a5e096c8, type: 3}
+  m_Name: infusion_void_added
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.InfusionDefinition
+  stableId: infusion.void.added
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: infusion.void.added.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 2d0f1268d6b25b4b
+  sourceDoc: "02 \xA73.9.4"
+  nameEn: Void Infusion (Added)
+  affixId: affix.core.infusion_void_added
+  affinityBits: 1048576
+  form: 0
+  hitFilter: 0
+  countsAsAffinity: 1
+  poolRule: any
+  references:
+    version: 2
+    RefIds: []

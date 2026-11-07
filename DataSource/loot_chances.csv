@@ -1,0 +1,11 @@
+id,name_pt,name_en,source,leg_normal,leg_veteran,leg_nightmare,leg_eclipse,leg_a1,leg_a100,epic_normal,epic_veteran,epic_nightmare,epic_eclipse,epic_a1,epic_a100,rare_normal,rare_veteran,rare_nightmare,rare_eclipse,rare_a1,rare_a100,source_doc
+lootchance.core.trash,Inimigo comum,Trash,Trash,0.1,0.4,0.9,1.8,2.5,4.0,2,6,12,20,25,32,25,32,38,42,42,40,"05 §5.2, §5.3, §5.4"
+lootchance.core.elite,Elite,Elite,Elite,0.5,1.5,3,6,8,12,8,15,22,30,34,40,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.guardian,Guardian,Guardian,Guardian,2,4,7,11,14,18,12,20,28,36,40,45,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.arena_reward,Recompensa de Arena,Arena Reward,ArenaReward,0.5,1.5,3,6,8,12,8,15,22,30,34,40,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.treasure_delivered,Tesouro (entregues),Treasure (delivered),TreasureDelivered,1,3,5,9,12,16,12,20,28,36,40,45,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.reliquary,Reliquary,Reliquary,Reliquary,2,5,8,12,15,20,-1,-1,-1,-1,-1,-1,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.challenge,Challenge Room,Challenge Room,Challenge,5,10,15,22,26,32,-1,-1,-1,-1,-1,-1,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.event,Event Room,Event Room,Event,1,3,5,9,12,16,10,18,25,33,37,42,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.boss,Chefe,Boss,Boss,4,8,13,20,24,30,15,22,30,38,42,48,,,,,,,"05 §5.2, §5.3, §5.4"
+lootchance.core.rift_cache,Rift Cache,Rift Cache,RiftCache,2,5,9,14,17,22,20,28,35,42,45,50,,,,,,,"05 §5.2, §5.3, §5.4"

@@ -1,5 +1,5 @@
 # M12 — Itemização núcleo (itens, afixos, gerador, loot, pity)
-Fase 2 · Onda 3 · Status: ⏳ não iniciado
+Fase 2 · Onda 3 · Status: ✅ concluído (2026-11-07)
 Depende de: M02, M03 · Desbloqueia: M13, M18 · Paralelo com: M04
 Branch: modulo/M12-itemizacao-nucleo
 Docs de referência: 01 §3.9 (tiers, faixas, multiplicadores de slot, Armor implícito, upgrade), §3.10; 02 §3.1–3.12 (anatomia, nomes, bases, Off Hand, armaduras, joias/Relics, pool §3.9.3, Infusions §3.9.4, compatibilidade §3.10, catálogo §3.12.1 Kael e §3.12.5 universais, §3.12.6 fontes de Unique); 05 §2–§10, §13; 11 §3.4.1–3.4.3, §3.12; 00 §5 R21–R31
@@ -33,16 +33,16 @@ Construir o modelo de item e o gerador de loot no `Eclipse.Core` (C# puro, deter
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | Mapear APIs de M01/M02/M03 e extrair colunas das tabelas de 01/02/05 | investigação | investigador | — | — | ⏳ |
-| T2 | Contratos Core de item/loot + esquemas de CSV | design | principal | T1 | `Assets/_Project/Code/Core/Items/Contracts/*.cs`, `Assets/_Project/Code/Core/Loot/Contracts/*.cs`, `docs/data-schemas/items.md` | ⏳ |
-| T3 | Modelo de item: instância, tier, leitura de valor, Faixa Nomeada, upgrade, requisito | execução | executor | T2 | `Assets/_Project/Code/Core/Items/Model/*.cs`, `tools/CoreTests/Items/*.cs` | ⏳ |
-| T4 | Gerador: iLvl, quantidade, raridade, tipo, smart loot, afixos, Roll01/Primal, modificadores de Epic, região-lar/Attunement | execução | executor | T3 | `Assets/_Project/Code/Core/Loot/Generation/*.cs`, `tools/CoreTests/Loot/Generation/*.cs` | ⏳ |
-| T5 | Pity e garantias por herói | execução | executor | T3 | `Assets/_Project/Code/Core/Loot/Pity/*.cs`, `tools/CoreTests/Loot/Pity/*.cs` | ⏳ |
-| T6 | Definições SO, importadores e regras de validação de itens e loot | execução | executor | T2 | `Assets/_Project/Code/Data/{Items,Loot}/*.cs`, `Assets/_Project/Code/Editor/DataPipeline/Importers/{Affix,AffixPool,SlotMultiplier,Rarity,ItemBase,NamedItem,LootSource,LootChance,IlvlRange,Pity,HomeRegion}TableImporter.cs`, `Assets/_Project/Code/Editor/Validation/Rules/{Item,Loot}Rules.cs` | ⏳ |
-| T7 | Cadastro das tabelas de sistema (atributos, multiplicadores, pool, Infusions, raridades, bases, loot, iLvl, pity, região-lar) | execução | executor | T6 | `DataSource/{affixes,slot_multipliers,affix_pools,infusions,rarities,item_bases,loot_sources,loot_chances,ilvl_ranges,pity,home_regions}.csv` | ⏳ |
-| T8 | Cadastro dos itens nomeados K1–K16 e U1–U19 | execução | executor | T6 | `DataSource/items_named.csv`, `DataSource/items_named_affixes.csv` | ⏳ |
-| T9 | Testes de integração com dados reais e de distribuição | execução | executor | T4, T5, T7, T8 | `Assets/_Project/Code/Tests/EditMode/Items/*.cs`, `tools/CoreTests/Loot/Distribution/*.cs` | ⏳ |
-| T10 | Integração, verificação final e documentação | revisão | principal | T9 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ⏳ |
+| T1 | Mapear APIs de M01/M02/M03 e extrair colunas das tabelas de 01/02/05 | investigação | investigador | — | — | ✅ |
+| T2 | Contratos Core de item/loot + esquemas de CSV | design | principal | T1 | `Assets/_Project/Code/Core/Items/Contracts/*.cs`, `Assets/_Project/Code/Core/Loot/Contracts/*.cs`, `docs/data-schemas/items.md` | ✅ |
+| T3 | Modelo de item: instância, tier, leitura de valor, Faixa Nomeada, upgrade, requisito | execução | executor | T2 | `Assets/_Project/Code/Core/Items/Model/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Items/*.cs` | ✅ |
+| T4 | Gerador: iLvl, quantidade, raridade, tipo, smart loot, afixos, Roll01/Primal, modificadores de Epic, região-lar/Attunement | execução | executor | T3 | `Assets/_Project/Code/Core/Loot/Generation/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Loot/Generation/*.cs` | ✅ |
+| T5 | Pity e garantias por herói | execução | executor | T3 | `Assets/_Project/Code/Core/Loot/Pity/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Loot/Pity/*.cs` | ✅ |
+| T6 | Definições SO, importadores e regras de validação de itens e loot | execução | executor | T2 | `Assets/_Project/Code/Data/{Items,Loot}/*.cs`, `Assets/_Project/Code/Editor/DataPipeline/Importers/{Affix,AffixPool,SlotMultiplier,Rarity,ItemBase,NamedItem,LootSource,LootChance,IlvlRange,Pity,HomeRegion}TableImporter.cs`, `Assets/_Project/Code/Editor/Validation/Rules/{Item,Loot}Rules.cs` | ✅ |
+| T7 | Cadastro das tabelas de sistema (atributos, multiplicadores, pool, Infusions, raridades, bases, loot, iLvl, pity, região-lar) | execução | executor | T6 | `DataSource/{affixes,slot_multipliers,affix_pools,infusions,rarities,item_bases,loot_sources,loot_chances,ilvl_ranges,pity,home_regions}.csv` | ✅ |
+| T8 | Cadastro dos itens nomeados K1–K16 e U1–U19 | execução | executor | T6 | `DataSource/items_named.csv`, `DataSource/items_named_affixes.csv` | ✅ |
+| T9 | Testes de integração com dados reais e de distribuição | execução | executor | T4, T5, T7, T8 | `Assets/_Project/Code/Tests/EditMode/Items/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Loot/Distribution/*.cs` | ✅ |
+| T10 | Integração, verificação final e documentação | revisão | principal | T9 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ✅ |
 
 ## Ondas internas
 1. T1
@@ -78,7 +78,7 @@ Entrega: até 200 palavras.
 Tarefa T3: Implementar o modelo de item.
 Objetivo: instâncias de item com leitura de valor correta.
 Contexto: 01 §3.9.1 (tier; Roll01 uniforme; sem interpolação por iLvl), §3.9.3 (multiplicadores por slot e família; Armor implícito `4 × iLvl × MultSlot × FatorBase`, Plate 1,5 / Leather 1,0 / Vestment 0,6), §3.9.5 (upgrade); R24 (Faixa Nomeada e bandas ↑ 95–115% / ↓ 70–80% de 02); 05 §4.3 (requisito); 11 §3.4.3 (campos).
-Arquivos: escreve `Assets/_Project/Code/Core/Items/Model/*.cs`, `tools/CoreTests/Items/*.cs`.
+Arquivos: escreve `Assets/_Project/Code/Core/Items/Model/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Items/*.cs`.
 Restrições: valores calculados na leitura, nunca salvos.
 Aceite: testes com os exemplos de 01 (ex.: Ember Damage T5 20–30% → Faixa Nomeada 21–34,5%) e casos de borda (iLvl 20/21, Roll01 0 e 1, upgrade +10).
 Verificação: `dotnet test tools/CoreTests --filter "FullyQualifiedName~Items"` → esperado: todos passam.
@@ -88,7 +88,7 @@ Entrega: até 150 palavras.
 Tarefa T4: Implementar o `ItemGenerator`.
 Objetivo: os 12 passos de 05 §6 com as tabelas de 05.
 Contexto: iLvl 05 §4.1–4.2 (inclui fórmula de Ascension, A90 = 100); quantidade §3.2 (aditiva, teto 2,0; chance de Legendary ≤ ×2 da base); raridade §5.1–5.4 com pisos (§3.1); tipo de Legendary §5.5; peso de slot §6.1 (Ring/Relic um sorteio cada); afixos §6.2; smart loot §7; região-lar ×4 / chefe ×6 e Attunement ×3 (§9.1, §9.4); Uniques ×2 se não descobertos (§6 passo 5); Roll01 com piso por dificuldade e Primal A50+ (§10.1, §10.3, chance de 01/05); modificadores de Epic via `IModifierPoolProvider` e hero-bound (R27); registro de `DropSeed` e `Source`.
-Arquivos: escreve `Assets/_Project/Code/Core/Loot/Generation/*.cs`, `tools/CoreTests/Loot/Generation/*.cs`.
+Arquivos: escreve `Assets/_Project/Code/Core/Loot/Generation/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Loot/Generation/*.cs`.
 Restrições: um único stream `Loot`; nenhuma alocação desnecessária em loops de amostragem.
 Aceite: testes por passo com fixtures; determinismo com 1.000 seeds.
 Verificação: `dotnet test tools/CoreTests --filter "FullyQualifiedName~Loot.Generation"` → esperado: todos passam.
@@ -98,7 +98,7 @@ Entrega: até 250 palavras — passos cobertos, onde a tabela de 05 foi ambígua
 Tarefa T5: Implementar pity e garantias.
 Objetivo: contadores por herói que alteram o gerador conforme 05 §8.
 Contexto: §8.1 (soft S/hard H por dificuldade; trash não consome hard; reset com Legendary compatível; contador mantido ao trocar de dificuldade), §8.2 (pity de set Veteran+), §8.3 (peças não possuídas ×3 — o "possuído" vem de uma interface de coleção), §8.4 (primeiro abate por dificuldade por herói; primeira conclusão de região no Normal), §8.5 (Unique de chefe no 10º abate).
-Arquivos: escreve `Assets/_Project/Code/Core/Loot/Pity/*.cs`, `tools/CoreTests/Loot/Pity/*.cs`.
+Arquivos: escreve `Assets/_Project/Code/Core/Loot/Pity/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Loot/Pity/*.cs`.
 Restrições: estado em POCO serializável sem referência a SO (para o M18).
 Aceite: testes por regra.
 Verificação: `dotnet test tools/CoreTests --filter "FullyQualifiedName~Loot.Pity"` → esperado: todos passam.
@@ -138,7 +138,7 @@ Entrega: até 150 palavras.
 Tarefa T9: Validar gerador com dados reais e distribuições.
 Objetivo: provar os critérios de saída 2–5.
 Contexto: EditMode: importar CSVs reais, gerar itens em vários contextos (fontes × dificuldades × regiões) e checar invariantes (estrutura R25, pool, faixas, hero-bound, requisito). Core: 200.000 amostras de trash por dificuldade contra 05 §5.4 (±0,5 p.p.), pisos de fonte, `minDropILvl`, ausência de set/Unique em Normal, pity hard nunca ultrapassado.
-Arquivos: escreve `Assets/_Project/Code/Tests/EditMode/Items/*.cs`, `tools/CoreTests/Loot/Distribution/*.cs`.
+Arquivos: escreve `Assets/_Project/Code/Tests/EditMode/Items/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/Loot/Distribution/*.cs`.
 Restrições: seeds fixas.
 Aceite: todos passam; tempo do teste de distribuição < 30 s.
 Verificação: `dotnet test tools/CoreTests --filter "FullyQualifiedName~Loot"` e `"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter "Eclipse.Tests.EditMode.Items" -testResults Logs/editmode-m12-t9.xml -logFile Logs/editmode-m12-t9.log` → esperado: sem falhas.
@@ -184,3 +184,8 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 Plano criado.
+- 2026-11-07 Concluído. dotnet 460/460; EditMode 564/564; `ImportAndValidate` 16 tabelas, 0 erros, 1 aviso (`modifiers.csv` ausente; o M10 promove a erro), idempotente. Distribuição do trash em 200.000 amostras (C/R/E/L, ±0,5 p.p.): Normal 72,93/24,92/2,04/0,11; Veteran 61,44/32,09/6,08/0,40; Nightmare 48,95/38,14/12,00/0,91; Eclipse 36,23/41,94/20,03/1,80; A1 30,51/42,24/24,84/2,41; A100 23,93/40,27/31,89/3,91. Teste de distribuição 9,9 s. Pity hard nunca ultrapassado (100k itens por dificuldade).
+- **Decisões do usuário:** (1) raridade com chances **absolutas** de 05 §5.4 (a cascata de §5.1/§5.3 dá Normal 73,4/24,5/2,0/0,1 e Eclipse 45,6/33,0/19,6/1,8 e reprovaria o critério 3); (2) K3 `HP*`, K4 `BLK*` e as opções abertas de U1 (DUR/Ring) e U3 (HEF/Amulet) cadastradas como em 02 §3.12, com lista de exceções em `OffPoolAffixRule.Exceptions` (R23 × 02 §2.14 — pendente: ajustar o doc dono); (3) Faixa Nomeada por bandas de R24/02 §3.9.1 em `named_bands.csv`, com `ImplicitRoll01` no `ItemInstance`; (4) afixos fixos dos nomeados em colunas de lista de `items_named.csv` (não existe `items_named_affixes.csv`).
+- **Desvios do plano:** testes do Core em `Tests/EditMode/Core/...` (único glob de `tools/CoreTests`); coluna `source_doc` (não `source_ref`); tabelas novas `loot_difficulty`, `loot_global`, `named_bands`; `home_regions.csv` com `row_kind` Set|Region; nomeados com colunas extras (`effect_text_*`, `lore_*`, `build`). Adição ao contrato: `LootContext.AllChallengesCleared`.
+- **Pendências/lacunas:** `hit_filter` das Infusions Strikes e `implicit_effect_id` da Warbrand vazios (doc não define); Event Room com `guaranteed_items` 0 (doc: 0–2, média 0,7); `consumes_hard_pity` falso para Guardian/Arena/Reliquary (05 §8.1 não lista); `affinity` vazia nos 35 nomeados (02 não dá); K15 sem `unique_source_ref`; Astral Citadel sem `dominant_affinities`; `OnItemGenerated` não recebe o herói (todo Legendary conta como compatível); ids de set/região são slugs escolhidos aqui; textos EN dos nomeados traduzidos pelo executor; Lyra/Nyx/Orun sem bases (M28).
+

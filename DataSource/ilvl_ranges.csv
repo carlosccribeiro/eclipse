@@ -1,0 +1,18 @@
+id,name_pt,name_en,difficulty,region_id,ilvl_min,ilvl_max,source_doc
+ilvl.normal.ashen_wastes,iLvl Normal Ashen Wastes,Normal iLvl Ashen Wastes,Normal,ashen_wastes,1,6,05 §4.1
+ilvl.normal.frozen_cathedral,iLvl Normal Frozen Cathedral,Normal iLvl Frozen Cathedral,Normal,frozen_cathedral,6,10,05 §4.1
+ilvl.normal.shattered_expanse,iLvl Normal Shattered Expanse,Normal iLvl Shattered Expanse,Normal,shattered_expanse,11,15,05 §4.1
+ilvl.normal.hollow_depths,iLvl Normal Hollow Depths,Normal iLvl Hollow Depths,Normal,hollow_depths,16,20,05 §4.1
+ilvl.normal.astral_citadel,iLvl Normal Astral Citadel,Normal iLvl Astral Citadel,Normal,astral_citadel,21,24,05 §4.1
+ilvl.veteran.ashen_wastes,iLvl Veteran Ashen Wastes,Veteran iLvl Ashen Wastes,Veteran,ashen_wastes,25,30,05 §4.1
+ilvl.veteran.frozen_cathedral,iLvl Veteran Frozen Cathedral,Veteran iLvl Frozen Cathedral,Veteran,frozen_cathedral,30,35,05 §4.1
+ilvl.veteran.shattered_expanse,iLvl Veteran Shattered Expanse,Veteran iLvl Shattered Expanse,Veteran,shattered_expanse,35,40,05 §4.1
+ilvl.veteran.hollow_depths,iLvl Veteran Hollow Depths,Veteran iLvl Hollow Depths,Veteran,hollow_depths,40,45,05 §4.1
+ilvl.veteran.astral_citadel,iLvl Veteran Astral Citadel,Veteran iLvl Astral Citadel,Veteran,astral_citadel,45,49,05 §4.1
+ilvl.nightmare.ashen_wastes,iLvl Nightmare Ashen Wastes,Nightmare iLvl Ashen Wastes,Nightmare,ashen_wastes,50,54,05 §4.1
+ilvl.nightmare.frozen_cathedral,iLvl Nightmare Frozen Cathedral,Nightmare iLvl Frozen Cathedral,Nightmare,frozen_cathedral,54,58,05 §4.1
+ilvl.nightmare.shattered_expanse,iLvl Nightmare Shattered Expanse,Nightmare iLvl Shattered Expanse,Nightmare,shattered_expanse,58,62,05 §4.1
+ilvl.nightmare.hollow_depths,iLvl Nightmare Hollow Depths,Nightmare iLvl Hollow Depths,Nightmare,hollow_depths,62,66,05 §4.1
+ilvl.nightmare.astral_citadel,iLvl Nightmare Astral Citadel,Nightmare iLvl Astral Citadel,Nightmare,astral_citadel,66,69,05 §4.1
+ilvl.eclipse.all,iLvl Eclipse,Eclipse iLvl,Eclipse,,75,84,05 §4.1
+ilvl.ascension.all,iLvl Ascension,Ascension iLvl,Ascension,,85,100,05 §4.1
