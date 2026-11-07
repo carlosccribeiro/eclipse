@@ -50,7 +50,7 @@ Criar o framework reutilizável de chefes e Guardians: fases por limiar de vida,
 
 ## Premissas e decisões
 - Os chefes usam HFSM de fases + `PatternSequencer`, com sequências autorais e padrões ponderados por fase, sem randomização total (11 §3.10). Os ataques reaproveitam `AttackDefinition`, telegraphs e hit detection de M05/M07.
-- HP do chefe = duração alvo × DPS de referência da dificuldade (09 §8.1). O DPS de referência vem do simulador de M14 (perfil "Kael Normal fim de região 1"). Sem esse dado, use o placeholder do CSV marcado `TODO(M14)` e calibre na T6.
+- HP do chefe = duração alvo × DPS de referência da dificuldade (09 §8.1). O DPS de referência é `DPS_ref(eLvl) = HP_Std(eLvl) / 2,2 s` no `Faixa.max` (06 §3.13, R53, D02); o uptime da luta é calibrado na T6 com o simulador de M14 (perfil "Kael Normal fim de região 1").
 - Guardians e chefes usam o eLvl no topo da faixa da região × dificuldade (10 §7.2).
 - A arena encolhendo usa colisores de zona letal com telegraph (anéis de magma), sem destruir NavMesh: as bordas são zonas proibidas para o jogador e o chefe não precisa navegar lá.
 

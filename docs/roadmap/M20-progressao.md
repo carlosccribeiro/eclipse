@@ -42,7 +42,7 @@ Junto com M19, fecha o **Marco D**.
 8. Dificuldades:
    - `DifficultyDefinition` para Normal, Veteran, Nightmare e Eclipse, com tudo vindo de CSV:
      - eLvl por região (10 §7.2; aqui só a Ashen Wastes é jogável, mas a tabela tem as 5 regiões);
-     - vida e dano relativos (1/3/9/25× e 1/1,6/2,5/4×);
+     - vida e dano relativos (resultado da curva de 06 §3.13: vida ≈1/3,2/8,9/22×, dano ≈1/2,4/4,3/7,9× — R53, R54);
      - quantidade de loot (05 §3.2), densidade (09 §10.1), afixos por Elite e matilhas (09 §6.2) e tokens (09 §3.2);
      - redução de wind-up limitada a −15% (R14);
      - retenção na morte (Normal 75% / Veteran+ 50%, 10 §4);
@@ -65,8 +65,8 @@ Junto com M19, fecha o **Marco D**.
 
 ## Premissas e decisões
 - Dono da curva de XP: 10 (R40). Os nomes do catch-up divergem: 10 chama de *Kindred Echo* e 08 §9.2 de *Eclipsed Memory*. Usar **Kindred Echo** (dono 10) e registrar a errata para 08 no Log.
-- XP por inimigo é proporcional ao PA (09 §10.5), mas a constante não está definida em 10. Mesma lacuna de M16: usar o placeholder `DataSource/progression/xp_per_threat.csv` marcado `TODO(10)` e calibrar contra 10 §10 (primeiro chefe por volta do nível 6 em 1,5–2 h; nível ~25 ao fim da campanha Normal), registrando a calibração no Log.
-- O fator de dificuldade da conversão Rift Shards → Gold (10 §3.3) não está tabelado em 10. Usar placeholder no CSV de dificuldade (Normal 1, Veteran 1,5, Nightmare 2, Eclipse 3), marcado `TODO(10)`, e registrar.
+- XP por inimigo é proporcional ao PA (09 §10.5); a constante foi **fechada pelo D02** em 10 §5.1 (R56: `2 × NívelDeConteúdo(eLvl)^1,1 ÷ MultDensidade`; Guardian 60 PA, chefe 150 PA). Gravar em `DataSource/progression/xp_per_threat.csv` e conferir contra 10 §10 com o simulador/bot (primeiro chefe ~nível 6 em 1,5–2 h), registrando no Log.
+- O fator de dificuldade da conversão Rift Shards → Gold foi **fechado pelo D02** em 10 §3.3 (R57): Normal 1 · Veteran 3 · Nightmare 9 · Eclipse 19 · Ascension 19 × (1 + 0,02N).
 - A Lattice é idêntica em estrutura para os 4 heróis (08 §8.1): o framework é genérico e o conteúdo é por CSV de herói.
 - **Coordenação com M19 (paralelo):** M20 só edita `Save/Dto/HeroesDto.cs`; campos de profile (unlocks de dificuldade, Account Rank) vão em `ProfileDto` **depois** do merge de M19 (T9), com migração encadeada após a de M19.
 
@@ -103,7 +103,7 @@ Objetivo: `Eclipse.Core.Progression` puro, com:
 - Hero Mastery: 250.000 por nível após o 50;
 - Account Rank: `AXP(R) = 3000 × R^1,5`, fontes 1:1 + bônus de Codex, recompensas da tabela de 10 §5.2 como `AccountUnlockFlag`;
 - `ApplyRunResult(RunResult)` → XP do herói e da conta (100% em qualquer desfecho).
-Arquivos: escreve `Assets/_Project/Code/Core/Progression/*.cs` (`HeroLevelCurve.cs`, `HeroProgress.cs`, `KindredEcho.cs`, `HeroMastery.cs`, `AccountRank.cs`, `AccountUnlocks.cs`, `XpAwarder.cs`), `DataSource/progression/*.csv` (`hero_levels.csv`, `account_rank.csv`, `xp_per_threat.csv` com `TODO(10)`) e `tools/CoreTests/Progression/*.cs`.
+Arquivos: escreve `Assets/_Project/Code/Core/Progression/*.cs` (`HeroLevelCurve.cs`, `HeroProgress.cs`, `KindredEcho.cs`, `HeroMastery.cs`, `AccountRank.cs`, `AccountUnlocks.cs`, `XpAwarder.cs`), `DataSource/progression/*.csv` (`hero_levels.csv`, `account_rank.csv`, `xp_per_threat.csv` com R56) e `tools/CoreTests/Progression/*.cs`.
 Restrições: Core puro (R52); números de 10/08 só em CSV e fixtures.
 Aceite: total até o nível 50 ≈ 3,9 M; Rank 100 consistente com a fórmula; Kindred Echo nos limites (−9, −10, −11 níveis).
 Verificação: `dotnet test tools/CoreTests --filter Category=Progression` → passa.
@@ -162,7 +162,7 @@ Objetivo: `DifficultyDefinition` (11 §3.4.2) para Normal, Veteran, Nightmare e 
 - vida e dano relativos (10 §7.2);
 - quantidade (05 §3.2), densidade (09 §10.1), afixos por Elite e matilhas (09 §6.2) e tokens (09 §3.2);
 - redução de wind-up limitada a −15% (R14);
-- retenção na morte e fator de conversão de Shards (`TODO(10)`);
+- retenção na morte e fator de conversão de Shards (10 §3.3, R57);
 - iLvl de drop (05 §4.1).
 `DifficultyUnlockRules` data-driven (10 §7.1):
 - Veteran exige First Forgotten em Normal;
@@ -241,7 +241,7 @@ Entrega: no máximo 150 palavras.
 ### T11 — Revisão e Marco D (principal)
 - Calibrar `xp_per_threat` contra a curva de tempo de 10 §10 com o simulador e bot de M14/M16 (primeiro chefe por volta do nível 6) e registrar no Log.
 - Revisar os valores `DESIGN-FILL` de T4.
-- Registrar as erratas: 08 §9.2 Eclipsed Memory → Kindred Echo; e as lacunas de 10 (XP por PA, fator de conversão de Shards).
+- Registrar as erratas: 08 §9.2 Eclipsed Memory → Kindred Echo; (as lacunas de XP por PA e fator de Shards foram fechadas pelo D02).
 - Conferir o Marco D (ROADMAP §3) junto com M19.
 - Atualizar o ROADMAP (§3 Marco D, §7) e o CLAUDE.md (`DataSource/progression/`, `DataSource/difficulty/`, categoria `Progression`).
 
@@ -262,7 +262,7 @@ dotnet test tools/CoreTests --filter Category=Progression
 ## Riscos e rollback
 - **T9 bloqueada por M19 atrasado** → M20 fecha T1–T8 e T10 e fica 🔄 em T9. Quem terminar por último faz a integração.
 - **Recompilação de `SkillSpec` cara** ao alocar pontos → recompilar só no confirmar, com prévia calculada sob demanda.
-- **Lacunas de 10** (XP por PA, fator de Shards) → placeholders `TODO(10)`; avisar o usuário no fim do módulo.
+- ~~Lacunas de 10 (XP por PA, fator de Shards)~~ → fechadas pelo D02 (R56, R57). Pendência aberta pelo D02: "segundo herói ao 50 em 12–15 h" (10 §10) não fecha com Kindred Echo (~25 h no modelo) — validar no simulador.
 - **Afixos Veteran com custo de performance** (Soulbound, Sentinel) → pooling e medição no soak test de M07.
 
 ## Atualizações de documentação

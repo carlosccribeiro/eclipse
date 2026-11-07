@@ -70,7 +70,7 @@ Transformar o mapa de M15 numa run jogável de ponta a ponta em The Ashen Wastes
 - Os 4 eventos (09 §14) são Bleeding Remnant, Altar of Embers, Gambler's Cairn e Echo of a Fallen Eclipsed. Cobrem custo em HP, custo em Rift Shards, aposta, Curse e o gancho roguelite.
 - Os 2 Challenges (09 §9.1) são Trial of Haste e Untouched.
 - Salas greybox são geradas por **ferramenta de editor** a partir de specs (`DataSource/rooms/ashen_wastes_rooms.csv`): retângulos/arenas com obstáculos, portas, spawn points, `RoomAnchor` e NavMesh baked. Meta: 8 Combat, 2 Elite, 2 Treasure, 1 Shrine, 2 Event, 1 Challenge, 1 Clareira e 1 Antecâmara (11 §3.11).
-- Para XP e Rift Shards por PA (09 §10.5), 10 §3.3 dá faixas de Rift Shards por tipo de sala. A constante de XP por PA não está fixada em 10: **lacuna**. Use um placeholder no CSV (`xp_per_threat.csv`) marcado `TODO(10)` e registre no Log para o dono de 10 decidir.
+- XP e Rift Shards por PA (09 §10.5) — **fechados pelo D02:** XP por PA em 10 §5.1 (R56: `2 × NívelDeConteúdo(eLvl)^1,1 ÷ MultDensidade`; Guardian 60 PA, chefe 150 PA); 0,2 Rift Shard por PA em 10 §3.3 (R57). Gravar em `xp_per_threat.csv` (sem placeholder).
 
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
@@ -278,7 +278,7 @@ Rodar uma run manual completa em Normal e checar os critérios 1–11. Revisar d
 
 ## Riscos e rollback
 - **Módulo grande** (13 tarefas): se estourar, dividir em M16a (fluxo, salas, encontros, loot, fim de run) e M16b (Blessings, eventos, Challenge, UI fina). Avisar o usuário antes.
-- **Lacuna de XP/Shards por PA** (09 §10.5 → 10): placeholder no CSV; não bloqueia o Marco C.
+- ~~Lacuna de XP/Shards por PA~~ → fechada pelo D02 (R56, R57).
 - **Carregamento de sala com hitch** → pré-carregar durante a recompensa; reduzir o bake/aquecimento de shaders (warmup) da sala.
 - **GC no spawn de ondas** → pré-aquecer os pools no carregamento da sala.
 

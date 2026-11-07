@@ -13,7 +13,7 @@ Construir o framework de IA de inimigos comuns (HFSM + Utility, tokens de ataque
 3. `AttackTokenDirector` com a tabela de 09 §3.2 por dificuldade (Normal 3 melee/2 ranged … Eclipse 5/4, intervalo mínimo 1,2 → 0,8 s), Elites e Guardians sem token, inimigo sem token orbitando a 4–7 m (09 §3.2, 06 §3.10).
 4. Telegraphs com a linguagem de 06 §3.10 (vermelho, roxo, branco-dourado, ciano, Annihilation; laranja nunca), preenchimento do centro para a borda, renderizando acima do VFX do jogador; wind-up ≥ piso (comum 0,6 s Normal, piso 0,45 s; redução máx. −15%) validado pelo validador de dados (R14).
 5. Três inimigos da Ashen Wastes jogáveis com os ataques de 09 §5.1: **Ashborn Marauder** (melee standard), **Slag Hurler** (ranged, poça Burning) e **Kiln Brute** (tank, placa frontal −50%, slam Unblockable) — mais o **Cinder Husk** (fodder) como unidade de enxame do soak test.
-6. Dano dos inimigos calibrado para a tabela de letalidade de 06 §3.13 (golpe comum 4–6% da vida máxima do jogador em Normal) e vida para os TTKs de 06 §3.13 (Medium 1,5–3 s, Heavy 4–6 s), usando uma curva provisória declarada (ver Premissas).
+6. Dano dos inimigos calibrado para a tabela de letalidade de 06 §3.13 (golpe comum 4–6% da vida máxima do jogador em Normal) e vida para os TTKs de 06 §3.13 (Medium 1,5–3 s, Heavy 4–6 s), usando a curva base de 06 §3.13 (R53, fechada pelo D02).
 7. **Soak test:** 200 inimigos ativos (Husk + Marauder) em combate contra bot por 60 s; atende 11 §3.14 no hardware alvo: frame ≤ 16,6 ms, gameplay + IA ≤ 5 ms, física/queries ≤ 2 ms, GC 0 B/frame (alerta > 1 KB). Relatório `Logs/soak.csv` + resumo no Log.
 8. EditMode + PlayMode verdes.
 
@@ -22,7 +22,7 @@ Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos d
 
 ## Premissas e decisões
 - **Só contratos congelados do M05.** Este módulo não edita nada em `Gameplay/Combat/Contracts`, `Gameplay/Combat/*`, asmdefs de teste, `ProjectSettings/TagManager.asset` nem `CombatSandbox.unity` (que pertence ao M08 nesta onda). Precisou de algo novo no contrato → parar e pedir ao lead (risco registrado no M05).
-- **Lacuna de design — curva base de HP/dano por Monster Level:** 09 §4 diz que os valores absolutos vêm "do Monster Level (10) e da curva base de 06", mas 06 não define a curva. Decisão provisória (T0, principal): derivar `EnemyScaling` dos alvos de 06 §3.13 — dano do Standard = 5% da vida de referência do jogador no mesmo nível (01) e vida do Standard = 2,25 s × DPS de referência do jogador no gear recomendado (01/02) — gravada em `DataSource/EnemyScaling.csv` com coluna `provisional=true`. Registrar no Log e levar para decisão do dono (06/10) antes do M16.
+- **Curva base de HP/dano por Monster Level — fechada pelo D02 (R53–R55):** `HP_Std = 36 × 1,048^(eLvl − 1)`; `DanoBase = 20 × 1,048^(eLvl − 1)` até 24 e `58,8 × 1,016^(eLvl − 24)` acima, × `M_let` (1,0 / 1,2 / 1,5 / 2,0); Tank HP× 2,5 (06 §3.13, 09 §4). T0 grava esses valores em `DataSource/EnemyScaling.csv` (sem `provisional`); o simulador de M14 só recalibra os coeficientes.
 - `DifficultyDefinition` nasce aqui só com os campos que a IA precisa (tokens, intervalo mínimo, redução de wind-up, multiplicador de limiar de Stagger de 06 §3.8.2). O M20 amplia o mesmo SO.
 - Locomoção: steering + avoidance radial em `IJobParallelFor` (Burst), NavMesh (AI Navigation) só para caminho global (11 §3.10).
 - Telegraph greybox: URP Decal Projector com shader de preenchimento radial; cores por SO `TelegraphPalette`.
@@ -31,7 +31,7 @@ Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos d
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T0 | Curva provisória de inimigos e valores dos 4 inimigos | decisão | principal | — | `DataSource/EnemyScaling.csv`, `docs/roadmap/M07-ia-inimigos.md` (Log) | ⏳ |
+| T0 | Curva de inimigos (R53) e valores dos 4 inimigos | decisão | principal | — | `DataSource/EnemyScaling.csv`, `docs/roadmap/M07-ia-inimigos.md` (Log) | ⏳ |
 | T1 | Dados: `EnemyDefinition`, `AttackDefinition`, `EnemyScaling`, `DifficultyDefinition` + CSV + importadores | execução | executor | T0 | `Assets/_Project/Code/Data/Enemies/*`, `Assets/_Project/Code/Data/Difficulty/*`, `DataSource/{Enemies,EnemyAttacks,Difficulty}.csv`, `Assets/_Project/Code/Editor/DataPipeline/Importers/{EnemyImporter,DifficultyImporter}.cs` | ⏳ |
 | T2 | HFSM + seletor Utility + LOD de decisão | execução | executor | T1 | `Assets/_Project/Code/AI/StateMachine/*`, `Assets/_Project/Code/AI/Utility/*`, `Assets/_Project/Code/AI/Lod/*`, `Assets/_Project/Code/Tests/EditMode/AI/Brain/*` | ⏳ |
 | T3 | `AttackTokenDirector` | execução | executor | T1 | `Assets/_Project/Code/AI/Director/*`, `Assets/_Project/Code/Tests/EditMode/AI/Tokens/*` | ⏳ |
@@ -56,10 +56,10 @@ Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos d
 
 ## Briefs
 
-**T0 — Curva provisória de inimigos e valores dos 4 inimigos (principal)**
-- Objetivo: fechar números provisórios coerentes com 06 §3.13 para que a calibragem seja testável.
-- Contexto: lacuna descrita nas Premissas. Stats relativos dos arquétipos em 09 §4 (Fodder 0,3/0,6, Standard 1,0/1,0, Ranged 0,8/1,0, Tank 4,0/1,4); inimigos em 09 §5.1. Vida de referência e DPS de referência do jogador: 01 (exemplo numérico) e 02 (Weapon Power). TTK alvo: Light 0,3–0,8 s, Medium 1,5–3 s, Heavy 4–6 s; letalidade Normal: golpe comum 4–6% (06 §3.13).
-- Arquivos: escreve `DataSource/EnemyScaling.csv` (por Monster Level 1–100, colunas `level, std_hp, std_damage, provisional`) e a decisão no Log.
+**T0 — Curva de inimigos (R53) e valores dos 4 inimigos (principal)**
+- Objetivo: gravar a curva de 06 §3.13 (R53) e os valores dos 4 inimigos para que a calibragem seja testável.
+- Contexto: curva descrita nas Premissas (D02). Stats relativos dos arquétipos em 09 §4 (Fodder 0,3/0,6, Standard 1,0/1,0, Ranged 0,8/1,0, Tank 2,5/1,4, R55); inimigos em 09 §5.1. Curva: 06 §3.13 (R53). Vida de referência e DPS de referência do jogador: 01 (exemplo numérico) e 02 (Weapon Power). TTK alvo: Light 0,3–0,8 s, Medium 1,5–3 s, Heavy 4–6 s; letalidade Normal: golpe comum 4–6% (06 §3.13).
+- Arquivos: escreve `DataSource/EnemyScaling.csv` (por Monster Level 1–110 e tier, colunas `level, tier, std_hp, std_damage`; Ascension pela regra de 06 §3.13) e a origem (R53) no Log.
 - Aceite: com os números escolhidos, Marauder (Standard) leva 1,5–3 s de TTK e causa 4–6% por golpe ao Kael nível 1 em Normal com gear recomendado (conta mostrada no Log).
 - Verificação: planilha/CSV revisados; teste numérico em T10.
 
@@ -117,7 +117,7 @@ Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos d
 
 **T7 — Conteúdo: 4 inimigos da Ashen Wastes**
 - Objetivo: dados + prefabs greybox dos inimigos de 09 §5.1.
-- Contexto: **Cinder Husk** (fodder · Ember · 0,3/0,6 · PA 1; lunge-mordida círculo 1 m 0,6 s; 25% de faísca ao morrer círculo 1,5 m 0,6 s); **Ashborn Marauder** (standard · Physical · 1,0/1,0 · PA 3; combo de 2 golpes + overhead linha 3 m 0,7 s); **Slag Hurler** (ranged · Ember · 0,8/1,0 · PA 4; escória círculo 2,5 m no destino 1,0 s, poça Burning 3 s — Burning via `StatusStub`; recua se < 5 m); **Kiln Brute** (tank · Physical/Ember · 4,0/1,4 · PA 8; placa frontal −50%; slam círculo 4 m 1,1 s Unblockable; 2 s de recuperação após o slam). Massa: Husk Light, Marauder/Hurler Medium, Brute Heavy (09 §4).
+- Contexto: **Cinder Husk** (fodder · Ember · 0,3/0,6 · PA 1; lunge-mordida círculo 1 m 0,6 s; 25% de faísca ao morrer círculo 1,5 m 0,6 s); **Ashborn Marauder** (standard · Physical · 1,0/1,0 · PA 3; combo de 2 golpes + overhead linha 3 m 0,7 s); **Slag Hurler** (ranged · Ember · 0,8/1,0 · PA 4; escória círculo 2,5 m no destino 1,0 s, poça Burning 3 s — Burning via `StatusStub`; recua se < 5 m); **Kiln Brute** (tank · Physical/Ember · 2,5/1,4 · PA 8; placa frontal −50%; slam círculo 4 m 1,1 s Unblockable; 2 s de recuperação após o slam). Massa: Husk Light, Marauder/Hurler Medium, Brute Heavy (09 §4).
 - Arquivos: `Assets/_Project/Content/Enemies/AshenWastes/<Inimigo>/` (prefab, `EnemyDefinition`, ataques); linhas nos CSV do T1.
 - Aceite: os quatro jogáveis na AI Sandbox; números conferidos por teste (T10).
 - Verificação: import/validação sem erros.
@@ -148,9 +148,9 @@ Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos d
 - Entrega: ≤ 150 palavras.
 
 **T11 — Revisão final e integração (principal)**
-- Objetivo: conferir critérios, registrar métricas do soak e a lacuna da curva de inimigos.
+- Objetivo: conferir critérios, registrar métricas do soak e o TTK/letalidade medidos contra a curva de R53.
 - Arquivos: este arquivo, `docs/ROADMAP.md` §7, `CLAUDE.md` (pastas `AI/*`, comando de soak build, pegadinhas de Burst/NavMesh).
-- Aceite: critérios 1–8 ✅ com saídas no Log; lacuna da curva aberta como pendência para o dono (06/10) com o número provisório usado.
+- Aceite: critérios 1–8 ✅ com saídas no Log; curva de R53 gravada; desvios de TTK/letalidade medidos no soak registrados para o M14.
 
 ## Verificação do módulo
 ```bash
@@ -170,7 +170,7 @@ Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos d
 ## Riscos e rollback
 - **Orçamento estourado no soak** → é exatamente o que este módulo deve revelar cedo: priorizar (1) LOD de IA e animação, (2) agrupamento de queries, (3) instancing dos greybox; se ainda estourar, registrar números e abrir tarefa de performance antes do M16 (não esperar o M30).
 - Contrato do M05 insuficiente → parar e pedir ao lead; não editar `Contracts` em paralelo com o M08.
-- Curva provisória vira definitiva sem querer → coluna `provisional=true` e pendência no ROADMAP até o dono decidir.
+- Curva de R53 diverge do soak → registrar no Log; o M14 recalibra os coeficientes `36`/`20` (a forma da curva é de 06).
 - Decal Projector caro com muitos telegraphs → fallback para quad no chão com shader próprio, mesma API.
 
 ## Atualizações de documentação
