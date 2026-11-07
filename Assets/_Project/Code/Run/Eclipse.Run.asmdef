@@ -1,0 +1,20 @@
+{
+    "name": "Eclipse.Run",
+    "rootNamespace": "Eclipse.Run",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Data",
+        "Eclipse.Gameplay",
+        "Eclipse.AI",
+        "Unity.Addressables"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

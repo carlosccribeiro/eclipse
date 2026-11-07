@@ -31,7 +31,7 @@ Regra: **nenhum número de balanceamento é inventado no código.** Valores vêm
 
 ## 3. Stack (decidido)
 
-- **Unity 6.3 LTS (6000.3.x)**, versão exata travada em `ProjectSettings/ProjectVersion.txt`. Não abrir o projeto em outra versão.
+- **Unity 6.3 LTS — `6000.3.28f1`**, travada em `ProjectSettings/ProjectVersion.txt`. Não abrir o projeto em outra versão.
 - URP Forward+, Input System, Cinemachine 3, Addressables, AI Navigation, Burst/Jobs/Collections/Mathematics (só fora de `Eclipse.Core`), Newtonsoft JSON, Unity Localization, UI Toolkit, FMOD for Unity, Steamworks.NET, Unity Test Framework.
 - Repositório GitHub privado, Git LFS para binários, CI com GameCI (GitHub Actions).
 - Arte até o Vertical Slice: **greybox + assets gratuitos** (primitivas, mannequins, Mixamo). Nada de asset pago sem decisão do usuário.
@@ -57,11 +57,11 @@ DataSource/            CSV versionados (fonte dos SOs)
 tools/CoreTests/       projeto dotnet que compila Eclipse.Core e roda os testes rápidos
 docs/                  GDD (docs/gdd), roadmap (docs/ROADMAP.md), planos de módulo (docs/roadmap), relatórios (docs/roadmap/reports)
 ```
-(Criada no módulo M00; atualize aqui se mudar.)
+(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/` (compilados também por `tools/CoreTests`).
 
 ## 6. Comandos de verificação
 
-> Preenchidos/confirmados no M00. Feche o Editor antes de rodar batchmode (lock do projeto).
+> Confirmados no M00. Feche o Editor antes de rodar batchmode (lock do projeto). Em bash: `UNITY_EXE="/c/Program Files/Unity/Hub/Editor/6000.3.28f1/Editor/Unity.exe"`. Logs ficam em `Logs/` (ignorada).
 
 ```bash
 # Testes rápidos do núcleo (sem Unity)
@@ -79,7 +79,7 @@ dotnet test tools/CoreTests
 # Importar CSV → SOs e validar dados
 "$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
 ```
-`$UNITY_EXE` = `C:\Program Files\Unity\Hub\Editor\<versão 6000.3.x>\Editor\Unity.exe`.
+`$UNITY_EXE` = `C:\Program Files\Unity\Hub\Editor\6000.3.28f1\Editor\Unity.exe`.
 
 ## 7. Fluxo de trabalho por módulo
 
@@ -103,3 +103,10 @@ Não coloque aqui status de módulo (vai no ROADMAP) nem detalhes de design (vã
 
 - O Editor aberto bloqueia o batchmode no mesmo projeto.
 - Batchmode exige licença Unity ativada na máquina; no CI a licença vai como secret do GameCI.
+- `-createProject` não aceita pasta não vazia: criar em scratch e mover `Assets/`, `Packages/`, `ProjectSettings/`.
+- Em 6000.3 o `Fixed Timestep` do `TimeManager.asset` é racional (`m_Count`/`m_Rate`; 60 Hz = `m_Count: 2352000` com rate `141120000`), não um float.
+- `tools/CoreTests` tem `nuget.config` próprio (a máquina não tem fonte NuGet global) e usa `net10.0`/C# 9.
+- Arquivos gerados por script saem com CRLF no Windows; `.gitattributes` normaliza para LF no commit (avisos de CRLF são esperados).
+- O Hub pode abrir o Editor no projeto sozinho; confira `tasklist | grep -i unity` antes do batchmode.
+- CI (GameCI): secrets `UNITY_LICENSE` (conteúdo de `C:\ProgramData\Unity\Unity_lic.ulf`), `UNITY_EMAIL`, `UNITY_PASSWORD`. O Hub 3.x com licença Personal por entitlement não gera o `.ulf`; gere com Hub → Configurações → Licenças → Adicionar licença → licença Personal gratuita. No runner o `.ulf` não bate com a máquina e o GameCI cai para ativação por e-mail/senha (aviso esperado).
+- Job com `game-ci/unity-test-runner` + `githubToken` precisa de `permissions: checks: write`, senão falha com "Resource not accessible by integration" mesmo com testes verdes.

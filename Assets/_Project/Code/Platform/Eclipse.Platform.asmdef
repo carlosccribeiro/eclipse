@@ -1,0 +1,17 @@
+{
+    "name": "Eclipse.Platform",
+    "rootNamespace": "Eclipse.Platform",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Save"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

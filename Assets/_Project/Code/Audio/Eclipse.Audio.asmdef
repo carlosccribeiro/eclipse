@@ -1,0 +1,17 @@
+{
+    "name": "Eclipse.Audio",
+    "rootNamespace": "Eclipse.Audio",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Gameplay"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
