@@ -1,0 +1,240 @@
+# M22 — Herói Nyx (The Echo Hunter)
+Fase 5 · Onda 13 · Status: ⏳ não iniciado
+Depende de: M11, M20 (frameworks de status e progressão; transitivamente M08, M10, M13, M14) · Desbloqueia: M28 · Paralelo com: M25
+Branch: modulo/M22-nyx
+Docs de referência: 08 §6 (Nyx), §3, §8 (Aether Lattice), §9.3, §10.3, §11.1; 03 (`NYX-xx`); 04 (sets de Nyx); 02 §3.5, §3.6, §3.12.3, §3.12.6; 05 §9.1, §9.3; 06 (frame data, estados); 07 (Shock, Chain Lightning, Overload (Overload Circuit +2 acúmulos, R49), Static Field, Repeat); 00 §4 e §5 (R01, R03, R07, R08, R12, R21–R28, R48, R49); CLAUDE.md
+
+## Objetivo
+Nyx jogável de ponta a ponta: recurso Echo Energy, 5 habilidades (Phantom Shot, Shadowstep, Storm Trap, Echo Clone, Thousand Reflections), 5 armas (Dual Daggers, Longbow, Crossbow, Twin Blades, Chakrams), 15 Augments e os 3 ramos da Aether Lattice, com as 3 builds (Storm Reaper, Phantom Assassin, Echo Architect) viáveis pelas Rotas A, B e C, e todos os dados do herói (modificadores `NYX-xx`, 16 itens nomeados, 3 sets) no pipeline `DataSource/` → SOs. O **Echo Clone** sai do spike de M10 para produção: réplica de habilidades a 40% e básicos a 25% (`IsEcho`, proc coefficient 0,4), até 2 clones com Perfect Mirror (+1 com Hollow Self), e a exceção **Echo Recursion 1×** do Keystone Echo Chamber (00 R07).
+
+## Critérios de saída (verificáveis)
+1. Recurso conforme 08 §6.1 e passivas de 08 §6.2, com teste EditMode por regra.
+2. 5 habilidades + Basic/Heavy com números e tags de 08 §6.4; snapshot de SkillSpec por habilidade.
+3. 5 armas com moveset/APS/bônus de 08 §6.6, frame data de 06 e DPS normalizado a ±5% (02).
+4. 15 Augments + notáveis/Keystones de 08 §8.3 funcionando pela Lattice (M20), com exclusividade por habilidade.
+5. 100% dos `NYX-xx` de 03 importados e compilando sem código por modificador.
+6. Itens N1–N16 (02 §3.12.3) e 3 sets × 6 peças (04) importados, com `fonteUnique` e `homeRegion`; validador com 0 erros.
+7. Simulador (M14): 9 loadouts (3 builds × Rotas A/B/C); rotas ofensivas a ±10% (00 §4) ou desvio levado ao usuário.
+8. Stress: 3 clones (Perfect Mirror + Hollow Self) + 3 armadilhas Echo Trap + Echo Chamber contra 40 inimigos a 60 fps no hardware mínimo (11 §3.14), 0 B de GC por frame após warm-up.
+9. Desbloqueio: Nyx desbloqueada pela primeira derrota do The Ashen Colossus (qualquer herói) + missão curta no Keeper (08 §9.3).
+10. Status e Log deste arquivo e a linha de `docs/ROADMAP.md` atualizados.
+
+## Fora de escopo
+- Conteúdo de regiões, inimigos e chefes (trilha de regiões).
+- Itens universais `U-xx` e catálogo restante do Kael (M28).
+- Fontes de drop de Pinnacle (M29) e de Challenge Rooms (já cobertas por M16); aqui só se declara `fonteUnique`.
+- Arte final, animação final e VFX final (A00). Balanceamento cruzado entre heróis (M28).
+
+## Premissas e decisões
+- Frameworks de M08 (habilidades), M10 (modificadores, Augments, Generation, spikes), M11 (status), M13 (equipamento/sets), M14 (simulador) e M20 (Lattice, desbloqueios) estão ✅ e mergeados na base. *Refinar ao iniciar* (T1 confirma).
+- Estrutura de CSV proposta abaixo segue a convenção esperada de M02/M12; se M02 definiu outra, T2 ajusta os nomes mantendo a partição.
+- Visual greybox + assets gratuitos (D4). Áudio: só hooks de evento e placeholders no banco FMOD do herói.
+- Todos os itens com prefixo `N` (inclusive Uniques de chefe, região, Challenge e Pinnacle) são autorados aqui, porque dependem dos modificadores do herói; regiões apenas declaram que o chefe existe.
+
+### Partição de arquivos (escreve) — evita colisão com M25
+- `Assets/_Project/Code/Gameplay/Heroes/Nyx/**`, `Assets/_Project/Content/Heroes/Nyx/**`, `Assets/_Project/Code/Tests/{EditMode,PlayMode}/Heroes/Nyx/**`
+- `DataSource/heroes/nyx/*.csv`, `DataSource/items/bases/nyx.csv`, `DataSource/items/named/nyx.csv`, `DataSource/sets/nyx.csv`, `DataSource/modifiers/nyx.csv`, `DataSource/sim/loadouts/nyx/`, `DataSource/localization/{hero_,items_}nyx.csv`
+- Extensões genéricas de framework (somente se T2 aprovar): `Assets/_Project/Code/Gameplay/{Skills,Status}/**` — a trilha de regiões não escreve nessas pastas nesta onda.
+- **Não escreve:** `DataSource/regions/**`, `DataSource/items/named/universal*.csv`, `Assets/_Project/Code/AI/{Enemies,Bosses}/**`, `Content/{Regions,Enemies,Bosses}/**`.
+
+## Tarefas
+| ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
+|----|--------|------|----------|---------|---------|--------|
+| T1 | Levantar o estado dos frameworks para Nyx | investigação | investigador | — | — (relatório no Log) | ⏳ |
+| T2 | Decidir extensões de framework e fechar a partição de arquivos | decisão | principal | T1 | este arquivo (Premissas, Log) | ⏳ |
+| T3 | Recurso Echo Energy e passivas inatas | execução | executor | T2 | Code/Gameplay/Heroes/Nyx/Resource/*, testes | ⏳ |
+| T4 | Dados do herói em CSV (kit, armas, Augments, Lattice) | execução | executor | T2 | `DataSource/heroes/nyx/{hero,resource,skills,weapons,augments,lattice}.csv` | ⏳ |
+| T5 | Comportamentos das 5 habilidades, Basic/Heavy e movesets das 5 armas | execução | executor | T3, T4 | Code/Gameplay/Heroes/Nyx/Skills/*, Content/Heroes/Nyx/*, testes | ⏳ |
+| T5b | Echo Clone de produção (a partir do spike de M10) | execução | executor | T3 | Code/Gameplay/Heroes/Nyx/Clone/*, testes | ⏳ |
+| T5c | Armadilhas, Hunter's Mark e estados de Stealth/Taunt | execução | executor | T3 | Code/Gameplay/Heroes/Nyx/{Traps,Mark}/*, testes | ⏳ |
+| T6 | Augments e nós da Lattice do herói | execução | executor | T5, T5b, T5c | Code/Gameplay/Heroes/Nyx/Augments/*, testes | ⏳ |
+| T7 | Modificadores NYX-xx de 03 no pipeline | execução | executor | T5 | `DataSource/modifiers/nyx.csv`, testes | ⏳ |
+| T8 | Itens nomeados N1–N16 e os 3 sets de Nyx | execução | executor | T7 | `DataSource/items/named/nyx.csv`, `DataSource/sets/nyx.csv` | ⏳ |
+| T9 | Loadouts das 3 builds × Rotas A/B/C e rodada do simulador | execução | executor | T6, T8 | `DataSource/sim/loadouts/nyx/*.json`, relatório | ⏳ |
+| T10 | Revisão de game feel e de balanceamento | revisão | principal | T9 | CSV do herói (ajustes), este arquivo (Log) | ⏳ |
+| T11 | Integração: HUD do recurso, desbloqueio, localização e docs | execução | executor | T10 | UI/HUD/Resources/Nyx*, Meta (regra de desbloqueio), docs | ⏳ |
+
+## Ondas internas
+1. T1
+2. T2
+3. T3 ∥ T4 (arquivos disjuntos: código do recurso × CSV)
+4. T5 ∥ T5b ∥ T5c (pastas disjuntas)
+5. T6 ∥ T7
+6. T8
+7. T9
+8. T10
+9. T11
+
+## Briefs
+### T1 — Levantar o estado dos frameworks para Nyx
+
+- **Objetivo:** Mapear o que os frameworks já entregam e o que falta para o kit completo de Nyx: habilidades (M08), modificadores/Augments/Generation (M10), status/Resonance (M11), equipamento/sets (M13), simulador (M14), Lattice/desbloqueios (M20), e a estrutura real de CSV e do validador (M02/M12).
+- **Contexto:** Nyx usa Echo Energy; habilidades Phantom Shot, Shadowstep, Storm Trap, Echo Clone, Thousand Reflections; estados Stealth, Taunt (Shadow Decoy), Intangível (Thousand Reflections), Execute (R08), Root (Snare Trap); status Shock, Chain Lightning, Overload (Overload Circuit +2 acúmulos, R49), Static Field, Repeat. O **Echo Clone** sai do spike de M10 para produção: réplica de habilidades a 40% e básicos a 25% (`IsEcho`, proc coefficient 0,4), até 2 clones com Perfect Mirror (+1 com Hollow Self), e a exceção **Echo Recursion 1×** do Keystone Echo Chamber (00 R07).
+- **Arquivos:** lê CLAUDE.md, este arquivo, 08 §6 e §8, docs/roadmap/M08…M20 (Log e critérios), `Assets/_Project/Code/Gameplay/Skills`, `DataSource/`; escreve nada (somente relatório) (não toque em outros).
+- **Restrições:** Somente leitura.
+- **Aceite:** Lista de lacunas por sistema (arquivo:linha), estrutura de CSV confirmada e lista de APIs ausentes para Nyx.
+- **Verificação:** relatório com evidências; o principal registra no Log
+- **Entrega:** no máximo 300 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T2 — Decidir extensões de framework e fechar a partição de arquivos
+
+- **Objetivo:** Transformar as lacunas de T1 em decisões: o que vira extensão genérica de framework (tarefa própria) e o que é código específico do herói; confirmar a partição de arquivos com o par da onda.
+- **Contexto:** Par paralelo: M25 (trilha de regiões) — não pode haver arquivo escrito pelos dois. Extensões genéricas em pastas compartilhadas (Gameplay/Skills, Gameplay/Status) só nesta trilha.
+- **Arquivos:** lê relatório de T1, docs/roadmap/M25-*.md; escreve este arquivo (não toque em outros).
+- **Restrições:** Mudança de número/regra de design → perguntar ao usuário e registrar em 00 §5; não decidir sozinho.
+- **Aceite:** Seção Premissas atualizada; tabela de tarefas ajustada (novas T5x se necessário).
+- **Verificação:** revisão do diff deste arquivo
+- **Entrega:** no máximo 150 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T3 — Recurso Echo Energy e passivas inatas
+
+- **Objetivo:** Implementar o componente de recurso polimórfico de Nyx (Echo Energy (0–100, teto 150, regenera 10/s, não decai)) com todas as regras da tabela de 08 §6.1, a tradução dos atributos genéricos (Maximum Resource, Resource Generation, Resource Cost Reduction) de 01 e 08 §3.2, e as passivas inatas de 08 §6.2.
+- **Contexto:** Regras numéricas vêm de CSV (`resource.csv`), não do código. Exceções de teto só pelas fontes de 08 §11.1 (R01).
+- **Arquivos:** lê 08 §6.1–§6.2, §3.2, §11.1; 01 (tradução de recurso); 00 §5 R01; escreve `Assets/_Project/Code/Gameplay/Heroes/Nyx/Resource/` e `Assets/_Project/Code/Tests/EditMode/Heroes/Nyx/ResourceTests.cs` (não toque em outros).
+- **Restrições:** Sem números hardcoded; sem alocação por frame.
+- **Aceite:** Um teste por linha da tabela de recurso (ganho, gasto, decaimento, início de sala) e por passiva.
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter Eclipse.Tests.EditMode.Heroes.Nyx -testResults Logs/editmode.xml -logFile Logs/editmode.log` → esperado: todos passam
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T4 — Dados do herói em CSV (kit, armas, Augments, Lattice)
+
+- **Objetivo:** Autorar os dados de Nyx: herói (atributos-base de 08 §3.1), Basic/Heavy, 5 habilidades com custo/CD/alcance/área/coeficiente/tags de 08 §6.4, 5 armas (Dual Daggers, Longbow, Crossbow, Twin Blades, Chakrams) com APS, moveset, bônus de kit (08 §6.6) e fator de DPS/implícito de 02 §3.5, Off Hand Quiver (02 §3.6), 15 Augments (08 §6.5) e os 3 ramos da Lattice com notáveis/Keystones (08 §8.3).
+- **Contexto:** Tags só do vocabulário de 00 §3.4; HitFlags separadas (R02). Frame data dos movesets é de 06 (R18).
+- **Arquivos:** lê 08 §3, §6, §8; 02 §3.5–§3.6; 06 (frame data das armas de Nyx); estrutura de CSV de M02; escreve `DataSource/heroes/nyx/{hero,resource,skills,weapons,augments,lattice}.csv`, `DataSource/items/bases/nyx.csv` e `DataSource/localization/hero_nyx.csv` (não toque em outros).
+- **Restrições:** Nenhum arquivo fora da pasta do herói; nenhum valor fora do que os docs definem (lacuna → Log).
+- **Aceite:** Importação sem erros; contagens: 5 habilidades, 5 armas, 1 Off Hand base, 15 Augments, 3 ramos × (10 menores + 5 notáveis + 2 Keystones) + 8 nós de Núcleo.
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log` → esperado: 0 erros no Logs/data.log
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T5 — Comportamentos das 5 habilidades, Basic/Heavy e movesets das 5 armas
+
+- **Objetivo:** Implementar Phantom Shot, Shadowstep, Storm Trap, Echo Clone, Thousand Reflections, Basic e Heavy de cada arma e os bônus de kit das armas, com greybox/VFX placeholder e hooks de SFX, usando o framework de habilidades (delivery/effects/triggers) e a frame data de 06.
+- **Contexto:** Comportamentos em 08 §6.3–§6.6; estados Stealth, Taunt (Shadow Decoy), Intangível (Thousand Reflections), Execute (R08), Root (Snare Trap) definidos por 06; status por 07. O **Echo Clone** sai do spike de M10 para produção: réplica de habilidades a 40% e básicos a 25% (`IsEcho`, proc coefficient 0,4), até 2 clones com Perfect Mirror (+1 com Hollow Self), e a exceção **Echo Recursion 1×** do Keystone Echo Chamber (00 R07).
+- **Arquivos:** lê 08 §6; 06 (frame data, estados, telegraphs); 07 (status de Nyx); 11 §3.6; escreve `Assets/_Project/Code/Gameplay/Heroes/Nyx/Skills/`, `Assets/_Project/Content/Heroes/Nyx/` e `Code/Tests/PlayMode/Heroes/Nyx/KitSmokeTests.cs` (não toque em outros).
+- **Restrições:** Nada de código por modificador; comportamento parametrizado por SkillSpec. Arte só greybox/gratuita (D4).
+- **Aceite:** Smoke test PlayMode conjura cada habilidade com cada arma no sandbox sem erro; DPS normalizado das 5 armas dentro de ±5% (02) medido por teste.
+- **Verificação:** `"$UNITY_EXE" -batchmode -projectPath . -runTests -testPlatform PlayMode -testFilter Eclipse.Tests.PlayMode.Heroes.Nyx -testResults Logs/playmode.xml -logFile Logs/playmode.log` → esperado: KitSmokeTests passa
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T5b — Echo Clone de produção (a partir do spike de M10)
+
+- **Objetivo:** Transformar o spike de M10 no sistema de clones de Nyx: entidade que segue Nyx, replica cada habilidade (exceto Ultimate) no mesmo alvo/direção a 40% e básicos a 25% (Twin Blades 40%), 30% da vida de Nyx, sem cura; Mirror Step (clone de 2 s que copia a próxima habilidade); Afterimage (imagem que repete o próximo básico a 40%).
+- **Contexto:** 08 §6.2, §6.4, §6.5. Toda cópia é réplica (`IsEcho`, coef. 0,4) e não gera nova réplica, exceto com Echo Chamber (réplica pode replicar 1×, a 50%, ainda com Generation < 2). Limites de clones: base 1, Perfect Mirror 2, Hollow Self +1. Teto de 30 entidades geradas/s por fonte (11).
+- **Arquivos:** lê 08 §6, 07 (Generation, Echo Recursion 1×), 06 §3.2 (proc coefficient), 11 §3.6, relatório do spike em docs/roadmap/M10-modificadores.md (Log); escreve `Assets/_Project/Code/Gameplay/Heroes/Nyx/Clone/` e `Assets/_Project/Code/Tests/{EditMode,PlayMode}/Heroes/Nyx/CloneTests.cs` (não toque em outros).
+- **Restrições:** Nenhuma réplica de réplica fora de `EchoRecursion1x`; pooling dos clones; 0 B de GC por cast após warm-up.
+- **Aceite:** Teste de recursão de 07 (40 inimigos, todos os ecos ativos) → ≤ 400 eventos de dano/s e nenhum evento com Generation > 2; clones somem ao sair da sala.
+- **Verificação:** `"$UNITY_EXE" -batchmode -projectPath . -runTests -testPlatform PlayMode -testFilter Eclipse.Tests.PlayMode.Heroes.Nyx -testResults Logs/playmode.xml -logFile Logs/playmode.log` → esperado: CloneTests e RecursionTest passam
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T5c — Armadilhas, Hunter's Mark e estados de Stealth/Taunt
+
+- **Objetivo:** Implementar Storm Trap (arma em 0,5 s, gatilho raio 3 m, máx. 3, +1 com Crossbow, some após 20 s), Hunter's Mark (4º acerto consecutivo; 3º em Elites/chefes; 1 alvo por vez) e o uso dos estados Stealth/Taunt/Intangível definidos por 06 (Shadow Decoy, Shadow Doctrine, Thousand Reflections).
+- **Contexto:** 08 §6.2–§6.5. Estados genéricos são de 06 (R20); Nyx só os aplica. Overcharge Trap conecta armadilhas por arcos; Echo Trap dispara 2× (2ª a 70%, réplica).
+- **Arquivos:** lê 08 §6, 06 (Stealth, Taunt, Intangível), 07 (Shock, Static Field, Overload); escreve `Assets/_Project/Code/Gameplay/Heroes/Nyx/Traps/`, `.../Nyx/Mark/` e testes em `Code/Tests/EditMode/Heroes/Nyx/` (não toque em outros).
+- **Restrições:** Não alterar a implementação dos estados em Gameplay/States (só consumir); se faltar API, registrar no Log e pedir ao principal.
+- **Aceite:** Testes cobrem limite de armadilhas, marcação 4º/3º acerto, troca de alvo marcado e saída de Stealth com crítico garantido.
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter Eclipse.Tests.EditMode.Heroes.Nyx -testResults Logs/editmode.xml -logFile Logs/editmode.log` → esperado: todos passam
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T6 — Augments e nós da Lattice do herói
+
+- **Objetivo:** Fazer os 15 Augments e os notáveis/Keystones de Nyx funcionarem pela Lattice de M20 (exclusividade de 1 Augment por habilidade, gates, 2 Keystones), preferindo ops genéricos de modificador a código específico.
+- **Contexto:** Augments não contam como modificadores de equipamento e não dão More (R03). Keystones ≤ +20% More sustentado. Exceções de teto de recurso só as de 08 §11.1.
+- **Arquivos:** lê 08 §6.5, §8, §10.3, §11.1; 00 §5 R01/R03; código de M20 (Lattice); escreve `Assets/_Project/Code/Gameplay/Heroes/Nyx/Augments/` e `Code/Tests/EditMode/Heroes/Nyx/AugmentSpecTests.cs` (não toque em outros).
+- **Restrições:** Se um Augment exigir op nova, implementá-la como op genérica e registrar no Log.
+- **Aceite:** Snapshot de SkillSpec antes/depois para cada Augment; teste de exclusividade e de teto de Keystones.
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter Eclipse.Tests.EditMode.Heroes.Nyx -testResults Logs/editmode.xml -logFile Logs/editmode.log` → esperado: todos passam
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T7 — Modificadores NYX-xx de 03 no pipeline
+
+- **Objetivo:** Importar todos os modificadores `NYX-xx` de 03 e garantir que compilam no SkillSpec pelas 6 fases (Conversão → Forma → Parâmetros → Replicação → Gatilhos → Recurso) sem código por modificador.
+- **Contexto:** 03 é dono dos nomes e valores (R26). Modificadores escritos para premissas antigas das habilidades: em divergência vale 08 (D01 revisou). Grupos exclusivos e limite de 14 ativos (R30).
+- **Arquivos:** lê 03 (seção de Nyx e GEN-xx), 08 §6.4, 00 §5 R07/R26/R30, docs/roadmap/D01-revisao-modificadores.md; escreve `DataSource/modifiers/nyx.csv` e `Code/Tests/EditMode/Heroes/Nyx/ModifierSpecTests.cs` (não toque em outros).
+- **Restrições:** Não editar 03; divergência de design → Log + principal.
+- **Aceite:** 100% dos `NYX-xx` importados; snapshot por modificador; teste de grupos exclusivos.
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log` e `"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter Eclipse.Tests.EditMode.Heroes.Nyx -testResults Logs/editmode.xml -logFile Logs/editmode.log` → esperado: 0 erros e testes passando
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T8 — Itens nomeados N1–N16 e os 3 sets de Nyx
+
+- **Objetivo:** Autorar os 16 itens nomeados de Nyx (02 §3.12.3, incluindo os Uniques de chefe/região/Challenge/Pinnacle com o campo `fonteUnique`) e os 3 sets (Storm Phantom (lar: The Shattered Expanse), Death's Pursuit (lar: The Ashen Wastes), Thousand Echoes (lar: The Astral Citadel)) com 6 peças cada (04), coluna `homeRegion` (05 §9.1) e Set Powers.
+- **Contexto:** Estrutura de item de R25 (Legendary 4 fixos + 1 Afixo Aberto + 2 modificadores + efeito; peça de set sem efeito; Unique 5 fixos + 2 modificadores + Signature opcional). Faixas por tier de 01, pool por slot de 02, máx. 1 afixo `*` por peça de set. A origem do drop é declarada no item; regiões não listam itens. 
+- **Arquivos:** lê 02 §3.12.3 e §3.12.6, 04 (sets de Nyx), 05 §9.1/§9.3, 01 §3.9, 00 §5 R03/R21–R28; escreve `DataSource/items/named/nyx.csv`, `DataSource/sets/nyx.csv` e `DataSource/localization/items_nyx.csv` (não toque em outros).
+- **Restrições:** Não escrever arquivos de região nem `universal*.csv`.
+- **Aceite:** 16 itens + 18 peças + 6 Set Powers importados; validador sem erros (estrutura R25, pool, Faixa Nomeada 70–115%, tetos de More R03, teto de recurso ≤ 8).
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log` → esperado: 0 erros
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T9 — Loadouts das 3 builds × Rotas A/B/C e rodada do simulador
+
+- **Objetivo:** Criar 9 loadouts (Storm Reaper, Phantom Assassin, Echo Architect × Rotas A/B/C de 08 §6.7) com equipamento de referência de 00 §4 (fim de campanha, Eclipse, iLvl ~80, itens +6) e rodar o simulador de M14.
+- **Contexto:** Regra de ouro (00 §4): rotas ofensivas da mesma build a ±10% entre si; rota defensiva compara sobrevivência. Simulador usa o DamageResolver real.
+- **Arquivos:** lê 08 §6.7, 04 (análise de rotas), 00 §4, documentação do simulador em docs/roadmap/M14-simuladores-training.md; escreve `DataSource/sim/loadouts/nyx/` e `Logs/sim/nyx.csv` (relatório, não versionado) (não toque em outros).
+- **Restrições:** Não ajustar números nesta tarefa — só medir.
+- **Aceite:** Relatório com DPS sustentado, burst e TTK por loadout; desvio entre rotas calculado.
+- **Verificação:** `"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.Simulation.BalanceSim.Run -simArgs loadouts/nyx -quit -logFile Logs/sim.log` (nome do método definido em M14 — Refinar ao iniciar) → esperado: CSV com 9 linhas
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T10 — Revisão de game feel e de balanceamento
+
+- **Objetivo:** Jogar Nyx no Training Grounds com as 5 armas e as 3 builds, conferir a checklist de game feel de 06 e o relatório de T9; decidir ajustes dentro das faixas dos docs.
+- **Contexto:** Ajuste fora das faixas definidas nos docs é decisão do usuário (registrar proposta).
+- **Arquivos:** lê relatório de T9, 06 (critérios de feel), 00 §4; escreve CSVs do herói e este arquivo (não toque em outros).
+- **Restrições:** No máximo 2 iterações de ajuste + re-simulação.
+- **Aceite:** Rotas dentro de ±10% ou desvio justificado e levado ao usuário; checklist de feel marcada.
+- **Verificação:** re-execução de T9 após ajustes
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+### T11 — Integração: HUD do recurso, desbloqueio, localização e docs
+
+- **Objetivo:** Exibir Echo Energy no HUD (M06), aplicar a regra de desbloqueio (Nyx desbloqueada pela primeira derrota do The Ashen Colossus (qualquer herói) + missão curta no Keeper (08 §9.3)) via sistema de M20/M19, completar strings pt-BR/en-US e atualizar status.
+- **Contexto:** UI só reage a eventos (CLAUDE.md §4). Desbloqueio é dado, não código condicional por herói.
+- **Arquivos:** lê 08 §9.3, código de M06/M19/M20; escreve `Assets/_Project/Code/UI/HUD/Resources/NyxResourceView.*`, `DataSource/localization/hero_nyx.csv`, este arquivo, `docs/ROADMAP.md` (linha de status) e `CLAUDE.md` se surgir convenção nova (não toque em outros).
+- **Restrições:** Não alterar layout de HUD dos outros heróis.
+- **Aceite:** Herói selecionável conforme a regra; HUD correto; testes do módulo verdes.
+- **Verificação:** `"$UNITY_EXE" -batchmode -projectPath . -runTests -testPlatform PlayMode -testFilter Eclipse.Tests.PlayMode.Heroes.Nyx -testResults Logs/playmode.xml -logFile Logs/playmode.log` e `"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter Eclipse.Tests.EditMode -testResults Logs/editmode.xml -logFile Logs/editmode.log` → esperado: tudo passa
+- **Entrega:** no máximo 200 palavras — o que mudou/achou, evidência (arquivo:linha), o que não foi verificado/lido, pendências.
+
+## Verificação do módulo
+```bash
+dotnet test tools/CoreTests
+```
+```bash
+"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testFilter Eclipse.Tests.EditMode -testResults Logs/editmode.xml -logFile Logs/editmode.log
+```
+```bash
+"$UNITY_EXE" -batchmode -projectPath . -runTests -testPlatform PlayMode -testFilter Eclipse.Tests.PlayMode.Heroes.Nyx -testResults Logs/playmode.xml -logFile Logs/playmode.log
+```
+```bash
+"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
+```
+```bash
+"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.Simulation.BalanceSim.Run -simArgs loadouts/nyx -quit -logFile Logs/sim.log
+```
+Esperado: todos os testes passam, `Logs/data.log` sem erros, relatório do simulador com 9 loadouts e desvio entre rotas ofensivas ≤ 10%.
+
+## Riscos e rollback
+- Echo Clone é o maior risco técnico do jogo (11 §3.18) → spike de M10 obrigatório; se o spike falhou, este módulo começa por ele.
+- Explosão de eventos com Echo Chamber + Perfect Mirror + Echo Trap → teste de recursão de 07 como gate do módulo.
+- Leitura visual com 3 clones → opacidade e silhueta de clones seguem 06 §8 (VFX do jogador 80%).
+- Framework insuficiente descoberto em T1 → T2 cria tarefa de extensão genérica; se a extensão for grande, pausar e abrir módulo de framework separado (decisão do usuário).
+- Rollback: o módulo vive na branch `modulo/M22-nyx`; nada vai para a base sem os testes do módulo verdes.
+
+## Atualizações de documentação
+- `docs/ROADMAP.md` §7: status de M22.
+- `CLAUDE.md`: só se surgir convenção nova (ex.: op genérica de modificador, novo tipo de custo de recurso, padrão de entidade aliada).
+- Divergências de design encontradas → proposta ao usuário e, se aprovada, registro em `docs/gdd/00-convencoes.md` §5 (nunca editar o doc dono sem aprovação).
+
+## Prompt de disparo
+```
+Implemente o módulo M22 do PROJECT ECLIPSE.
+Leia CLAUDE.md, docs/roadmap/M22-nyx.md e os docs de referência listados nele.
+Use a skill /planejar tomando o plano do módulo como base (tarefas, briefs e verificação já definidos);
+peça minha aprovação antes de executar. Trabalhe na branch modulo/M22-nyx.
+Este módulo roda em paralelo com M25: respeite a partição de arquivos do plano.
+Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADMAP.md e o CLAUDE.md, se aplicável.
+```
+
+## Log
+- 2026-11-07 Plano criado.

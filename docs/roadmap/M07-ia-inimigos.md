@@ -1,0 +1,191 @@
+# M07 — IA de inimigos base + 3 inimigos + soak test
+Fase 1 · Onda 5 · Status: ⏳ não iniciado
+Depende de: M05 · Desbloqueia: M14, M16 (e M17 via M16) · Paralelo com: M08 (Skills/Heroes — só usa contratos congelados do M05)
+Branch: modulo/M07-ia-inimigos
+Docs de referência: 09-inimigos §3 (IA, tokens, telegraph, letalidade), §4 (arquétipos), §5.1 (The Ashen Wastes); 06-combate §3.8 (massa/Stagger), §3.10 (telegraphs, wind-up), §3.13 (TTK/letalidade); 11-arquitetura §3.4.2 (`EnemyDefinition`, `DifficultyDefinition`), §3.10, §3.14; 10-progressao §7.2 (Monster Level); 00 §5 R14, R15, R17, R47
+
+## Objetivo
+Construir o framework de IA de inimigos comuns (HFSM + Utility, tokens de ataque, locomoção em job, telegraphs com a linguagem de 06), três inimigos jogáveis da Ashen Wastes e o soak test de 200 inimigos que valida o orçamento de performance de 11 §3.14 cedo.
+
+## Critérios de saída (verificáveis)
+1. HFSM `Idle → Engage → [Approach | Reposition | Attack | Recover | Flee] → Dead` com seleção de ataque por Utility (distância, ângulo, cooldown, aliados, HP) e 15% de aleatoriedade ponderada por stream `Combat` (09 §3.1, 11 §3.10).
+2. Decisões a 10 Hz para inimigos perto/na tela e 4 Hz para distantes/fora da tela (09 §3.1, 11 §3.10).
+3. `AttackTokenDirector` com a tabela de 09 §3.2 por dificuldade (Normal 3 melee/2 ranged … Eclipse 5/4, intervalo mínimo 1,2 → 0,8 s), Elites e Guardians sem token, inimigo sem token orbitando a 4–7 m (09 §3.2, 06 §3.10).
+4. Telegraphs com a linguagem de 06 §3.10 (vermelho, roxo, branco-dourado, ciano, Annihilation; laranja nunca), preenchimento do centro para a borda, renderizando acima do VFX do jogador; wind-up ≥ piso (comum 0,6 s Normal, piso 0,45 s; redução máx. −15%) validado pelo validador de dados (R14).
+5. Três inimigos da Ashen Wastes jogáveis com os ataques de 09 §5.1: **Ashborn Marauder** (melee standard), **Slag Hurler** (ranged, poça Burning) e **Kiln Brute** (tank, placa frontal −50%, slam Unblockable) — mais o **Cinder Husk** (fodder) como unidade de enxame do soak test.
+6. Dano dos inimigos calibrado para a tabela de letalidade de 06 §3.13 (golpe comum 4–6% da vida máxima do jogador em Normal) e vida para os TTKs de 06 §3.13 (Medium 1,5–3 s, Heavy 4–6 s), usando uma curva provisória declarada (ver Premissas).
+7. **Soak test:** 200 inimigos ativos (Husk + Marauder) em combate contra bot por 60 s; atende 11 §3.14 no hardware alvo: frame ≤ 16,6 ms, gameplay + IA ≤ 5 ms, física/queries ≤ 2 ms, GC 0 B/frame (alerta > 1 KB). Relatório `Logs/soak.csv` + resumo no Log.
+8. EditMode + PlayMode verdes.
+
+## Fora de escopo
+Elites e afixos (M16), Guardians e chefes (M17), Encounter Director com Pontos de Ameaça (M15/M16), os demais 5 inimigos da Ashen Wastes e outras regiões (M16, M24–M27), Stealth de Assassin (M16), summoners/supports (M16), status completos (M11 — aqui Burning usa o `StatusStub` do M05).
+
+## Premissas e decisões
+- **Só contratos congelados do M05.** Este módulo não edita nada em `Gameplay/Combat/Contracts`, `Gameplay/Combat/*`, asmdefs de teste, `ProjectSettings/TagManager.asset` nem `CombatSandbox.unity` (que pertence ao M08 nesta onda). Precisou de algo novo no contrato → parar e pedir ao lead (risco registrado no M05).
+- **Lacuna de design — curva base de HP/dano por Monster Level:** 09 §4 diz que os valores absolutos vêm "do Monster Level (10) e da curva base de 06", mas 06 não define a curva. Decisão provisória (T0, principal): derivar `EnemyScaling` dos alvos de 06 §3.13 — dano do Standard = 5% da vida de referência do jogador no mesmo nível (01) e vida do Standard = 2,25 s × DPS de referência do jogador no gear recomendado (01/02) — gravada em `DataSource/EnemyScaling.csv` com coluna `provisional=true`. Registrar no Log e levar para decisão do dono (06/10) antes do M16.
+- `DifficultyDefinition` nasce aqui só com os campos que a IA precisa (tokens, intervalo mínimo, redução de wind-up, multiplicador de limiar de Stagger de 06 §3.8.2). O M20 amplia o mesmo SO.
+- Locomoção: steering + avoidance radial em `IJobParallelFor` (Burst), NavMesh (AI Navigation) só para caminho global (11 §3.10).
+- Telegraph greybox: URP Decal Projector com shader de preenchimento radial; cores por SO `TelegraphPalette`.
+- Arte greybox (D4): cápsulas com silhueta distinta por arquétipo (Husk pequeno, Brute largo com placa frontal visível).
+
+## Tarefas
+| ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
+|----|--------|------|----------|---------|---------|--------|
+| T0 | Curva provisória de inimigos e valores dos 4 inimigos | decisão | principal | — | `DataSource/EnemyScaling.csv`, `docs/roadmap/M07-ia-inimigos.md` (Log) | ⏳ |
+| T1 | Dados: `EnemyDefinition`, `AttackDefinition`, `EnemyScaling`, `DifficultyDefinition` + CSV + importadores | execução | executor | T0 | `Assets/_Project/Code/Data/Enemies/*`, `Assets/_Project/Code/Data/Difficulty/*`, `DataSource/{Enemies,EnemyAttacks,Difficulty}.csv`, `Assets/_Project/Code/Editor/DataPipeline/Importers/{EnemyImporter,DifficultyImporter}.cs` | ⏳ |
+| T2 | HFSM + seletor Utility + LOD de decisão | execução | executor | T1 | `Assets/_Project/Code/AI/StateMachine/*`, `Assets/_Project/Code/AI/Utility/*`, `Assets/_Project/Code/AI/Lod/*`, `Assets/_Project/Code/Tests/EditMode/AI/Brain/*` | ⏳ |
+| T3 | `AttackTokenDirector` | execução | executor | T1 | `Assets/_Project/Code/AI/Director/*`, `Assets/_Project/Code/Tests/EditMode/AI/Tokens/*` | ⏳ |
+| T4 | Locomoção em job + NavMesh global | execução | executor | T1 | `Assets/_Project/Code/AI/Locomotion/*`, `Assets/_Project/Code/AI/Eclipse.AI.asmdef` | ⏳ |
+| T5 | Sistema de telegraph + regra do validador | execução | executor | T1 | `Assets/_Project/Code/AI/Telegraphs/*`, `Assets/_Project/Art/Shaders/TelegraphFill.shadergraph`, `Assets/_Project/Content/Shared/Telegraphs/TelegraphPalette.asset`, `Assets/_Project/Code/Editor/Validation/Rules/TelegraphWindupRule.cs` | ⏳ |
+| T6 | `EnemyController` e templates de arquétipo (Fodder, Melee, Ranged, Tank) | execução | executor | T2–T5 | `Assets/_Project/Code/AI/Enemies/*` | ⏳ |
+| T7 | Conteúdo: Cinder Husk, Ashborn Marauder, Slag Hurler, Kiln Brute | execução | executor | T6 | `Assets/_Project/Content/Enemies/AshenWastes/*` | ⏳ |
+| T8 | Spawner simples + cena AI Sandbox | execução | executor | T7 | `Assets/_Project/Code/AI/Spawning/*`, `Assets/_Project/Scenes/Sandbox/AISandbox.unity` | ⏳ |
+| T9 | Soak test (cena, bot, coleta de métricas, build de desenvolvimento) | execução | executor | T8 | `Assets/_Project/Code/AI/Diagnostics/*`, `Assets/_Project/Scenes/Perf/SoakTest.unity`, `Assets/_Project/Code/Editor/Build/SoakBuild.cs`, `Assets/_Project/Code/Tests/PlayMode/AI/Soak/*` | ⏳ |
+| T10 | Testes PlayMode de comportamento | execução | executor | T8 | `Assets/_Project/Code/Tests/PlayMode/AI/Behavior/*` | ⏳ |
+| T11 | Revisão final e integração | integração | principal | T0–T10 | `docs/roadmap/M07-ia-inimigos.md`, `docs/ROADMAP.md`, `CLAUDE.md` | ⏳ |
+
+## Ondas internas
+1. T0
+2. T1
+3. T2 ∥ T3 ∥ T4 ∥ T5 (pastas disjuntas)
+4. T6
+5. T7
+6. T8
+7. T9 ∥ T10
+8. T11
+
+## Briefs
+
+**T0 — Curva provisória de inimigos e valores dos 4 inimigos (principal)**
+- Objetivo: fechar números provisórios coerentes com 06 §3.13 para que a calibragem seja testável.
+- Contexto: lacuna descrita nas Premissas. Stats relativos dos arquétipos em 09 §4 (Fodder 0,3/0,6, Standard 1,0/1,0, Ranged 0,8/1,0, Tank 4,0/1,4); inimigos em 09 §5.1. Vida de referência e DPS de referência do jogador: 01 (exemplo numérico) e 02 (Weapon Power). TTK alvo: Light 0,3–0,8 s, Medium 1,5–3 s, Heavy 4–6 s; letalidade Normal: golpe comum 4–6% (06 §3.13).
+- Arquivos: escreve `DataSource/EnemyScaling.csv` (por Monster Level 1–100, colunas `level, std_hp, std_damage, provisional`) e a decisão no Log.
+- Aceite: com os números escolhidos, Marauder (Standard) leva 1,5–3 s de TTK e causa 4–6% por golpe ao Kael nível 1 em Normal com gear recomendado (conta mostrada no Log).
+- Verificação: planilha/CSV revisados; teste numérico em T10.
+
+**T1 — Dados e importadores**
+- Objetivo: definir os SOs de inimigo/ataque/dificuldade e importá-los de CSV.
+- Contexto: campos de `EnemyDefinition` em 11 §3.4.2 (arquétipo, stats relativos × curva, PA, massa, barra de Stagger, `AttackDefinition[]` com scores de utility e tipo de telegraph, template de HFSM, resistências, classe de loot, tags, range preferido min/max e comportamento de reposicionamento — 09 §3.1). `AttackDefinition`: cooldown, alcance, peso, condição, telegraph (tipo de 06 §3.10 + forma: círculo/cone/linha/anel — 09 §3.3), wind-up (s, em Normal), frames ativos/recovery, dano relativo, Stagger, HitFlags (`Unblockable`, `Unavoidable`, `Knockdown`), custo de token. `DifficultyDefinition` (subset): tokens melee/ranged, intervalo mínimo, redução máx. de wind-up (−15%), multiplicador de limiar de Stagger (06 §3.8.2), multiplicadores de vida/dano (placeholder 1,0 até M20). Tabela de tokens de 09 §3.2.
+- Arquivos: os listados na tabela; importadores descobertos pelo pipeline do M02 sem editar arquivo central.
+- Restrições: `StableId` `enemy.ashen.marauder`, `attack.enemy.marauder.combo1` etc.; nenhum número em código.
+- Aceite: import gera assets; teste EditMode confere tokens por dificuldade e um inimigo completo.
+- Verificação: import/validação (CLAUDE.md §6) sem erros; EditMode `-testFilter "Eclipse.Tests.EditMode.Data.Enemies"` → verde.
+- Entrega: ≤ 150 palavras.
+
+**T2 — HFSM + Utility + LOD**
+- Objetivo: cérebro de inimigo comum reutilizável por todos os arquétipos.
+- Contexto: estados de 11 §3.10; Utility pontua ações disponíveis (distância, ângulo, cooldown, aliados próximos, HP próprio) e escolhe a de maior utilidade com 15% de aleatoriedade ponderada (09 §3.1) usando o stream `Combat` do M01 (nunca `UnityEngine.Random`). LOD: 10 Hz perto/na tela, 4 Hz distante/fora (09 §3.1). Sem Behavior Trees (11 decisão 9).
+- Arquivos: `AI/StateMachine/*`, `AI/Utility/*`, `AI/Lod/*` e testes EditMode em `Tests/EditMode/AI/Brain/`.
+- Restrições: lógica de decisão em classes C# sem `MonoBehaviour` (testável em EditMode); 0 alocação por decisão.
+- Aceite: testes com seed fixa reproduzem a mesma sequência de escolhas; distribuição de 10.000 decisões com aleatoriedade dentro de ±2% de 15%; LOD troca de 10 para 4 Hz ao sair do raio.
+- Verificação: EditMode `-testFilter "Eclipse.Tests.EditMode.AI.Brain"` → verde.
+- Entrega: ≤ 150 palavras.
+
+**T3 — `AttackTokenDirector`**
+- Objetivo: limitar atacantes simultâneos conforme 09 §3.2.
+- Contexto: tokens por dificuldade lidos de `DifficultyDefinition`; Elites e Guardians não consomem token, mas ataques fortes respeitam o intervalo mínimo; chefes ignoram; Assassin token de emboscada (1 em Normal/Veteran, 2 em Nightmare+); sem token → orbita 4–7 m, reposiciona ou faz ação de baixo custo; inimigo sob Taunt ignora tokens (06 §3.10).
+- Arquivos: `AI/Director/{AttackTokenDirector,TokenTicket,TokenPolicy}.cs` e testes EditMode.
+- Aceite: com 10 melee em Normal, nunca mais de 3 atacando no mesmo tick; Elite ataca sem token; intervalo mínimo por inimigo respeitado.
+- Verificação: EditMode `-testFilter "Eclipse.Tests.EditMode.AI.Tokens"` → verde.
+- Entrega: ≤ 120 palavras.
+
+**T4 — Locomoção em job + NavMesh global**
+- Objetivo: mover centenas de inimigos dentro do orçamento.
+- Contexto: steering (seek/arrive/orbit/flee) + avoidance radial em `IJobParallelFor` com Burst; NavMesh (pacote AI Navigation) só para caminho global por sala; velocidades de 09 §4 (Fodder 5,0, Standard 4,2, Ranged 4,0, Tank 3,0 m/s; nenhum mais rápido que 5,8 m/s fora de investida — 09 §4/R50). Animação de inimigos distantes em taxa reduzida (11 §3.14).
+- Arquivos: `AI/Locomotion/*`; adiciona referências de pacote em `Assets/_Project/Code/AI/Eclipse.AI.asmdef` (único asmdef que este módulo edita).
+- Restrições: `NativeArray` persistentes; 0 GC/frame.
+- Aceite: 200 agentes movendo-se em sala de 40 × 40 m sem sobreposição persistente (> 0,5 s) e sem atravessar `Wall`.
+- Verificação: PlayMode `-testFilter "Eclipse.Tests.PlayMode.AI.Behavior.Locomotion"` (T10) → verde.
+- Entrega: ≤ 120 palavras.
+
+**T5 — Sistema de telegraph + regra do validador**
+- Objetivo: telegraphs legíveis e validados.
+- Contexto: linguagem de 06 §3.10 — vermelho (padrão; i-frames, Parry melee e Block funcionam), roxo (controle), branco-dourado + brilho na arma (Unblockable), anel ciano no inimigo (janela interrompível: Stagger/CC na janela cancela e aplica Staggered imediato), Annihilation (vermelho com borda amarela tracejada ≥ 1,5 s), Unstoppable (contorno branco pulsante), linha de sniper (≥ 0,8 s), agarrão, indicador de borda para fora da tela; laranja reservado a Ember. Preenchimento do centro para a borda, impacto quando toca a borda (09 §3.3). Telegraphs e projéteis inimigos renderizam acima de todo VFX do jogador (06 §3.10). Wind-up: comum 0,6 s em Normal (piso 0,45), Elite 0,8 (0,55), chefe 1,0–1,5 (0,8); redução máx. −15% por dificuldade.
+- Arquivos: os listados; a regra do validador é descoberta pelo `DataValidator` do M02 (sem editar o validador central).
+- Aceite: validador rejeita `AttackDefinition` com wind-up efetivo abaixo do piso em qualquer dificuldade; teste visual manual descrito no Log; teste PlayMode confirma que o impacto ocorre no frame em que o preenchimento chega a 100%.
+- Verificação: import/validação com um CSV de teste inválido → erro esperado; EditMode `-testFilter "Eclipse.Tests.EditMode.AI.Telegraphs"` → verde.
+- Entrega: ≤ 150 palavras.
+
+**T6 — `EnemyController` e templates de arquétipo**
+- Objetivo: juntar cérebro, locomoção, tokens, telegraph e os componentes de combate do M05.
+- Contexto: entidade usa `CombatEntity`, `StateComponent`, `StaggerComponent` (massa e limiares de 06 §3.8) e `AttackController`/hitboxes/projéteis/áreas do M05 via contratos. Templates: Fodder (aproxima em enxame, lunge curto), Melee (aproxima com desvio para cercar; combo 2–3 golpes), Ranged (mantém 8–14 m, recua se < 5 m com CD 4 s, busca LOS, não atira através de Tank aliado), Tank (avança lento, escolta casters; proteção frontal −50%) (09 §4). Inimigos fora da tela não disparam projéteis (06 §3.10). Projéteis inimigos 14 m/s em Normal (06 §3.9).
+- Arquivos: `AI/Enemies/{EnemyController,EnemyBrainBinder,ArchetypeTemplates,FrontalGuard}.cs`.
+- Restrições: sem editar arquivos do M05; pooling via `PoolService`.
+- Aceite: cada template executa seu ciclo completo na AI Sandbox (T8) sem erros.
+- Verificação: PlayMode `-testFilter "Eclipse.Tests.PlayMode.AI.Behavior"` (T10) → verde.
+- Entrega: ≤ 150 palavras.
+
+**T7 — Conteúdo: 4 inimigos da Ashen Wastes**
+- Objetivo: dados + prefabs greybox dos inimigos de 09 §5.1.
+- Contexto: **Cinder Husk** (fodder · Ember · 0,3/0,6 · PA 1; lunge-mordida círculo 1 m 0,6 s; 25% de faísca ao morrer círculo 1,5 m 0,6 s); **Ashborn Marauder** (standard · Physical · 1,0/1,0 · PA 3; combo de 2 golpes + overhead linha 3 m 0,7 s); **Slag Hurler** (ranged · Ember · 0,8/1,0 · PA 4; escória círculo 2,5 m no destino 1,0 s, poça Burning 3 s — Burning via `StatusStub`; recua se < 5 m); **Kiln Brute** (tank · Physical/Ember · 4,0/1,4 · PA 8; placa frontal −50%; slam círculo 4 m 1,1 s Unblockable; 2 s de recuperação após o slam). Massa: Husk Light, Marauder/Hurler Medium, Brute Heavy (09 §4).
+- Arquivos: `Assets/_Project/Content/Enemies/AshenWastes/<Inimigo>/` (prefab, `EnemyDefinition`, ataques); linhas nos CSV do T1.
+- Aceite: os quatro jogáveis na AI Sandbox; números conferidos por teste (T10).
+- Verificação: import/validação sem erros.
+- Entrega: ≤ 120 palavras.
+
+**T8 — Spawner simples + AI Sandbox**
+- Objetivo: cena própria para testar IA sem tocar na `CombatSandbox` (dona: M08 nesta onda).
+- Contexto: spawner por ondas com composição fixa definida em SO de teste (o Encounter Director real é M15/M16), pooling, teto de unidades vivas configurável; jogador greybox do M04/M05 com combate básico (sem habilidades); console simples de spawn por tecla de debug (o console completo é M06).
+- Arquivos: `AI/Spawning/{SimpleWaveSpawner,SpawnPoint,TestWaveDefinition}.cs`, `Scenes/Sandbox/AISandbox.unity`.
+- Aceite: Play na AI Sandbox spawna os 4 inimigos e eles lutam contra o jogador sem erros.
+- Verificação: PlayMode "cena carrega e spawna 1 de cada" → verde.
+- Entrega: ≤ 100 palavras.
+
+**T9 — Soak test**
+- Objetivo: medir o orçamento de 11 §3.14 com 200 inimigos.
+- Contexto: cena `SoakTest` com 200 inimigos ativos (150 Husk + 50 Marauder) contra bot que anda em círculo, ataca e esquiva; 60 s; coleta por `ProfilerRecorder`: frame time (média, p95, p99), main thread de gameplay+IA (marcadores próprios), física/queries, GC Allocated In Frame. Orçamento: frame ≤ 16,6 ms, gameplay+IA ≤ 5 ms, física ≤ 2 ms, GC 0 B/frame (alerta > 1 KB). Dois modos: (a) PlayMode test no Editor (CI) só para GC e contagem de entidades; (b) build de desenvolvimento Windows gerada por `-executeMethod Eclipse.Editor.Build.SoakBuild.Build` que roda sozinha e grava `Logs/soak.csv`, executada pelo usuário no hardware alvo (mín.: GTX 1060 / i5-8400 — 11 §3.14).
+- Arquivos: `AI/Diagnostics/{SoakTestRunner,SoakBot,PerfSampler}.cs`, `Scenes/Perf/SoakTest.unity`, `Editor/Build/SoakBuild.cs`, `Tests/PlayMode/AI/Soak/*`.
+- Aceite: PlayMode test verde (GC 0 B/frame após warm-up); build gera CSV; resultados no Log com hardware usado. Se o hardware do usuário não for o alvo, registrar a diferença.
+- Verificação: PlayMode `-testFilter "Eclipse.Tests.PlayMode.AI.Soak"` → verde; `"$UNITY_EXE" -batchmode -projectPath . -executeMethod Eclipse.Editor.Build.SoakBuild.Build -quit -logFile Logs/soakbuild.log` → build em `Builds/Soak/`.
+- Entrega: ≤ 150 palavras + tabela de métricas.
+
+**T10 — Testes PlayMode de comportamento**
+- Objetivo: provar critérios 1–6.
+- Contexto: casos: Marauder aproxima e ataca só com token; 10 melee em Normal → ≤ 3 atacando; Hurler recua quando o jogador entra a < 5 m e não atira fora da tela; Brute recebe −50% de frente e 100% pelas costas; slam do Brute ignora Block (Unblockable) mas é negado por i-frames; telegraph do overhead do Marauder dura 0,7 s e o hit acontece ao completar; dano do combo do Marauder = 4–6% da vida de Kael nível 1 em Normal; TTK do Marauder 1,5–3 s e do Brute 4–6 s com o combo do Greatsword (M05); locomoção de 200 agentes (T4).
+- Arquivos: `Tests/PlayMode/AI/Behavior/*`.
+- Aceite: todos verdes.
+- Verificação: PlayMode `-testFilter "Eclipse.Tests.PlayMode.AI"` → 0 falhas.
+- Entrega: ≤ 150 palavras.
+
+**T11 — Revisão final e integração (principal)**
+- Objetivo: conferir critérios, registrar métricas do soak e a lacuna da curva de inimigos.
+- Arquivos: este arquivo, `docs/ROADMAP.md` §7, `CLAUDE.md` (pastas `AI/*`, comando de soak build, pegadinhas de Burst/NavMesh).
+- Aceite: critérios 1–8 ✅ com saídas no Log; lacuna da curva aberta como pendência para o dono (06/10) com o número provisório usado.
+
+## Verificação do módulo
+```bash
+"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
+```
+```bash
+"$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testResults Logs/editmode.xml -logFile Logs/editmode.log
+```
+```bash
+"$UNITY_EXE" -batchmode -projectPath . -runTests -testPlatform PlayMode -testFilter "Eclipse.Tests.PlayMode.AI" -testResults Logs/playmode.xml -logFile Logs/playmode.log
+```
+```bash
+"$UNITY_EXE" -batchmode -projectPath . -executeMethod Eclipse.Editor.Build.SoakBuild.Build -quit -logFile Logs/soakbuild.log
+```
+→ validador sem erros; 0 falhas; build de soak gerada; `Logs/soak.csv` dentro do orçamento no hardware alvo (execução manual do usuário).
+
+## Riscos e rollback
+- **Orçamento estourado no soak** → é exatamente o que este módulo deve revelar cedo: priorizar (1) LOD de IA e animação, (2) agrupamento de queries, (3) instancing dos greybox; se ainda estourar, registrar números e abrir tarefa de performance antes do M16 (não esperar o M30).
+- Contrato do M05 insuficiente → parar e pedir ao lead; não editar `Contracts` em paralelo com o M08.
+- Curva provisória vira definitiva sem querer → coluna `provisional=true` e pendência no ROADMAP até o dono decidir.
+- Decal Projector caro com muitos telegraphs → fallback para quad no chão com shader próprio, mesma API.
+
+## Atualizações de documentação
+- `CLAUDE.md`: pastas `AI/*`, `Scenes/Perf`, comando de soak build, regra "IA nunca usa `UnityEngine.Random`".
+- `docs/ROADMAP.md` §7: status do M07; pendência "curva base de HP/dano por Monster Level (06/10)".
+
+## Prompt de disparo
+```
+Implemente o módulo M07 do PROJECT ECLIPSE.
+Leia CLAUDE.md, docs/roadmap/M07-ia-inimigos.md e os docs de referência listados nele.
+Use a skill /planejar tomando o plano do módulo como base (tarefas, briefs e verificação já definidos);
+peça minha aprovação antes de executar. Trabalhe na branch modulo/M07-ia-inimigos.
+Este módulo roda em paralelo com o M08: não edite Gameplay/Combat/Contracts, asmdefs de teste nem CombatSandbox.unity.
+Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADMAP.md e o CLAUDE.md, se aplicável.
+```
+
+## Log
+- 2026-11-07 Plano criado.
