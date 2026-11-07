@@ -1,5 +1,5 @@
 # M02 — Pipeline de dados (SO base, importador CSV, validador)
-Fase 0 · Onda 2 · Status: ⏳ não iniciado
+Fase 0 · Onda 2 · Status: ✅ concluído (2026-11-07; job `data-validate` do CI ainda não confirmado em push)
 Depende de: M01 · Desbloqueia: M12 (e todo módulo que importa dados) · Paralelo com: M03 (worktree separado; pastas disjuntas)
 Branch: modulo/M02-pipeline-dados
 Docs de referência: 11 §2 dec. 5, 15; §3.4.1 (Definition, DefinitionRegistry, IdRemapTable, convenção de ID); §3.15 itens 1–2 (pipeline de planilhas e Data Validator); 00 §3.4 (tags), §5 R02, R48 (nomes reservados); 07 §10 (cores e identidade das afinidades); CLAUDE.md §1 (nenhum número hardcoded), §6 (comando `ImportAndValidate`).
@@ -32,14 +32,14 @@ Montar o caminho único dos dados de design para o jogo: `DataSource/*.csv` (ver
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | Parser `CsvTable` (Core) + testes | execução | executor | — | `Assets/_Project/Code/Core/DataTables/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/DataTables/*Tests.cs` | ⏳ |
-| T2 | `Definition` SO, `DefinitionRegistry` SO, `IdRemapTable` asset | execução | executor | — | `Assets/_Project/Code/Data/Definitions/*.cs`, `Assets/_Project/Code/Editor/Definitions/*.cs` | ⏳ |
-| T3 | Framework de importação + `DataPipeline.ImportAndValidate` | execução | executor | T1, T2 | `Assets/_Project/Code/Editor/DataPipeline/*.cs`, `DataSource/README.md` | ⏳ |
-| T4 | Framework de validação + regras transversais | execução | executor | T3 | `Assets/_Project/Code/Editor/Validation/*.cs`, `DataSource/ReservedNames.csv`, `Assets/_Project/Code/Tests/EditMode/Data/Validation/*Tests.cs` | ⏳ |
-| T5 | Tabela piloto de afinidades | execução | executor | T4 | `Assets/_Project/Code/Data/Affinities/AffinityDefinition.cs`, `Assets/_Project/Code/Editor/DataPipeline/Importers/AffinityImporter.cs`, `DataSource/Affinities.csv`, `Assets/_Project/Content/Affinities/*.asset`, `Assets/_Project/Code/Tests/EditMode/Data/Affinities/*Tests.cs` | ⏳ |
-| T6 | Geração da String Table `Definitions` | execução | executor | T5 | `Assets/_Project/Code/Editor/DataPipeline/LocalizationWriter.cs`, `Assets/_Project/Settings/Localization/**` | ⏳ |
-| T7 | Job `data-validate` no CI | execução | executor | T4 | `.github/workflows/ci.yml` | ⏳ |
-| T8 | Revisão e integração | integração | principal | T6, T7 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ⏳ |
+| T1 | Parser `CsvTable` (Core) + testes | execução | executor | — | `Assets/_Project/Code/Core/DataTables/*.cs`, `Assets/_Project/Code/Tests/EditMode/Core/DataTables/*Tests.cs` | ✅ |
+| T2 | `Definition` SO, `DefinitionRegistry` SO, `IdRemapTable` asset | execução | executor | — | `Assets/_Project/Code/Data/Definitions/*.cs`, `Assets/_Project/Code/Editor/Definitions/*.cs` | ✅ |
+| T3 | Framework de importação + `DataPipeline.ImportAndValidate` | execução | executor | T1, T2 | `Assets/_Project/Code/Editor/DataPipeline/*.cs`, `DataSource/README.md` | ✅ |
+| T4 | Framework de validação + regras transversais | execução | executor | T3 | `Assets/_Project/Code/Editor/Validation/*.cs`, `DataSource/ReservedNames.csv`, `Assets/_Project/Code/Tests/EditMode/Data/Validation/*Tests.cs` | ✅ |
+| T5 | Tabela piloto de afinidades | execução | executor | T4 | `Assets/_Project/Code/Data/Affinities/AffinityDefinition.cs`, `Assets/_Project/Code/Editor/DataPipeline/Importers/AffinityImporter.cs`, `DataSource/Affinities.csv`, `Assets/_Project/Content/Affinities/*.asset`, `Assets/_Project/Code/Tests/EditMode/Data/Affinities/*Tests.cs` | ✅ |
+| T6 | Geração da String Table `Definitions` | execução | executor | T5 | `Assets/_Project/Code/Editor/DataPipeline/LocalizationWriter.cs`, `Assets/_Project/Settings/Localization/**` | ✅ |
+| T7 | Job `data-validate` no CI | execução | executor | T4 | `.github/workflows/ci.yml` | ✅ |
+| T8 | Revisão e integração | integração | principal | T6, T7 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ✅ |
 
 ## Ondas internas
 1. T1 ∥ T2 (Core/DataTables × Data/Editor; arquivos disjuntos; T1 usa `dotnet test`, T2 usa batchmode — não concorrem pelo mesmo build)
@@ -72,7 +72,7 @@ Contexto comum (inclua em todos):
 - Objetivo: framework genérico de importação por `StableId` e o ponto de entrada de batchmode.
 - Arquivos: escreve `Editor/DataPipeline/TableImporterAttribute.cs`, `ITableImporter.cs` (`TableName`, `CsvPath`, `Import(CsvTable, ImportContext)`), `TableImporter<TDef>.cs` (base: encontra asset por `StableId` em `OutputFolder`, cria se não existir, atualiza campos, marca `ImportedHash`, **nunca recria** nem muda GUID, reporta órfãos), `ImportContext.cs` (log de erros/avisos, resolução de referências cruzadas em 2 passes), `DataPipeline.cs` (`public static void ImportAndValidate()` — importa todas as tabelas registradas em ordem de dependência, chama o validador, reconstrói o registro, `AssetDatabase.SaveAssets`, sai com código 0/1 em batchmode), menu `Eclipse/Data/Import & Validate`; `DataSource/README.md` com a convenção do critério 3.
 - Aceite: critérios 3, 4 e 5 (verificados no T5 com a tabela piloto).
-- Verificação: `"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log` → exit code 0 sem tabelas registradas; log com resumo "0 tables, 0 errors".
+- Verificação: `"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log` → exit code 0 sem tabelas registradas; log com resumo "0 tables, 0 errors".
 - Entrega: ≤ 150 palavras — API para módulos futuros registrarem tabelas.
 
 **T4 — Validação**
@@ -99,7 +99,7 @@ Contexto comum (inclua em todos):
 
 **T7 — CI**
 - Objetivo: validação de dados obrigatória no CI.
-- Arquivos: escreve `.github/workflows/ci.yml` (substitui o comentário `# data-validate` por job que usa `game-ci/unity-builder@v4` com `customParameters: -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate` ou o runner equivalente do GameCI para `executeMethod`, mesma licença/caches do `unity-tests`; falha se exit ≠ 0).
+- Arquivos: escreve `.github/workflows/ci.yml` (substitui o comentário `# data-validate` por job que usa `game-ci/unity-builder@v4` com `customParameters: -executeMethod Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate` ou o runner equivalente do GameCI para `executeMethod`, mesma licença/caches do `unity-tests`; falha se exit ≠ 0).
 - Verificação: YAML válido (`python -c "import yaml;yaml.safe_load(open('.github/workflows/ci.yml'))"`); job verde após push (o principal confirma).
 - Entrega: ≤ 80 palavras.
 
@@ -111,7 +111,7 @@ Contexto comum (inclua em todos):
 dotnet test tools/CoreTests
 ```
 ```bash
-"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
+"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
 ```
 ```bash
 "$UNITY_EXE" -batchmode -nographics -projectPath . -runTests -testPlatform EditMode -testResults Logs/editmode.xml -logFile Logs/editmode.log
@@ -137,3 +137,7 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 plano criado.
+- 2026-11-07 T1 ✅ `CsvTable`/`CsvRow` (11 testes dotnet). T2 ✅ `Definition`, `DefinitionRegistry`, `IdRemapAsset`, inspector, `RegistryBuilder`. T3 ✅ framework de importação e `DataPipeline`. T4 ✅ `DataValidator` + 6 regras + `ReservedNames.csv`. T5 ✅ piloto de afinidades (6 assets, reimport idempotente). T6 ✅ String Table `Definitions` pt-BR/en-US. T7 ✅ job `data-validate` (só validado estaticamente; confirmar verde no 1º push).
+- 2026-11-07 Desvio: o comando de dados é `Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate` (namespace e classe com o mesmo nome impedem o curto). CLAUDE.md e ci.yml já usam o nome completo.
+- 2026-11-07 Extras: `Definition` ganhou `SourceDoc` e `NameEn` (alimentam `ReservedNameRule`); contratos `ITaggedDefinition` e `IReferencingDefinition` em `Eclipse.Data`; `LocalizationKeyRule` é Error; a criação da coleção gerou `Assets/AddressableAssetsData/**` e 2 config objects em `ProjectSettings/EditorBuildSettings.asset` (versionados). Regra opcional de `ImportedHash` divergente não feita. Status primário das afinidades fica como texto até o M11 (não há `ReferenceResolvesRule` para ele).
+- 2026-11-07 Verificação final: dotnet 144/144, EditMode 188/188, `ImportAndValidate` exit 0 ("1 tables, 0 errors, 0 warnings"), 2ª execução com hashes de 95 arquivos iguais. Risco aberto: `unity-builder` com `buildMethod` custom; fallback = `unity-test-runner` com teste EditMode.

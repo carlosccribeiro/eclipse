@@ -54,11 +54,13 @@ Regra: **nenhum número de balanceamento é inventado no código.** Valores vêm
 ```
 Assets/_Project/Code/{Core,Data,Gameplay,AI,Run,Meta,Save,UI,Audio,Platform,Editor,Tests/EditMode,Tests/PlayMode}
 Assets/_Project/Content/{Heroes,Items,Modifiers,Affinities,Enemies,Bosses,Regions,Sanctuary}
-DataSource/            CSV versionados (fonte dos SOs)
+DataSource/            CSV versionados (fonte dos SOs; convenção em DataSource/README.md; ReservedNames.csv = nomes reservados R48)
 tools/CoreTests/       projeto dotnet que compila Eclipse.Core e roda os testes rápidos
 docs/                  GDD (docs/gdd), roadmap (docs/ROADMAP.md), planos de módulo (docs/roadmap), relatórios (docs/roadmap/reports)
 ```
-(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/<Área>/` com namespace `Eclipse.Core.<Área>.Tests` (compilados também por `tools/CoreTests`; filtro `--filter FullyQualifiedName~Eclipse.Core.<Área>`). Subpastas do Core: `Ids, Tags, Random, Time, Events, Definitions`.
+(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/<Área>/` com namespace `Eclipse.Core.<Área>.Tests` (compilados também por `tools/CoreTests`; filtro `--filter FullyQualifiedName~Eclipse.Core.<Área>`). Subpastas do Core: `Ids, Tags, Random, Time, Events, Definitions, DataTables` (`CsvTable`/`CsvRow`, parser CSV RFC 4180).
+
+Pipeline de dados (M02): `Eclipse.Data.Definitions` (`Definition` base SO, `DefinitionRegistry`, `IdRemapAsset`), `Eclipse.Editor.DataPipeline` (`TableImporter<T>`, `DataPipeline`, `LocalizationWriter`), `Eclipse.Editor.Validation` (`DataValidator` + regras em `Rules/`). Saída em `Assets/_Project/Content/**` (+ `DefinitionRegistry.asset`, `IdRemap.asset`) e String Table `Definitions` em `Assets/_Project/Settings/Localization/`. `Assets/AddressableAssetsData/` é versionado.
 
 ## 6. Comandos de verificação
 
@@ -78,7 +80,7 @@ dotnet test tools/CoreTests
 ```
 ```bash
 # Importar CSV → SOs e validar dados
-"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
+"$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
 ```
 `$UNITY_EXE` = `C:\Program Files\Unity\Hub\Editor\6000.3.28f1\Editor\Unity.exe`.
 
@@ -89,6 +91,8 @@ dotnet test tools/CoreTests
 - **Definition of Done** de um módulo: critérios de saída do arquivo atendidos; `dotnet test` + EditMode (e PlayMode, se aplicável) passando; validador de dados sem erros; sem warnings novos de compilação; status e Log atualizados no arquivo do módulo e na tabela de `docs/ROADMAP.md`; este CLAUDE.md atualizado se algo durável mudou.
 - Git: commits em português no formato `tipo(Mxx): descrição` (`feat`, `fix`, `refactor`, `test`, `docs`, `chore`). Sempre commitar os `.meta`. Nunca `--no-verify`. Push/PR só quando o usuário pedir.
 - Worktree novo não tem `Library/`: o primeiro batchmode reimporta (demora); não commitar `Library/`, `Temp/`, `Logs/`, `UserSettings/`.
+
+**Adicionar uma tabela de dados (M02):** crie `DataSource/<Tabela>.csv` (convenção no README de lá), uma classe `XDefinition : Definition` (um arquivo por ScriptableObject, nome igual ao arquivo) e `[TableImporter("X", Order=…, DependsOn=…)] class XImporter : TableImporter<XDefinition>` com `CsvPath`, `OutputFolder` e `Apply`. Nenhum arquivo central é editado. **Adicionar regra de validação:** `[ValidationRule] class R : IValidationRule` (ctor público sem parâmetros) e um teste com caso que passa e caso que falha. Nomes de exibição reservados (R48) vão em `DataSource/ReservedNames.csv`. Depois rode o comando de dados (§6) duas vezes: a 2ª não pode alterar nenhum arquivo.
 
 ## 8. Quando atualizar este arquivo
 
@@ -115,3 +119,6 @@ Não coloque aqui status de módulo (vai no ROADMAP) nem detalhes de design (vã
 - Arquivos `.cs` criados fora do Editor não têm `.meta`; rode um batchmode (EditMode ou `-quit`) para gerá-los e commite junto.
 - Dentro de `Eclipse.Core`, `Random` resolve para o namespace `Eclipse.Core.Random`, não `System.Random` (que nem deve ser usado em regras).
 - Job com `game-ci/unity-test-runner` + `githubToken` precisa de `permissions: checks: write`, senão falha com "Resource not accessible by integration" mesmo com testes verdes.
+- Comando de dados: namespace e classe se chamam `DataPipeline`, então o `-executeMethod` precisa do nome completo `Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate` (o curto dá "class 'DataPipeline' could not be found").
+- `ScriptableObject` exige um arquivo por classe com o mesmo nome (classes fake de teste também), senão o script não é associado.
+- Criar a String Table `Definitions` gera `Assets/AddressableAssetsData/**` e entradas em `ProjectSettings/EditorBuildSettings.asset`; é esperado e versionado.

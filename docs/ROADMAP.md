@@ -130,7 +130,8 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | D02 | ✅ concluído | 2026-11-07 | R53–R58 em 00 §5.6; pendências em §9 |
 | M00 | ✅ concluído | 2026-11-07 | Unity 6000.3.28f1; CI GameCI verde (Core + EditMode + PlayMode). `build.yml` ativa após merge em `main` |
 | M01 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Ids, Tags/HitFlags, RNG xoshiro128** + 5 streams, SimulationClock 60 Hz, EventBus 0 B, Definitions. dotnet 132/132, EditMode 131/131 |
-| M02–M32 | ⏳ não iniciado | 2026-11-07 | |
+| M02 | ✅ concluído | 2026-11-07 | CSV→SO→registro→validador; piloto Affinities (6) + String Table `Definitions`. dotnet 144/144, EditMode 188/188. Comando: `…DataPipeline.DataPipeline.ImportAndValidate`. `data-validate` no CI a confirmar |
+| M03–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
 Legenda: ⏳ não iniciado · 🔄 em andamento · ✅ concluído · ❌ bloqueado (com motivo).
