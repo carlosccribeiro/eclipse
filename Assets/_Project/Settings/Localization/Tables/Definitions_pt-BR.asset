@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Definitions_pt-BR
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 15b8a40efefa8bb4fa026473712b58f1, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 2725806080
+    m_Localized: Ember
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2956492800
+    m_Localized: "Dano cont\xEDnuo, explos\xF5es e propaga\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075712
+    m_Localized: Frost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075713
+    m_Localized: "Controle, lentid\xE3o e congelamento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075714
+    m_Localized: Storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075715
+    m_Localized: Velocidade, encadeamento e sobrecarga.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075716
+    m_Localized: Void
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075717
+    m_Localized: "Agrupamento, implos\xE3o e manipula\xE7\xE3o espacial."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075718
+    m_Localized: Echo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075719
+    m_Localized: "C\xF3pias, repeti\xE7\xE3o e efeitos atrasados."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075720
+    m_Localized: Ruin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2969075721
+    m_Localized: "Enfraquecimento, deteriora\xE7\xE3o e detona\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

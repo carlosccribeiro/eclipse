@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8386d6e36b889124694bc66ce20fc9d8, type: 3}
+  m_Name: echo
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Affinities.AffinityDefinition
+  stableId: affinity.core.echo
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: affinity.core.echo.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: affinity.core.echo.desc
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 78d6d2fe4403a72f
+  sourceDoc: "07 \xA710"
+  nameEn: Echo
+  affinityTag: 21
+  primary: {r: 0.43529412, g: 1, b: 0.8784314, a: 1}
+  secondary: {r: 0.84705883, g: 0.8901961, b: 0.9098039, a: 1}
+  primaryStatusId: Echo Mark
+  icon: {fileID: 0}
+  shapeLanguage: "An\xE9is conc\xEAntricos, afterimages transl\xFAcidas"
+  references:
+    version: 2
+    RefIds: []

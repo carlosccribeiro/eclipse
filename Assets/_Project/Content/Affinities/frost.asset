@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8386d6e36b889124694bc66ce20fc9d8, type: 3}
+  m_Name: frost
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Affinities.AffinityDefinition
+  stableId: affinity.core.frost
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: affinity.core.frost.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: affinity.core.frost.desc
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 5ba31c8502c0d616
+  sourceDoc: "07 \xA710"
+  nameEn: Frost
+  affinityTag: 18
+  primary: {r: 0.61960787, g: 0.90588236, b: 1, a: 1}
+  secondary: {r: 0.9490196, g: 0.9843137, b: 1, a: 1}
+  primaryStatusId: Chill
+  icon: {fileID: 0}
+  shapeLanguage: Cristais angulares, crosta
+  references:
+    version: 2
+    RefIds: []

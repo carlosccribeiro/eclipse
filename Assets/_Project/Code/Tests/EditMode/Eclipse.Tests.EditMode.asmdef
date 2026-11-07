@@ -5,6 +5,8 @@
         "Eclipse.Core",
         "Eclipse.Data",
         "Eclipse.Editor",
+        "Unity.Localization",
+        "Unity.Localization.Editor",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],

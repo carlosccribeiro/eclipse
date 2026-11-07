@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef9ff898175ba34ebac1c5ff15239c8, type: 3}
+  m_Name: DefinitionRegistry
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Definitions.DefinitionRegistry
+  definitions:
+  - {fileID: 11400000, guid: 6ede7a42f2b622d44bfa22491154b5a4, type: 2}
+  - {fileID: 11400000, guid: b0cb2086b18f17b4589026471e1783bb, type: 2}
+  - {fileID: 11400000, guid: 87591c3783c57a643a76fe7cac6f6dca, type: 2}
+  - {fileID: 11400000, guid: 05290993fc8acf2489d5a5eb96a74b52, type: 2}
+  - {fileID: 11400000, guid: 9fe2378c29378a44bb9f31cb4a312172, type: 2}
+  - {fileID: 11400000, guid: ab618d814e587944e98c94682969fffb, type: 2}
+  remapAsset: {fileID: 11400000, guid: 454a6c3a06c40e54baa4e732c4f1c008, type: 2}

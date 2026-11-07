@@ -26,7 +26,6 @@ jobs:
     permissions:
       contents: read
       checks: write
-    # data-validate: adicionado no M02
     steps:
       - uses: actions/checkout@v4
         with:
@@ -51,3 +50,29 @@ jobs:
         with:
           name: unity-test-results
           path: ${{ steps.tests.outputs.artifactsPath }}
+
+  data-validate:
+    name: Data validation (ImportAndValidate)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+      # unity-builder runs the method with -quit -batchmode and fails the job on a non-zero
+      # Unity exit code; ImportAndValidate calls EditorApplication.Exit(1) on validation errors.
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: StandaloneLinux64
+          buildMethod: Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate
