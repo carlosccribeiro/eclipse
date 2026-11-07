@@ -112,6 +112,33 @@ namespace Eclipse.Editor.DataPipeline.Tests
         }
 
         [Test]
+        public void RenamedId_InCsv_FollowsRemap_AndDoesNotCreateSecondAsset()
+        {
+            WriteCsv(TwoRows);
+            RunFake();
+            string guid = AssetDatabase.AssetPathToGUID(Folder + "/beta.asset");
+
+            // beta is renamed to gamma through the migration table; the sheet still says beta.
+            var asset = AssetDatabase.LoadAssetAtPath<FakePipelineDef>(Folder + "/beta.asset");
+            asset.EditorSetStableId("fake.t.gamma");
+            EditorUtility.SetDirty(asset);
+            AssetDatabase.SaveAssets();
+            var remap = new Eclipse.Core.Ids.IdRemapTable();
+            remap.Add(new Eclipse.Core.Ids.StableId("fake.t.beta"), new Eclipse.Core.Ids.StableId("fake.t.gamma"));
+
+            var importer = new FakePipelineImporter("Fake", "fake.csv", Folder) { Remap = remap };
+            ImportContext ctx = DataPipeline.Run(new ITableImporter[] { importer }, _root);
+
+            Assert.AreEqual(0, ctx.ErrorCount, string.Join("\n", ctx.Messages));
+            Assert.AreEqual(0, ctx.Created);
+            Assert.AreEqual(0, ctx.Orphans);
+            Assert.AreEqual(1, ctx.WarningCount);
+            StringAssert.Contains("renamed", ctx.Messages[0].Text);
+            Assert.AreEqual(guid, AssetDatabase.AssetPathToGUID(Folder + "/beta.asset"));
+            Assert.AreEqual(2, AssetDatabase.FindAssets("t:FakePipelineDef", new[] { Folder }).Length);
+        }
+
+        [Test]
         public void RemovedRow_ReportsOrphanWarning_AndKeepsAsset()
         {
             WriteCsv(TwoRows);

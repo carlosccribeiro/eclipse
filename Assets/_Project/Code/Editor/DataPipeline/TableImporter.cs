@@ -7,6 +7,7 @@ using Eclipse.Core.DataTables;
 using Eclipse.Core.Ids;
 using Eclipse.Core.Random;
 using Eclipse.Data.Definitions;
+using Eclipse.Editor.Definitions;
 using UnityEditor;
 using UnityEngine;
 
@@ -45,6 +46,13 @@ namespace Eclipse.Editor.DataPipeline
         /// <summary>Pass 2: resolve cross references by StableId. Return true if the asset was changed.</summary>
         protected virtual bool ResolveReferences(TDef definition, CsvRow row, ImportContext context) => false;
 
+        /// <summary>Id migrations applied to CSV ids before matching assets. Defaults to the project's <c>IdRemap.asset</c>.</summary>
+        protected virtual IdRemapTable LoadRemap()
+        {
+            var asset = AssetDatabase.LoadAssetAtPath<IdRemapAsset>(RegistryBuilder.RemapPath);
+            return asset != null ? asset.ToTable() : new IdRemapTable();
+        }
+
         public void Import(CsvTable table, ImportContext context)
         {
             if (table == null) throw new ArgumentNullException(nameof(table));
@@ -58,6 +66,7 @@ namespace Eclipse.Editor.DataPipeline
             }
 
             EnsureFolder(OutputFolder);
+            IdRemapTable remap = LoadRemap();
             Dictionary<string, TDef> existing = IndexExisting(context, tableName);
             var seen = new HashSet<string>(StringComparer.Ordinal);
 
@@ -78,17 +87,30 @@ namespace Eclipse.Editor.DataPipeline
                         continue;
                     }
 
+                    // A renamed definition keeps its old id in the CSV until the sheet is updated: follow the remap.
+                    string assetId = id;
+                    if (remap.TryResolve(new StableId(id), out StableId renamed))
+                    {
+                        assetId = renamed.Value;
+                        context.Warning(tableName, row.Line, id, "id was renamed to '" + assetId + "' (IdRemap); update the CSV");
+                        if (!seen.Add(assetId))
+                        {
+                            context.Error(tableName, row.Line, id, "duplicate id in CSV after remap: '" + assetId + "'");
+                            continue;
+                        }
+                    }
+
                     string hash = ComputeHash(table, row, HashSalt);
                     TDef def;
-                    if (!existing.TryGetValue(id, out def))
+                    if (!existing.TryGetValue(assetId, out def))
                     {
                         def = ScriptableObject.CreateInstance<TDef>();
                         try
                         {
-                            def.EditorSetStableId(id);
+                            def.EditorSetStableId(assetId);
                             Apply(def, row, context);
                             def.ImportedHash = hash;
-                            AssetDatabase.CreateAsset(def, NewAssetPath(id));
+                            AssetDatabase.CreateAsset(def, NewAssetPath(assetId));
                         }
                         catch
                         {
@@ -110,10 +132,11 @@ namespace Eclipse.Editor.DataPipeline
                     }
 
                     // Checked on every run (even with an unchanged hash) so a lost/edited table entry is restored.
-                    if (WritesLocalization && LocalizationWriter.ApplyRow(def, id, table, row))
+                    if (WritesLocalization && LocalizationWriter.ApplyRow(def, assetId, table, row))
                         EditorUtility.SetDirty(def);
 
                     context.Register(def);
+                    if (assetId != id) context.RegisterAlias(id, def);
                     TDef captured = def;
                     CsvRow capturedRow = row;
                     context.Defer(() =>

@@ -84,6 +84,13 @@ namespace Eclipse.Editor.DataPipeline
             _definitions[definition.StableIdString] = definition;
         }
 
+        /// <summary>Lets references that still use an old (remapped) id resolve to the renamed definition.</summary>
+        public void RegisterAlias(string oldId, Definition definition)
+        {
+            if (definition == null || string.IsNullOrEmpty(oldId)) return;
+            _definitions[oldId] = definition;
+        }
+
         public bool TryResolve<T>(string id, out T definition) where T : Definition
         {
             if (id != null && _definitions.TryGetValue(id, out Definition d) && d is T typed)

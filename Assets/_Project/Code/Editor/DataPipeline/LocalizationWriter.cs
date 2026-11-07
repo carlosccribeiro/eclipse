@@ -100,8 +100,8 @@ namespace Eclipse.Editor.DataPipeline
 
             string nameKey = id + ".name";
             string descKey = id + ".desc";
-            bool hasName = SetEntry(collection, nameKey, row.GetString("name_pt", string.Empty), row.GetString("name_en", string.Empty));
-            bool hasDesc = SetEntry(collection, descKey, row.GetString("desc_pt", string.Empty), row.GetString("desc_en", string.Empty));
+            bool hasName = SetEntry(collection, nameKey, Optional(table, row, "name_pt"), Optional(table, row, "name_en"));
+            bool hasDesc = SetEntry(collection, descKey, Optional(table, row, "desc_pt"), Optional(table, row, "desc_en"));
 
             LocalizedString name = hasName ? new LocalizedString(CollectionName, nameKey) : null;
             LocalizedString desc = hasDesc ? new LocalizedString(CollectionName, descKey) : null;
@@ -114,6 +114,10 @@ namespace Eclipse.Editor.DataPipeline
             }
             return changed;
         }
+
+        // Localization columns are optional individually: a missing column reads as empty.
+        private static string Optional(CsvTable table, CsvRow row, string column) =>
+            table.HasColumn(column) ? row.GetString(column, string.Empty) : string.Empty;
 
         // Returns true if the key has any text. Writes only differing values.
         private static bool SetEntry(StringTableCollection collection, string key, string pt, string en)

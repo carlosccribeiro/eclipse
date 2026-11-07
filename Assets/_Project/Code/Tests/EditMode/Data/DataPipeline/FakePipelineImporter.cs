@@ -1,4 +1,5 @@
 using Eclipse.Core.DataTables;
+using Eclipse.Core.Ids;
 
 namespace Eclipse.Editor.DataPipeline.Tests
 {
@@ -15,6 +16,11 @@ namespace Eclipse.Editor.DataPipeline.Tests
             _csv = csv;
             _folder = folder;
         }
+
+        /// <summary>Remap injected by tests; null means no migrations.</summary>
+        public IdRemapTable Remap { get; set; }
+
+        protected override IdRemapTable LoadRemap() => Remap ?? new IdRemapTable();
 
         public override string TableName => _name;
         public override string CsvPath => _csv;
