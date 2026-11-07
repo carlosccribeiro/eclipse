@@ -4,6 +4,7 @@
     "references": [
         "Eclipse.Core",
         "Eclipse.Data",
+        "Eclipse.Gameplay",
         "Eclipse.Editor",
         "Unity.Localization",
         "Unity.Localization.Editor",
