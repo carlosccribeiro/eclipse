@@ -40,6 +40,7 @@ Este documento aplica as resoluções R02, R04–R20, R47 e R48 do registro `00-
 22. **Parry unificado (R20):** janela de 0,2 s para toda ação defensiva de parry (Ashen Guard, Perfect Guard, bloqueio perfeito), teto 0,3 s com bônus. — Um único conceito, uma única regra de UI e de engine.
 23. **Linguagem de telegraph de 06 é única no jogo (R14):** vermelho = padrão, roxo = controle, branco-dourado = Unblockable, ciano = janela interrompível; laranja reservado a Ember. — Legibilidade; 09 aplica.
 24. **Attack tokens seguem a tabela de 09 (R17)**; este doc só define o comportamento de quem não tem token. — 09 é dono dos números por arquétipo e dificuldade.
+25. **Curva base do Standard por eLvl e DPS de referência são deste doc (R53, §3.13):** HP exponencial (×1,048/eLvl) calibrado no TTK; dano calibrado na letalidade (R54). — Um único lugar para os números absolutos; 09 só define proporções.
 
 ---
 
@@ -546,6 +547,30 @@ TTK = tempo de dano focado de um jogador com equipamento adequado ao conteúdo (
 
 Teto: nenhum ataque não-mecânico > 60% da vida máxima com defesas recomendadas (validado por ferramenta de simulação — 11). Esta tabela é a única referência de letalidade (R15); 09 calibra o dano relativo dos inimigos para caber nela. A exceção é exclusivamente Annihilation.
 
+**Curva base do Standard por Monster Level (R53, dono: este doc).** Valores absolutos da unidade "Standard" de 09 (HP× 1,0 / Dano× 1,0); cada arquétipo multiplica por seus stats relativos (09 §4). O eLvl é o de 10 §7.2.
+
+```
+HP_Std(eLvl)        = 36 × 1,048^(eLvl − 1)                       // campanha, eLvl 1–84
+DanoBase(eLvl)      = 20 × 1,048^(eLvl − 1)                       // eLvl ≤ 24
+                    = 58,8 × 1,016^(eLvl − 24)                     // eLvl > 24
+Dano_Std(eLvl)      = DanoBase(eLvl) × M_let(tier)                 // M_let: Normal 1,0 · Veteran 1,2 · Nightmare 1,5 · Eclipse 2,0
+Ascension N (sala)  : HP = HP_Std(eLvl_Eclipse) × 1,035^N · Dano = Dano_Std(eLvl_Eclipse) × 1,02^N
+DPS_ref(eLvl)       = HP_Std(eLvl) / 2,2 s                         // DPS focado de referência do jogador no gear recomendado
+```
+
+- **Calibração:** HP_Std dá TTK de 1,7–2,8 s (Medium) para o jogador de referência no gear recomendado, com Blessings médias da run; Dano_Std é o golpe comum no centro da faixa de letalidade acima (5 / 6 / 7,5 / 10% da vida de referência, com 30% de mitigação). `M_let` é a razão entre esses centros.
+- **Rampa na run:** a interpolação do eLvl por sala (05 §4.2) faz o HP subir ×1,21–1,26 numa faixa regional (≈ Blessings +25%, R35); em Eclipse (faixa 75–84) sobe ×1,52.
+- **Ascension:** `eLvl_Eclipse` é o eLvl que a mesma sala teria em Eclipse (75–84). O eLvl real de Ascension (85–110, 10 §7.2) vale só para o K de Armor de 01.
+- **DPS_ref** é a referência para o HP de chefe (09 §8.1: duração alvo × DPS_ref × uptime) e para o simulador de TTK (11).
+- Premissas do jogador de referência e verificação por eLvl e por arquétipo: `docs/roadmap/reports/D02-calculos.md`. O simulador (11, M14) recalibra os coeficientes `36` e `20` sem mudar a forma da curva.
+
+| eLvl | 1 | 6 | 12 | 24 | 25 | 35 | 49 | 50 | 60 | 69 | 75 | 80 | 84 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Tier | N | N | N | N | V | V | V | NM | NM | NM | E | E | E |
+| HP_Std | 36 | 46 | 60 | 106 | 111 | 177 | 342 | 358 | 572 | 873 | 1156 | 1462 | 1763 |
+| Dano_Std | 20,0 | 25,3 | 33,5 | 58,8 | 71,7 | 84,0 | 104,9 | 133,2 | 156,2 | 180,2 | 264,2 | 286,0 | 304,8 |
+| DPS_ref | 16,4 | 20,7 | 27,4 | 48,1 | 50,4 | 80,6 | 155,3 | 162,8 | 260,1 | 396,7 | 525,6 | 664,4 | 801,4 |
+
 ### 3.14 Invulnerabilidade, morte e revive
 
 **Grace period:** 0,25 s de imunidade a novos Hits após qualquer Hit recebido; 0,8 s após Hit ≥ 20% da vida máxima. Ticks de DoT/zonas não iniciam grace e não são bloqueados por ele (mas são limitados a 1 tick por fonte a cada 0,5 s).
@@ -581,8 +606,8 @@ Teto: nenhum ataque não-mecânico > 60% da vida máxima com defesas recomendada
 | 04-conjuntos | Bucket More (orçamento), Vulnerability (teto 07), Execute contra chefe, Echo Recursion 1×, eventos | Set Powers que declaram More% e quais declaram Echo Recursion 1× |
 | 07-resonance | Grupo de DR Hard (Stun+Freeze), CC no jogador (Freeze máx. 1,0 s), tick de DoT 0,5 s, conversão de CC em Stagger, cores de dano, HitFlags | Status de afinidade, buildup, acúmulos, **teto de Vulnerability (+60%)**, modelo Generation, efeitos de Frostbound e Distortion |
 | 08-herois | Frame data por arma (§3.6), esquiva universal, Perfect Dodge, Parry, estados genéricos, flags `Commit`/`MoveDuringCast`/`Tracking`, input | Movesets e APS das 20 armas, coeficientes, Stagger de habilidades, recurso ganho em Perfect Dodge, quais habilidades concedem Unstoppable/Intangível/Stealth/Taunt |
-| 09-inimigos | Classes de massa, limiares de Stagger, Broken, linguagem de telegraph, wind-ups mínimos, letalidade, TTK/durações, comportamento sem token | Tabela de attack tokens, arquétipos, padrões de ataque, arenas e câmera de chefe, Blessing de revive |
-| 10-progressao | Flask, escala de limiar por dificuldade, TTK por tier | Escala de vida/dano por dificuldade, Monster Level (eLvl), regra de morte, serviços da Rest Room, cargas extras de Flask |
+| 09-inimigos | Classes de massa, limiares de Stagger, Broken, linguagem de telegraph, wind-ups mínimos, letalidade, TTK/durações, comportamento sem token, **curva base do Standard e DPS_ref (§3.13, R53)** | Tabela de attack tokens, arquétipos, padrões de ataque, arenas e câmera de chefe, Blessing de revive |
+| 10-progressao | Flask, escala de limiar por dificuldade, TTK por tier, curva base do Standard (a escala relativa de 10 §7.2 é o resultado dela, R54) | Escala de vida/dano por dificuldade, Monster Level (eLvl), regra de morte, serviços da Rest Room, cargas extras de Flask |
 | 11-arquitetura | Tick 60 Hz, DamageInstance, HitFlags, Generation, hit registry, vocabulário de eventos, grupos de DR | Implementação, orçamento de performance (120/200 inimigos, 2.000 projéteis), ferramenta de simulação de dano/TTK |
 
 **Estrutura mínima de um DamageInstance (para 11):** fonte, alvo, componentes `{tipo, valor}`, tags (vocabulário 00 §3.4), flag Hit/Tick, `isCrit`, `procCoefficient`, `generation` (0–2), `staggerValue`, `hitGroupId`, **HitFlags** (`Unavoidable`, `Unblockable`, `Annihilation`, `Knockdown`, `Execute`, `IsEcho`, `IsResonance`, `IsTriggered`).

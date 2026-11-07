@@ -90,7 +90,7 @@ A tabela de dano por golpe (% da vida máxima com defesas recomendadas) é de **
 
 ## 4. Os 9 arquétipos
 
-Stats relativos à unidade Standard; valores absolutos vêm do Monster Level (10) e da curva base de 06. **PA** = custo no orçamento de ameaça. **Massa** = classe de 06 §3.8.1 (define flinch, knockback e limiar de Stagger). Velocidades em m/s; a referência é a velocidade base dos heróis em 01-atributos (Orun 5,8 m/s, o mais lento) (R50). Nenhum inimigo comum é mais rápido que o herói mais lento, exceto Assassins em investida.
+Stats relativos à unidade Standard; valores absolutos vêm do Monster Level (10 §7.2) e da curva base de 06 §3.13 (R53: `HP_Std = 36 × 1,048^(eLvl − 1)`; dano por tier calibrado na letalidade). **PA** = custo no orçamento de ameaça. **Massa** = classe de 06 §3.8.1 (define flinch, knockback e limiar de Stagger). Velocidades em m/s; a referência é a velocidade base dos heróis em 01-atributos (Orun 5,8 m/s, o mais lento) (R50). Nenhum inimigo comum é mais rápido que o herói mais lento, exceto Assassins em investida.
 
 | Arquétipo | HP× | Dano× | Velocidade | Massa (06) | PA | Função no encontro |
 |---|---:|---:|---:|---|---:|---|
@@ -98,7 +98,7 @@ Stats relativos à unidade Standard; valores absolutos vêm do Monster Level (10
 | Melee (standard) | 1,0 | 1,0 | 4,2 | Medium | 3 | Linha de frente, pressão constante |
 | Ranged | 0,8 | 1,0 | 4,0 | Medium | 4 | Força movimento, pune ficar parado |
 | Caster | 0,9 | 1,3 | 3,6 | Medium | 5 | Zonas e controle, alvo prioritário |
-| Tank | 4,0 | 1,4 | 3,0 | Heavy | 8 | Bloqueia espaço, testa Stagger/penetração |
+| Tank | 2,5 (R55) | 1,4 | 3,0 | Heavy | 8 | Bloqueia espaço, testa Stagger/penetração |
 | Summoner | 1,6 | 0,6 | 3,4 | Medium | 6 | Cresce com o tempo, testa single target |
 | Assassin | 0,8 | 1,6 | 5,5 (investida 9,0) | Light | 5 | Pune posicionamento descuidado |
 | Support | 1,0 | 0,5 | 3,8 | Medium | 5 | Multiplica aliados, alvo prioritário |
@@ -166,7 +166,7 @@ Região de introdução: ensina telegraphs, Stagger e priorização. Densidade a
 2. **Ashborn Marauder** — melee standard · Hollow · Physical · 1,0 / 1,0 · 3. Combo de 2 golpes + golpe overhead (linha 3 m, 0,7 s). *Esquiva lateral após o 2º golpe.*
 3. **Slag Hurler** — ranged · Hollow · Ember · 0,8 / 1,0 · 4. Arremessa escória (círculo 2,5 m no destino, 1,0 s) que deixa poça Burning por 3 s. Recua se jogador < 5 m. *Fechar distância; não ficar em poças.*
 4. **Choir Pyrecaller** — caster · Ascendants · Ember · 0,9 / 1,3 · 5. Coluna de fogo no jogador (círculo 3 m, 1,2 s, janela ciano) e Flame Wall (linha 8 m que persiste 4 s). *Interromper; contornar a parede.*
-5. **Kiln Brute** — tank · Hollow · Physical/Ember · 4,0 / 1,4 · 8. Placa frontal (–50% dano frontal). Slam (círculo 4 m, 1,1 s, Unblockable). *Flanquear; punir após slam (2 s de recuperação).*
+5. **Kiln Brute** — tank · Hollow · Physical/Ember · 2,5 / 1,4 · 8. Placa frontal (–50% dano frontal). Slam (círculo 4 m, 1,1 s, Unblockable). *Flanquear; punir após slam (2 s de recuperação).*
 6. **Ember Matron** — summoner · Hollow · Ember · 1,6 / 0,6 · 6. Choca 3 Cinder Husks a cada 8 s (máx. 6). Foge. *Matar primeiro; Husks colapsam quando ela morre.*
 7. **Cinder Stalker** — assassin · Ascendants · Ember · 0,8 / 1,6 · 5. Shimmer de calor; dash-strike pelas costas (linha 6 m, 0,6 s) que aplica Burning. *Ouvir o cue; punir na recuperação.*
 8. **Choir Cantor** — support · Ascendants · Ember · 1,0 / 0,5 · 5. Concede *Pyre Shell* a até 3 aliados (casca laranja; absorve 30% do HP máximo do alvo por 8 s). *Matar ou separar; o shell se desfaz com a morte do Cantor.*
@@ -178,7 +178,7 @@ Ensina controle: Slow, Freeze, posicionamento em arenas com colunas e corredores
 2. **Cathedral Sentinel** — melee standard · Forgotten · Physical · 1,2 / 1,0 · 3. Escudo frontal que bloqueia projéteis; estocada de lança (linha 4 m, 0,7 s). *Atacar pelas costas ou encher a barra de Stagger.*
 3. **Rime Archer** — ranged · Forgotten · Frost · 0,8 / 0,9 · 4. Rajada de 3 flechas em leque que aplica Chill (acúmulo para Freeze). *Movimento lateral; usar colunas.*
 4. **Hymnal Wraith** — caster · Forgotten · Frost/Echo · 0,9 / 1,2 · 5. Canta onda em anel (donut 3–9 m, 1,3 s, roxo: Freeze) — seguro colado nele ou longe. *Ler a forma do anel.*
-5. **Glacial Reliquary** — tank · construct · Frost · 4,5 / 1,2 · 8. Rola em linha reta (linha 12 m, 1,2 s, Unblockable) e ganha *Hoarfrost Carapace* (não acumula Stagger) até receber dano Ember ou um Heavy. *Esquivar a rolagem; Ember/Heavy quebra a armadura.*
+5. **Glacial Reliquary** — tank · construct · Frost · 2,8 / 1,2 · 8. Rola em linha reta (linha 12 m, 1,2 s, Unblockable) e ganha *Hoarfrost Carapace* (não acumula Stagger) até receber dano Ember ou um Heavy. *Esquivar a rolagem; Ember/Heavy quebra a armadura.*
 6. **Bellringer** — summoner · Forgotten · Frost · 1,4 / 0,4 · 6. Toca sino a cada 9 s chamando 3 Penitents. O **sino é um objeto destrutível** separado (HP 1,0×). *Destruir o sino para cortar a invocação.*
 7. **Shard Wraith** — assassin · Forgotten · Frost · 0,7 / 1,5 · 5. Desaparece em espelhos de gelo da arena e surge atrás do jogador (cue: espelho racha 0,6 s antes). *Destruir espelhos; virar ao som da rachadura.*
 8. **Rimeseeker Adept** — support · Ascendants · Frost · 1,0 / 0,5 · 5. Aplica *Hoarfrost Carapace* a aliados (não acumulam Stagger, –30% dano recebido) por 6 s. *Hoarfrost Carapace* é um buff exclusivo de inimigos, distinto do status Frozen Armor de 07. *Ember ou Heavy remove; priorizar.*
@@ -190,7 +190,7 @@ Realidade instável: plataformas fragmentadas, ataques que se repetem, teleporte
 2. **Echo Duelist** — melee standard · Forgotten · Echo · 1,0 / 0,9 · 3. Todo combo é **repetido por um eco fantasma 0,8 s depois** no mesmo lugar (ver Repeat em 07). *Esquivar duas vezes ou sair do lugar.*
 3. **Arc Lancer** — ranged · Ascendants · Storm · 0,8 / 1,1 · 4. Feixe carregado (linha 14 m, 1,0 s) que encadeia entre jogador e clones/invocações próximas. *Não alinhar; espalhar invocações.*
 4. **Rift Seer** — caster · Ascendants · Echo/Void · 0,9 / 1,3 · 5. Coloca 3 glifos atrasados que detonam após 2,0 s (círculos 2,5 m). Teleporta ao ser alcançado. *Sair dos glifos; perseguir após teleporte (cooldown 8 s).*
-5. **Stormglass Golem** — tank · construct · Storm · 4,0 / 1,3 · 8. Static Field passivo (raio 3 m, Shock leve). A cada 10 s acumula carga visível (arcos crescentes) e descarrega (círculo 6 m, 1,4 s, Unblockable). *Recuar na carga; punir após descarga.*
+5. **Stormglass Golem** — tank · construct · Storm · 2,5 / 1,3 · 8. Static Field passivo (raio 3 m, Shock leve). A cada 10 s acumula carga visível (arcos crescentes) e descarrega (círculo 6 m, 1,4 s, Unblockable). *Recuar na carga; punir após descarga.*
 6. **Paradox Weaver** — summoner · Forgotten · Echo · 1,5 / 0,5 · 6. Transforma cadáveres de aliados em **Ecos** (30% HP, mesmos ataques, translúcidos) — máx. 4. *Matar primeiro; AoE em corpos não remove — matar o Weaver colapsa os Ecos.*
 7. **Blink Reaver** — assassin · Hollow · Storm · 0,8 / 1,5 · 5. Teleporta em flash elétrico (cue: estalo + marca no chão 0,6 s) e faz 3 cortes rápidos (cone 2 m). *Esquivar ao estalo.*
 8. **Tempo Warden** — support · Forgotten · Echo · 1,1 / 0,4 · 5. Aura de haste (+25% velocidade de ataque/movimento a aliados em 8 m). Uma vez por encontro, **rebobina** o HP de um aliado para o valor de 3 s atrás (ampulheta visível sobre o alvo 1,0 s antes). *Matar primeiro ou interromper (ciano) a rebobinagem.*
@@ -202,7 +202,7 @@ Escuridão, corrupção e puxões. Ensina gestão de espaço e de debuffs (Decay
 2. **Hollow Thrall** — melee standard · Hollow · Ruin · 1,1 / 1,0 · 3. Golpes aplicam Decay. Ao morrer, deixa poça de Decay 2 s. *Não lutar em cima das poças.*
 3. **Spitting Maw** — ranged (estático) · Hollow · Ruin · 1,2 / 1,0 · 4. Planta enraizada; cospe ácido em arco (círculo 2 m, 1,0 s) deixando poça Decay 4 s. Não se move. *Prioridade de rota; pode ser contornado.*
 4. **Void Whisperer** — caster · Hollow · Void · 0,9 / 1,3 · 5. Orbe de Pull (roxo, puxa para um ponto por 1,5 s) seguido de Implosion no mesmo ponto (círculo 3 m, 1,0 s após o fim do Pull). *Usar mobilidade contra o Pull ou interromper.*
-5. **Abyssal Carapace** — tank · Hollow · Void · 4,5 / 1,3 · 8. Absorve projéteis vindos da frente (fenda visível). Grab de tentáculo (linha 7 m, 0,9 s, roxo) que puxa o jogador até ele. *Atacar pelas laterais; esquivar o grab.*
+5. **Abyssal Carapace** — tank · Hollow · Void · 2,8 / 1,3 · 8. Absorve projéteis vindos da frente (fenda visível). Grab de tentáculo (linha 7 m, 0,9 s, roxo) que puxa o jogador até ele. *Atacar pelas laterais; esquivar o grab.*
 6. **Brood Mother** — summoner · Hollow · Ruin · 1,8 / 0,6 · 6. Põe 2 ovos (HP 0,4× cada) a cada 8 s; eclodem em 5 s, cada um gera 2 Gnawlings. *Destruir ovos; ou matar a Mother.*
 7. **Umbral Stalker** — assassin · Hollow · Void · 0,8 / 1,7 · 5. **Invisível dentro de zonas de escuridão** da arena, visível em zonas iluminadas (mecânica explícita da região). Fora da escuridão, apenas shimmer. *Lutar perto de fontes de luz; algumas habilidades de luz/Ember revelam.*
 8. **Rot Priest** — support · Hollow · Ruin · 1,0 / 0,5 · 5. Consome cadáveres para curar aliados em 8 m (15% HP, tether verde-escuro) ou criar um Totem de Decay (HP 0,5×, aura de Decay 4 m). *Matar rápido; limpar totens.*
@@ -214,7 +214,7 @@ Exame final: combina mecânicas das regiões anteriores e cicla afinidades. Usa 
 2. **Citadel Templar** — melee standard · Ascendants · cíclica · 1,2 / 1,1 · 3. A arma brilha na cor da afinidade atual (troca a cada 6 s em ordem fixa Ember → Frost → Storm → Void → Echo → Ruin) e seus golpes aplicam o status dessa afinidade. *Ler a cor; evitar a afinidade que mais prejudica a build.*
 3. **Starbinder Archer** — ranged · Ascendants · Storm · 0,8 / 1,1 · 4. Flecha que se divide em 3 após 6 m (cones visíveis). *Encostar ou ficar longe; nunca a 6–10 m.*
 4. **Constellation Magus** — caster · Ascendants · Void/Echo · 1,0 / 1,4 · 5. Cria 4 estrelas no chão e, após 1,2 s, liga-as com feixes (linhas vermelhas entre estrelas). *Ler as linhas; destruir uma estrela quebra duas linhas.*
-5. **Pillar Guardian** — tank · Forgotten · Physical · 5,0 / 1,4 · 9. **Imune a dano** enquanto ligado ao seu Nódulo de Pilar (cristal HP 0,8×, tether brilhante, a 6–10 m). Slam Unblockable. *Destruir o cristal primeiro.*
+5. **Pillar Guardian** — tank · Forgotten · Physical · 3,1 / 1,4 · 9. **Imune a dano** enquanto ligado ao seu Nódulo de Pilar (cristal HP 0,8×, tether brilhante, a 6–10 m). Slam Unblockable. *Destruir o cristal primeiro.*
 6. **Herald of the First** — summoner · Forgotten · cíclica · 1,6 / 0,6 · 7. Abre fendas que trazem inimigos das regiões 1–4 (PA 3–4 cada, máx. 2 por vez). *Prioridade alta; interromper (ciano) a abertura.*
 7. **Null Executioner** — assassin · Forgotten · Void · 1,0 / 1,8 · 6. Aplica *Unwriting Mark* no jogador (ícone sobre a cabeça, contagem de 3 s); ao fim, teleporta e executa (círculo 2 m, Unblockable, 0,6 s). Quebrar linha de visão por 1 s ou acertá-lo com Stagger cancela. *Usar obstáculos ou interromper.*
 8. **Choir of the Pillars** — support (trio flutuante, conta como 1 unidade) · Ascendants · Echo · 3 × 0,6 / 0,4 · 7. Escudam aliados; se um membro morrer e os outros não morrerem em 4 s, ele renasce. *AoE ou foco rápido nos três.*
@@ -297,7 +297,7 @@ Toda run tem uma **Guardian Arena fixa na linha 9** (fim do Estrato II) com um d
 ## 8. Chefes de região
 
 ### 8.1 Regras gerais
-- **Duração alvo** com equipamento adequado: 3–4 min em Normal; a fase/variação extra de Eclipse leva a até 5 min (R16, TTK de 06 §3.13). Valores por chefe abaixo são de Normal. HP é derivado da duração alvo × DPS esperado da dificuldade (06-combate/10-progressao fornecem o DPS de referência).
+- **Duração alvo** com equipamento adequado: 3–4 min em Normal; a fase/variação extra de Eclipse leva a até 5 min (R16, TTK de 06 §3.13). Valores por chefe abaixo são de Normal. HP é derivado da duração alvo × DPS de referência × uptime, com `DPS_ref(eLvl) = HP_Std(eLvl) / 2,2 s` no `Faixa.max` da região (06 §3.13, R53); o uptime (fases, transições, janelas) é calibrado com o simulador (11).
 - **Fases** por limiar de HP; transição com 1,5–3 s de invulnerabilidade sinalizada (o chefe não ataca durante a transição).
 - **Stagger de chefe:** chefes são massa Colossal; barra e limiares de 06 §3.8.2. Ao encher, o chefe entra em **Broken** por 4 s com **+30% Vulnerability** (conta no teto de +60% de 07; não é fonte More) e hit-stop global. Após cada Break o limiar cresce 50%, até 3× (R11).
 - **CC em chefe:** Stun, Freeze, Root e Knockback viram Stagger (06). Exceções nomeadas de 07: Freeze vira **Frostbound** e Pull vira **Distortion** (+10% Vulnerability) (R10). Chefes e Guardians são imunes a Execute; efeitos de Execute viram +25% Vulnerability abaixo de 20% de vida (R08).
@@ -468,7 +468,7 @@ Templates data-driven que o gerador sorteia (peso por região e linha):
 | **Mixed Patrol** | Distribuição padrão por arquétipo | Geral |
 
 ### 10.5 Recompensas por inimigo
-- XP e Rift Shards dropados por inimigo são **proporcionais ao PA** (constantes por PA definidas em 10-progressao). Elites valem ×3 seu PA em XP/Rift Shards.
+- XP e Rift Shards dropados por inimigo são **proporcionais ao PA** (constantes por PA definidas em 10-progressao: XP em 10 §5.1, R56; 0,2 Rift Shard por PA em 10 §3.3, R57). Elites valem ×3 seu PA em XP/Rift Shards. Para XP, Guardian vale 60 PA e chefe 150 PA (R56).
 - Classes de loot para 05-loot: `Fodder`, `Standard`, `Heavy` (Tank), `Specialist`, `Elite`, `Guardian`, `Boss`.
 
 ---
@@ -684,7 +684,7 @@ Elite especial na última sala do Overrift (10): um Ascendant com **2 afixos fix
 | 02-equipamentos | Temas dos pools de 3 Uniques por chefe | Catálogo de Uniques de chefe (15 = 3 × 5, R28) |
 | 03-modificadores | Interações com clones/invocações (Arc Lancer, Overcharged), projéteis refletidos (Prismatic) | — |
 | 05-loot | Classes de loot por inimigo, tipos de sala e recompensas por sala, estrutura de 13 linhas + chefe, Guardian/chefe, Overrift Herald | Quantidades, raridades, drop rates, pity, baú "escolha 1 de 3" |
-| 06-combate | Tabela de tokens de ataque (R17), classes de massa por arquétipo, tempos de cada ataque (≥ pisos de 06), durações de sala/Guardian/chefe | Linguagem de telegraph, wind-ups mínimos, letalidade, TTK, curva base de HP/dano, Stagger/Broken, DR de CC, estados Stealth/Execute, HitFlags |
+| 06-combate | Tabela de tokens de ataque (R17), classes de massa por arquétipo, tempos de cada ataque (≥ pisos de 06), durações de sala/Guardian/chefe | Linguagem de telegraph, wind-ups mínimos, letalidade, TTK, curva base de HP/dano e DPS de referência (§3.13, R53), Stagger/Broken, DR de CC, estados Stealth/Execute, HitFlags |
 | 07-resonance | Inimigos que aplicam e usam status; Thermal Shatter na Pale Sovereign; Resonance inimiga na First Forgotten e no Sundering Heart | Definição de Burning, Chill/Freeze, Shock, Pull, Repeat, Decay (máx. 5), Vulnerability (teto +60%), Weakening, Detonation, Frostbound, Distortion, Frozen Armor |
 | 08-herois | Inimigos que exigem respostas de kit (Stealth, Pull, selamento de slot, escudo frontal) | Garantia de que cada herói tem resposta a Stealth/escudo frontal |
 | 10-progressao | Estrutura da run (linhas/Estratos), catálogo de Blessings e ranks, Curses, afixos de Elite por dificuldade, conteúdo de endgame (§15), evento Echo of a Fallen Eclipsed | Monster Level por região/dificuldade, regra de morte, moedas (Rift Shards, Heart of [Chefe], Aether Dust, Sundered Cores), serviços da Rest Room, Overrift, Distortions, modificadores de Ascension, constantes XP/Rift Shards por PA, reputação Remnant |

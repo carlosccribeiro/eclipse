@@ -1,5 +1,5 @@
 # D02 — Lacunas numéricas de design
-Fase 0 · Onda 1 · Status: ⏳ não iniciado
+Fase 0 · Onda 1 · Status: ✅ concluído (2026-11-07)
 Depende de: — · Desbloqueia: M07 (valores finais), M16, M19, M20 · Paralelo com: M01
 Branch: modulo/D02-lacunas-numericas
 Docs de referência: 06 §3.13 (TTK), 09 §2 (stats relativos, Pontos de Ameaça), 10 §5 (XP), §6 (moedas, Rift Shards), §7 (Monster Level), 00 §5 R16, R35, R36, R40, R44
@@ -24,9 +24,9 @@ Implementação; mudança de qualquer outro número já decidido.
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | Levantar alvos e restrições numéricas nos docs | investigação | investigador | — | `docs/roadmap/reports/D02-calculos.md` (seção Alvos) | ⏳ |
-| T2 | Propor curva HP/dano por eLvl, XP/PA e fator Rift Shards→Gold, com cálculos | decisão | principal | T1 | `docs/roadmap/reports/D02-calculos.md` | ⏳ |
-| T3 | Registrar nos docs donos e em 00 §5 | execução | executor | T2 | `docs/gdd/06-combate.md`, `docs/gdd/10-progressao.md`, `docs/gdd/09-inimigos.md` (referência), `docs/gdd/00-convencoes.md` | ⏳ |
+| T1 | Levantar alvos e restrições numéricas nos docs | investigação | principal | — | `docs/roadmap/reports/D02-calculos.md` (seção Alvos) | ✅ 23 alvos (A1–A23) |
+| T2 | Propor curva HP/dano por eLvl, XP/PA e fator Rift Shards→Gold, com cálculos | decisão | principal | T1 | `docs/roadmap/reports/D02-calculos.md`, `docs/roadmap/reports/D02-modelo.py` | ✅ aprovado pelo usuário (Q1–Q4) |
+| T3 | Registrar nos docs donos e em 00 §5 | execução | principal | T2 | `docs/gdd/06-combate.md`, `docs/gdd/10-progressao.md`, `docs/gdd/09-inimigos.md`, `docs/gdd/00-convencoes.md` | ✅ R53–R58 |
 
 ## Ondas internas
 1. T1 · 2. T2 · 3. T3
@@ -70,3 +70,8 @@ Ao final, atualize o Status e o Log do módulo e a tabela de status de docs/ROAD
 
 ## Log
 - 2026-11-07 Criado a partir das lacunas apontadas pelos planos de M07, M16, M19 e M20.
+- 2026-11-07 T1/T2 feitas na sessão principal (docs curtos o bastante; o modelo precisava das mesmas leituras). Alvos e cálculos em `reports/D02-calculos.md`; modelo reproduzível em `reports/D02-modelo.py`.
+- 2026-11-07 Conflitos achados e decididos pelo usuário: (Q1) dano relativo de 10 §7.2 (1,6/2,5/4×) × letalidade de 06 → letalidade vence, dano ≈2,4/4,3/7,9× (R54); (Q2) Tank HP× 4,0 não cabe no TTK Heavy → 2,5 (R55; tanks nomeados de 09 §5 ×0,625); (Q3) fator Shards→Gold 1/3/9/19, Ascension 19×(1+0,02N) (R57); (Q4) P11 do D01 incluída como R58 (03 aplica após o merge do D01).
+- 2026-11-07 Registrado: R53 curva HP/dano do Standard + DPS_ref (06 §3.13); R56 XP por PA + Guardian 60 / chefe 150 PA (10 §5.1); R57 0,2 Shard por PA + fator (10 §3.3); referências em 09 §4, §8.1, §10.5; 10 §7.2 com a escala resultante. Planos M07, M16, M17 e M20 atualizados para usar os valores em vez de placeholders.
+- 2026-11-07 Verificação: `grep -rn "TODO(10)\|TODO(06)" docs/gdd` vazio; R53–R58 em 00 §5.6; `python -I docs/roadmap/reports/D02-modelo.py` reproduz as tabelas (TTK Std 1,7–2,8 s; golpe comum dentro da letalidade em todos os tiers; nível 50 em ~43 h; conversão ~40% do Gold da run).
+- 2026-11-07 Pendências (ROADMAP §9): errata de níveis esperados em 05 §4.3; segundo herói em 12–15 h × Kindred Echo; coluna "média por run" de 09 §11.2; recalibração dos coeficientes pelo M14; aplicar R58 em 03.

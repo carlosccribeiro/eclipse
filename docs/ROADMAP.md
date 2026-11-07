@@ -127,7 +127,7 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | ID | Status | Atualizado | Nota |
 |---|---|---|---|
 | D01 | ✅ concluído | 2026-11-07 | 206 revisados (02/04 atualizados), 0 IDs removidos; script verde. 10 renomeações (LYR-SR-08 → Inward Spiral). Pendências P2–P13 em `reports/D01-divergencias.md` |
-| D02 | ⏳ não iniciado | 2026-11-07 | Deve fechar antes do M16 |
+| D02 | ✅ concluído | 2026-11-07 | R53–R58 em 00 §5.6; pendências em §9 |
 | M00 | ✅ concluído | 2026-11-07 | Unity 6000.3.28f1; CI GameCI verde (Core + EditMode + PlayMode). `build.yml` ativa após merge em `main` |
 | M01–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
@@ -173,7 +173,7 @@ Regras que os planos assumem uns dos outros. Cada módulo confere as que o afeta
 - **M06:** comandos do console de debug são registrados por atributo, um arquivo por comando.
 
 **Escopo deslocado**
-- O M07 inclui um 4º inimigo (Cinder Husk) para o soak test e usa a curva provisória de HP/dano até o D02.
+- O M07 inclui um 4º inimigo (Cinder Husk) para o soak test e usa a curva de HP/dano de 06 §3.13 (R53, fechada pelo D02).
 - O M08 inclui as 5 armas do Kael.
 - O M13 cobre os efeitos especiais dos itens nomeados do M12 e o save de loadout/inventário (usa o M18).
 - O Run Map Previewer (11 §3.15) fica no M15.
@@ -190,5 +190,12 @@ Regras que os planos assumem uns dos outros. Cada módulo confere as que o afeta
 **Trilha de arte e release**
 - A trilha A00 usa branches `arte/Axx-<slug>` e o prompt de disparo do próprio `A00-trilha-arte.md`.
 - **Pré-requisitos do M32 (decisões do usuário):** App ID da Steam, destino da telemetria opt-in e ferramenta de crash reporting.
+
+**Lacunas numéricas (D02 fechou HP/dano por eLvl, DPS_ref, XP e Rift Shards por PA, fator Shards → Gold — R53–R58)**
+- R58 (caps por alvo de KAE-BC-03 / LYR-SR-04, fragmentos de LYR-VO-04) é aplicado em `03-modificadores.md` depois do merge do D01.
+- Os coeficientes `36` (HP) e `20` (dano) de R53 são recalibrados pelo simulador do M14; a forma da curva fica.
+- 05 §4.3 ainda cita níveis esperados antigos (~15/30/40/44); o dono (10 §5.1, R40) diz ~25/35/45/48–50. Errata pendente para 05.
+- 10 §10 "segundo herói ao 50 em 12–15 h" não fecha com Kindred Echo (~25 h no modelo do D02). Validar no M20/M14.
+- 09 §11.2: a coluna "média esperada por run" soma mais que as 10 linhas livres; pelos pesos dá ~5 Combat / 1,6 Elite / 0,8 Treasure / 1,2 Shrine / 1,1 Event / 0,6 Challenge.
 
 **Relatórios** de módulos de design e simuladores ficam em `docs/roadmap/reports/`.

@@ -38,6 +38,7 @@ Princípio central: **a meta-progressão amplia opções, não obriga números.*
 19. **Rest Room é serviço de 10, sala de 09:** cura 40% grátis, recarrega o Aether Flask, Rift Anchor, Anchor e Temper; a Antecâmara oferece os mesmos serviços.
 20. **Bônus de quantidade de loot são aditivos, com teto total ×2,0** (Peril, Overrift, Boons e afins).
 21. **Sem revive.** A única forma de sobreviver a dano fatal é a Blessing *Second Wind* de 09. Revanche após a morte vem do evento Echo of a Fallen Eclipsed (§4.1).
+22. **Constantes por PA e conversão de Shards fechadas (R56, R57):** XP por PA segue o nível de conteúdo do eLvl e é dividido pela densidade; 0,2 Rift Shard por PA; fator Shards → Gold acompanha o Gold por run (1 / 3 / 9 / 19). — Ritmo de nível e peso da moeda da run iguais em todas as dificuldades.
 
 ---
 
@@ -77,8 +78,10 @@ Interações de meta-progressão (deste doc):
 
 - **Única moeda da run.** Todo evento, aposta, oferta ou compra dentro da run (09 §14) usa Rift Shards, nunca Gold.
 - Fonte: salas de combate (5–15), Elites (20–30), Treasure Rooms (40–60), Events.
+- **Inimigos (09 §10.5, R57):** **0,2 Rift Shard por PA**, Elites ×3, sem escala por dificuldade. Isso produz as faixas acima (sala de combate da linha 1 em Normal ≈ 5; linha 12 em Eclipse ≈ 15; Elite Arena ≈ 13–34, média ~22). Treasure Rooms e Events usam os valores fixos acima.
 - Usos dentro da run: Wandering Merchant (evento), reroll de oferta de Shrine (25, +25 a cada uso), serviços da Rest Room, escolhas de eventos de 09.
 - Ao fim: **Vitória/Extração** → saldo convertido em Gold (1 Shard = 5 Gold × fator de dificuldade). **Morte** → perdido (50% pode ser recuperado pelo evento Echo of a Fallen Eclipsed, §4.1).
+- **Fator de dificuldade (R57):** Normal **1** · Veteran **3** · Nightmare **9** · Eclipse **19** · Ascension N **19 × (1 + 0,02N)**. Acompanha o Gold por run de §6.6, então a conversão vale ~40% do Gold de uma run vencida em todos os tiers (saldo final típico ~65 Shards) e a decisão "gastar na run × levar para casa" pesa igual em todas as dificuldades.
 
 ### 3.4 Rest Room — serviços (dono: este doc)
 
@@ -148,6 +151,13 @@ Se uma atualização remover a definição de um item (StableId sem definição 
 - Permanente por herói. Respec de passivas e habilidades gratuito no Sanctuary (08-herois define o que cada nível concede).
 - **Dono da curva: este doc** (08 aplica as recompensas por nível). XP para o próximo nível: `XP(L) = 200 × L^1.8` (total até 50 ≈ 3,9 M XP).
 - Curva alvo: nível ~25 ao fim da campanha Normal, ~35 ao fim de Veteran, ~45 ao fim de Nightmare, **50 em ~40–50 h**, por volta da entrada em Eclipse. 05-loot usa esses níveis para validar o nível exigido dos itens (ceil(iLvl × 0,5)).
+- **XP por inimigo (R56; 09 §10.5 usa o PA):**
+  ```
+  NívelDeConteúdo(eLvl) = interpolação linear de (1 → 1), (24 → 25), (49 → 35), (69 → 45), (84 → 50); 50 acima de 84
+  XP_por_PA(eLvl)       = 2 × NívelDeConteúdo(eLvl)^1,1 ÷ MultDensidade(dificuldade)      // MultDensidade de 09 §10.1
+  XP do inimigo         = PA × XP_por_PA (Elites ×3) · Guardian = 60 PA · chefe = 150 PA (no eLvl da sala)
+  ```
+  `NívelDeConteúdo` é a curva alvo acima traduzida em eLvl; dividir pela densidade mantém o XP por sala igual entre dificuldades. Valores: eLvl 1 → 2,0 · 6 → 14,9 · 24 → 69 · 25 → 64 · 49 → 91 · 50 → 85 · 69 → 110 · 84 → 114 XP/PA. Verificação (run de 30 min, 65% de sucesso, XP retido na morte): nível 6 em 1,75 h, ~24 em 13,5 h, ~34 em 24 h, ~45 em 37,5 h, **50 em ~43 h** (`docs/roadmap/reports/D02-calculos.md` §3.5). Em Ascension o `NívelDeConteúdo` fica em 50 e o XP vai para Hero Mastery (§5.4).
 - **Kindred Echo (catch-up):** heróis com nível inferior a (maior nível da conta − 10) recebem **+100% XP** (limiar −10 níveis / bônus +100%; substitui o −5 / +75% proposto em 08). Reduz o custo de experimentar heróis novos sem pular o aprendizado do kit.
 - Após o nível 50, XP converte em **Hero Mastery** (§5.4).
 
@@ -377,19 +387,19 @@ Regras de região:
 | Ascension N | Até A90: igual ao iLvl base de 05 (85 → 100). **Acima de A90:** `eLvl = 100 + (N − 90)` → A100 = eLvl 110, só para escala (o iLvl de drop fica em 100) |||||
 
 - A faixa é sempre cópia de 05 §4.1: se 05 mudar uma faixa, esta tabela segue (o eLvl é sempre igual ao `iLvl_sala`).
-- O eLvl acima de 100 em A91–A100 confirma o previsto por 01 ("eLvl efetivo em Ascension pode passar de 100").
+- O eLvl acima de 100 em A91–A100 confirma o previsto por 01 ("eLvl efetivo em Ascension pode passar de 100"). Esse eLvl entra no K de Armor de 01; o HP e o dano em Ascension seguem a regra de 06 §3.13 (sala equivalente de Eclipse × 1,035^N / × 1,02^N, R53).
 
-**Escala relativa por tier (alvo resultante).** A curva de HP/dano base por eLvl é de **06-combate**; os multiplicadores abaixo são o alvo de poder relativo que a combinação "curva por eLvl × modificador de tier" deve produzir, já contando com o ganho de **+25% das Blessings** na run (00 §5, R35). 06 calibra a curva; 09 usa os stats relativos por arquétipo sobre ela.
+**Escala relativa por tier (resultado da curva de 06).** A curva de HP/dano base por eLvl é de **06-combate §3.13 (R53)**; os multiplicadores abaixo são o poder relativo que ela produz (média de cada tier contra a média do Normal), já contando com o ganho de **+25% das Blessings** na run (00 §5, R35). 09 usa os stats relativos por arquétipo sobre ela.
 
-| Tier | Vida relativa | Dano relativo |
-|---|---:|---:|
-| Normal | 1× | 1× |
-| Veteran | 3× | 1,6× |
-| Nightmare | 9× | 2,5× |
-| Eclipse | 25× | 4× |
-| Ascension N | 25 × 1,035^N | 4 × 1,02^N |
+| Tier | Vida relativa (alvo) | Vida (curva de 06) | Dano relativo (R54) |
+|---|---:|---:|---:|
+| Normal | 1× | 1× | 1× |
+| Veteran | 3× | ≈3,2× | ≈2,4× |
+| Nightmare | 9× | ≈8,9× | ≈4,3× |
+| Eclipse | 25× | ≈22× | ≈7,9× |
+| Ascension N | 25 × 1,035^N | Eclipse × 1,035^N | 7,9 × 1,02^N |
 
-O dano cresce mais devagar que a vida de propósito: o Ascension alto deve exigir otimização ofensiva e execução, não gerar one-shots (respeitando a tabela de letalidade de 06).
+O dano cresce mais devagar que a vida de propósito: o Ascension alto deve exigir otimização ofensiva e execução, não gerar one-shots. Na campanha, o dano relativo é o necessário para cumprir a tabela de letalidade de 06 (que vence, R54), porque a vida do jogador de referência cresce ~4× de Normal a Eclipse.
 
 ### 7.3 Ascension
 
