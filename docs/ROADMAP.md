@@ -128,7 +128,7 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 |---|---|---|---|
 | D01 | ⏳ não iniciado | 2026-11-07 | |
 | D02 | ⏳ não iniciado | 2026-11-07 | Deve fechar antes do M16 |
-| M00 | ⏳ não iniciado | 2026-11-07 | Requer Unity 6.3 LTS instalada e repositório GitHub criado |
+| M00 | ✅ concluído | 2026-11-07 | Unity 6000.3.28f1; CI GameCI verde (Core + EditMode + PlayMode). `build.yml` ativa após merge em `main` |
 | M01–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
