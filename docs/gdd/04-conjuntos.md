@@ -170,7 +170,7 @@ Habilidades: Cleaving Strike, Infernal Leap, Burning Chains, Ashen Guard, Worldb
 | Sovereign's Pyre-Plate | Chest | O peitoral ainda arde; dizem que o fogo é o coração do antigo rei. | Ember Damage ★*, Strength, Damage Over Time, Armor | Maximum Health / Damage Reduction / Elemental Resistance | KAE-CS-01 Burning Arc; KAE-AG-04 Reflective Plate |
 | Gauntlets of the Ember Oath | Hands | Quem as calça jura nunca mais conhecer o frio. | Ember Damage ★, Strength, Attack Speed, Critical Damage | Critical Chance / Armor Penetration / Resource Generation | KAE-CS-03 Executioner's Reach; KAE-BC-04 Searing Shackles |
 | Cuisses of the Ashen March | Legs | Usadas pela guarda que marchou através do incêndio sem recuar. | Ember Damage ★*, Strength, Area Damage, Maximum Health | Damage Over Time / Elemental Resistance / Duration of Effects | KAE-IL-02 Scorched Trail; KAE-BC-08 Molten Links |
-| Ashwalker Sabatons | Feet | Cada passo deixa uma pegada de brasa. | Ember Damage ★*, Movement Speed, Resource Generation, Maximum Health | Strength / Elemental Resistance / Status Resistance | KAE-IL-10 Ignition Landing; KAE-CS-07 Blood Fury |
+| Ashwalker Sabatons | Feet | Cada passo deixa uma pegada de brasa. | Ember Damage ★*, Movement Speed, Resource Generation, Maximum Health | Strength / Elemental Resistance / Status Resistance | KAE-IL-10 Combustion Landing; KAE-CS-07 Blood Fury |
 | Pendant of the Burning Throne | Amulet | Um coração de pedra que bate ao ritmo das chamas. | Ember Damage ★, Strength, Critical Damage, Damage Reduction | Skill Damage / Physical Resistance / Cooldown Reduction | KAE-WB-01 Tectonic Fissures; KAE-AG-01 Ember Riposte |
 
 **3 peças — Ashen Ascension**
@@ -200,7 +200,7 @@ Habilidades: Cleaving Strike, Infernal Leap, Burning Chains, Ashen Guard, Worldb
 | Ruinbreaker Hauberk | Chest | Feita das correntes que prendiam um Pilar em queda. | Ruin Damage ★*, Strength, Armor, Maximum Health | Damage Reduction / Physical Resistance / Damage Over Time | KAE-CS-06 Ruin Cleaver; KAE-WB-07 Executioner's Verdict |
 | Fistguards of the Fault | Hands | Racham pedra só de se fecharem. | Ruin Damage ★, Strength, Critical Damage, Armor Penetration | Stagger Damage / Physical Damage / Critical Chance | KAE-CS-08 Infernal Collapse; KAE-BC-08 Molten Links |
 | Tassets of Collapse | Legs | Pesam como uma catedral; quem as carrega não cede. | Ruin Damage ★*, Strength, Area Damage, Maximum Health | Armor / Damage Reduction / Damage Over Time | KAE-IL-09 Tectonic Landing; KAE-AG-07 Unyielding |
-| Band of the Cracked Pillar | Ring | Um fragmento do Pilar da Lei preso em ferro. | Ruin Damage ★, Armor Penetration, Critical Chance, Physical Damage | Critical Damage / Void Resistance / Resource Generation | KAE-WB-09 Pyre Crown; KAE-IL-10 Ignition Landing |
+| Band of the Cracked Pillar | Ring | Um fragmento do Pilar da Lei preso em ferro. | Ruin Damage ★, Armor Penetration, Critical Chance, Physical Damage | Critical Damage / Void Resistance / Resource Generation | KAE-WB-09 Pyre Crown; KAE-IL-10 Combustion Landing |
 | Signet of Final Weight | Ring | O selo que encerrava sentenças sem apelação. | Ruin Damage ★, Physical Damage, Critical Damage, Maximum Health | Attack Speed / Skill Damage / Resource Generation | KAE-CS-02 Volatile Impact; KAE-BC-02 Fan of Chains |
 | Shard of the First Fault | Relic | A primeira rachadura do Sundering, ainda se alargando. | Ruin Damage ★, Damage Over Time, Area Damage, Duration of Effects | Status Resistance / Projectile Damage / Ember Damage | KAE-WB-01 Tectonic Fissures; KAE-IL-04 Gravity Crash |
 
@@ -228,7 +228,7 @@ Habilidades: Cleaving Strike, Infernal Leap, Burning Chains, Ashen Guard, Worldb
 | Aegis of the Unfallen | Chest | Mil marcas de lâmina e nenhum furo. | Armor ★, Strength, Damage Reduction, Health Regeneration | Block Chance / Maximum Health / Shield Strength | KAE-AG-03 Bulwark Stance; KAE-WB-07 Executioner's Verdict |
 | Stonevow Treads | Feet | Quem jura não recuar sente o chão segurar seus pés. | Armor ★, Movement Speed, Status Resistance, Maximum Health | Physical Resistance / Dodge Chance / Resource Generation | KAE-IL-03 Twin Leap; KAE-AG-02 Absorbing Ash |
 | Ward of the Last Gate | Amulet | A chave de um portão que já não existe. | Armor ★*, Strength, Maximum Health, Damage Reduction | Physical Resistance / Shield Strength / Critical Damage | KAE-BC-01 Chain Pull; KAE-CS-07 Blood Fury |
-| Ember of the Watchfire | Relic | A fogueira da vigília nunca se apagou. | Armor ★*, Status Resistance, Ember Damage, Duration of Effects | Damage Over Time / Area Damage / Ruin Damage | KAE-WB-08 Ashfall; KAE-BC-07 Molten Anchor |
+| Ember of the Watchfire | Relic | A fogueira da vigília nunca se apagou. | Armor ★*, Status Resistance, Ember Damage, Duration of Effects | Damage Over Time / Area Damage / Ruin Damage | KAE-WB-08 Ashfall; KAE-BC-07 Molten Knot |
 | Mortar of Ages | Relic | Argamassa tirada da fundação do Sanctuary. | Armor ★*, Status Resistance, Area Damage, Ruin Damage | Duration of Effects / Damage Over Time / Ember Damage | KAE-AG-04 Reflective Plate; KAE-IL-09 Tectonic Landing |
 
 **3 peças — Unyielding Wall**
@@ -276,7 +276,7 @@ Habilidades: Frost Lance, Void Orb, Shattered Reality, Astral Shift, Absolute Ze
 |---|---|---|---|---|---|
 | Rimecrown of the Empress | Head | A coroa nunca derrete, nem no coração do Ashen Wastes. | Frost Damage ★*, Intelligence, Critical Chance, Maximum Health | Cooldown Reduction / Skill Damage / Elemental Resistance | LYR-FL-01 Piercing Lance; LYR-AZ-07 Frozen Sanctum |
 | Glacial Court Gown | Chest | Tecida com geada que um dia foi lágrima. | Frost Damage ★*, Intelligence, Maximum Health, Shield Strength | Elemental Resistance / Damage Reduction / Damage Over Time | LYR-SR-09 Frozen Fracture; LYR-FL-02 Splinter Burst |
-| Frostveil Skirts | Legs | O frio as acompanha como uma cauda real. | Frost Damage ★*, Intelligence, Area Damage, Duration of Effects | Maximum Health / Elemental Resistance / Dodge Chance | LYR-AZ-01 Eternal Winter; LYR-AS-02 Frost Step |
+| Frostveil Skirts | Legs | O frio as acompanha como uma cauda real. | Frost Damage ★*, Intelligence, Area Damage, Duration of Effects | Maximum Health / Elemental Resistance / Dodge Chance | LYR-AZ-01 Lingering Winter; LYR-AS-02 Frost Step |
 | Stillwater Slippers | Feet | Onde ela pisa, a água para de correr. | Frost Damage ★*, Movement Speed, Dodge Chance, Resource Generation | Intelligence / Maximum Health / Status Resistance | LYR-AS-08 Slipstream Cast; LYR-FL-08 Overflowing Lance |
 | Ring of the Unthawed | Ring | Um anel que guarda o último instante antes do gelo. | Frost Damage ★, Critical Damage, Cast Speed, Skill Damage | Critical Chance / Resource Generation / Elemental Resistance | LYR-FL-09 Arcane Lance; LYR-SR-04 Collapsing Reality |
 | Tear of the Pale Court | Amulet | Dizem que a imperatriz chorou uma única vez. | Frost Damage ★, Intelligence, Skill Damage, Critical Damage | Shield Strength / Cooldown Reduction / Elemental Resistance | LYR-AZ-02 Glacial Prison; LYR-VO-10 Cold Collapse |
@@ -301,9 +301,9 @@ Habilidades: Frost Lance, Void Orb, Shattered Reality, Astral Shift, Absolute Ze
 
 | Peça | Slot | Lore | Fixos | Aberto (1 de 3) | Modificadores |
 |---|---|---|---|---|---|
-| Veil of the Seeing Dark | Head | Quem a usa vê através das paredes da realidade. | Void Damage ★*, Intelligence, Cooldown Reduction, Maximum Health | Skill Damage / Critical Chance / Void Resistance | LYR-VO-03 Twin Orbs; LYR-SR-08 Gravity Well |
+| Veil of the Seeing Dark | Head | Quem a usa vê através das paredes da realidade. | Void Damage ★*, Intelligence, Cooldown Reduction, Maximum Health | Skill Damage / Critical Chance / Void Resistance | LYR-VO-03 Twin Orbs; LYR-SR-08 Inward Spiral |
 | Gloves of Bent Light | Hands | A luz contorna os dedos de quem as calça. | Void Damage ★, Intelligence, Cast Speed, Critical Chance | Critical Damage / Resource Generation / Maximum Health | LYR-VO-05 Growing Void; LYR-AS-01 Void Wake |
-| Oracle's Eye | Amulet | Um olho que nunca fecha, preso em vidro negro. | Void Damage ★, Intelligence, Skill Damage, Critical Damage | Void Resistance / Damage Reduction / Cooldown Reduction | LYR-SR-02 Time Distortion; LYR-AZ-08 Storm Front |
+| Oracle's Eye | Amulet | Um olho que nunca fecha, preso em vidro negro. | Void Damage ★, Intelligence, Skill Damage, Critical Damage | Void Resistance / Damage Reduction / Cooldown Reduction | LYR-SR-02 Time Dilation; LYR-AZ-08 Storm Front |
 | Loop of the Far Edge | Ring | O limite do que pode ser visto, fechado em círculo. | Void Damage ★, Area Damage, Resource Generation, Critical Chance | Cast Speed / Skill Damage / Void Resistance | LYR-VO-06 Unstable Orb; LYR-FL-09 Arcane Lance |
 | Lens of the Collapsed Star | Relic | Uma estrela que caiu para dentro de si mesma. | Void Damage ★, Area Damage, Duration of Effects, Damage Over Time | Frost Damage / Status Resistance / Projectile Damage | LYR-SR-04 Collapsing Reality; LYR-VO-09 Rift Orb |
 | Astrolabe of Nothing | Relic | Mede distâncias que não existem mais. | Void Damage ★, Projectile Damage, Duration of Effects, Status Resistance | Area Damage / Damage Over Time / Frost Damage | LYR-AS-02 Frost Step; LYR-AZ-07 Frozen Sanctum |
@@ -331,7 +331,7 @@ Habilidades: Frost Lance, Void Orb, Shattered Reality, Astral Shift, Absolute Ze
 | Paradox Wraps | Hands | As mãos conjuram antes que a mente decida. | Resource Generation ★, Intelligence, Cast Speed, Critical Chance | Critical Damage / Resource Cost Reduction / Void Damage | LYR-VO-08 Charge Battery; LYR-AS-08 Slipstream Cast |
 | Leggings of Recursive Script | Legs | Uma frase que termina onde começa. | Resource Generation ★*, Intelligence, Area Damage, Maximum Health | Duration of Effects / Dodge Chance / Damage Over Time | LYR-AZ-09 Glacial Reserve; LYR-SR-03 Mirror Zone |
 | Ouroboros Ring | Ring | Morde a própria cauda; nunca termina de se consumir. | Resource Generation ★, Resource Cost Reduction, Critical Damage, Maximum Resource | Cast Speed / Skill Damage / Frost Damage | LYR-FL-07 Arcane Echo Lance; LYR-VO-04 Rime Core |
-| Ring of the Second Answer | Ring | Toda pergunta do Aether tem duas respostas. | Resource Generation ★, Skill Damage, Cast Speed, Maximum Health | Critical Chance / Void Damage / Maximum Resource | LYR-AS-05 Arcane Refund; LYR-FL-06 Cold Snap |
+| Ring of the Second Answer | Ring | Toda pergunta do Aether tem duas respostas. | Resource Generation ★, Skill Damage, Cast Speed, Maximum Health | Critical Chance / Void Damage / Maximum Resource | LYR-AS-05 Arcane Refund; LYR-FL-06 Shattering Lance |
 | Hourglass Without Sand | Relic | O tempo escorre, mas nada cai. | Resource Generation ★*, Duration of Effects, Area Damage, Status Resistance | Frost Damage / Void Damage / Damage Over Time | LYR-AZ-05 Shatterstorm; LYR-VO-02 Orbital |
 
 **3 peças — Paradox Engine**
@@ -401,7 +401,7 @@ Habilidades: Phantom Shot, Shadowstep, Storm Trap, Echo Clone, Thousand Reflecti
 
 | Peça | Slot | Lore | Fixos | Aberto (1 de 3) | Modificadores |
 |---|---|---|---|---|---|
-| Mask of Many Faces | Head | Por trás dela não há rosto, só reflexos. | Echo Damage ★*, Dexterity, Cooldown Reduction, Maximum Health | Skill Damage / Critical Chance / Status Resistance | NYX-EC-04 Perfect Mirror; NYX-TR-01 Endless Reflections |
+| Mask of Many Faces | Head | Por trás dela não há rosto, só reflexos. | Echo Damage ★*, Dexterity, Cooldown Reduction, Maximum Health | Skill Damage / Critical Chance / Status Resistance | NYX-EC-04 Flawless Mirror; NYX-TR-01 Endless Reflections |
 | Mirrorweave Vest | Chest | O tecido devolve a luz como um espelho líquido. | Echo Damage ★*, Dexterity, Summon Duration, Maximum Health | Summon Damage / Armor / Shield Strength | NYX-EC-06 Lingering Echo; NYX-PS-05 Echo Shot |
 | Ring of the Unspoken Twin | Ring | A irmã que nunca nasceu. | Echo Damage ★, Critical Chance, Summon Damage, Skill Damage | Critical Damage / Attack Speed / Maximum Health | NYX-ST-06 Echo Mine; NYX-EC-02 Explosive Echo |
 | Ring of the Spoken Twin | Ring | A irmã que nasceu duas vezes. | Echo Damage ★, Critical Damage, Summon Duration, Attack Speed | Critical Chance / Storm Damage / Resource Generation | NYX-SS-05 Rewind Step; NYX-PS-08 Marked Prey |

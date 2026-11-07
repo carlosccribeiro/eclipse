@@ -126,7 +126,7 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 
 | ID | Status | Atualizado | Nota |
 |---|---|---|---|
-| D01 | ⏳ não iniciado | 2026-11-07 | |
+| D01 | ✅ concluído | 2026-11-07 | 206 revisados (02/04 atualizados), 0 IDs removidos; script verde. 10 renomeações (LYR-SR-08 → Inward Spiral). Pendências P2–P13 em `reports/D01-divergencias.md` |
 | D02 | ⏳ não iniciado | 2026-11-07 | Deve fechar antes do M16 |
 | M00 | ⏳ não iniciado | 2026-11-07 | Requer Unity 6.3 LTS instalada e repositório GitHub criado |
 | M01–M32 | ⏳ não iniciado | 2026-11-07 | |

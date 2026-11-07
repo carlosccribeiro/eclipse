@@ -333,7 +333,7 @@ Distribuição: Kael 16, Lyra 17, Nyx 16, Orun 16, Universais 19 → **54 Legend
 | Implícito | Area Damage (faixa T5 × 0,5) |
 | Fixos | Strength · Attack Speed · Ember Damage (×1,5 MH) · Critical Chance — banda padrão da Faixa Nomeada T5 |
 | Aberto | Area Damage / Physical Damage / Resource Generation |
-| Modificadores | KAE-CS-01 (Burning Arc) · KAE-IL-10 (Ignition Landing) |
+| Modificadores | KAE-CS-01 (Burning Arc) · KAE-IL-10 (Combustion Landing) |
 | Efeito | O Heavy da Greatsword deixa um cone de chão em chamas (4 m, 3 s) que aplica Burning. |
 | Lore | "Forjada no primeiro incêndio após o Sundering; ainda morde o ar." |
 
@@ -341,7 +341,7 @@ Distribuição: Kael 16, Lyra 17, Nyx 16, Orun 16, Universais 19 → **54 Legend
 
 | # | Item | Slot · Base | Tipo | Efeito especial | Modificadores | Build |
 |---|---|---|---|---|---|---|
-| K1 | **Ashfang** | MH · Greatsword | Legendary | O Heavy deixa um cone em chamas (4 m, 3 s, Burning). | KAE-CS-01 (Burning Arc) · KAE-IL-10 (Ignition Landing) | Inferno |
+| K1 | **Ashfang** | MH · Greatsword | Legendary | O Heavy deixa um cone em chamas (4 m, 3 s, Burning). | KAE-CS-01 (Burning Arc) · KAE-IL-10 (Combustion Landing) | Inferno |
 | K2 | **Twinmaw** | MH · Dual Axes | Legendary | Cada 5º golpe consecutivo aplica 2 acúmulos de Decay. | KAE-CS-06 (Ruin Cleaver) · KAE-BC-03 (Linked Torment) | Executioner |
 | K3 | **Colossus Knell** | MH · Warhammer | **Unique** | Inimigos em Stagger recebem 25% More dano de Warhammer. Worldbreaker aplica Stagger instantâneo em não-chefes e +50% de Stagger Damage em chefes. | KAE-WB-01 (Tectonic Fissures) · KAE-IL-09 (Tectonic Landing) | Juggernaut |
 | K4 | **Oathkeeper's Edge** | MH · Longsword | Legendary | Um Parry (06) com Ashen Guard torna o próximo básico crítico garantido e gera 15 Fury. | KAE-AG-01 (Ember Riposte) · KAE-CS-03 (Executioner's Reach) | Juggernaut |
@@ -354,9 +354,9 @@ Distribuição: Kael 16, Lyra 17, Nyx 16, Orun 16, Universais 19 → **54 Legend
 | K11 | **Treads of Scorched Earth** | Feet · Sabatons | Legendary | Infernal Leap deixa uma trilha de fogo por 4 s; sobre ela, +15% Movement Speed. | KAE-IL-05 (Fury Leap) · KAE-AG-05 (Lingering Ash) | Inferno |
 | K12 | **Ring of the Last Stand** | Ring · Band | **Unique** | Abaixo de 35% de vida: 40% More Physical Damage e Fury não decai. Uma vez a cada 60 s, dano fatal deixa Kael com 1 de vida e 2 s de invulnerabilidade. | KAE-WB-05 (Fury Reservoir) · KAE-AG-03 (Bulwark Stance) | Juggernaut |
 | K13 | **Pendant of the Ashbound** | Amulet · Pendant | Legendary | Cada 25 Fury gasta reduz o cooldown de Worldbreaker em 1 s. | KAE-WB-08 (Ashfall) · KAE-BC-08 (Molten Links) | Todas |
-| K14 | **Ember of the First Pillar** | Relic · Cinder | Legendary | Quando um inimigo em Burning morre, o Burning se espalha para 1 inimigo próximo (4 m) com a duração total. | KAE-BC-07 (Molten Anchor) · KAE-CS-02 (Volatile Impact) | Inferno |
+| K14 | **Ember of the First Pillar** | Relic · Cinder | Legendary | Quando um inimigo em Burning morre, o Burning se espalha para 1 inimigo próximo (4 m) com a duração total. | KAE-BC-07 (Molten Knot) · KAE-CS-02 (Volatile Impact) | Inferno |
 | K15 | **Ordeal Greaves** | Legs · Greaves | **Unique** | Cada Parry (06) com Ashen Guard concede 1 acúmulo de Ordeal (máx. 5). Cada acúmulo dá +6% More dano a Cleaving Strike e Worldbreaker (máx. 30%). Receber dano sem bloquear remove 1 acúmulo. | KAE-AG-04 (Reflective Plate) · KAE-AG-02 (Absorbing Ash) | Juggernaut |
-| K16 | **Sunderbrand, the First Fault** | MH · Greatsword | **Unique** (Pinnacle) | Worldbreaker abre uma Fenda do Sundering em linha de 14 m por 6 s. Cleaving Strike usado sobre a fenda repete seu impacto na fenda inteira com 40% do dano (réplica Echo, Proc Coefficient 0,5). Worldbreaker gera 50 Fury. | KAE-WB-02 (Cataclysm Chain) · SIG-K16 (Pillarfall) | Todas |
+| K16 | **Sunderbrand, the First Fault** | MH · Greatsword | **Unique** (Pinnacle) | Worldbreaker abre uma Fenda do Sundering em linha de 14 m por 6 s. Cleaving Strike usado sobre a fenda repete seu impacto na fenda inteira com 40% do dano (réplica Echo, Proc Coefficient 0,5). Worldbreaker gera 50 Fury. | KAE-WB-02 (Rolling Quake) · SIG-K16 (Pillarfall) | Todas |
 
 `SIG-K16 Pillarfall` (Worldbreaker, Behavior): antes do impacto, puxa inimigos em 6 m para o centro (em chefes vira Distortion, 07). Valor: raio de puxão [5–6] m.
 
@@ -385,11 +385,11 @@ Distribuição: Kael 16, Lyra 17, Nyx 16, Orun 16, Universais 19 → **54 Legend
 
 | # | Item | Slot · Base | Tipo | Efeito especial | Modificadores | Build |
 |---|---|---|---|---|---|---|
-| L1 | **Rimeheart** | MH · Arcane Staff | Legendary | O 3º projétil do combo cria uma Frost Nova de 3 m que aplica 2 acúmulos de Chill. | LYR-FL-02 (Splinter Burst) · LYR-AZ-01 (Eternal Winter) | Permafrost |
+| L1 | **Rimeheart** | MH · Arcane Staff | Legendary | O 3º projétil do combo cria uma Frost Nova de 3 m que aplica 2 acúmulos de Chill. | LYR-FL-02 (Splinter Burst) · LYR-AZ-01 (Lingering Winter) | Permafrost |
 | L2 | **Tome of Closed Doors** | MH · Spellbook | **Unique** | Habilidades em cooldown podem ser lançadas consumindo 2 Arcane Charges (o cooldown não é reiniciado). | LYR-AS-06 (Return Vector) · LYR-SR-10 (Unstable Pages) | Overload |
 | L3 | **Whisper & Wane** | MH · Twin Wands | Legendary | Acertar o mesmo alvo com as duas varinhas em 1 s aplica um acúmulo de Chill e um de Corruption (habilita Resonance Frost + Void). | LYR-FL-04 (Frost Volley) · LYR-VO-02 (Orbital) | Permafrost / Singularity |
-| L4 | **Heart of the Glacier** | MH · Crystal Orb | Legendary | O cristal orbitante aplica o dobro de buildup de Freeze; após 4 golpes seguidos no mesmo alvo, aplica Freeze (DR de 06). | LYR-FL-03 (Glacial Spear) · LYR-AZ-02 (Glacial Prison) | Permafrost |
-| L5 | **Eye of the Collapse** | MH · Void Focus | **Unique** | Void Orb vira singularidade estacionária: puxa inimigos em 6 m por 3 s e implode, com +5% More dano por inimigo puxado (máx. 40%, 8 inimigos). | LYR-VO-01 (Singularity Core) · LYR-SR-08 (Gravity Well) | Singularity |
+| L4 | **Heart of the Glacier** | MH · Crystal Orb | Legendary | O cristal orbitante aplica o dobro de buildup de Freeze; após 4 golpes seguidos no mesmo alvo, aplica Freeze (DR de 06). | LYR-FL-03 (Glacial Javelin) · LYR-AZ-02 (Glacial Prison) | Permafrost |
+| L5 | **Eye of the Collapse** | MH · Void Focus | **Unique** | Void Orb vira singularidade estacionária: puxa inimigos em 6 m por 3 s e implode, com +5% More dano por inimigo puxado (máx. 40%, 8 inimigos). | LYR-VO-01 (Singularity Core) · LYR-SR-08 (Inward Spiral) | Singularity |
 | L6 | **Grimoire of Hollow Stars** | OH · Grimoire | Legendary | Inimigos mortos enquanto Frozen concedem 1 Arcane Charge (ICD 1 s). | LYR-AS-02 (Frost Step) · LYR-FL-09 (Arcane Lance) | Permafrost / Overload |
 | L7 | **Diadem of the Pale Choir** | Head · Circlet | Legendary | Freeze aplicado por Lyra marca o alvo: o próximo dano Void recebido ganha +40% Increased. | LYR-SR-09 (Frozen Fracture) · LYR-VO-10 (Cold Collapse) | Híbrida |
 | L8 | **Mantle of the Veil** | Chest · Robe | Legendary | Astral Shift deixa uma ilusão que aplica Taunt (06) por 2 s e explode em Void (120% wpn). | LYR-AS-01 (Void Wake) · LYR-AZ-07 (Frozen Sanctum) | Singularity |
@@ -397,7 +397,7 @@ Distribuição: Kael 16, Lyra 17, Nyx 16, Orun 16, Universais 19 → **54 Legend
 | L10 | **Leggings of Drifting Snow** | Legs · Leggings | Legendary | A cada 2 s em movimento, ganha 1 Frozen Armor (07; absorve 8% da vida máxima; máx. 3). | LYR-AS-07 (Lingering Phase) · LYR-SR-05 (Permafrost Rift) | Permafrost |
 | L11 | **Starwalker Slippers** | Feet · Treads | Legendary | Astral Shift ganha +1 carga; depois de usá-lo, a próxima habilidade tem +30% Cast Speed. | LYR-VO-09 (Rift Orb) · LYR-AS-08 (Slipstream Cast) | Overload |
 | L12 | **Band of the Paradox** | Ring · Signet | Legendary | +1 Arcane Charge máxima (exceção de item ao teto base 6, limitada ao teto absoluto 8 — 08 §11.1). Gastar Charges concede +3% Cast Speed por Charge por 4 s. | LYR-VO-08 (Charge Battery) · LYR-AS-05 (Arcane Refund) | Overload |
-| L13 | **Locket of the Last Winter** | Amulet · Locket | Legendary | Shatter em inimigos Frozen reduz o cooldown de Absolute Zero em 1 s. | LYR-AZ-05 (Shatterstorm) · LYR-FL-06 (Cold Snap) | Permafrost |
+| L13 | **Locket of the Last Winter** | Amulet · Locket | Legendary | Shatter em inimigos Frozen reduz o cooldown de Absolute Zero em 1 s. | LYR-AZ-05 (Shatterstorm) · LYR-FL-06 (Shattering Lance) | Permafrost |
 | L14 | **Shard of the Silent Pillar** | Relic · Lodestone | Legendary | Efeitos de Pull de Lyra duram +50% e aplicam 1 acúmulo de Chill por segundo nos alvos puxados. | LYR-VO-05 (Growing Void) · LYR-SR-04 (Collapsing Reality) | Singularity |
 | L15 | **Grimoire of the Pale Court** | OH · Grimoire | **Unique** | Cada Shatter (07) causado por Lyra libera um anel de gelo de 4 m com Chill pesado e concede +6% More Frost Damage por 6 s (acumula 5×, máx. 30%). | LYR-AZ-09 (Glacial Reserve) · SIG-L15 (Court of Rime) | Permafrost |
 | L16 | **Stepless Path** | Feet · Treads | **Unique** | Enquanto Lyra tiver Arcane Charges, Astral Shift não tem cooldown: cada uso consome 1 Charge. A próxima habilidade nos 2 s seguintes causa 20% More dano. | LYR-AS-04 (Swap Shift) · LYR-VO-03 (Twin Orbs) | Overload |
@@ -435,9 +435,9 @@ Distribuição: Kael 16, Lyra 17, Nyx 16, Orun 16, Universais 19 → **54 Legend
 | N2 | **Thunderstring** | MH · Longbow | Legendary | O tiro carregado completo vira Chain Lightning com 4 saltos (70% do dano por salto). | NYX-PS-01 (Fork Shot) · NYX-ST-03 (Overload Trap) | Storm Reaper |
 | N3 | **Gallows Repeater** | MH · Crossbow | Legendary | O 3º virote de cada rajada executa inimigos comuns abaixo de 12% de vida (Elites: 6%); abates reduzem a próxima recarga em 50%. | NYX-PS-08 (Marked Prey) · NYX-SS-06 (Kinetic Reload) | Assassin |
 | N4 | **Tempest Pair** | MH · Twin Blades | **Unique** | Cada 10% de Movement Speed acima da base concede 6% More dano Storm (máx. 36%). A investida giratória (Heavy) aplica Shock. | NYX-SS-01 (Lightning Dash) · NYX-TR-03 (Storm Prism) | Storm Reaper |
-| N5 | **Orbit of the Twice-Born** | MH · Chakrams | **Unique** | O retorno do chakram repete os efeitos "on hit" da ida (réplica Echo, Proc Coefficient 0,5). Echo Clones também arremessam chakrams. | NYX-EC-04 (Perfect Mirror) · NYX-PS-02 (Ricochet Bolt) | Echo Architect |
+| N5 | **Orbit of the Twice-Born** | MH · Chakrams | **Unique** | O retorno do chakram repete os efeitos "on hit" da ida (réplica Echo, Proc Coefficient 0,5). Echo Clones também arremessam chakrams. | NYX-EC-04 (Flawless Mirror) · NYX-PS-02 (Ricochet Bolt) | Echo Architect |
 | N6 | **Phantom Quiver** | OH · Quiver | Legendary | A cada 4º Phantom Shot, dispara uma cópia Echo com 50% do dano. | NYX-PS-05 (Echo Shot) · NYX-EC-06 (Lingering Echo) | Echo Architect |
-| N7 | **Hood of the Unseen** | Head · Hood | Legendary | Após Shadowstep, 1,5 s de Stealth (06); o primeiro acerto é crítico garantido com +50% Critical Damage. | NYX-SS-02 (Afterimage) · NYX-SS-07 (Execution Step) | Assassin |
+| N7 | **Hood of the Unseen** | Head · Hood | Legendary | Após Shadowstep, 1,5 s de Stealth (06); o primeiro acerto é crítico garantido com +50% Critical Damage. | NYX-SS-02 (Phantom Lure) · NYX-SS-07 (Execution Step) | Assassin |
 | N8 | **Stormweave Vest** | Chest · Jerkin | Legendary | Inimigos em Shock que atingem Nyx sofrem descarga Storm de 80% wpn; aplicar Shock concede +5% Movement Speed por 3 s (acumula 3×). | NYX-ST-08 (Static Field Trap) · NYX-SS-08 (Static Wake) | Storm Reaper |
 | N9 | **Grips of a Thousand Cuts** | Hands · Grips | Legendary | Cada acerto consecutivo concede +2% Attack Speed (máx. 20%); zera após 1,5 s sem acertos. | NYX-PS-04 (Phantom Volley) · NYX-TR-07 (Endless Cuts) | Storm Reaper / Assassin |
 | N10 | **Legwraps of the Hunted** | Legs · Leggings | Legendary | Um Perfect Dodge (06) torna o próximo Phantom Shot crítico e gera 15 Echo Energy. | NYX-SS-04 (Chain Step) · NYX-ST-01 (Tesla Network) | Assassin |
