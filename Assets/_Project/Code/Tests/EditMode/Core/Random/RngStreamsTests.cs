@@ -82,6 +82,14 @@ namespace Eclipse.Core.Random.Tests
         }
 
         [Test]
+        public void Fork_rejects_empty_key()
+        {
+            var s = new RngStreams(7);
+            Assert.Throws<System.ArgumentException>(() => s.Fork(RngStream.Loot, default(StableId)));
+            Assert.Throws<System.ArgumentException>(() => s.Fork(RngStream.Loot, default(StableId), 3UL));
+        }
+
+        [Test]
         public void Fork_with_salt_distinguishes_same_key_and_salt_zero_matches_unsalted()
         {
             var s = new RngStreams(7);

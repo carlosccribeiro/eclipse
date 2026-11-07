@@ -47,11 +47,13 @@ namespace Eclipse.Core.Random
         /// Like <see cref="Fork(RngStream, StableId)"/>, with a <paramref name="salt"/> (e.g. a drop counter)
         /// so the same key can yield distinct sub-generators: <c>FromSeed(streamSeed[i] ^ Fnv1a64(key) ^
         /// (salt * 0x9E3779B97F4A7C15))</c>. Salt 0 equals the unsalted overload. Does not consume the stream.
+        /// Throws <see cref="ArgumentException"/> for an empty key (avoids correlated rolls from missing ids).
         /// </summary>
         public Xoshiro128StarStar Fork(RngStream stream, StableId key, ulong salt)
         {
             int i = (int)stream;
             if ((uint)i >= Count) throw new ArgumentOutOfRangeException(nameof(stream));
+            if (key.IsEmpty) throw new ArgumentException("Fork key must not be an empty StableId.", nameof(key));
             ulong mixedSalt = unchecked(salt * 0x9E3779B97F4A7C15UL);
             return Xoshiro128StarStar.FromSeed(_seeds[i] ^ Fnv1a64(key.Value) ^ mixedSalt);
         }
