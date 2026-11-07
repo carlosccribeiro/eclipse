@@ -132,7 +132,7 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | M01 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Ids, Tags/HitFlags, RNG xoshiro128** + 5 streams, SimulationClock 60 Hz, EventBus 0 B, Definitions. dotnet 132/132, EditMode 131/131 |
 | M02 | ✅ concluído | 2026-11-07 | CSV→SO→registro→validador; piloto Affinities (6) + String Table `Definitions`. dotnet 144/144, EditMode 188/188. Comando: `…DataPipeline.DataPipeline.ImportAndValidate`. `data-validate` no CI a confirmar |
 | M03 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Stats (StatBlock, DR/caps), Attributes, Damage (ofensivo/recebido), CrowdControl, Procs. Exemplo 01 §3.12 reproduzido. dotnet 299/299, EditMode 297/297. Pendências no Log do M03 |
-| M04 | ✅ concluído | 2026-11-07 | Tick 60 Hz, Input+InputBuffer 9 f, motor/mira, esquiva 06 §3.7, câmera Cinemachine+dither, CombatSandbox. EditMode 403/403, PlayMode 19/19. Pendente: checagem manual e confirmação do Perfect Dodge (ver Log) |
+| M04 | ✅ concluído | 2026-11-07 | Tick 60 Hz, Input+InputBuffer 9 f, motor/mira, esquiva 06 §3.7, câmera Cinemachine+dither, CombatSandbox. EditMode 403/403, PlayMode 19/19. Pendente: checagem manual (ver Log) |
 | M05–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
