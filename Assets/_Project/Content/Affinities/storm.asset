@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8386d6e36b889124694bc66ce20fc9d8, type: 3}
+  m_Name: storm
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Affinities.AffinityDefinition
+  stableId: affinity.core.storm
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: fb3ffcf5dfc7fac5
+  sourceDoc: "07 \xA710"
+  nameEn: Storm
+  affinityTag: 19
+  primary: {r: 0.9607843, g: 0.9019608, b: 0.3882353, a: 1}
+  secondary: {r: 0.7058824, g: 0.6117647, b: 1, a: 1}
+  primaryStatusId: Shock
+  icon: {fileID: 0}
+  shapeLanguage: Linhas quebradas, arcos
+  references:
+    version: 2
+    RefIds: []

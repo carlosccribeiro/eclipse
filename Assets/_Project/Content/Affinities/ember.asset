@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8386d6e36b889124694bc66ce20fc9d8, type: 3}
+  m_Name: ember
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Affinities.AffinityDefinition
+  stableId: affinity.core.ember
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 12452c0e9b5cf475
+  sourceDoc: "07 \xA710"
+  nameEn: Ember
+  affinityTag: 17
+  primary: {r: 1, g: 0.41568628, b: 0.101960786, a: 1}
+  secondary: {r: 1, g: 0.7607843, b: 0.23921569, a: 1}
+  primaryStatusId: Burning
+  icon: {fileID: 0}
+  shapeLanguage: "Chamas ascendentes, part\xEDculas subindo"
+  references:
+    version: 2
+    RefIds: []

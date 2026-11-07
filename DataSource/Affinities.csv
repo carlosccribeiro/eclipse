@@ -1,0 +1,7 @@
+id,name_pt,name_en,desc_pt,desc_en,affinity_tag,color_primary,color_secondary,shape,primary_status,icon,source_doc
+affinity.core.ember,Ember,Ember,"Dano contínuo, explosões e propagação.","Damage over time, explosions and spread.",Ember,#FF6A1A,#FFC23D,"Chamas ascendentes, partículas subindo",Burning,,07 §10
+affinity.core.frost,Frost,Frost,"Controle, lentidão e congelamento.","Control, slowing and freezing.",Frost,#9EE7FF,#F2FBFF,"Cristais angulares, crosta",Chill,,07 §10
+affinity.core.storm,Storm,Storm,"Velocidade, encadeamento e sobrecarga.","Speed, chaining and overload.",Storm,#F5E663,#B49CFF,"Linhas quebradas, arcos",Shock,,07 §10
+affinity.core.void,Void,Void,"Agrupamento, implosão e manipulação espacial.","Grouping, implosion and spatial manipulation.",Void,#5A2BBF,#E040FB,"Espirais para dentro, bordas negras",Corruption,,07 §10
+affinity.core.echo,Echo,Echo,"Cópias, repetição e efeitos atrasados.","Copies, repetition and delayed effects.",Echo,#6FFFE0,#D8E3E8,"Anéis concêntricos, afterimages translúcidas",Echo Mark,,07 §10
+affinity.core.ruin,Ruin,Ruin,"Enfraquecimento, deterioração e detonação.","Weakening, deterioration and detonation.",Ruin,#8FBF3A,#4A5A1E,"Rachaduras, partículas caindo",Decay,,07 §10
