@@ -22,6 +22,10 @@ jobs:
   unity-tests:
     name: Unity tests (EditMode + PlayMode)
     runs-on: ubuntu-latest
+    # unity-test-runner publishes a check run with githubToken
+    permissions:
+      contents: read
+      checks: write
     # data-validate: adicionado no M02
     steps:
       - uses: actions/checkout@v4

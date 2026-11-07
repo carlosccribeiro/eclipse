@@ -108,3 +108,5 @@ Não coloque aqui status de módulo (vai no ROADMAP) nem detalhes de design (vã
 - `tools/CoreTests` tem `nuget.config` próprio (a máquina não tem fonte NuGet global) e usa `net10.0`/C# 9.
 - Arquivos gerados por script saem com CRLF no Windows; `.gitattributes` normaliza para LF no commit (avisos de CRLF são esperados).
 - O Hub pode abrir o Editor no projeto sozinho; confira `tasklist | grep -i unity` antes do batchmode.
+- CI (GameCI): secrets `UNITY_LICENSE` (conteúdo de `C:\ProgramData\Unity\Unity_lic.ulf`), `UNITY_EMAIL`, `UNITY_PASSWORD`. O Hub 3.x com licença Personal por entitlement não gera o `.ulf`; gere com Hub → Configurações → Licenças → Adicionar licença → licença Personal gratuita. No runner o `.ulf` não bate com a máquina e o GameCI cai para ativação por e-mail/senha (aviso esperado).
+- Job com `game-ci/unity-test-runner` + `githubToken` precisa de `permissions: checks: write`, senão falha com "Resource not accessible by integration" mesmo com testes verdes.
