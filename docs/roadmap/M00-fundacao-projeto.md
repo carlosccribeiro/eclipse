@@ -1,5 +1,5 @@
 # M00 — Repositório, projeto Unity e CI
-Fase 0 · Onda 0 · Status: ⏳ não iniciado
+Fase 0 · Onda 0 · Status: 🔄 em andamento (T1, T3–T8 ✅; faltam T2/T9 — repo remoto, secrets e CI verde — e T10)
 Depende de: — · Desbloqueia: M01 (e todo o resto) · Paralelo com: D01
 Branch: modulo/M00-fundacao-projeto (primeiro commit vai em `main`; ver T3)
 Docs de referência: 11-arquitetura §2 (decisões 1–5, 18), §3.1 (stack e pacotes), §3.2 (pastas), §3.3 (assemblies), §3.16 (testes/CI); 00 §5 R04, R52; CLAUDE.md §3–§6; ROADMAP §1 (D1–D6).
@@ -33,14 +33,14 @@ Repositório GitHub privado com Git LFS, projeto Unity 6.3 LTS (URP Forward+, In
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | Instalar Unity 6.3 LTS + Windows Build Support (Mono e IL2CPP) | ação do usuário | usuário | — | — | ⏳ |
+| T1 | Instalar Unity 6.3 LTS + Windows Build Support (Mono e IL2CPP) | ação do usuário | usuário | — | — | ✅ |
 | T2 | Criar repo GitHub privado, `gh auth login`, instalar Git LFS | ação do usuário | usuário | — | — | ⏳ |
-| T3 | Inicializar git, `.gitignore`, `.gitattributes`, LFS, commit inicial dos docs | execução | executor | — | `.gitignore`, `.gitattributes` | ⏳ |
-| T4 | Criar projeto Unity por batchmode na raiz + manifest de pacotes | execução | executor | T1, T3 | `Assets/`, `Packages/manifest.json`, `Packages/packages-lock.json`, `ProjectSettings/` | ⏳ |
-| T5 | Bootstrap de configurações (URP Forward+, Input System, Linear, 60 Hz) e pastas | execução | executor | T4 | `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs`, `Assets/_Project/Settings/URP/*`, `Assets/_Project/**/.gitkeep`, `ProjectSettings/*.asset` | ⏳ |
-| T6 | Os 13 assembly definitions de 11 §3.3 + arquivo âncora por assembly | execução | executor | T5 | `Assets/_Project/Code/**/*.asmdef`, `Assets/_Project/Code/**/AssemblyInfo.cs` | ⏳ |
-| T7 | `tools/CoreTests` (dotnet) + smoke test compartilhado | execução | executor | T6 | `tools/CoreTests/CoreTests.csproj`, `Assets/_Project/Code/Core/CoreInfo.cs`, `Assets/_Project/Code/Tests/EditMode/Core/CoreSmokeTests.cs` | ⏳ |
-| T8 | Workflows GameCI (`ci.yml`, `build.yml`) | execução | executor | T7 | `.github/workflows/ci.yml`, `.github/workflows/build.yml` | ⏳ |
+| T3 | Inicializar git, `.gitignore`, `.gitattributes`, LFS, commit inicial dos docs | execução | executor | — | `.gitignore`, `.gitattributes` | ✅ |
+| T4 | Criar projeto Unity por batchmode na raiz + manifest de pacotes | execução | executor | T1, T3 | `Assets/`, `Packages/manifest.json`, `Packages/packages-lock.json`, `ProjectSettings/` | ✅ |
+| T5 | Bootstrap de configurações (URP Forward+, Input System, Linear, 60 Hz) e pastas | execução | executor | T4 | `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs`, `Assets/_Project/Settings/URP/*`, `Assets/_Project/**/.gitkeep`, `ProjectSettings/*.asset` | ✅ |
+| T6 | Os 13 assembly definitions de 11 §3.3 + arquivo âncora por assembly | execução | executor | T5 | `Assets/_Project/Code/**/*.asmdef`, `Assets/_Project/Code/**/AssemblyInfo.cs` | ✅ |
+| T7 | `tools/CoreTests` (dotnet) + smoke test compartilhado | execução | executor | T6 | `tools/CoreTests/CoreTests.csproj`, `Assets/_Project/Code/Core/CoreInfo.cs`, `Assets/_Project/Code/Tests/EditMode/Core/CoreSmokeTests.cs` | ✅ |
+| T8 | Workflows GameCI (`ci.yml`, `build.yml`) | execução | executor | T7 | `.github/workflows/ci.yml`, `.github/workflows/build.yml` | ✅ |
 | T9 | Configurar secrets do GameCI e fazer o primeiro push | ação do usuário | usuário | T2, T8 | — (secrets no GitHub) | ⏳ |
 | T10 | Confirmar comandos, atualizar CLAUDE.md e ROADMAP, revisar | integração | principal | T9 | `CLAUDE.md`, `docs/ROADMAP.md`, este arquivo | ⏳ |
 
@@ -181,3 +181,6 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 plano criado.
+- 2026-11-07 T1/T3–T8 concluídas na branch `modulo/M00-fundacao-projeto`. Unity **6000.3.28f1**; pacotes resolveram nas versões do manifest (URP 17.3.0, Input System 1.14.2, Cinemachine 3.1.5, Addressables 2.7.6, Localization 1.5.5, Newtonsoft 3.2.1…). `dotnet test tools/CoreTests` 1/1; EditMode 2 total/0 falhas (inclui `CoreAssemblyLoads`); PlayMode 1/1.
+- Desvios: (a) `Fixed Timestep` em 6000.3 é racional — critério 6 vale como `m_Count: 2352000` / rate `141120000` (= 1/60 s), não `0.016666668`; (b) `CoreTests` usa `net10.0` + `nuget.config` local (sem fonte NuGet global); (c) adicionado `PlayModeSmokeTests` para o `testMode: all` do CI não ficar sem testes; (d) `-createProject` feito em scratch e movido; (e) quality levels renomeados `PC_Low`/`PC_High`.
+- Pendente: T2 (gh + repo privado), T9 (secrets GameCI, push, CI verde) e T10 (ROADMAP).
