@@ -25,7 +25,7 @@ namespace Eclipse.Tests.PlayMode.Player.Sandbox
             var services = Object.FindFirstObjectByType<GameplayServices>();
             Assert.IsNotNull(services, "GameplayServices missing");
             Assert.IsNotNull(Object.FindFirstObjectByType<PlayerMotor>(), "PlayerMotor missing");
-            Assert.IsNotNull(Camera.main, "Main camera missing");
+            Assert.IsNotNull(UnityEngine.Camera.main, "Main camera missing");
             Assert.Greater(services.Scheduler.CurrentFrame, 0, "TickScheduler did not tick");
             LogAssert.NoUnexpectedReceived();
         }
