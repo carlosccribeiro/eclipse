@@ -1,0 +1,19 @@
+{
+    "name": "Eclipse.Save",
+    "rootNamespace": "Eclipse.Save",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

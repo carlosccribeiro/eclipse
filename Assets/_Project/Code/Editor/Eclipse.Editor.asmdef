@@ -1,0 +1,28 @@
+{
+    "name": "Eclipse.Editor",
+    "rootNamespace": "Eclipse.Editor",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Data",
+        "Eclipse.Gameplay",
+        "Eclipse.AI",
+        "Eclipse.Run",
+        "Eclipse.Meta",
+        "Eclipse.Save",
+        "Eclipse.UI",
+        "Eclipse.Audio",
+        "Eclipse.Platform",
+        "Unity.RenderPipelines.Universal.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

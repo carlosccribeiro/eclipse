@@ -1,0 +1,20 @@
+{
+    "name": "Eclipse.AI",
+    "rootNamespace": "Eclipse.AI",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Data",
+        "Eclipse.Gameplay",
+        "Unity.AI.Navigation",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

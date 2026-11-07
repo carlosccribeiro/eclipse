@@ -1,0 +1,23 @@
+{
+    "name": "Eclipse.Gameplay",
+    "rootNamespace": "Eclipse.Gameplay",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Data",
+        "Unity.InputSystem",
+        "Unity.Cinemachine",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Mathematics",
+        "Unity.AI.Navigation"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
