@@ -116,5 +116,23 @@ namespace Eclipse.Core.Time.Tests
             Assert.AreEqual(0f, c.Alpha);
             Assert.AreEqual(0.0, c.ElapsedSeconds);
         }
+
+        [Test]
+        public void Advance_RejectsInfinity()
+        {
+            var c = new SimulationClock();
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.Advance(float.PositiveInfinity));
+        }
+
+        [Test]
+        public void Advance_HugeDelta_SaturatesWithoutCorruptingState()
+        {
+            var c = new SimulationClock(8);
+            Assert.AreEqual(8, c.Advance(float.MaxValue));
+            Assert.Greater(c.DroppedTicks, 0L);
+            Assert.That(c.Alpha, Is.GreaterThanOrEqualTo(0f).And.LessThan(1f));
+            Assert.AreEqual(1, c.Advance(1f / 60f));
+            Assert.AreEqual(9L, c.Tick);
+        }
     }
 }

@@ -11,7 +11,10 @@ namespace Eclipse.Core.Events
     /// <summary>Handle returned by <see cref="EventBus{T}.Subscribe"/>. <c>default</c> is invalid.</summary>
     public readonly struct SubscriptionToken : IEquatable<SubscriptionToken>
     {
-        internal SubscriptionToken(int id) { Id = id; }
+        internal SubscriptionToken(int busId, int id) { BusId = busId; Id = id; }
+
+        /// <summary>Process-unique id of the issuing bus; a token from another bus is rejected.</summary>
+        public int BusId { get; }
 
         /// <summary>Id unique within the issuing bus; 0 means invalid.</summary>
         public int Id { get; }
@@ -19,9 +22,16 @@ namespace Eclipse.Core.Events
         /// <summary>True unless this is <c>default</c>.</summary>
         public bool IsValid => Id != 0;
 
-        public bool Equals(SubscriptionToken other) => Id == other.Id;
+        public bool Equals(SubscriptionToken other) => Id == other.Id && BusId == other.BusId;
         public override bool Equals(object obj) => obj is SubscriptionToken t && Equals(t);
-        public override int GetHashCode() => Id;
+        public override int GetHashCode() => unchecked(BusId * 397 ^ Id);
+    }
+
+    /// <summary>Hands out process-unique bus ids so tokens cannot cross buses.</summary>
+    internal static class EventBusIds
+    {
+        private static int _last;
+        internal static int Next() => System.Threading.Interlocked.Increment(ref _last);
     }
 
     /// <summary>
@@ -50,6 +60,7 @@ namespace Eclipse.Core.Events
         private int _count;          // slots used in _entries (alive + dead)
         private Entry[] _pending = new Entry[2];
         private int _pendingCount;   // subscriptions made during dispatch
+        private readonly int _busId = EventBusIds.Next();
         private int _nextId = 1;
         private int _live;
         private int _depth;
@@ -73,13 +84,13 @@ namespace Eclipse.Core.Events
             {
                 InsertSorted(entry);
             }
-            return new SubscriptionToken(entry.Id);
+            return new SubscriptionToken(_busId, entry.Id);
         }
 
         /// <summary>Removes a subscription; false if the token is invalid or already removed.</summary>
         public bool Unsubscribe(SubscriptionToken token)
         {
-            if (token.Id == 0) return false;
+            if (token.Id == 0 || token.BusId != _busId) return false;
             for (int i = 0; i < _pendingCount; i++)
             {
                 if (_pending[i].Id != token.Id) continue;

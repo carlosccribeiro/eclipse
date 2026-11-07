@@ -260,5 +260,18 @@ namespace Eclipse.Core.Events.Tests
             Assert.Greater(_hits, 0);
         }
 #endif
+
+        [Test]
+        public void TokenFromAnotherBusIsRejected()
+        {
+            var other = new EventBus<TestEvent>();
+            var mine = _bus.Subscribe(Logger("mine"));
+            var foreign = other.Subscribe(Logger("other"));
+            Assert.AreEqual(mine.Id, foreign.Id);
+            Assert.IsFalse(_bus.Unsubscribe(foreign));
+            Assert.AreNotEqual(mine, foreign);
+            _bus.Publish(Ev());
+            CollectionAssert.AreEqual(new[] { "mine" }, _log);
+        }
     }
 }

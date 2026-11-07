@@ -22,6 +22,7 @@ namespace Eclipse.Core.Time
 
         // Absorbs float rounding (e.g. 60 x (1f/60f) or Advance(1f)) so a tick is never lost by ~1e-9 s.
         private const double Epsilon = 1e-9;
+        private const long MaxDroppedTicks = long.MaxValue;
 
         private double _accumulator;
 
@@ -76,23 +77,26 @@ namespace Eclipse.Core.Time
         /// Adds <paramref name="deltaSeconds"/> and returns how many ticks to simulate now (also added to
         /// <see cref="Tick"/>). The sub-tick remainder is kept for the next call. If more than
         /// <see cref="MaxTicksPerAdvance"/> ticks are due, the excess whole ticks are discarded and counted
-        /// in <see cref="DroppedTicks"/>. Throws for negative or NaN input.
+        /// in <see cref="DroppedTicks"/> (saturating). Throws for negative, NaN or infinite input.
         /// </summary>
         public int Advance(float deltaSeconds)
         {
-            if (float.IsNaN(deltaSeconds) || deltaSeconds < 0f)
-                throw new ArgumentOutOfRangeException(nameof(deltaSeconds), "Must be non-negative and not NaN.");
+            if (float.IsNaN(deltaSeconds) || float.IsInfinity(deltaSeconds) || deltaSeconds < 0f)
+                throw new ArgumentOutOfRangeException(nameof(deltaSeconds), "Must be finite and non-negative.");
 
             _accumulator += deltaSeconds;
             double due = Math.Floor((_accumulator + Epsilon) / TickDurationDouble);
             if (due < 1.0) return 0;
 
             _accumulator -= due * TickDurationDouble;
-            if (_accumulator < 0.0) _accumulator = 0.0;
+            // With huge inputs the subtraction loses precision; never keep more than one tick of remainder.
+            if (_accumulator < 0.0 || _accumulator >= TickDurationDouble) _accumulator = 0.0;
 
-            long total = (long)due;
-            int run = total > MaxTicksPerAdvance ? MaxTicksPerAdvance : (int)total;
-            DroppedTicks += total - run;
+            // Compare in double before casting: a huge dt (e.g. float.MaxValue) must not overflow (long),
+            // whose out-of-range behaviour differs between .NET and Mono.
+            int run = due > MaxTicksPerAdvance ? MaxTicksPerAdvance : (int)due;
+            double dropped = due - run;
+            DroppedTicks = dropped >= MaxDroppedTicks - DroppedTicks ? MaxDroppedTicks : DroppedTicks + (long)dropped;
             Tick += run;
             return run;
         }

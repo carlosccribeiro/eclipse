@@ -41,11 +41,19 @@ namespace Eclipse.Core.Random
         }
 
         /// <summary>Deterministic sub-generator from stream seed and key. Does not consume the parent stream.</summary>
-        public Xoshiro128StarStar Fork(RngStream stream, StableId key)
+        public Xoshiro128StarStar Fork(RngStream stream, StableId key) => Fork(stream, key, 0UL);
+
+        /// <summary>
+        /// Like <see cref="Fork(RngStream, StableId)"/>, with a <paramref name="salt"/> (e.g. a drop counter)
+        /// so the same key can yield distinct sub-generators: <c>FromSeed(streamSeed[i] ^ Fnv1a64(key) ^
+        /// (salt * 0x9E3779B97F4A7C15))</c>. Salt 0 equals the unsalted overload. Does not consume the stream.
+        /// </summary>
+        public Xoshiro128StarStar Fork(RngStream stream, StableId key, ulong salt)
         {
             int i = (int)stream;
             if ((uint)i >= Count) throw new ArgumentOutOfRangeException(nameof(stream));
-            return Xoshiro128StarStar.FromSeed(_seeds[i] ^ Fnv1a64(key.Value));
+            ulong mixedSalt = unchecked(salt * 0x9E3779B97F4A7C15UL);
+            return Xoshiro128StarStar.FromSeed(_seeds[i] ^ Fnv1a64(key.Value) ^ mixedSalt);
         }
 
         /// <summary>FNV-1a 64 over UTF-16 chars (low byte, then high byte). Stable across platforms.</summary>

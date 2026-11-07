@@ -80,5 +80,22 @@ namespace Eclipse.Core.Random.Tests
                 + "Loot:3689283648,3178807754,227784487;Combat:1559807665,509639421,2601844753;"
                 + "Cosmetic:3722333714,2201559271,640565689;", sb.ToString());
         }
+
+        [Test]
+        public void Fork_with_salt_distinguishes_same_key_and_salt_zero_matches_unsalted()
+        {
+            var s = new RngStreams(7);
+            var key = StableId.Parse("item.ashfang");
+            var plain = s.Fork(RngStream.Loot, key);
+            var zero = s.Fork(RngStream.Loot, key, 0UL);
+            var one = s.Fork(RngStream.Loot, key, 1UL);
+            var two = s.Fork(RngStream.Loot, key, 2UL);
+            var oneAgain = new RngStreams(7).Fork(RngStream.Loot, key, 1UL);
+            uint p = plain.NextUInt(), z = zero.NextUInt(), a = one.NextUInt(), b = two.NextUInt();
+            Assert.AreEqual(p, z);
+            Assert.AreNotEqual(a, b);
+            Assert.AreNotEqual(p, a);
+            Assert.AreEqual(a, oneAgain.NextUInt());
+        }
     }
 }
