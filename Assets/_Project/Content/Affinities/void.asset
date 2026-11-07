@@ -15,19 +15,19 @@ MonoBehaviour:
   stableId: affinity.core.void
   displayName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Definitions
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: affinity.core.void.name
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: Definitions
     m_TableEntryReference:
       m_KeyId: 0
-      m_Key: 
+      m_Key: affinity.core.void.desc
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []

@@ -82,13 +82,13 @@ namespace Eclipse.Data.Validation.Tests
         }
 
         [Test]
-        public void LocalizationKey_Warns_Only()
+        public void LocalizationKey_Errors_When_Missing()
         {
             var ok = DataValidator.Validate(new Definition[] { Make<FakeValidationDef>("l.ok") });
-            Assert.AreEqual(0, Count(ok, "LocalizationKey", ValidationSeverity.Warning));
+            Assert.AreEqual(0, Count(ok, "LocalizationKey", ValidationSeverity.Error));
             var bad = DataValidator.Validate(new Definition[] { Make<FakeValidationDef>("l.bad", displayName: false) });
-            Assert.AreEqual(1, Count(bad, "LocalizationKey", ValidationSeverity.Warning));
-            Assert.AreEqual(0, Count(bad, "LocalizationKey", ValidationSeverity.Error));
+            Assert.AreEqual(1, Count(bad, "LocalizationKey", ValidationSeverity.Error));
+            Assert.AreEqual(0, Count(bad, "LocalizationKey", ValidationSeverity.Warning));
         }
 
         [Test]

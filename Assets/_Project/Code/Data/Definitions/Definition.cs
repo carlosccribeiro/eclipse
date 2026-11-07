@@ -61,6 +61,13 @@ namespace Eclipse.Data.Definitions
         /// <summary>Editor/importer only.</summary>
         public void EditorSetNameEn(string value) => nameEn = value;
 
+        /// <summary>Editor/importer only: points display name and description at String Table entries (null clears).</summary>
+        public void EditorSetLocalized(LocalizedString name, LocalizedString desc)
+        {
+            displayName = name;
+            description = desc;
+        }
+
         /// <summary>Editor/importer only: sets the serialized id and invalidates the cache.</summary>
         public void EditorSetStableId(string value)
         {

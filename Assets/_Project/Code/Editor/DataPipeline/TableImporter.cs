@@ -33,6 +33,12 @@ namespace Eclipse.Editor.DataPipeline
         /// <summary>Bump when <see cref="Apply"/> changes meaning so unchanged CSV rows are re-applied.</summary>
         protected virtual string HashSalt => string.Empty;
 
+        /// <summary>
+        /// When true (default) the columns name_pt/name_en/desc_pt/desc_en, if present, feed the
+        /// "Definitions" String Table. Override to false for importers that write to scratch folders.
+        /// </summary>
+        protected virtual bool WritesLocalization => true;
+
         /// <summary>Pass 1: copy row values into the definition (id and ImportedHash are set by the base).</summary>
         protected abstract void Apply(TDef definition, CsvRow row, ImportContext context);
 
@@ -103,6 +109,10 @@ namespace Eclipse.Editor.DataPipeline
                         context.Unchanged++;
                     }
 
+                    // Checked on every run (even with an unchanged hash) so a lost/edited table entry is restored.
+                    if (WritesLocalization && LocalizationWriter.ApplyRow(def, id, table, row))
+                        EditorUtility.SetDirty(def);
+
                     context.Register(def);
                     TDef captured = def;
                     CsvRow capturedRow = row;
@@ -121,6 +131,8 @@ namespace Eclipse.Editor.DataPipeline
                     context.Error(tableName, row.Line, id, ex.GetType().Name + ": " + ex.Message);
                 }
             }
+
+            LocalizationWriter.Flush();
 
             foreach (var kv in existing)
             {

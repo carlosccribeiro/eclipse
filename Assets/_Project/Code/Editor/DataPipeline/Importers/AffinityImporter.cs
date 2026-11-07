@@ -31,6 +31,9 @@ namespace Eclipse.Editor.DataPipeline
         public override string CsvPath => _csvPath;
         public override string OutputFolder => _outputFolder;
 
+        // Test importers write to scratch folders and must not touch the real String Table.
+        protected override bool WritesLocalization => _outputFolder == DefaultOutputFolder;
+
         protected override void Apply(AffinityDefinition definition, CsvRow row, ImportContext context)
         {
             Tag tag = row.GetEnum<Tag>("affinity_tag");
