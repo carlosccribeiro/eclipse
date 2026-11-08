@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef14e24d5dcc08449bddf957128ff600, type: 3}
+  m_Name: attack_kael_warhammer_1
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Combat.AttackChainDefinition
+  stableId: attack.kael.warhammer.1
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: attack.kael.warhammer.1.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: dab2b1afef390f5d
+  sourceDoc: "06 \xA73.6.2 / 08 \xA74.6"
+  nameEn: Warhammer - Strike 1
+  weaponId: weapon.kael.warhammer
+  kind: 0
+  comboIndex: 1
+  step:
+    startupFrames: 28
+    activeFrames: 8
+    recoveryFrames: 50
+    shape: 1
+    radius: 2.5
+    arcDegrees: 140
+    length: 0
+    width: 0
+    offset: {x: 0, y: 0, z: 0}
+    stagger: 30
+    staggerMax: 30
+    hitStopFrames: 7
+    procCoefficient: 1
+    damageMultiplier: 1
+    damageMultiplierMax: 1
+    lungeMinMeters: 0.5
+    lungeMaxMeters: 1
+    lungeConeDegrees: 60
+    hitGroup: 0
+    rehitIntervalFrames: 0
+    tracking: 0
+    commit: 0
+    chargeMinFrames: 0
+    chargeMaxFrames: 0
+  references:
+    version: 2
+    RefIds: []

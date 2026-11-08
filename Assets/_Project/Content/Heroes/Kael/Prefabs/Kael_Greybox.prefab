@@ -107,6 +107,10 @@ GameObject:
   - component: {fileID: 2668772991768020878}
   - component: {fileID: 1059116964221833182}
   - component: {fileID: 1330836713205096454}
+  - component: {fileID: 7515565299937997288}
+  - component: {fileID: 3491070427236162416}
+  - component: {fileID: 1170659091785754339}
+  - component: {fileID: 8114440361189842492}
   m_Layer: 8
   m_Name: Kael_Greybox
   m_TagString: Untagged
@@ -281,6 +285,72 @@ MonoBehaviour:
   heavyWindupPitch: -120
   heavyEndPitch: 60
   fallbackHalfArc: 60
+--- !u!114 &7515565299937997288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565895117854130750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6bf9e10748c2746a2c5d4ec043e045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Eclipse.Gameplay::Eclipse.Gameplay.Heroes.ResourceComponent
+  definition: {fileID: 11400000, guid: ad3e11d754f8cd4478a5134717594e38, type: 2}
+--- !u!114 &3491070427236162416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565895117854130750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7af6ba98454ed438a7bed8c7fc9fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Eclipse.Gameplay::Eclipse.Gameplay.Skills.SkillCasterRig
+--- !u!114 &1170659091785754339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565895117854130750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1ea629ef585344fa71c31e36719db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Eclipse.Gameplay::Eclipse.Gameplay.Heroes.Kael.KaelHeroRig
+  hero: {fileID: 11400000, guid: cac2873884a2b8648b7635fe82ec40d9, type: 2}
+  weapons:
+  - {fileID: 11400000, guid: 133529446815c62479ed6b7d2bb33657, type: 2}
+  - {fileID: 11400000, guid: 86f96b463521af54fa3b11c91c0724a3, type: 2}
+  - {fileID: 11400000, guid: 7263660aa0033084db69d5577a7ba2f0, type: 2}
+  - {fileID: 11400000, guid: 5de1de3f1f3035b48a97975f186444b3, type: 2}
+  - {fileID: 11400000, guid: f74685a2628c0ea479d5567a73cd8804, type: 2}
+  actor: {fileID: 3466017993351730151}
+  motor: {fileID: 2666405821870723117}
+  dodge: {fileID: 2789105458942976517}
+  attack: {fileID: 2668772991768020878}
+  resource: {fileID: 7515565299937997288}
+  skillRig: {fileID: 3491070427236162416}
+--- !u!114 &8114440361189842492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565895117854130750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db3f15fcda049841988e04fcdb8bdee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Eclipse.Gameplay::Eclipse.Gameplay.Heroes.Kael.KaelSkillVfx
+  rig: {fileID: 1170659091785754339}
+  emberPrefab: {fileID: 5635022999187201635, guid: fd2c7c48a30477844b448de1d1627a93, type: 3}
+  physicalPrefab: {fileID: 3309101474955063618, guid: 473deac6657bb8b459a1b4fc7cb05ca4, type: 3}
+  ruinPrefab: {fileID: 251273327795530796, guid: 81b18ab4cd727f845930a8b613748ad7, type: 3}
 --- !u!1 &1432343468388675542
 GameObject:
   m_ObjectHideFlags: 0

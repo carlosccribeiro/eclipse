@@ -1,0 +1,2 @@
+id,name_pt,name_en,kind,base_max,absolute_cap,max_per_max_resource_pct,decay_delay_s,decay_per_s,start_of_room,params,source_doc
+resource.fury,Fúria,Fury,Pool,100,150,1,4,8,0,basic_first_target=5|basic_extra_target=1|basic_max_per_hit=9|heavy_tap=10|heavy_charged=15|damage_taken_per_pct_hp=1|damage_taken_max_per_s=15|kill=3|embers_fury_step=10|embers_increased_pct_per_step=2|resolve_health_threshold_pct=35|resolve_damage_reduction_pct=15|resolve_resource_generation_pct=25,08 §3.2 / 08 §4.1 / 08 §4.2

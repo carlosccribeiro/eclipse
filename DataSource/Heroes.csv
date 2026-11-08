@@ -1,0 +1,2 @@
+id,name_pt,name_en,primary_attribute,health_rel_pct,armor_rel_pct,move_speed_mps,engagement_min_m,engagement_max_m,resource_id,skill_basic,skill_heavy,skill_q,skill_e,skill_r,skill_shift,skill_f,weapon_categories,off_hand_category,passives,source_doc
+hero.kael,Kael,Kael,Strength,120,130,6,0,4,resource.fury,,,skill.kael.cleaving_strike,skill.kael.burning_chains,skill.kael.ashen_guard,skill.kael.infernal_leap,skill.kael.worldbreaker,Greatsword|Dual Axes|Warhammer|Longsword|Heavy Blade,Warbrand,passive.kael.embers_of_rage|passive.kael.ashbound_resolve,08 §3.1 / 08 §4 / 02 R29

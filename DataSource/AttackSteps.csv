@@ -4,3 +4,25 @@ attack.kael.greatsword.2,Espada Grande - Golpe 2,Greatsword - Strike 2,weapon.ka
 attack.kael.greatsword.3,Espada Grande - Golpe 3,Greatsword - Strike 3,weapon.kael.greatsword,Basic,3,26,8,34,Sector,2.8,120,,,0,0,0,35,35,8,1.0,160,160,0.8,1.5,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.3
 attack.kael.greatsword.heavy,Espada Grande - Golpe Forte,Greatsword - Heavy,weapon.kael.greatsword,Heavy,0,36,6,26,Cone,3,90,,,0,0,0,60,100,10,1.0,280,420,0.8,1.2,60,0,0,false,false,36,72,06 §3.6.2 / 08 §4.3
 attack.kael.greatsword.dash,Espada Grande - Ataque de Esquiva,Greatsword - Dash Attack,weapon.kael.greatsword,Dash,0,10,6,18,Sector,2.5,90,,,0,0,0,20,20,5,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.1
+attack.kael.dual_axes.1,Machados Duplos - Golpe 1,Dual Axes - Strike 1,weapon.kael.dual_axes,Basic,1,10,3,24,Sector,2.2,110,,,0,0,0,5,5,2,0.8,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.dual_axes.2,Machados Duplos - Golpe 2,Dual Axes - Strike 2,weapon.kael.dual_axes,Basic,2,10,3,24,Sector,2.2,110,,,0,0,0,5,5,2,0.8,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.dual_axes.3,Machados Duplos - Golpe 3,Dual Axes - Strike 3,weapon.kael.dual_axes,Basic,3,10,3,24,Sector,2.2,110,,,0,0,0,5,5,2,0.8,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.dual_axes.4,Machados Duplos - Golpe 4,Dual Axes - Strike 4,weapon.kael.dual_axes,Basic,4,10,3,24,Sector,2.2,110,,,0,0,0,5,5,2,0.8,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.dual_axes.5,Machados Duplos - Giro,Dual Axes - Spin,weapon.kael.dual_axes,Basic,5,14,10,16,Circle,2.2,,,,0,0,0,12,12,4,0.8,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.dual_axes.heavy,Machados Duplos - Redemoinho,Dual Axes - Whirlwind,weapon.kael.dual_axes,Heavy,0,8,72,14,Circle,2.2,,,,0,0,0,4,4,1,0.3,100,100,,,60,0,9,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.dual_axes.dash,Machados Duplos - Ataque de Esquiva,Dual Axes - Dash Attack,weapon.kael.dual_axes,Dash,0,6,4,10,Sector,2.2,110,,,0,0,0,6,6,3,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.1
+attack.kael.warhammer.1,Martelo de Guerra - Golpe 1,Warhammer - Strike 1,weapon.kael.warhammer,Basic,1,28,8,50,Sector,2.5,140,,,0,0,0,30,30,7,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.warhammer.2,Martelo de Guerra - Golpe 2,Warhammer - Strike 2,weapon.kael.warhammer,Basic,2,32,8,46,Sector,2.5,160,,,0,0,0,40,40,8,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.warhammer.heavy,Martelo de Guerra - Slam,Warhammer - Slam,weapon.kael.warhammer,Heavy,0,40,6,34,Circle,4,,,,0,0,0,90,90,10,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.warhammer.dash,Martelo de Guerra - Ataque de Esquiva,Warhammer - Dash Attack,weapon.kael.warhammer,Dash,0,10,6,18,Sector,2.5,140,,,0,0,0,20,20,5,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.1
+attack.kael.longsword.1,Espada Longa - Golpe 1,Longsword - Strike 1,weapon.kael.longsword,Basic,1,14,4,32,Sector,2.6,120,,,0,0,0,8,8,3,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.longsword.2,Espada Longa - Golpe 2,Longsword - Strike 2,weapon.kael.longsword,Basic,2,14,4,32,Sector,2.6,120,,,0,0,0,8,8,3,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.longsword.3,Espada Longa - Golpe 3,Longsword - Strike 3,weapon.kael.longsword,Basic,3,16,5,29,Sector,2.8,140,,,0,0,0,10,10,3,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.longsword.4,Espada Longa - Estocada,Longsword - Thrust,weapon.kael.longsword,Basic,4,20,6,24,Box,,,3.5,1,0,0,0,25,25,6,1.0,100,100,3,3,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.longsword.heavy,Espada Longa - Estocada Perfurante,Longsword - Piercing Thrust,weapon.kael.longsword,Heavy,0,22,6,30,Box,,,5,1,0,0,0,45,45,7,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.longsword.dash,Espada Longa - Ataque de Esquiva,Longsword - Dash Attack,weapon.kael.longsword,Dash,0,8,5,14,Sector,2.6,120,,,0,0,0,12,12,4,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.1
+attack.kael.heavy_blade.1,Lâmina Pesada - Golpe 1,Heavy Blade - Strike 1,weapon.kael.heavy_blade,Basic,1,22,7,46,Sector,2.6,180,,,0,0,0,18,18,5,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.heavy_blade.2,Lâmina Pesada - Golpe 2,Heavy Blade - Strike 2,weapon.kael.heavy_blade,Basic,2,22,7,46,Sector,2.6,180,,,0,0,0,18,18,5,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.heavy_blade.3,Lâmina Pesada - Golpe 3,Heavy Blade - Strike 3,weapon.kael.heavy_blade,Basic,3,26,8,41,Sector,2.6,180,,,0,0,0,28,28,7,1.0,100,100,0.5,1.0,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.heavy_blade.heavy,Lâmina Pesada - Execução,Heavy Blade - Execution,weapon.kael.heavy_blade,Heavy,0,30,6,36,Sector,3,90,,,0,0,0,60,60,10,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.6
+attack.kael.heavy_blade.dash,Lâmina Pesada - Ataque de Esquiva,Heavy Blade - Dash Attack,weapon.kael.heavy_blade,Dash,0,10,6,18,Sector,2.6,180,,,0,0,0,20,20,5,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.1

@@ -1623,6 +1623,138 @@ MonoBehaviour:
     m_Key: enemy.scaling.curve.name
     m_Metadata:
       m_Items: []
+  - m_Id: 283901376888832
+    m_Key: resource.fury.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620544
+    m_Key: attack.kael.dual_axes.1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620545
+    m_Key: attack.kael.dual_axes.2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620546
+    m_Key: attack.kael.dual_axes.3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620547
+    m_Key: attack.kael.dual_axes.4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620548
+    m_Key: attack.kael.dual_axes.5.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620549
+    m_Key: attack.kael.dual_axes.heavy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620550
+    m_Key: attack.kael.dual_axes.dash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620551
+    m_Key: attack.kael.warhammer.1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620552
+    m_Key: attack.kael.warhammer.2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620553
+    m_Key: attack.kael.warhammer.heavy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620554
+    m_Key: attack.kael.warhammer.dash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620555
+    m_Key: attack.kael.longsword.1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620556
+    m_Key: attack.kael.longsword.2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620557
+    m_Key: attack.kael.longsword.3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620558
+    m_Key: attack.kael.longsword.4.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620559
+    m_Key: attack.kael.longsword.heavy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620560
+    m_Key: attack.kael.longsword.dash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620561
+    m_Key: attack.kael.heavy_blade.1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814848
+    m_Key: attack.kael.heavy_blade.2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814849
+    m_Key: attack.kael.heavy_blade.3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814850
+    m_Key: attack.kael.heavy_blade.heavy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814851
+    m_Key: attack.kael.heavy_blade.dash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903327240192
+    m_Key: skill.kael.cleaving_strike.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903327240193
+    m_Key: skill.kael.infernal_leap.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903331434496
+    m_Key: skill.kael.burning_chains.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903331434497
+    m_Key: skill.kael.ashen_guard.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903331434498
+    m_Key: skill.kael.worldbreaker.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283904136740864
+    m_Key: hero.kael.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905063682048
+    m_Key: weapon.kael.dual_axes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905067876352
+    m_Key: weapon.kael.warhammer.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905067876353
+    m_Key: weapon.kael.longsword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905067876354
+    m_Key: weapon.kael.heavy_blade.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

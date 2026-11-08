@@ -37,7 +37,11 @@ namespace Eclipse.Tests.PlayMode.Combat
             if (overlay != null) overlay.Visible = false;
             foreach (var a in Object.FindObjectsByType<TrainingAttacker>(FindObjectsSortMode.None)) a.AttackEnabled = false;
             Dummy.ArmorPercent = 0f;
-            if (noCrit) Player.Entity.Stats.SetBase(StatId.CriticalChance, 0f);
+            if (noCrit)
+            {
+                Player.Entity.Stats.SetBase(StatId.CriticalChance, 0f);
+                ZeroHeroPassives();
+            }
 
             DummyPos = Dummy.transform.position;
             motor.Teleport(DummyPos + new Vector3(0f, 0f, -1.8f));
@@ -47,6 +51,20 @@ namespace Eclipse.Tests.PlayMode.Combat
             // The real FixedUpdate must not add ticks on top of the manual ones.
             _savedTimeScale = Time.timeScale;
             Time.timeScale = 0f;
+        }
+
+        /// <summary>
+        /// Deterministic-damage mode (<c>noCrit</c>): M05 expectations assume no hero passives, but Kael's Embers of Rage (+2% damage per
+        /// 10 Fury, M08) would scale the hits. The rig stays (so the world is the shipped one); only its passive numbers are zeroed, so it
+        /// never adds a stat modifier. Runs with <c>noCrit: false</c> (the 60 s ComboGcTests) keep the shipped Kael untouched.
+        /// </summary>
+        private static void ZeroHeroPassives()
+        {
+            var field = typeof(Eclipse.Gameplay.Heroes.Kael.KaelPassives).GetField("_rules",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            Assert.IsNotNull(field, "KaelPassives._rules (renamed? update SandboxCombatRun)");
+            foreach (var rig in Object.FindObjectsByType<Eclipse.Gameplay.Heroes.Kael.KaelHeroRig>(FindObjectsSortMode.None))
+                if (rig.Passives != null) field.SetValue(rig.Passives, default(Eclipse.Gameplay.Heroes.Kael.KaelPassiveRules));
         }
 
         public void Restore() => Time.timeScale = _savedTimeScale;

@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ba928f45751c54a96bedfc6f637bbb, type: 3}
+  m_Name: cleaving_strike
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Skills.SkillDefinition
+  stableId: skill.kael.cleaving_strike
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: skill.kael.cleaving_strike.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 3108a37c6aacb6ad
+  sourceDoc: "08 \xA74.4"
+  nameEn: Cleaving Strike
+  heroId: hero.kael
+  slot: 2
+  tagBits: 8388645
+  costResourceId: resource.fury
+  costAmount: 20
+  costAllResource: 0
+  costMinimum: 0
+  resourceGain: 0
+  cooldownSeconds: 0
+  damageCoefficient: 2.2
+  damageCoefficientPerResource: 0
+  moveDuringCastPercent: 0
+  commit: 0
+  tracking: 0
+  modifierSlots: 3
+  parameters:
+  - key: arc_deg
+    value: 180
+  - key: radius_m
+    value: 3.5
+  - key: windup_f
+    value: 14
+  - key: active_f
+    value: 6
+  - key: recovery_f
+    value: 26
+  delivery:
+    rid: 4564267573705441280
+  effects:
+  - rid: 4564267573705441281
+  triggers: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4564267573705441280
+      type: {class: MeleeArcDelivery, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        impactPhase: 2
+        radiusParam: radius_m
+        arcParam: arc_deg
+    - rid: 4564267573705441281
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 0
+        coefficientParam: 
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []

@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ba928f45751c54a96bedfc6f637bbb, type: 3}
+  m_Name: ashen_guard
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Skills.SkillDefinition
+  stableId: skill.kael.ashen_guard
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: skill.kael.ashen_guard.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 616aa23432ee009b
+  sourceDoc: "08 \xA74.4 / 00 R20"
+  nameEn: Ashen Guard
+  heroId: hero.kael
+  slot: 4
+  tagBits: 8389637
+  costResourceId: 
+  costAmount: 0
+  costAllResource: 0
+  costMinimum: 0
+  resourceGain: 0
+  cooldownSeconds: 14
+  damageCoefficient: 2.5
+  damageCoefficientPerResource: 0
+  moveDuringCastPercent: 0
+  commit: 0
+  tracking: 0
+  modifierSlots: 3
+  parameters:
+  - key: stance_s
+    value: 1.5
+  - key: damage_reduction_pct
+    value: 60
+  - key: absorbed_to_counter_pct
+    value: 30
+  - key: counter_radius_m
+    value: 3
+  - key: counter_arc_deg
+    value: 120
+  - key: resource_on_counter
+    value: 20
+  - key: parry_window_s
+    value: 0.2
+  - key: parry_window_f
+    value: 12
+  - key: parry_counter_bonus_pct
+    value: 50
+  - key: windup_f
+    value: 6
+  - key: active_f
+    value: 90
+  - key: recovery_f
+    value: 18
+  delivery:
+    rid: 4564267573705441292
+  effects:
+  - rid: 4564267573705441293
+  - rid: 4564267573705441294
+  - rid: 4564267573705441295
+  triggers: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4564267573705441292
+      type: {class: StanceDelivery, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        impactPhase: 2
+        durationParam: stance_s
+        counterRadiusParam: counter_radius_m
+        counterArcParam: counter_arc_deg
+    - rid: 4564267573705441293
+      type: {class: ApplyStateEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 1
+        targeting: 1
+        state: 2
+        durationParam: 
+        durationSeconds: 0
+        parryBonusParam: 
+    - rid: 4564267573705441294
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 0
+        coefficientParam: 
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []
+    - rid: 4564267573705441295
+      type: {class: GainResourceEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 1
+        amountParam: resource_on_counter
+        amount: 0
+        procCoefficient: 1
+        scaleByProcCoefficient: 0

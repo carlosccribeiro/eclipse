@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3f7733e7dbe8c4b8fce2362fb46472, type: 3}
+  m_Name: heavy_blade
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Combat.WeaponDefinition
+  stableId: weapon.kael.heavy_blade
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: weapon.kael.heavy_blade.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 2cb397cd91823dd1
+  sourceDoc: "02 \xA73.4 / 06 \xA73.6 / 08 \xA74.6"
+  nameEn: Heavy Blade
+  heroId: kael
+  baseId: base.kael.heavy_blade
+  weightClass: 0
+  attacksPerSecond: 0.8
+  weaponPowerILvl1: 10.5
+  comboResetSeconds: 0.8
+  basicChain:
+  - {fileID: 11400000, guid: 7b54a5275ffe9f345b9102f9b1ae8a31, type: 2}
+  - {fileID: 11400000, guid: db17605262c2f6846b25d27e56ada059, type: 2}
+  - {fileID: 11400000, guid: d7b3afea6363ec949a5bd8e84664dc84, type: 2}
+  heavy: {fileID: 11400000, guid: 594038e363f78664999ea53aea657eae, type: 2}
+  dashAttack: {fileID: 11400000, guid: 9829097f89d58f8479d21e0ed318b214, type: 2}
+  feedback: {fileID: 11400000, guid: 2206cbf1d9ef7c0499642d6d01a15abe, type: 2}
+  references:
+    version: 2
+    RefIds: []

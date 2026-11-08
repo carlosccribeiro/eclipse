@@ -1626,6 +1626,138 @@ MonoBehaviour:
     m_Localized: Enemy Scaling
     m_Metadata:
       m_Items: []
+  - m_Id: 283901376888832
+    m_Localized: Fury
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620544
+    m_Localized: Dual Axes - Strike 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620545
+    m_Localized: Dual Axes - Strike 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620546
+    m_Localized: Dual Axes - Strike 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620547
+    m_Localized: Dual Axes - Strike 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620548
+    m_Localized: Dual Axes - Spin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620549
+    m_Localized: Dual Axes - Whirlwind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620550
+    m_Localized: Dual Axes - Dash Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620551
+    m_Localized: Warhammer - Strike 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620552
+    m_Localized: Warhammer - Strike 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620553
+    m_Localized: Warhammer - Slam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620554
+    m_Localized: Warhammer - Dash Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620555
+    m_Localized: Longsword - Strike 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620556
+    m_Localized: Longsword - Strike 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620557
+    m_Localized: Longsword - Strike 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620558
+    m_Localized: Longsword - Thrust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620559
+    m_Localized: Longsword - Piercing Thrust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620560
+    m_Localized: Longsword - Dash Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902752620561
+    m_Localized: Heavy Blade - Strike 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814848
+    m_Localized: Heavy Blade - Strike 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814849
+    m_Localized: Heavy Blade - Strike 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814850
+    m_Localized: Heavy Blade - Execution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283902756814851
+    m_Localized: Heavy Blade - Dash Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903327240192
+    m_Localized: Cleaving Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903327240193
+    m_Localized: Infernal Leap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903331434496
+    m_Localized: Burning Chains
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903331434497
+    m_Localized: Ashen Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283903331434498
+    m_Localized: Worldbreaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283904136740864
+    m_Localized: Kael
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905063682048
+    m_Localized: Dual Axes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905067876352
+    m_Localized: Warhammer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905067876353
+    m_Localized: Longsword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 283905067876354
+    m_Localized: Heavy Blade
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -137,7 +137,8 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | M05 | ✅ concluído | 2026-11-08 | Contratos de combate congelados (`Gameplay/Combat/Contracts`), Greatsword do Kael na frame data de 06, hit detection, dano recebido, estados/Stagger, projéteis/áreas/DoT, feedback, pool, CombatSandbox. dotnet 462/462, EditMode 813/813, PlayMode 65/65 (Combat 46). Pendente: checagem manual; lacunas (lunge, Forte/Dash) no Log do M05 |
 | M15 | ✅ concluído | 2026-11-08 | `Eclipse.Core.RunGen`: `MapGenerator` (13 linhas + chefe, 7 restrições de 09 §11.3), `EncounterPlanner` (orçamento, ondas, limites, receitas), `EncounterRuntimeRules`; 6 CSVs `DataSource/run` + SOs; Run Map Previewer. dotnet RunGen 24/24, EditMode 658/658. Pesos do mapa ajustados (TUNED) e divergências de 09 no Log do M15 |
 | M07 | ✅ concluído | 2026-11-08 | `Eclipse.AI`: HFSM+Utility, tokens, locomoção Burst, telegraph, 4 inimigos Ashen Wastes, AISandbox, soak 200 (gameplay+IA média 2,6 ms). EditMode 1012/1012, PlayMode AI 17/17. Pendente: soak no hardware alvo (GC ≠ 0, física p99 > 2 ms), desvios de TTK/letalidade ao M14, teste visual do telegraph |
-| M06, M08–M11, M13–M14, M16–M32 | ⏳ não iniciado | 2026-11-07 | |
+| M08 | ✅ concluído | 2026-11-08 | `Gameplay/Skills` (SkillController, SkillSpec v1 com ponto de extensão do M10, Deliveries/Effects/Triggers) e `Gameplay/Heroes` (Fury, passivas, 5 armas, `WeaponKitBonus`); 5 habilidades do Kael na CombatSandbox. EditMode 1052/1052, PlayMode Skills 14/14. Pendente: `ComboGcTests` (M05) instável (21–34 hits vs ≥40); frames/cone/arco/fissura provisórios (TUNED); stacks de Ruin Vulnerability do Worldbreaker (08); checagem manual de sensação |
+| M06, M09–M11, M13–M14, M16–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
 Legenda: ⏳ não iniciado · 🔄 em andamento · ✅ concluído · ❌ bloqueado (com motivo).
