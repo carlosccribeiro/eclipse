@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef14e24d5dcc08449bddf957128ff600, type: 3}
+  m_Name: attack_kael_heavy_blade_heavy
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Combat.AttackChainDefinition
+  stableId: attack.kael.heavy_blade.heavy
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: attack.kael.heavy_blade.heavy.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: b34a53eb8078b363
+  sourceDoc: "06 \xA73.6.2 / 08 \xA74.6"
+  nameEn: Heavy Blade - Execution
+  weaponId: weapon.kael.heavy_blade
+  kind: 1
+  comboIndex: 0
+  step:
+    startupFrames: 30
+    activeFrames: 6
+    recoveryFrames: 36
+    shape: 1
+    radius: 3
+    arcDegrees: 90
+    length: 0
+    width: 0
+    offset: {x: 0, y: 0, z: 0}
+    stagger: 60
+    staggerMax: 60
+    hitStopFrames: 10
+    procCoefficient: 1
+    damageMultiplier: 1
+    damageMultiplierMax: 1
+    lungeMinMeters: 0
+    lungeMaxMeters: 0
+    lungeConeDegrees: 60
+    hitGroup: 0
+    rehitIntervalFrames: 0
+    tracking: 0
+    commit: 0
+    chargeMinFrames: 0
+    chargeMaxFrames: 0
+  references:
+    version: 2
+    RefIds: []

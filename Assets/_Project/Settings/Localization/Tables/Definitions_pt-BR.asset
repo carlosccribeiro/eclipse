@@ -1590,6 +1590,110 @@ MonoBehaviour:
     m_Localized: Kael
     m_Metadata:
       m_Items: []
+  - m_Id: 225553801576448
+    m_Localized: Machados Duplos - Golpe 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225554464276480
+    m_Localized: Machados Duplos - Golpe 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225554850152448
+    m_Localized: Machados Duplos - Golpe 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225555244417024
+    m_Localized: Machados Duplos - Golpe 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225555642875904
+    m_Localized: Machados Duplos - Giro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225556011974656
+    m_Localized: Machados Duplos - Redemoinho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225556330741760
+    m_Localized: Machados Duplos - Ataque de Esquiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225556657897472
+    m_Localized: Martelo de Guerra - Golpe 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225557010219008
+    m_Localized: Martelo de Guerra - Golpe 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225557396094976
+    m_Localized: Martelo de Guerra - Slam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225557752610816
+    m_Localized: Martelo de Guerra - Ataque de Esquiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225558109126656
+    m_Localized: Espada Longa - Golpe 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225558427893760
+    m_Localized: Espada Longa - Golpe 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225558792798208
+    m_Localized: Espada Longa - Golpe 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225559103176704
+    m_Localized: Espada Longa - Estocada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225559451303936
+    m_Localized: Espada Longa - Estocada Perfurante
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225559774265344
+    m_Localized: Espada Longa - Ataque de Esquiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225560118198272
+    m_Localized: "L\xE2mina Pesada - Golpe 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225560466325504
+    m_Localized: "L\xE2mina Pesada - Golpe 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225560801869824
+    m_Localized: "L\xE2mina Pesada - Golpe 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225561162579968
+    m_Localized: "L\xE2mina Pesada - Execu\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225561519095808
+    m_Localized: "L\xE2mina Pesada - Ataque de Esquiva"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225565096837120
+    m_Localized: Machados Duplos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225565461741568
+    m_Localized: Martelo de Guerra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225565788897280
+    m_Localized: Espada Longa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 225566170578944
+    m_Localized: "L\xE2mina Pesada"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3f7733e7dbe8c4b8fce2362fb46472, type: 3}
+  m_Name: longsword
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Combat.WeaponDefinition
+  stableId: weapon.kael.longsword
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: weapon.kael.longsword.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: dbf642c83b23bfba
+  sourceDoc: "02 \xA73.4 / 06 \xA73.6 / 08 \xA74.6"
+  nameEn: Longsword
+  heroId: kael
+  baseId: base.kael.longsword
+  weightClass: 1
+  attacksPerSecond: 1.2
+  weaponPowerILvl1: 10
+  comboResetSeconds: 0.8
+  basicChain:
+  - {fileID: 11400000, guid: 95f3ad2e41fd6db4186250b65fe09854, type: 2}
+  - {fileID: 11400000, guid: 05b162aac2cbd7c4db06984ec9e81174, type: 2}
+  - {fileID: 11400000, guid: f149c11275d80f84caaa4ea04e6ae87c, type: 2}
+  - {fileID: 11400000, guid: 28bbc5f06ada2da4580e389fd84cf1d4, type: 2}
+  heavy: {fileID: 11400000, guid: 2fc7ffa2905ceb4458c04d0f1f2cd663, type: 2}
+  dashAttack: {fileID: 11400000, guid: 246879bc4ac9dc941884a523433bbf1d, type: 2}
+  feedback: {fileID: 11400000, guid: 4e9f8e0879912994d876804606300332, type: 2}
+  references:
+    version: 2
+    RefIds: []
