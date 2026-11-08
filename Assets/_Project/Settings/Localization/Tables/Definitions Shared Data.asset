@@ -1559,6 +1559,70 @@ MonoBehaviour:
     m_Key: roomweights.core.stratum_3.name
     m_Metadata:
       m_Items: []
+  - m_Id: 211799529521152
+    m_Key: difficulty.normal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211800280301568
+    m_Key: difficulty.veteran.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211800724897792
+    m_Key: difficulty.nightmare.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211801182076928
+    m_Key: difficulty.eclipse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211803728019456
+    m_Key: attack.enemy.husk.lunge.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211804252307456
+    m_Key: attack.enemy.husk.spark.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211804768206848
+    m_Key: attack.enemy.marauder.combo1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805196025856
+    m_Key: attack.enemy.marauder.combo2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805577707520
+    m_Key: attack.enemy.marauder.overhead.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805992943616
+    m_Key: attack.enemy.hurler.slag.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211806399791104
+    m_Key: attack.enemy.brute.slam.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211809818148864
+    m_Key: enemy.ashen.cinder_husk.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810212413440
+    m_Key: enemy.ashen.marauder.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810598289408
+    m_Key: enemy.ashen.slag_hurler.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810996748288
+    m_Key: enemy.ashen.kiln_brute.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212067004481536
+    m_Key: enemy.scaling.curve.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

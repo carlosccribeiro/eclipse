@@ -1,0 +1,5 @@
+id,name_pt,name_en,tier,tokens_melee,tokens_ranged,min_token_interval_s,ambush_tokens,max_windup_reduction_pct,stagger_threshold_mult,hp_mult,damage_mult,source_doc,notes
+difficulty.normal,Normal,Normal,Normal,3,2,1.2,1,15,1.0,1.0,1.0,09 §3.2 / 06 §3.8.2 / 06 §3.10,"max_windup_reduction_pct is the global cap (06 §3.10); hp_mult/damage_mult provisional 1.0 until M20"
+difficulty.veteran,Veterano,Veteran,Veteran,3,3,1.0,1,15,1.2,1.0,1.0,09 §3.2 / 06 §3.8.2 / 06 §3.10,"hp_mult/damage_mult provisional 1.0 until M20"
+difficulty.nightmare,Pesadelo,Nightmare,Nightmare,4,3,0.9,2,15,1.4,1.0,1.0,09 §3.2 / 06 §3.8.2 / 06 §3.10,"hp_mult/damage_mult provisional 1.0 until M20"
+difficulty.eclipse,Eclipse,Eclipse,Eclipse,5,4,0.8,2,15,1.6,1.0,1.0,09 §3.2 / 06 §3.8.2 / 06 §3.10,"hp_mult/damage_mult provisional 1.0 until M20"

@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9731ce8a17839478a7e0661725783a, type: 3}
+  m_Name: marauder
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Enemies.EnemyDefinition
+  stableId: enemy.ashen.marauder
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: enemy.ashen.marauder.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: fe875d1b1d23acee
+  sourceDoc: "09 \xA75.1 / 09 \xA74"
+  nameEn: Ashborn Marauder
+  archetype: 1
+  faction: Hollow
+  hpMult: 1
+  damageMult: 1
+  threatPoints: 3
+  massClass: 1
+  staggerThreshold: 40
+  moveSpeed: 4.2
+  baseElement: 0
+  secondaryElement: 0
+  resistances:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  statusResistance: 0
+  lootClass: 1
+  tagBits: 8388613
+  preferredRangeMin: 0
+  preferredRangeMax: 2
+  reposition: 0
+  retreatBelowMeters: 0
+  retreatCooldownSeconds: 0
+  frontPlateReduction: 0
+  frontPlateArcDegrees: 0
+  hfsmTemplate: hfsm.melee
+  attacks:
+  - {fileID: 11400000, guid: a3388b9ad9cf2944683f7a9c5d3a745b, type: 2}
+  - {fileID: 11400000, guid: 2d8ae6033f0ec994f8ac905086dcc949, type: 2}
+  - {fileID: 11400000, guid: f6e95270dc1747947bd01cb7b34852a8, type: 2}
+  references:
+    version: 2
+    RefIds: []

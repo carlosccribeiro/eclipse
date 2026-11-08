@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913968f553887c944acb2a5f89e838ae, type: 3}
+  m_Name: nightmare
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Difficulties.DifficultyDefinition
+  stableId: difficulty.nightmare
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: difficulty.nightmare.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 0f28be331bb50bdd
+  sourceDoc: "09 \xA73.2 / 06 \xA73.8.2 / 06 \xA73.10"
+  nameEn: Nightmare
+  tier: 2
+  tokensMelee: 4
+  tokensRanged: 3
+  minTokenIntervalSeconds: 0.9
+  ambushTokens: 2
+  maxWindupReduction: 0.15
+  staggerThresholdMult: 1.4
+  hpMult: 1
+  damageMult: 1
+  references:
+    version: 2
+    RefIds: []

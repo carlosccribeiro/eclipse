@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe908b7340fed1418e7b9b5ad941e36, type: 3}
+  m_Name: TelegraphPalette
+  m_EditorClassIdentifier: Eclipse.AI::Eclipse.AI.Telegraphs.TelegraphPalette
+  entries:
+  - visual: 0
+    fill: {r: 0.85, g: 0.1, b: 0.1, a: 0.6}
+    border: {r: 1, g: 0.2, b: 0.2, a: 1}
+  - visual: 1
+    fill: {r: 0.55, g: 0.2, b: 0.85, a: 0.6}
+    border: {r: 0.75, g: 0.45, b: 1, a: 1}
+  - visual: 2
+    fill: {r: 1, g: 0.93, b: 0.62, a: 0.65}
+    border: {r: 1, g: 1, b: 0.9, a: 1}
+  - visual: 3
+    fill: {r: 0.1, g: 0.9, b: 0.95, a: 0.35}
+    border: {r: 0.1, g: 0.9, b: 0.95, a: 1}
+  - visual: 4
+    fill: {r: 0.85, g: 0.1, b: 0.1, a: 0.65}
+    border: {r: 1, g: 0.92, b: 0.1, a: 1}
+  - visual: 5
+    fill: {r: 1, g: 1, b: 1, a: 0.2}
+    border: {r: 1, g: 1, b: 1, a: 1}
+  - visual: 6
+    fill: {r: 0.95, g: 0.1, b: 0.1, a: 0.7}
+    border: {r: 1, g: 0.3, b: 0.3, a: 1}
+  - visual: 7
+    fill: {r: 0.7, g: 0.75, b: 0.85, a: 0.5}
+    border: {r: 0.85, g: 0.9, b: 1, a: 1}
+  - visual: 8
+    fill: {r: 0.9, g: 0.15, b: 0.15, a: 0.8}
+    border: {r: 1, g: 0.35, b: 0.35, a: 1}
