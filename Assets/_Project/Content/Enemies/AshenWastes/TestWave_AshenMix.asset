@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca56d0948cd1654b8d09473d0ed6979, type: 3}
+  m_Name: TestWave_AshenMix
+  m_EditorClassIdentifier: Eclipse.AI::Eclipse.AI.Spawning.TestWaveDefinition
+  entries:
+  - prefab: {fileID: 7597857122834488260, guid: 727f14282f3c47f41801cffb2e775ce2, type: 3}
+    count: 6
+  - prefab: {fileID: 6608981856746828091, guid: 1fa3a28f1ee76a9429a7f60ee76847cd, type: 3}
+    count: 3
+  - prefab: {fileID: 5796585207789647317, guid: 3a93fb2ecdd6fa2429c350c8bbeb5d47, type: 3}
+    count: 2
+  - prefab: {fileID: 969048991396119555, guid: 971194b934cd9b34f90d1d13ba9f3133, type: 3}
+    count: 1
+  maxAlive: 6
+  spawnIntervalSeconds: 0.75
+  monsterLevel: 1

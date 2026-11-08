@@ -1,0 +1,20 @@
+{
+    "name": "Eclipse.AI.Sandbox",
+    "rootNamespace": "Eclipse.AI.Sandbox",
+    "references": [
+        "Eclipse.Core",
+        "Eclipse.Data",
+        "Eclipse.Gameplay",
+        "Eclipse.AI",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
