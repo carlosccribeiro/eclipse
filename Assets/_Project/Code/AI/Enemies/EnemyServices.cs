@@ -76,7 +76,7 @@ namespace Eclipse.AI.Enemies
         {
             if (_blueprints.TryGetValue((enemy, level), out blueprint)) return true;
             if (!EnemyStatsBuilder.TryBuild(enemy, Scaling, level, Difficulty, out EnemyStats stats)) return false;
-            float reduction = Difficulty != null ? Difficulty.MaxWindupReduction : 0f;
+            float reduction = EnemyStatsBuilder.WindupReduction(Difficulty);
             blueprint = EnemyBlueprint.Build(enemy, in stats, reduction);
             _blueprints[(enemy, level)] = blueprint;
             RegisterPlans(blueprint);

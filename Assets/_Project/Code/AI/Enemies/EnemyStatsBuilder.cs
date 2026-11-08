@@ -46,6 +46,17 @@ namespace Eclipse.AI.Enemies
             return false;
         }
 
+        /// <summary>
+        /// Wind-up reduction applied at spawn. The difficulty asset stores the <b>cap</b> (06 section 3.10: "redução máxima em
+        /// dificuldades altas"), and the table's wind-ups are the Normal values, so Normal applies none; higher tiers apply the cap
+        /// (the per-tier schedule belongs to M20). Found by the T10 telegraph test: using the cap in Normal gave 0.595 s instead of 0.7 s.
+        /// </summary>
+        public static float WindupReduction(DifficultyDefinition difficulty)
+        {
+            if (difficulty == null || difficulty.Tier == Eclipse.Data.Difficulties.DifficultyTier.Normal) return 0f;
+            return difficulty.MaxWindupReduction;
+        }
+
         /// <summary>Damage of one attack: <c>damage_rel</c> times the enemy hit damage.</summary>
         public static float AttackDamage(in EnemyStats stats, AttackDefinition attack) => stats.Damage * attack.DamageRel;
 
