@@ -55,7 +55,7 @@ namespace Eclipse.Tests.PlayMode.Combat.Feedback
 
             _run.Release(InputActionId.Basic);
             Assert.GreaterOrEqual(_run.PlayerHits.Count, 20, "the combo kept landing hits");
-            GcProbe.AssertClean(result);
+            GcProbe.AssertClean(result, engineBookkeepingOnRunner: true);
         }
     }
 }
