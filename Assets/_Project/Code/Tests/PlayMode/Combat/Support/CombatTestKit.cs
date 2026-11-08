@@ -119,6 +119,8 @@ namespace Eclipse.Tests.PlayMode.Combat
         {
             yield return EditorSceneManager.LoadSceneAsyncInPlayMode(ScenePath, new LoadSceneParameters(LoadSceneMode.Single));
             for (int i = 0; i < 5; i++) yield return null;
+            // The IMGUI debug overlay allocates every frame whenever a graphics device exists (CI); it is not gameplay.
+            foreach (var overlay in UnityEngine.Object.FindObjectsByType<CombatDebugOverlay>(FindObjectsSortMode.None)) overlay.Visible = false;
         }
 
         public static CombatActor FindDummy(CombatWorld world, string name)
@@ -191,7 +193,7 @@ namespace Eclipse.Tests.PlayMode.Combat
         public static void AssertClean(GcResult r, bool engineBookkeepingOnRunner = false)
         {
             Debug.Log("[GcProbe] " + r.Summary);
-            bool onRunner = !string.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("GITHUB_ACTIONS"));
+            bool onRunner = Application.platform == RuntimePlatform.LinuxEditor; // CI runs the Linux editor; dev machines are Windows
             if (engineBookkeepingOnRunner && onRunner)
             {
                 if (r.LoopMedianBytes > r.BaselineMedianBytes) Debug.LogWarning("[GcProbe] runner-only allocation above idle (open item): " + r.Summary);
