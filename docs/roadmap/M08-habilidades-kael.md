@@ -1,5 +1,5 @@
 # M08 — Sistema de habilidades v1 + kit do Kael
-Fase 1 · Onda 5 · Status: ⏳ não iniciado
+Fase 1 · Onda 5 · Status: ✅ concluído (2026-11-08) com pendências no Log
 Depende de: M03, M05 · Desbloqueia: M06, M10 · Paralelo com: M07 (AI — só contratos congelados do M05)
 Branch: modulo/M08-habilidades-kael
 Docs de referência: 08-herois §3 (convenções, DA/APS), §4 (Kael inteiro), §11.1; 06-combate §3.2 (Weapon Power, Execute), §3.5 (cancelamentos), §3.6.2 (frame data das 5 armas do Kael), §3.8.3 (Unstoppable, Root, Parry), §3.11 (hit-stop global de Ultimate); 07-resonance §4 (Burning, Ruin Vulnerability); 11-arquitetura §3.4.2 (`HeroDefinition`, `ResourceDefinition`, `SkillDefinition`), §3.6.1, §3.6.3; 00 §5 R01, R03, R05, R08, R12, R20
@@ -160,3 +160,12 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 Plano criado.
+- 2026-11-08 Implementado T1–T8 (commits `feat(M08)` T1–T7 e `test(M08)` T8). Critérios 1–6 atendidos. Saídas: comando de dados 0 erros (1 aviso: modifiers.csv ausente, pré-existente), EditMode 1052/1052, PlayMode Skills 14/14, PlayMode completo 78/79.
+- **Falha aberta:** `ComboGcTests` (M05) bimodal (34 hits passa, 21 falha; ≥40 esperado). Não confirmado se é pré-existente; o teste depende de tempo real. Decidir limiar no M05/M06.
+- **Ajuste em teste M05:** `SandboxCombatRun` zera números de `KaelPassives` (Embers of Rage) para manter o combo de 160%.
+- **Bug corrigido:** `DamageEffect` duplicava `OnHitDealt`/`OnCritDealt`/Stagger com o `CombatReceiver` real. Verificar se `AreaDeliverer` (Combat, l.116) tem o mesmo problema (M05).
+- **Provisórios (TUNED, confirmar com dono do 08):** frames windup/active/recovery Cleaving 14/6/26, Leap 8/30/20, Chains 12/4/22, Ashen 6/90/18, Worldbreaker 30/6/40; cone do Chains 60°; arco do contra-ataque do Ashen 120°; largura das fissuras 1,5 m; `unstoppable_s` do Worldbreaker 1,3; Stagger das habilidades 0; multiplicador de dano por golpe 100% nas 4 armas novas; Ruin do Worldbreaker 1 stack por fissura, máx. 5, 6 s (lacuna de 08 §4.4).
+- **Interinos:** chão Burning do Leap = Burning 2 s no pouso (`AreaSpec` não carrega status; Contracts congelado); Burning só empilha, sem DoT (M11); Ashbound Resolve usa `DamageReduction` Flat +0,15; Vulnerability via `TimedVulnerabilitySet` (sem StatId no Core).
+- **Não ligado:** dodge-cancel de habilidade; kit de arma além de área do Cleaving, raio do Leap e +1 corrente do Chains (Parry, contra-ataque, Stagger, execução); visual de arma continua Greatsword; colunas de "anda a 50%" (Dual Axes) e ×2 da Heavy Blade (em `WeaponKitBonus`); sem PropertyDrawer para `[SerializeReference]`; triggers não recompilam em `StatsChanged`.
+- **Nota para o M10:** estender `SkillSpecBuilder` via `ISkillSpecModifier` (6 fases, ordem fase/canal/chave); migrar `WeaponKitBonus` para `ModifierOp` no canal "Item". DPS de folha entre armas só é comparável normalizado pelo fator do doc 02.
+- **Checklist manual de sensação (pendente):** cada habilidade na sandbox (F4 atacante para Parry, F5–F9 troca de arma), janela de Parry de 12 f, hit-stop do Worldbreaker, spam de Cleaving.
