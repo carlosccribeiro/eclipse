@@ -189,3 +189,5 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 Plano criado.
+- 2026-11-08 Branch `modulo/M07-ia-inimigos` criada de main (d1c7d2b); plano aprovado pelo usuário; executors em sequência no checkout.
+- 2026-11-08 T0 ✅ `DataSource/EnemyScaling.csv` (níveis 1–110) gerado da curva R53 (06 §3.13, D02); confere com a tabela do doc (eLvl 1/25/50/76). Ascension (85–110): eLvl_Eclipse=84 (pior caso) e N = nível − 84, HP ×1,035^N e dano ×1,02^N (a sala real pode usar eLvl_Eclipse menor; refinar no M20/M14). `std_damage` já inclui M_let do tier. Conta Marauder (Normal, nível 1): HP 36 × 1,0 = 36; DPS_ref 16,4 → TTK 2,2 s (alvo 1,5–3 s). Dano 20 × 1,0 = 20; com 30% de mitigação = 14 de 288 de vida de referência de Kael = 4,9% (alvo 4–6%) — premissas em docs/roadmap/reports/D02-calculos.md §3.3.
