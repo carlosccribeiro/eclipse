@@ -174,6 +174,18 @@ namespace Eclipse.Core.Loot.Generation.Tests
         }
 
         [Test]
+        public void SourceGuaranteedEpicPlus_AppliesToFirstItemsOnly()
+        {
+            var src = _f.Loot.GetSource(LootSourceKind.Guardian);
+            Assert.GreaterOrEqual(src.GuaranteedEpicPlus, 1);
+            var c = GenFixture.Ctx(LootSourceKind.Guardian); c.ItemIndex = 0;
+            Assert.AreEqual(0.0, Dist(c, 2000)[0] + Dist(c, 2000)[1]); // never Common/Rare
+            c.ItemIndex = src.GuaranteedEpicPlus; // beyond the guaranteed count
+            var d = Dist(c, 2000);
+            Assert.Greater(d[0] + d[1], 0.0);
+        }
+
+        [Test]
         public void SoftPity_MultipliesAndCapsAtTwiceBase()
         {
             var c = GenFixture.Ctx(LootSourceKind.Elite); // base L = 0.5%, Normal soft start = 80

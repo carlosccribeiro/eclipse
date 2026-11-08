@@ -26,6 +26,8 @@ namespace Eclipse.Core.Loot.Generation
             bool hasCurrent = !string.IsNullOrEmpty(ctx.HeroId);
             if (hasCurrent && rng.Chance(p)) return ctx.HeroId;
             Collect(ctx.HeroId);
+            // Generic drops need a droppable base: heroes without any compatible base (e.g. only listed in home regions) are skipped.
+            if (!legendaryKind) RemoveHeroesWithoutBase();
             if (_heroes.Count == 0) return ctx.HeroId;
             return _heroes[rng.Range(0, _heroes.Count)];
         }
@@ -43,6 +45,17 @@ namespace Eclipse.Core.Loot.Generation
             for (int i = 0; i < homes.Count; i++) Add(homes[i].HeroId);
             _heroes.Sort(Ordinal);
             return _heroes;
+        }
+
+        private void RemoveHeroesWithoutBase()
+        {
+            var bases = _items.Bases;
+            for (int h = _heroes.Count - 1; h >= 0; h--)
+            {
+                bool any = false;
+                for (int i = 0; i < bases.Count && !any; i++) any = BaseSelector.Compatible(bases[i], _heroes[h]);
+                if (!any) _heroes.RemoveAt(h);
+            }
         }
 
         private void Add(string hero)

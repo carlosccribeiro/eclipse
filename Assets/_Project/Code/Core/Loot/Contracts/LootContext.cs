@@ -48,6 +48,11 @@ namespace Eclipse.Core.Loot
         public float QuantityBonus;
         /// <summary>Rift Cache: all Challenge Rooms of the run were cleared (+ExtraItemsIfAllChallenges items; 05 section 3.1). Additive field (T4).</summary>
         public bool AllChallengesCleared;
+        /// <summary>
+        /// Index (0-based) of this item among the items of one source occurrence; items with index &lt; <c>LootSourceData.GuaranteedEpicPlus</c>
+        /// are raised to Epic or better (Guardian/Boss). -1 = unspecified, no source guarantee. Additive field.
+        /// </summary>
+        public int ItemIndex = -1;
         public AttunementTarget Attunement;
         public LootGuarantees Guarantees = new LootGuarantees { SetPieceChanceOverride = -1f };
         /// <summary>Per-hero pity state; null = no pity.</summary>

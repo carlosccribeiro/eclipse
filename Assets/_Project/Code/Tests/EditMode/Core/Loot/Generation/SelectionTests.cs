@@ -30,6 +30,17 @@ namespace Eclipse.Core.Loot.Generation.Tests
         }
 
         [Test]
+        public void GenericPick_SkipsHeroesWithoutCompatibleBase()
+        {
+            // "ghost" only appears in a home region: no base can drop for it.
+            _f.Loot.HomeList.Add(new HomeRegionData { SetId = "ghost_set", HeroId = "ghost", RegionId = "ashen_wastes" });
+            foreach (var b in _f.Items.Bases) if (string.IsNullOrEmpty(b.HeroId)) b.Droppable = false; // only hero-specific bases remain
+            var sel = new HeroSelector(_f.Items, _f.Loot); var rng = GenFixture.Rng(5);
+            var c = GenFixture.Ctx(hero: "kael");
+            for (int i = 0; i < 2000; i++) Assert.AreNotEqual("ghost", sel.Pick(c, false, ref rng));
+        }
+
+        [Test]
         public void Base_RespectsHeroDroppableAndSlotWeights()
         {
             var sel = new BaseSelector(_f.Items, _f.Loot); var rng = GenFixture.Rng(9);

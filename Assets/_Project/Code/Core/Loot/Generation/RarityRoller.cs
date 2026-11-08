@@ -59,7 +59,8 @@ namespace Eclipse.Core.Loot.Generation
             else rarity = Rarity.Common;
 
             Rarity floor = src.RarityFloor;
-            if (ctx.Guarantees.ForceEpicPlus && floor < Rarity.Epic) floor = Rarity.Epic;
+            bool sourceGuarantee = ctx.ItemIndex >= 0 && ctx.ItemIndex < src.GuaranteedEpicPlus;
+            if ((ctx.Guarantees.ForceEpicPlus || sourceGuarantee) && floor < Rarity.Epic) floor = Rarity.Epic;
             return rarity < floor ? floor : rarity;
         }
     }
