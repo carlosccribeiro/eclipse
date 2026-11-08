@@ -62,7 +62,7 @@ MonoBehaviour:
     skill: {fileID: 11400000, guid: 3d55a74e01eb9374a96d2c596d7fc625, type: 2}
   - slot: 6
     skill: {fileID: 11400000, guid: 8901dff1faf98144cb91e19d527cccde, type: 2}
-  movementProfile: {fileID: 0}
+  movementProfile: {fileID: 11400000, guid: ea8ff815120d2bf4ebb563af8bc748ed, type: 2}
   references:
     version: 2
     RefIds: []

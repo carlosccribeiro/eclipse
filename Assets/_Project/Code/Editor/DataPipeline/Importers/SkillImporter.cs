@@ -54,13 +54,36 @@ namespace Eclipse.Editor.DataPipeline
             if (moveDuringCast != 0 && moveDuringCast != 50 && moveDuringCast != 100)
                 throw new CsvFormatException("move_during_cast_pct must be 0, 50 or 100 (06 section 3.5)", row.Line, "move_during_cast_pct");
 
+            List<SkillParam> parameters = ParamColumn.Parse(row, "params");
+            RequirePhaseFrames(parameters, row);
             // Percentages are numbers in the CSV (220 = 220%) and fractions in the asset.
             definition.EditorSetNumbers(row.GetString("hero_id"), row.GetEnum<SkillSlot>("slot"), tags,
                 row.GetString("cost_resource_id", string.Empty), row.GetFloat("cost_amount", 0f), row.GetBool("cost_all_resource", false),
                 row.GetFloat("cost_minimum", 0f), row.GetFloat("resource_gain", 0f), row.GetFloat("cooldown_s", 0f),
                 row.GetFloat("damage_coef_pct", 0f) / 100f, row.GetFloat("coef_per_resource_pct", 0f) / 100f, moveDuringCast,
                 row.GetBool("commit", false), row.GetBool("tracking", false), row.GetInt("modifier_slots"),
-                ParamColumn.Parse(row, "params"));
+                parameters);
+        }
+
+        /// <summary>
+        /// Every skill must carry its phase frames (06 3.5, 60 fps) as the params windup_f, active_f and recovery_f: whole numbers
+        /// &gt;= 0. Values that the docs do not define are marked TUNED in the "notes" column.
+        /// </summary>
+        private static void RequirePhaseFrames(List<SkillParam> parameters, CsvRow row)
+        {
+            foreach (string key in new[] { "windup_f", "active_f", "recovery_f" })
+            {
+                bool found = false;
+                for (int i = 0; i < parameters.Count; i++)
+                {
+                    if (parameters[i].Key != key) continue;
+                    found = true;
+                    float v = parameters[i].Value;
+                    if (v < 0f || v != Math.Floor(v))
+                        throw new CsvFormatException("param '" + key + "' must be a whole number of frames >= 0", row.Line, "params");
+                }
+                if (!found) throw new CsvFormatException("missing param '" + key + "' (phase frames)", row.Line, "params");
+            }
         }
     }
 }

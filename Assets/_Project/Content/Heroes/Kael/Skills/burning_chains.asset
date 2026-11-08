@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: 9463654c17fe7d19
+  importedHash: 44d7d408175a214a
   sourceDoc: "08 \xA74.4"
   nameEn: Burning Chains
   heroId: hero.kael
@@ -52,6 +52,8 @@ MonoBehaviour:
   parameters:
   - key: range_m
     value: 8
+  - key: arc_deg
+    value: 60
   - key: max_targets
     value: 5
   - key: root_s
@@ -60,12 +62,82 @@ MonoBehaviour:
     value: 10
   - key: break_damage_coef_pct
     value: 60
+  - key: windup_f
+    value: 12
+  - key: active_f
+    value: 4
+  - key: recovery_f
+    value: 22
   delivery:
-    rid: -2
-  effects: []
+    rid: 4564267573705441286
+  effects:
+  - rid: 4564267573705441287
+  - rid: 4564267573705441288
+  - rid: 4564267573705441289
+  - rid: 4564267573705441290
   triggers: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 4564267573705441286
+      type: {class: ConeMultiTargetDelivery, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        impactPhase: 2
+        rangeParam: range_m
+        arcParam: arc_deg
+        maxTargetsParam: max_targets
+    - rid: 4564267573705441287
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 1
+        coefficientParam: 
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []
+    - rid: 4564267573705441288
+      type: {class: ApplyStatusEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        statusId: status.burning
+        stacks: 1
+        durationParam: 
+        durationSeconds: 0
+        potency: 1
+        guaranteed: 1
+    - rid: 4564267573705441289
+      type: {class: ApplyStateEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        state: 0
+        durationParam: root_s
+        durationSeconds: 0
+        parryBonusParam: 
+    - rid: 4564267573705441290
+      type: {class: TetherEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        durationParam: root_s
+        durationSeconds: 0
+        breakDistanceParam: break_distance_m
+        breakDistance: 0
+        onBreak:
+        - rid: 4564267573705441291
+    - rid: 4564267573705441291
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 1
+        coefficientParam: break_damage_coef_pct
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []

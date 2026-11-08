@@ -31,8 +31,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: f3eace3916907316
-  sourceDoc: "08 \xA74.4 / 06 \xA73.11 / M08 premissas (stacks de Ruin provis\xF3rio)"
+  importedHash: a194f3c1b0f3520c
+  sourceDoc: "08 \xA74.4 / 06 \xA73.11 / 07 \xA74.6 / M08 premissas"
   nameEn: Worldbreaker
   heroId: hero.kael
   slot: 6
@@ -54,22 +54,89 @@ MonoBehaviour:
     value: 7
   - key: fissure_count
     value: 6
+  - key: fissure_width_m
+    value: 1.5
   - key: ruin_vulnerability_s
     value: 6
+  - key: ruin_vulnerability_pct
+    value: 4
   - key: ruin_stacks_per_fissure
     value: 1
   - key: ruin_stacks_max
     value: 5
+  - key: unstoppable_s
+    value: 1.3
   - key: hitstop_f
     value: 6
   - key: shake
     value: 0.5
+  - key: windup_f
+    value: 30
+  - key: active_f
+    value: 6
+  - key: recovery_f
+    value: 40
   delivery:
-    rid: -2
-  effects: []
+    rid: 4564267573705441296
+  effects:
+  - rid: 4564267573705441297
+  - rid: 4564267573705441298
+  - rid: 4564267573705441299
+  - rid: 4564267573705441300
   triggers: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 4564267573705441296
+      type: {class: RadialLinesDelivery, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        impactPhase: 2
+        countParam: fissure_count
+        lengthParam: radius_m
+        widthParam: fissure_width_m
+        startAngleDegrees: 0
+    - rid: 4564267573705441297
+      type: {class: ApplyStateEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 0
+        targeting: 1
+        state: 1
+        durationParam: unstoppable_s
+        durationSeconds: 0
+        parryBonusParam: 
+    - rid: 4564267573705441298
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 0
+        coefficientParam: 
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []
+    - rid: 4564267573705441299
+      type: {class: ApplyTimedModifierEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        mode: 1
+        sourceKey: kael.worldbreaker.ruin
+        durationParam: ruin_vulnerability_s
+        durationSeconds: 0
+        valueParam: ruin_vulnerability_pct
+        value: 0
+        stat: 0
+        bucket: 0
+        stacksPerHitParam: ruin_stacks_per_fissure
+        stacksPerHit: 0
+        maxStacksParam: ruin_stacks_max
+        maxStacks: 0
+    - rid: 4564267573705441300
+      type: {class: GlobalHitStopEffect, ns: Eclipse.Gameplay.Heroes.Kael, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 2
+        framesParam: hitstop_f
+        shakeParam: shake

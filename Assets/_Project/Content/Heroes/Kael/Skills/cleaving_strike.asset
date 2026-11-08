@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: aec52ebc58cea1aa
+  importedHash: 3108a37c6aacb6ad
   sourceDoc: "08 \xA74.4"
   nameEn: Cleaving Strike
   heroId: hero.kael
@@ -54,12 +54,35 @@ MonoBehaviour:
     value: 180
   - key: radius_m
     value: 3.5
+  - key: windup_f
+    value: 14
+  - key: active_f
+    value: 6
+  - key: recovery_f
+    value: 26
   delivery:
-    rid: -2
-  effects: []
+    rid: 4564267573705441280
+  effects:
+  - rid: 4564267573705441281
   triggers: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 4564267573705441280
+      type: {class: MeleeArcDelivery, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        impactPhase: 2
+        radiusParam: radius_m
+        arcParam: arc_deg
+    - rid: 4564267573705441281
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 0
+        coefficientParam: 
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []

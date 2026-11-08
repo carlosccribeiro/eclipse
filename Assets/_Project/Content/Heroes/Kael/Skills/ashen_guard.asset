@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: b73e144f7b318dc9
+  importedHash: 616aa23432ee009b
   sourceDoc: "08 \xA74.4 / 00 R20"
   nameEn: Ashen Guard
   heroId: hero.kael
@@ -58,6 +58,8 @@ MonoBehaviour:
     value: 30
   - key: counter_radius_m
     value: 3
+  - key: counter_arc_deg
+    value: 120
   - key: resource_on_counter
     value: 20
   - key: parry_window_s
@@ -66,12 +68,56 @@ MonoBehaviour:
     value: 12
   - key: parry_counter_bonus_pct
     value: 50
+  - key: windup_f
+    value: 6
+  - key: active_f
+    value: 90
+  - key: recovery_f
+    value: 18
   delivery:
-    rid: -2
-  effects: []
+    rid: 4564267573705441292
+  effects:
+  - rid: 4564267573705441293
+  - rid: 4564267573705441294
+  - rid: 4564267573705441295
   triggers: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 4564267573705441292
+      type: {class: StanceDelivery, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        impactPhase: 2
+        durationParam: stance_s
+        counterRadiusParam: counter_radius_m
+        counterArcParam: counter_arc_deg
+    - rid: 4564267573705441293
+      type: {class: ApplyStateEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 1
+        targeting: 1
+        state: 2
+        durationParam: 
+        durationSeconds: 0
+        parryBonusParam: 
+    - rid: 4564267573705441294
+      type: {class: DamageEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 0
+        damageType: 0
+        coefficientParam: 
+        coefficientScale: 1
+        procCoefficient: 1
+        staggerValue: 0
+        gainAsExtra: []
+        conversions: []
+    - rid: 4564267573705441295
+      type: {class: GainResourceEffect, ns: Eclipse.Gameplay.Skills, asm: Eclipse.Gameplay}
+      data:
+        timing: 2
+        targeting: 1
+        amountParam: resource_on_counter
+        amount: 0
+        procCoefficient: 1
+        scaleByProcCoefficient: 0
