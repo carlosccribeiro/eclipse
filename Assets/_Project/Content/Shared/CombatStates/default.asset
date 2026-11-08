@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e26f64b2d3a5e45b4b15e6b39189bb, type: 3}
+  m_Name: default
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Combat.CombatStatesDefinition
+  stableId: combat.states.default
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: combat.states.default.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 09503f986085ae77
+  sourceDoc: "06 \xA73.8 / 00 R09 / 00 R11"
+  nameEn: Combat States
+  values:
+    FlinchMinStaggerLight: 1
+    FlinchMinStaggerMedium: 10
+    EliteFlinchMult: 2
+    KnockbackLight: 1
+    KnockbackMedium: 0.7
+    KnockbackHeavy: 0.3
+    KnockbackColossal: 0
+    EliteKnockbackMult: 0.6
+    EliteCcDurationMult: 0.6
+    StaggerThresholdMedium: 40
+    StaggerThresholdHeavy: 120
+    StaggerThresholdEliteMult: 2.5
+    StaggerThresholdGuardian: 400
+    StaggerThresholdBoss: 800
+    DifficultyNormal: 1
+    DifficultyVeteran: 1.2
+    DifficultyNightmare: 1.4
+    DifficultyEclipse: 1.6
+    DifficultyAscensionPerLevel: 0.01
+    StaggerDecayDelaySeconds: 3
+    StaggerDecayFractionPerSecond: 0.15
+    StaggeredSeconds: 1.5
+    StaggeredEliteSeconds: 2
+    StaggeredGuardianSeconds: 3
+    StaggeredVulnerability: 0.2
+    BrokenSeconds: 4
+    BrokenVulnerability: 0.3
+    BrokenHitStopFrames: 6
+    BreakThresholdMaxGrowths: 3
+    BreakThresholdGrowth: 0.5
+    CcToStaggerPerSecond: 40
+    CcDrWindowSeconds: 8
+    CcDrFirst: 1
+    CcDrSecond: 0.5
+    CcDrThird: 0.25
+    PlayerHardMaxSeconds: 1.5
+    PlayerFreezeMaxSeconds: 1
+    PlayerRootMaxSeconds: 2
+    PlayerHardImmunitySeconds: 2
+    TauntMaxSeconds: 3
+    TauntEliteMult: 0.5
+    WallImpactDamageFraction: 0.1
+    WallImpactStunSeconds: 0.5
+    SlowEnemyCap: 0.6
+    SlowPlayerMinSpeed: 0.4
+    StealthMaxSeconds: 4
+    StealthReenterIcdSeconds: 1
+    StealthRevealMeters: 3
+    ParryWindowFrames: 12
+    ParryCapSeconds: 0.3
+    ParryAttackerStagger: 50
+    PlayerFlinchFrames: 8
+    PlayerFlinchCancelFrame: 6
+    KnockdownFrames: 24
+    KnockdownInvulnerableFrames: 10
+  references:
+    version: 2
+    RefIds: []

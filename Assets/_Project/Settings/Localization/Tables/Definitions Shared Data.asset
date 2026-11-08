@@ -1335,6 +1335,10 @@ MonoBehaviour:
     m_Key: weapon.kael.greatsword.name
     m_Metadata:
       m_Items: []
+  - m_Id: 101854691753984
+    m_Key: combat.states.default.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

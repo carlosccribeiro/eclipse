@@ -1338,6 +1338,10 @@ MonoBehaviour:
     m_Localized: Espada Grande
     m_Metadata:
       m_Items: []
+  - m_Id: 101854691753984
+    m_Localized: Estados de Combate
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

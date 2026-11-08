@@ -337,4 +337,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 43e26631f87b6e347bb7b42f5711eedf, type: 2}
   - {fileID: 11400000, guid: f4f6d5503c2dcbf4489a79ff7d701047, type: 2}
   - {fileID: 11400000, guid: dcc1c1b0cb34cf24aa54d47bf58541fb, type: 2}
+  - {fileID: 11400000, guid: a0b608332d877d64ca7ed9b443635b1e, type: 2}
   remapAsset: {fileID: 11400000, guid: 454a6c3a06c40e54baa4e732c4f1c008, type: 2}
