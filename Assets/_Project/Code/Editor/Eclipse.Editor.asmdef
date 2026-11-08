@@ -15,7 +15,8 @@
         "Unity.RenderPipelines.Universal.Runtime",
         "Unity.Localization",
         "Unity.Localization.Editor",
-        "Unity.Addressables"
+        "Unity.Addressables",
+        "Unity.Cinemachine"
     ],
     "includePlatforms": [
         "Editor"

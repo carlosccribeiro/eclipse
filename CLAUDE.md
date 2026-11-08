@@ -62,6 +62,8 @@ docs/                  GDD (docs/gdd), roadmap (docs/ROADMAP.md), planos de mód
 ```
 (Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/<Área>/` com namespace `Eclipse.Core.<Área>.Tests` (compilados também por `tools/CoreTests`; filtro `--filter FullyQualifiedName~Eclipse.Core.<Área>`). Subpastas do Core: `Ids, Tags, Random, Time, Events, Definitions, DataTables, Stats, Attributes, Damage, CrowdControl, Procs` (`DataTables` = `CsvTable`/`CsvRow`, parser CSV RFC 4180).
 
+Gameplay (M04): `Gameplay/{Simulation,Physics,Input,Player,Entities,Events,Camera}`. `TickScheduler` (`Advance`/`StepManual`) é movido por `GameplayServices.FixedUpdate`; `EntityClock.Freeze(n)` para hit-stop local. Camadas físicas só em `PhysicsLayers` (módulos seguintes não editam TagManager/DynamicsManager). Input: `Settings/Input/EclipseInput.inputactions` + wrapper manual `EclipseInput.cs` (refazer ao mudar o asset); `InputBuffer` 9 f. Valores de esquiva/câmera/movimento só nos SOs (`DodgeConfig`, `IsoCameraSettings`, `MovementProfile`), criados por scripts idempotentes em `Code/Editor/Setup/*Creator.cs`. Namespace da câmera: `Eclipse.Gameplay.Cameras`. Cena de teste: `Assets/_Project/Scenes/Sandbox/CombatSandbox.unity` (gerada por `SandboxBuilder.Run`; para regenerar, apague o `.unity`).
+
 Pipeline de dados (M02): `Eclipse.Data.Definitions` (`Definition` base SO, `DefinitionRegistry`, `IdRemapAsset`), `Eclipse.Editor.DataPipeline` (`TableImporter<T>`, `DataPipeline`, `LocalizationWriter`), `Eclipse.Editor.Validation` (`DataValidator` + regras em `Rules/`). Saída em `Assets/_Project/Content/**` (+ `DefinitionRegistry.asset`, `IdRemap.asset`) e String Table `Definitions` em `Assets/_Project/Settings/Localization/`. `Assets/AddressableAssetsData/` é versionado.
 
 ## 6. Comandos de verificação
@@ -85,6 +87,8 @@ dotnet test tools/CoreTests
 "$UNITY_EXE" -batchmode -nographics -projectPath . -executeMethod Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate -quit -logFile Logs/data.log
 ```
 `$UNITY_EXE` = `C:\Program Files\Unity\Hub\Editor\6000.3.28f1\Editor\Unity.exe`.
+
+Filtro de testes: acrescente `-testFilter "Eclipse.Tests.PlayMode.Player"` (ou o namespace desejado) ao comando de testes do §6.
 
 ## 7. Fluxo de trabalho por módulo
 
@@ -124,3 +128,7 @@ Não coloque aqui status de módulo (vai no ROADMAP) nem detalhes de design (vã
 - Comando de dados: namespace e classe se chamam `DataPipeline`, então o `-executeMethod` precisa do nome completo `Eclipse.Editor.DataPipeline.DataPipeline.ImportAndValidate` (o curto dá "class 'DataPipeline' could not be found").
 - `ScriptableObject` exige um arquivo por classe com o mesmo nome (classes fake de teste também), senão o script não é associado.
 - Criar a String Table `Definitions` gera `Assets/AddressableAssetsData/**` e entradas em `ProjectSettings/EditorBuildSettings.asset`; é esperado e versionado.
+- `m_LayerCollisionMatrix` do DynamicsManager grava os bytes de cada linha invertidos; edite via script/Unity, não à mão sem conferir (`PhysicsLayersTests`).
+- `Eclipse.Gameplay.Physics`/`...Cameras`: nomes de namespace que colidem com `UnityEngine.Physics`/`Camera` exigem alias ou qualificação (`UPhysics`, `UnityEngine.Camera`).
+- Importer do `.inputactions` não gera wrapper em batchmode (`m_GenerateWrapperCode: 0`); o wrapper é mantido à mão.
+- Mais de uma instância Unity de worktrees distintos pode rodar ao mesmo tempo; o lock é por projeto.

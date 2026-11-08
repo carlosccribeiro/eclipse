@@ -13,16 +13,16 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Character
+  - Environment
+  - Wall
+  - LowCover
+  - Hurtbox_Player
+  - Hurtbox_Enemy
+  - Hitbox_Player
+  - Hitbox_Enemy
+  - Projectile
+  - Interactable
   - 
   - 
   - 

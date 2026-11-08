@@ -5,6 +5,8 @@
         "Eclipse.Core",
         "Eclipse.Data",
         "Eclipse.Gameplay",
+        "Unity.InputSystem",
+        "Unity.Cinemachine",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],
