@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31eb22fab0b1441418df138d182db6df, type: 3}
+  m_Name: trash
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Loot.LootChanceDefinition
+  stableId: lootchance.core.trash
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: lootchance.core.trash.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 368be518c83ed5b4
+  sourceDoc: "05 \xA75.2, \xA75.3, \xA75.4"
+  nameEn: Trash
+  source: 0
+  legendary:
+  - 0.001
+  - 0.004
+  - 0.009
+  - 0.018
+  - 0.025
+  - 0.04
+  epic:
+  - 0.02
+  - 0.06
+  - 0.12
+  - 0.2
+  - 0.25
+  - 0.32
+  rare:
+  - 0.25
+  - 0.32
+  - 0.38
+  - 0.42
+  - 0.42
+  - 0.4
+  references:
+    version: 2
+    RefIds: []

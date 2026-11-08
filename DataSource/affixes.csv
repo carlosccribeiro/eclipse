@@ -1,0 +1,57 @@
+id,name_pt,name_en,abbrev,stat,value_kind,category,group,affinity,relevance_tags,t1_min,t1_max,t2_min,t2_max,t3_min,t3_max,t4_min,t4_max,t5_min,t5_max,source_doc
+affix.core.strength,Força,Strength,STR,Strength,Flat,Primary,Primary,,,3,6,6,12,11,18,16,26,22,35,01 §3.9.2
+affix.core.dexterity,Destreza,Dexterity,DEX,Dexterity,Flat,Primary,Primary,,,3,6,6,12,11,18,16,26,22,35,01 §3.9.2
+affix.core.intelligence,Inteligência,Intelligence,INT,Intelligence,Flat,Primary,Primary,,,3,6,6,12,11,18,16,26,22,35,01 §3.9.2
+affix.core.maximum_health,Vida Máxima,Maximum Health,HP,MaximumHealth,Flat,Flat,None,,,15,30,35,60,60,100,95,150,140,210,01 §3.9.2
+affix.core.armor,Armadura,Armor,ARM,Armor,Flat,Flat,None,,,20,40,50,90,100,170,170,280,260,420,01 §3.9.2
+affix.core.health_regeneration,Regeneração de Vida,Health Regeneration,HPR,HealthRegeneration,Flat,Flat,None,,,1,2,2,4,4,7,6,10,9,15,01 §3.9.2
+affix.core.attack_speed,Velocidade de Ataque,Attack Speed,AS,AttackSpeed,Percent,Offensive,None,,Attack,2,3,3,4,4,6,5,7,6,9,01 §3.9.2
+affix.core.cast_speed,Velocidade de Conjuração,Cast Speed,CS,CastSpeed,Percent,Offensive,None,,Spell,2,3,3,4,4,6,5,7,6,9,01 §3.9.2
+affix.core.critical_chance,Chance de Crítico,Critical Chance,CC,CriticalChance,Percent,Offensive,None,,,1,1.5,1.5,2.5,2,3.5,3,4.5,4,6,01 §3.9.2
+affix.core.critical_damage,Dano Crítico,Critical Damage,CD,CriticalDamage,Percent,Offensive,None,,,5,10,10,16,15,22,20,30,28,40,01 §3.9.2
+affix.core.physical_damage,Dano Físico,Physical Damage,PHY,PhysicalDamage,Percent,Offensive,None,,Physical,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.ember_damage,Dano de Ember,Ember Damage,EMB,EmberDamage,Percent,Offensive,Affinity,Ember,Ember,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.frost_damage,Dano de Frost,Frost Damage,FRO,FrostDamage,Percent,Offensive,Affinity,Frost,Frost,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.storm_damage,Dano de Storm,Storm Damage,STO,StormDamage,Percent,Offensive,Affinity,Storm,Storm,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.void_damage,Dano de Void,Void Damage,VOI,VoidDamage,Percent,Offensive,Affinity,Void,Void,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.echo_damage,Dano de Echo,Echo Damage,ECH,EchoDamage,Percent,Offensive,Affinity,Echo,Echo,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.ruin_damage,Dano de Ruin,Ruin Damage,RUI,RuinDamage,Percent,Offensive,Affinity,Ruin,Ruin,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.damage_over_time,Dano ao Longo do Tempo,Damage Over Time,DOT,DamageOverTime,Percent,Offensive,None,,DoT,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.area_damage,Dano em Área,Area Damage,ARE,AreaDamage,Percent,Offensive,None,,Area,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.projectile_damage,Dano de Projétil,Projectile Damage,PRJ,ProjectileDamage,Percent,Offensive,None,,Projectile,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.summon_damage,Dano de Invocação,Summon Damage,SMD,SummonDamage,Percent,Offensive,None,,Summon,4,8,8,12,11,17,15,22,20,30,01 §3.9.2
+affix.core.skill_damage,Dano de Habilidade,Skill Damage,SKD,SkillDamage,Percent,Offensive,None,,,3,6,6,9,8,13,11,17,15,22,01 §3.9.2
+affix.core.armor_penetration,Penetração de Armadura,Armor Penetration,APN,ArmorPenetration,Percent,Offensive,None,,,2,4,3,5,5,8,6,10,8,12,01 §3.9.2
+affix.core.stagger_damage,Dano de Stagger,Stagger Damage,STG,StaggerDamage,Percent,Offensive,None,,,5,10,10,15,14,22,20,30,25,40,01 §3.9.2
+affix.core.physical_resistance,Resistência Física,Physical Resistance,PRS,PhysicalResistance,Percent,Defensive,SingleResistance,,,1,2,2,3,3,4,4,5,5,7,01 §3.9.2
+affix.core.elemental_resistance,Resistência Elemental,Elemental Resistance,ERS,ElementalResistance,Percent,Defensive,SingleResistance,,,3,6,5,9,8,12,10,15,13,18,01 §3.9.2
+affix.core.void_resistance,Resistência a Void,Void Resistance,VRS,VoidResistance,Percent,Defensive,SingleResistance,,,3,6,5,9,8,12,10,15,13,18,01 §3.9.2
+affix.core.dodge_chance,Chance de Esquiva,Dodge Chance,DGE,DodgeChance,Percent,Defensive,None,,,1,1.5,1.5,2,2,3,2.5,4,3,5,01 §3.9.2
+affix.core.block_chance,Chance de Bloqueio,Block Chance,BLK,BlockChance,Percent,Defensive,None,,,2,3,3,4,4,5,4,6,5,8,01 §3.9.2
+affix.core.damage_reduction,Redução de Dano,Damage Reduction,DRD,DamageReduction,Percent,Defensive,None,,,1,1.5,1.5,2,2,2.5,2.5,3.5,3,4.5,01 §3.9.2
+affix.core.healing_effectiveness,Eficácia de Cura,Healing Effectiveness,HEF,HealingEffectiveness,Percent,Defensive,None,,,3,6,5,9,8,12,10,16,12,20,01 §3.9.2
+affix.core.shield_strength,Força de Escudo,Shield Strength,SHS,ShieldStrength,Percent,Defensive,None,,,4,8,6,11,10,15,13,20,16,25,01 §3.9.2
+affix.core.status_resistance,Resistência a Status,Status Resistance,SRS,StatusResistance,Percent,Defensive,None,,,3,5,4,7,6,10,8,12,10,15,01 §3.9.2
+affix.core.maximum_resource,Recurso Máximo,Maximum Resource,RES,MaximumResource,Percent,Defensive,None,,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2
+affix.core.movement_speed,Velocidade de Movimento,Movement Speed,MS,MovementSpeed,Percent,Utility,None,,,2,3,3,4,4,5,5,6,6,8,01 §3.9.2
+affix.core.cooldown_reduction,Redução de Recarga,Cooldown Reduction,CDR,CooldownReduction,Percent,Utility,None,,,1.5,2.5,2.5,3.5,3,5,4,6,5,7.5,01 §3.9.2
+affix.core.resource_generation,Geração de Recurso,Resource Generation,RGN,ResourceGeneration,Percent,Utility,None,,,3,6,5,9,8,12,10,16,12,20,01 §3.9.2
+affix.core.resource_cost_reduction,Redução de Custo de Recurso,Resource Cost Reduction,RCR,ResourceCostReduction,Percent,Utility,None,,,2,3,2.5,4,3,5,4,6.5,5,8,01 §3.9.2
+affix.core.pickup_radius,Raio de Coleta,Pickup Radius,PCK,PickupRadius,Percent,Utility,Comfort,,,10,15,15,20,20,30,25,40,30,50,01 §3.9.2
+affix.core.experience_gain,Ganho de Experiência,Experience Gain,XP,ExperienceGain,Percent,Utility,Comfort,,,3,5,4,6,5,8,6,10,8,12,01 §3.9.2
+affix.core.gold_acquisition,Ganho de Ouro,Gold Acquisition,GLD,GoldAcquisition,Percent,Utility,Comfort,,,5,10,8,15,12,20,15,28,20,35,01 §3.9.2
+affix.core.duration_of_effects,Duração de Efeitos,Duration of Effects,DUR,DurationOfEffects,Percent,Utility,None,,,3,6,5,9,8,12,10,16,12,20,01 §3.9.2
+affix.core.summon_duration,Duração de Invocação,Summon Duration,SMT,SummonDuration,Percent,Utility,None,,Summon,5,8,7,11,10,15,12,20,15,25,01 §3.9.2
+affix.core.status_potency,Potência de Status,Status Potency,SPT,StatusPotency,Percent,Utility,None,,,4,7,6,10,9,13,11,16,14,20,01 §3.9.2
+affix.core.infusion_ember_added,Infusão de Ember (Added),Ember Infusion (Added),INF-EMB-ADD,,Percent,Infusion,Affinity,Ember,,2,3,3,4,4,6,5,7,6,9,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_ember_strikes,Infusão de Ember (Strikes),Ember Infusion (Strikes),INF-EMB-STK,,Flat,Infusion,Affinity,Ember,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_frost_added,Infusão de Frost (Added),Frost Infusion (Added),INF-FRO-ADD,,Percent,Infusion,Affinity,Frost,,2,3,3,4,4,6,5,7,6,9,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_frost_strikes,Infusão de Frost (Strikes),Frost Infusion (Strikes),INF-FRO-STK,,Flat,Infusion,Affinity,Frost,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_storm_added,Infusão de Storm (Added),Storm Infusion (Added),INF-STO-ADD,,Percent,Infusion,Affinity,Storm,,2,3,3,4,4,6,5,7,6,9,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_storm_strikes,Infusão de Storm (Strikes),Storm Infusion (Strikes),INF-STO-STK,,Flat,Infusion,Affinity,Storm,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_void_added,Infusão de Void (Added),Void Infusion (Added),INF-VOI-ADD,,Percent,Infusion,Affinity,Void,,2,3,3,4,4,6,5,7,6,9,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_void_strikes,Infusão de Void (Strikes),Void Infusion (Strikes),INF-VOI-STK,,Flat,Infusion,Affinity,Void,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_echo_added,Infusão de Echo (Added),Echo Infusion (Added),INF-ECH-ADD,,Percent,Infusion,Affinity,Echo,,2,3,3,4,4,6,5,7,6,9,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_echo_strikes,Infusão de Echo (Strikes),Echo Infusion (Strikes),INF-ECH-STK,,Flat,Infusion,Affinity,Echo,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_ruin_added,Infusão de Ruin (Added),Ruin Infusion (Added),INF-RUI-ADD,,Percent,Infusion,Affinity,Ruin,,2,3,3,4,4,6,5,7,6,9,01 §3.9.2; 02 §3.9.4
+affix.core.infusion_ruin_strikes,Infusão de Ruin (Strikes),Ruin Infusion (Strikes),INF-RUI-STK,,Flat,Infusion,Affinity,Ruin,,3,5,5,8,7,11,9,14,12,18,01 §3.9.2; 02 §3.9.4

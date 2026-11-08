@@ -1,0 +1,11 @@
+id,name_pt,name_en,source,drop_chance_pct,guaranteed_items,extra_item_chance_pct,extra_items_if_all_challenges,choose_of,guaranteed_epic_plus,rarity_floor,affected_by_quantity,ilvl_bonus,ilvl_from_range_top,consumes_hard_pity,source_doc
+lootsrc.core.trash,Inimigo comum,Trash,Trash,3,0,0,0,0,0,Common,true,0,false,false,"05 §3.1, §3.2, §8.1"
+lootsrc.core.elite,Elite,Elite,Elite,100,1,30,0,0,0,Rare,true,1,false,true,"05 §3.1, §3.2, §8.1"
+lootsrc.core.guardian,Guardian,Guardian,Guardian,100,2,0,0,0,1,Rare,false,2,false,false,"05 §3.1, §3.2, §8.1"
+lootsrc.core.arena_reward,Recompensa de Arena,Arena Reward,ArenaReward,100,1,0,0,0,0,Rare,false,1,false,false,"05 §3.1, §3.2, §8.1"
+lootsrc.core.treasure_delivered,Tesouro (entregues),Treasure (delivered),TreasureDelivered,100,2,0,0,0,0,Rare,false,1,false,true,"05 §3.1, §3.2, §8.1"
+lootsrc.core.reliquary,Reliquary,Reliquary,Reliquary,100,1,0,0,3,0,Epic,false,1,false,false,"05 §3.1, §3.2, §8.1"
+lootsrc.core.challenge,Challenge Room,Challenge Room,Challenge,100,2,0,0,0,0,Epic,false,2,false,true,"05 §3.1, §3.2, §8.1"
+lootsrc.core.event,Event Room,Event Room,Event,100,0,0,0,0,0,Rare,false,1,false,true,"05 §3.1, §3.2, §8.1"
+lootsrc.core.boss,Chefe,Boss,Boss,100,4,0,0,0,1,Rare,true,2,true,true,"05 §3.1, §3.2, §8.1"
+lootsrc.core.rift_cache,Rift Cache,Rift Cache,RiftCache,100,2,0,1,0,0,Rare,false,2,true,true,"05 §3.1, §3.2, §8.1"

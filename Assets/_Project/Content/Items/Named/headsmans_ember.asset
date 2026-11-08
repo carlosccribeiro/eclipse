@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: headsmans_ember
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.kael.headsmans_ember
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.kael.headsmans_ember.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 06e81096a77f4049
+  sourceDoc: "02 \xA73.12.1"
+  nameEn: Headsman's Ember
+  catalogNo: K5
+  itemKind: 1
+  baseId: base.kael.heavy_blade
+  heroId: kael
+  effectId: effect.headsmans_ember
+  fixedAffixes:
+  - affixId: affix.core.strength
+    band: 2
+    offPool: 0
+  - affixId: affix.core.armor_penetration
+    band: 3
+    offPool: 0
+  - affixId: affix.core.ruin_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.critical_damage
+    band: 2
+    offPool: 0
+  openOptions:
+  - affixId: affix.core.physical_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.critical_chance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.stagger_damage
+    band: 2
+    offPool: 0
+  modifierIds:
+  - KAE-BC-01
+  - KAE-WB-07
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 0
+  uniqueSourceRef: 
+  minDropILvl: 10
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "O carrasco de Ashenreach ainda conta suas senten\xE7as."
+  loreEn: Ashenreach's headsman still counts his sentences.
+  build: Executioner
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

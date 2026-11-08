@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26f8dff3ec5f6fa4ab565b352460b1d8, type: 3}
+  m_Name: nightmare
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Loot.LootDifficultyDefinition
+  stableId: lootdiff.core.nightmare
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: lootdiff.core.nightmare.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 7d749f4a079c0b06
+  sourceDoc: "05 \xA73.2, \xA74.1, \xA75.5, \xA710.1, \xA710.3"
+  nameEn: Nightmare
+  difficulty: 2
+  quantityBonus: 0.2
+  quantityBonusPerAscension: 0
+  setShare: 0.4
+  standardShare: 0.45
+  uniqueShare: 0.15
+  rollFloor: 0.1
+  rollFloorPerAscension: 0
+  ascensionBaseILvl: 0
+  ascensionMaxILvl: 0
+  ascensionILvlCapLevel: 0
+  ascensionPrimalMinLevel: 0
+  primalBaseChance: 0
+  primalChancePerLevel: 0
+  primalRollMin: 0
+  references:
+    version: 2
+    RefIds: []

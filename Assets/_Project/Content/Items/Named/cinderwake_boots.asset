@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: cinderwake_boots
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.universal.cinderwake_boots
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.universal.cinderwake_boots.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: a653f38de38eeb10
+  sourceDoc: "02 \xA73.12.5"
+  nameEn: Cinderwake Boots
+  catalogNo: U17
+  itemKind: 3
+  baseId: base.armor.boots
+  heroId: 
+  effectId: effect.cinderwake_boots
+  fixedAffixes:
+  - affixId: affix.core.movement_speed
+    band: 2
+    offPool: 0
+  - affixId: affix.core.maximum_health
+    band: 2
+    offPool: 0
+  - affixId: affix.core.elemental_resistance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.dodge_chance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.armor
+    band: 2
+    offPool: 0
+  openOptions: []
+  modifierIds:
+  - GEN-14
+  - GEN-01
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 3
+  uniqueSourceRef: ashen_wastes
+  minDropILvl: 35
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "Cada passo \xE9 uma fagulha que o deserto lembra."
+  loreEn: Each step is a spark the desert remembers.
+  build: 
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

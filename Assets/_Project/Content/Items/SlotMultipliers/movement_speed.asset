@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ec2183ebc550e42aec0f003206094f, type: 3}
+  m_Name: movement_speed
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.SlotMultiplierDefinition
+  stableId: slotmult.feet.movement_speed
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: slotmult.feet.movement_speed.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 27c2662b8ae9afd2
+  sourceDoc: "01 \xA73.9.3"
+  nameEn: Feet Movement Speed
+  slot: 6
+  affixIds:
+  - affix.core.movement_speed
+  baseId: 
+  multiplier: 1.5
+  appliesToImplicit: 0
+  references:
+    version: 2
+    RefIds: []

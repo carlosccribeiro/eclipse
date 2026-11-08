@@ -1,0 +1,5 @@
+id,name_pt,name_en,rarity,random_affix_count,modifier_count,min_drop_ilvl,source_doc
+rarity.core.common,Common,Common,Common,2,0,1,02 §3.1
+rarity.core.rare,Rare,Rare,Rare,3,0,1,02 §3.1
+rarity.core.epic,Epic,Epic,Epic,4,1,1,02 §3.1
+rarity.core.legendary,Legendary,Legendary,Legendary,0,2,10,"02 §3.1, §3.3; 00 R25"

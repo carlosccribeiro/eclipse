@@ -63,6 +63,1242 @@ MonoBehaviour:
     m_Key: affinity.core.ruin.desc
     m_Metadata:
       m_Items: []
+  - m_Id: 28631224582144
+    m_Key: affix.core.strength.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28631815979008
+    m_Key: affix.core.dexterity.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28632185077760
+    m_Key: affix.core.intelligence.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28632596119552
+    m_Key: affix.core.maximum_health.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28632990384128
+    m_Key: affix.core.armor.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28633355288576
+    m_Key: affix.core.health_regeneration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28633690832896
+    m_Key: affix.core.attack_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28634051543040
+    m_Key: affix.core.cast_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28634399670272
+    m_Key: affix.core.critical_chance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28634756186112
+    m_Key: affix.core.critical_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28635100119040
+    m_Key: affix.core.physical_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28635410497536
+    m_Key: affix.core.ember_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28635729264640
+    m_Key: affix.core.frost_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28636119334912
+    m_Key: affix.core.storm_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28636526182400
+    m_Key: affix.core.void_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28636857532416
+    m_Key: affix.core.echo_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28637214048256
+    m_Key: affix.core.ruin_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28637541203968
+    m_Key: affix.core.damage_over_time.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28637880942592
+    m_Key: affix.core.area_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28638216486912
+    m_Key: affix.core.projectile_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28638568808448
+    m_Key: affix.core.summon_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28638929518592
+    m_Key: affix.core.skill_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28639281840128
+    m_Key: affix.core.armor_penetration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28639629967360
+    m_Key: affix.core.stagger_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28640015843328
+    m_Key: affix.core.physical_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28640372359168
+    m_Key: affix.core.elemental_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28640745652224
+    m_Key: affix.core.void_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28641127333888
+    m_Key: affix.core.dodge_chance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28641550958592
+    m_Key: affix.core.block_chance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28641932640256
+    m_Key: affix.core.damage_reduction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28642339487744
+    m_Key: affix.core.healing_effectiveness.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28642763112448
+    m_Key: affix.core.shield_strength.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28643174154240
+    m_Key: affix.core.status_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28643560030208
+    m_Key: affix.core.maximum_resource.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28643882991616
+    m_Key: affix.core.movement_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28644243701760
+    m_Key: affix.core.cooldown_reduction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28644633772032
+    m_Key: affix.core.resource_generation.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28644998676480
+    m_Key: affix.core.resource_cost_reduction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28645317443584
+    m_Key: affix.core.pickup_radius.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28645690736640
+    m_Key: affix.core.experience_gain.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28646101778432
+    m_Key: affix.core.gold_acquisition.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28646458294272
+    m_Key: affix.core.duration_of_effects.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28646798032896
+    m_Key: affix.core.summon_duration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28647171325952
+    m_Key: affix.core.status_potency.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28647548813312
+    m_Key: affix.core.infusion_ember_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28647884357632
+    m_Key: affix.core.infusion_ember_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28648232484864
+    m_Key: affix.core.infusion_frost_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28648593195008
+    m_Key: affix.core.infusion_frost_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28649192980480
+    m_Key: affix.core.infusion_storm_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28649545302016
+    m_Key: affix.core.infusion_storm_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28649897623552
+    m_Key: affix.core.infusion_void_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28650308665344
+    m_Key: affix.core.infusion_void_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28650694541312
+    m_Key: affix.core.infusion_echo_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28651122360320
+    m_Key: affix.core.infusion_echo_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28651583733760
+    m_Key: affix.core.infusion_ruin_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28652003164160
+    m_Key: affix.core.infusion_ruin_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28656709173248
+    m_Key: pool.core.strength.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28657103437824
+    m_Key: pool.core.dexterity.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28657459953664
+    m_Key: pool.core.intelligence.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28657824858112
+    m_Key: pool.core.maximum_health.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658152013824
+    m_Key: pool.core.armor.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658500141056
+    m_Key: pool.core.health_regeneration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28658877628416
+    m_Key: pool.core.attack_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28659255115776
+    m_Key: pool.core.cast_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28659578077184
+    m_Key: pool.core.critical_chance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28659913621504
+    m_Key: pool.core.critical_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28660236582912
+    m_Key: pool.core.physical_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28660593098752
+    m_Key: pool.core.ember_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28660962197504
+    m_Key: pool.core.frost_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28661314519040
+    m_Key: pool.core.storm_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28661637480448
+    m_Key: pool.core.void_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28662010773504
+    m_Key: pool.core.echo_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28662346317824
+    m_Key: pool.core.ruin_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28662727999488
+    m_Key: pool.core.damage_over_time.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28663071932416
+    m_Key: pool.core.area_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28663428448256
+    m_Key: pool.core.projectile_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28663768186880
+    m_Key: pool.core.summon_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28664107925504
+    m_Key: pool.core.skill_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28664472829952
+    m_Key: pool.core.armor_penetration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28664837734400
+    m_Key: pool.core.stagger_damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28665160695808
+    m_Key: pool.core.physical_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28665517211648
+    m_Key: pool.core.elemental_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28665873727488
+    m_Key: pool.core.void_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28666200883200
+    m_Key: pool.core.dodge_chance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28666561593344
+    m_Key: pool.core.block_chance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28666913914880
+    m_Key: pool.core.damage_reduction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28667266236416
+    m_Key: pool.core.healing_effectiveness.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28667614363648
+    m_Key: pool.core.shield_strength.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28667962490880
+    m_Key: pool.core.status_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28668331589632
+    m_Key: pool.core.maximum_resource.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28668662939648
+    m_Key: pool.core.movement_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28669002678272
+    m_Key: pool.core.cooldown_reduction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28669325639680
+    m_Key: pool.core.resource_generation.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28669669572608
+    m_Key: pool.core.resource_cost_reduction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28670030282752
+    m_Key: pool.core.pickup_radius.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28670365827072
+    m_Key: pool.core.experience_gain.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28670705565696
+    m_Key: pool.core.gold_acquisition.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28671036915712
+    m_Key: pool.core.duration_of_effects.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28671439568896
+    m_Key: pool.core.summon_duration.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28671791890432
+    m_Key: pool.core.status_potency.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28672160989184
+    m_Key: pool.core.infusion_ember_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28672509116416
+    m_Key: pool.core.infusion_ember_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28672857243648
+    m_Key: pool.core.infusion_frost_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28673184399360
+    m_Key: pool.core.infusion_frost_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28673524137984
+    m_Key: pool.core.infusion_storm_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28673876459520
+    m_Key: pool.core.infusion_storm_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28674232975360
+    m_Key: pool.core.infusion_void_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28674597879808
+    m_Key: pool.core.infusion_void_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28674925035520
+    m_Key: pool.core.infusion_echo_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28675285745664
+    m_Key: pool.core.infusion_echo_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28675680010240
+    m_Key: pool.core.infusion_ruin_added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28676057497600
+    m_Key: pool.core.infusion_ruin_strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28680193081344
+    m_Key: infusion.ember.added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28680583151616
+    m_Key: infusion.ember.strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28680906113024
+    m_Key: infusion.frost.added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28681237463040
+    m_Key: infusion.frost.strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28681602367488
+    m_Key: infusion.storm.added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28681954689024
+    m_Key: infusion.storm.strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28682332176384
+    m_Key: infusion.void.added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28682667720704
+    m_Key: infusion.void.strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28682982293504
+    m_Key: infusion.echo.added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28683330420736
+    m_Key: infusion.echo.strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28683678547968
+    m_Key: infusion.ruin.added.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28684009897984
+    m_Key: infusion.ruin.strikes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28685842808832
+    m_Key: band.core.envelope.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686220296192
+    m_Key: band.core.default.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686576812032
+    m_Key: band.core.high.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28686920744960
+    m_Key: band.core.low.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28688439083008
+    m_Key: rarity.core.common.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28688845930496
+    m_Key: rarity.core.rare.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28689227612160
+    m_Key: rarity.core.epic.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28689550573568
+    m_Key: rarity.core.legendary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28690905333760
+    m_Key: slotmult.main_hand.damage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28691261849600
+    m_Key: slotmult.off_hand.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28691626754048
+    m_Key: slotmult.head.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28691958104064
+    m_Key: slotmult.chest.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28692310425600
+    m_Key: slotmult.legs.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28692666941440
+    m_Key: slotmult.hands.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28693019262976
+    m_Key: slotmult.feet.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28693388361728
+    m_Key: slotmult.amulet.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28693753266176
+    m_Key: slotmult.ring.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28694109782016
+    m_Key: slotmult.relic.flat_defensive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28694420160512
+    m_Key: slotmult.off_hand.block_warbrand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28694755704832
+    m_Key: slotmult.feet.movement_speed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28695124803584
+    m_Key: slotmult.amulet.primary_resistance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28695481319424
+    m_Key: slotmult.relic.affinity_utility.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28695825252352
+    m_Key: slotmult.relic.infusion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28697779798016
+    m_Key: base.kael.greatsword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28698148896768
+    m_Key: base.kael.dual_axes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28698463469568
+    m_Key: base.kael.warhammer.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28698849345536
+    m_Key: base.kael.longsword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28699256193024
+    m_Key: base.kael.heavy_blade.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28699595931648
+    m_Key: base.kael.warbrand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28699956641792
+    m_Key: base.armor.helm.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28700334129152
+    m_Key: base.armor.hood.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28700745170944
+    m_Key: base.armor.circlet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701072326656
+    m_Key: base.armor.cuirass.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701416259584
+    m_Key: base.armor.jerkin.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28701739220992
+    m_Key: base.armor.robe.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28702095736832
+    m_Key: base.armor.gauntlets.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28702464835584
+    m_Key: base.armor.grips.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28702808768512
+    m_Key: base.armor.wraps.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28703224004608
+    m_Key: base.armor.greaves.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28703697960960
+    m_Key: base.armor.leggings.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704054476800
+    m_Key: base.armor.tassets.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704402604032
+    m_Key: base.armor.sabatons.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28704796868608
+    m_Key: base.armor.boots.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28705182744576
+    m_Key: base.armor.treads.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28705564426240
+    m_Key: base.ring.band.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28705916747776
+    m_Key: base.ring.signet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28706277457920
+    m_Key: base.ring.loop.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28706604613632
+    m_Key: base.amulet.pendant.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28706935963648
+    m_Key: base.amulet.torc.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28707288285184
+    m_Key: base.amulet.locket.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28707632218112
+    m_Key: base.relic.cinder.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28707984539648
+    m_Key: base.relic.rime_shard.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28708353638400
+    m_Key: base.relic.stormglass.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28708672405504
+    m_Key: base.relic.lodestone.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28709037309952
+    m_Key: base.relic.bell.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28709410603008
+    m_Key: base.relic.reliquary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28709800673280
+    m_Key: base.relic.keystone.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28712686354432
+    m_Key: item.kael.ashfang.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28713038675968
+    m_Key: item.kael.twinmaw.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28713361637376
+    m_Key: item.kael.colossus_knell.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28713718153216
+    m_Key: item.kael.oathkeepers_edge.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28714083057664
+    m_Key: item.kael.headsmans_ember.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28714401824768
+    m_Key: item.kael.brand_of_the_pyre_king.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28714766729216
+    m_Key: item.kael.crown_of_cinders.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28715110662144
+    m_Key: item.kael.hide_of_the_unyielding.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28715425234944
+    m_Key: item.kael.grips_of_the_sundered_oath.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28715785945088
+    m_Key: item.kael.greaves_of_the_charging_bull.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28716150849536
+    m_Key: item.kael.treads_of_scorched_earth.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28716528336896
+    m_Key: item.kael.ring_of_the_last_stand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28716876464128
+    m_Key: item.kael.pendant_of_the_ashbound.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28717262340096
+    m_Key: item.kael.ember_of_the_first_pillar.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28717593690112
+    m_Key: item.kael.ordeal_greaves.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28717954400256
+    m_Key: item.kael.sunderbrand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28718315110400
+    m_Key: item.universal.aetherbound_loop.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28718633877504
+    m_Key: item.universal.band_of_twin_eclipses.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28718977810432
+    m_Key: item.universal.seal_of_the_remnants.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28719338520576
+    m_Key: item.universal.vestments_of_the_sanctuary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28719703425024
+    m_Key: item.universal.hands_of_the_pillarwright.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28720051552256
+    m_Key: item.universal.gauntlets_of_steady_hands.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28720395485184
+    m_Key: item.universal.rift_runners_boots.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28720747806720
+    m_Key: item.universal.helm_of_the_forgotten_king.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28721163042816
+    m_Key: item.universal.legplates_of_the_long_road.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28721527947264
+    m_Key: item.universal.cinder_of_the_sundering.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28721892851712
+    m_Key: item.universal.tear_of_the_frozen_choir.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28722245173248
+    m_Key: item.universal.stormglass_prism.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28722652020736
+    m_Key: item.universal.hollow_lodestone.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28723071451136
+    m_Key: item.universal.bell_of_second_hours.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28723465715712
+    m_Key: item.universal.furnace_of_the_colossus.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28723901923328
+    m_Key: item.universal.shroud_of_the_still_court.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28724283604992
+    m_Key: item.universal.cinderwake_boots.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28724673675264
+    m_Key: item.universal.prism_of_the_six_pillars.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28725046968320
+    m_Key: item.universal.keystone_of_the_sundering.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28728796676096
+    m_Key: homeregion.set.ashen_sovereign.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28729199329280
+    m_Key: homeregion.set.deaths_pursuit.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28729593593856
+    m_Key: homeregion.set.frozen_empress.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28729992052736
+    m_Key: homeregion.set.eternal_bastion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28730373734400
+    m_Key: homeregion.set.storm_phantom.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28730826719232
+    m_Key: homeregion.set.abyssal_legion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28731220983808
+    m_Key: homeregion.set.ruinbreaker.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28731640414208
+    m_Key: homeregion.set.void_oracle.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28732068233216
+    m_Key: homeregion.set.hollow_sovereign.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28732529606656
+    m_Key: homeregion.set.arcane_paradox.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28733041311744
+    m_Key: homeregion.set.thousand_echoes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28733557211136
+    m_Key: homeregion.set.eternal_warden.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28734035361792
+    m_Key: homeregion.region.ashen_wastes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28734530289664
+    m_Key: homeregion.region.frozen_cathedral.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28735029411840
+    m_Key: homeregion.region.shattered_expanse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28735494979584
+    m_Key: homeregion.region.hollow_depths.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28735914409984
+    m_Key: homeregion.region.astral_citadel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28738259025920
+    m_Key: ilvl.normal.ashen_wastes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28738636513280
+    m_Key: ilvl.normal.frozen_cathedral.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28739060137984
+    m_Key: ilvl.normal.shattered_expanse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28739454402560
+    m_Key: ilvl.normal.hollow_depths.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28739768975360
+    m_Key: ilvl.normal.astral_citadel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28740104519680
+    m_Key: ilvl.veteran.ashen_wastes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28740419092480
+    m_Key: ilvl.veteran.frozen_cathedral.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28740779802624
+    m_Key: ilvl.veteran.shattered_expanse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28741157289984
+    m_Key: ilvl.veteran.hollow_depths.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28741530583040
+    m_Key: ilvl.veteran.astral_citadel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28741933236224
+    m_Key: ilvl.nightmare.ashen_wastes.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28742310723584
+    m_Key: ilvl.nightmare.frozen_cathedral.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28742663045120
+    m_Key: ilvl.nightmare.shattered_expanse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28743044726784
+    m_Key: ilvl.nightmare.hollow_depths.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28743434797056
+    m_Key: ilvl.nightmare.astral_citadel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28743795507200
+    m_Key: ilvl.eclipse.all.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28744156217344
+    m_Key: ilvl.ascension.all.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28746333061120
+    m_Key: lootchance.core.trash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28746718937088
+    m_Key: lootchance.core.elite.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28747109007360
+    m_Key: lootchance.core.guardian.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28747561992192
+    m_Key: lootchance.core.arena_reward.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28747943673856
+    m_Key: lootchance.core.treasure_delivered.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28748384075776
+    m_Key: lootchance.core.reliquary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28748778340352
+    m_Key: lootchance.core.challenge.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28749155827712
+    m_Key: lootchance.core.event.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28749520732160
+    m_Key: lootchance.core.boss.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28749940162560
+    m_Key: lootchance.core.rift_cache.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28752314138624
+    m_Key: lootdiff.core.normal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28752762929152
+    m_Key: lootdiff.core.veteran.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28753211719680
+    m_Key: lootdiff.core.nightmare.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28753719230464
+    m_Key: lootdiff.core.eclipse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28754218352640
+    m_Key: lootdiff.core.ascension.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28756101595136
+    m_Key: lootglobal.core.quantity_cap.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28756512636928
+    m_Key: lootglobal.core.undiscovered_unique_weight.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28756869152768
+    m_Key: lootglobal.core.required_level_factor.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28757208891392
+    m_Key: lootglobal.core.required_level_max.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28757586378752
+    m_Key: lootglobal.core.smart_current_hero_generic.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28757951283200
+    m_Key: lootglobal.core.smart_current_hero_legendary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28758307799040
+    m_Key: lootglobal.core.weight_irrelevant_affix.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28758664314880
+    m_Key: lootglobal.core.weight_primary_core.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28759012442112
+    m_Key: lootglobal.core.weight_primary_secondary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28759347986432
+    m_Key: lootglobal.core.weight_primary_tertiary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28759700307968
+    m_Key: lootglobal.core.epic_hero_modifier_share.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28760056823808
+    m_Key: lootglobal.core.equipped_skill_multiplier.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28760446894080
+    m_Key: lootglobal.core.armor_implicit_per_ilvl.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28760853741568
+    m_Key: lootglobal.core.upgrade_per_level.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28761256394752
+    m_Key: lootglobal.core.slot_weight.main_hand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28761638076416
+    m_Key: lootglobal.core.slot_weight.off_hand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28762023952384
+    m_Key: lootglobal.core.slot_weight.head.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28762363691008
+    m_Key: lootglobal.core.slot_weight.chest.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28762757955584
+    m_Key: lootglobal.core.slot_weight.hands.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763131248640
+    m_Key: lootglobal.core.slot_weight.legs.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763496153088
+    m_Key: lootglobal.core.slot_weight.feet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28763852668928
+    m_Key: lootglobal.core.slot_weight.ring.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764251127808
+    m_Key: lootglobal.core.slot_weight.amulet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764628615168
+    m_Key: lootglobal.core.slot_weight.relic.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28764997713920
+    m_Key: lootglobal.core.max_primary_per_item.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28765316481024
+    m_Key: lootglobal.core.max_primary_amulet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28765672996864
+    m_Key: lootglobal.core.max_affinity_per_item.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28766016929792
+    m_Key: lootglobal.core.max_comfort_per_item.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28766360862720
+    m_Key: lootglobal.core.max_single_resistance_common_rare.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28769414316032
+    m_Key: lootsrc.core.trash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28769758248960
+    m_Key: lootsrc.core.elite.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28770127347712
+    m_Key: lootsrc.core.guardian.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28770492252160
+    m_Key: lootsrc.core.arena_reward.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28770878128128
+    m_Key: lootsrc.core.treasure_delivered.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28771310141440
+    m_Key: lootsrc.core.reliquary.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28771763126272
+    m_Key: lootsrc.core.challenge.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28772190945280
+    m_Key: lootsrc.core.event.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28772618764288
+    m_Key: lootsrc.core.boss.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28773025611776
+    m_Key: lootsrc.core.rift_cache.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28774757859328
+    m_Key: pity.core.normal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28775114375168
+    m_Key: pity.core.veteran.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28775470891008
+    m_Key: pity.core.nightmare.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28775802241024
+    m_Key: pity.core.eclipse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28776150368256
+    m_Key: pity.core.ascension.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

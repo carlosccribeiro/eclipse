@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: furnace_of_the_colossus
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.universal.furnace_of_the_colossus
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.universal.furnace_of_the_colossus.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: de3e98cd09ef5cec
+  sourceDoc: "02 \xA73.12.5"
+  nameEn: Furnace of the Colossus
+  catalogNo: U15
+  itemKind: 3
+  baseId: base.amulet.torc
+  heroId: 
+  effectId: effect.furnace_of_the_colossus
+  fixedAffixes:
+  - affixId: affix.core.strength
+    band: 2
+    offPool: 0
+  - affixId: affix.core.intelligence
+    band: 2
+    offPool: 0
+  - affixId: affix.core.ember_damage
+    band: 3
+    offPool: 0
+  - affixId: affix.core.skill_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.elemental_resistance
+    band: 2
+    offPool: 0
+  openOptions: []
+  modifierIds:
+  - GEN-28
+  - SIG-U15
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 1
+  uniqueSourceRef: the_ashen_colossus
+  minDropILvl: 35
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "O cora\xE7\xE3o do Colosso nunca esfriou."
+  loreEn: The heart of the Colossus never cooled.
+  build: 
+  effectMoreDeclared: 20
+  references:
+    version: 2
+    RefIds: []

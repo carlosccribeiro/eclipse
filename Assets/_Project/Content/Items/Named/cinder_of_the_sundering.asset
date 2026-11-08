@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: cinder_of_the_sundering
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.universal.cinder_of_the_sundering
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.universal.cinder_of_the_sundering.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: acf4615587848d0e
+  sourceDoc: "02 \xA73.12.5"
+  nameEn: Cinder of the Sundering
+  catalogNo: U10
+  itemKind: 1
+  baseId: base.relic.cinder
+  heroId: 
+  effectId: effect.cinder_of_the_sundering
+  fixedAffixes:
+  - affixId: affix.core.ember_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.area_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.damage_over_time
+    band: 2
+    offPool: 0
+  - affixId: affix.core.duration_of_effects
+    band: 2
+    offPool: 0
+  openOptions:
+  - affixId: affix.core.projectile_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.status_potency
+    band: 2
+    offPool: 0
+  - affixId: affix.core.status_resistance
+    band: 2
+    offPool: 0
+  modifierIds:
+  - GEN-28
+  - GEN-11
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 0
+  uniqueSourceRef: 
+  minDropILvl: 10
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "Uma cinza do pr\xF3prio Sundering."
+  loreEn: An ash from the Sundering itself.
+  build: 
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

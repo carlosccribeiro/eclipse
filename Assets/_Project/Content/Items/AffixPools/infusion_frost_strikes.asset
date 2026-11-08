@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69e53ee0184caa4e98b08ad59b57704, type: 3}
+  m_Name: infusion_frost_strikes
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.AffixPoolDefinition
+  stableId: pool.core.infusion_frost_strikes
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: pool.core.infusion_frost_strikes.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 756bc1f448c5fa74
+  sourceDoc: "02 \xA73.9.3; 01 \xA73.9.4"
+  nameEn: infusion_frost_strikes pool
+  affixId: affix.core.infusion_frost_strikes
+  slotWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 10
+  - 20
+  restriction: relic_family_affinity
+  references:
+    version: 2
+    RefIds: []

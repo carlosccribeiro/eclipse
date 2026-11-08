@@ -1,0 +1,6 @@
+id,name_pt,name_en,difficulty,soft_start,hard,soft_step_pct,legendary_cap_mult,set_pity_after,dup_unowned_weight,boss_unique_chance_pct,boss_unique_chance_a100_pct,boss_unique_guarantee_kills,boss_echo_mult,first_kill_set_chance_pct,source_doc
+pity.core.normal,Pity Normal,Normal pity,Normal,80,160,5,2,0,3,0,0,10,1.5,0,"05 §3.2, §8.1-§8.5"
+pity.core.veteran,Pity Veteran,Veteran pity,Veteran,50,100,5,2,4,3,0,0,10,1.5,50,"05 §3.2, §8.1-§8.5"
+pity.core.nightmare,Pity Nightmare,Nightmare pity,Nightmare,30,60,5,2,4,3,8,8,10,1.5,50,"05 §3.2, §8.1-§8.5"
+pity.core.eclipse,Pity Eclipse,Eclipse pity,Eclipse,15,35,5,2,4,3,12,12,10,1.5,50,"05 §3.2, §8.1-§8.5"
+pity.core.ascension,Pity Ascension,Ascension pity,Ascension,12,30,5,2,4,3,15,25,10,1.5,50,"05 §3.2, §8.1-§8.5"

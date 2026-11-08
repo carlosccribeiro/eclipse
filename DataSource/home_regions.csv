@@ -1,0 +1,18 @@
+id,name_pt,name_en,row_kind,set_id,hero_id,region_id,home_weight,home_boss_weight,attunement_mult,dominant_affinities,affinity_weight,unique_bonus_pp,source_doc
+homeregion.set.ashen_sovereign,Ashen Sovereign,Ashen Sovereign,Set,ashen_sovereign,kael,ashen_wastes,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.deaths_pursuit,Death's Pursuit,Death's Pursuit,Set,deaths_pursuit,nyx,ashen_wastes,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.frozen_empress,Frozen Empress,Frozen Empress,Set,frozen_empress,lyra,frozen_cathedral,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.eternal_bastion,Eternal Bastion,Eternal Bastion,Set,eternal_bastion,kael,frozen_cathedral,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.storm_phantom,Storm Phantom,Storm Phantom,Set,storm_phantom,nyx,shattered_expanse,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.abyssal_legion,Abyssal Legion,Abyssal Legion,Set,abyssal_legion,orun,shattered_expanse,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.ruinbreaker,Ruinbreaker,Ruinbreaker,Set,ruinbreaker,kael,shattered_expanse,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.void_oracle,Void Oracle,Void Oracle,Set,void_oracle,lyra,hollow_depths,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.hollow_sovereign,Hollow Sovereign,Hollow Sovereign,Set,hollow_sovereign,orun,hollow_depths,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.arcane_paradox,Arcane Paradox,Arcane Paradox,Set,arcane_paradox,lyra,astral_citadel,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.thousand_echoes,Thousand Echoes,Thousand Echoes,Set,thousand_echoes,nyx,astral_citadel,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.set.eternal_warden,Eternal Warden,Eternal Warden,Set,eternal_warden,orun,astral_citadel,4,6,3,,,,"05 §9.1, §9.4; 00 R32, R39"
+homeregion.region.ashen_wastes,Ashen Wastes,Ashen Wastes,Region,,,ashen_wastes,,,,Ember,2,0,05 §9.2
+homeregion.region.frozen_cathedral,Frozen Cathedral,Frozen Cathedral,Region,,,frozen_cathedral,,,,Frost,2,0,05 §9.2
+homeregion.region.shattered_expanse,Shattered Expanse,Shattered Expanse,Region,,,shattered_expanse,,,,Storm|Echo,2,0,05 §9.2
+homeregion.region.hollow_depths,Hollow Depths,Hollow Depths,Region,,,hollow_depths,,,,Void|Ruin,2,0,05 §9.2
+homeregion.region.astral_citadel,Astral Citadel,Astral Citadel,Region,,,astral_citadel,,,,,2,3,05 §9.2

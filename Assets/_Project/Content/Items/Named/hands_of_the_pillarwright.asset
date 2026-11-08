@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: hands_of_the_pillarwright
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.universal.hands_of_the_pillarwright
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.universal.hands_of_the_pillarwright.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 94fbe16587f07c14
+  sourceDoc: "02 \xA73.12.5"
+  nameEn: Hands of the Pillarwright
+  catalogNo: U5
+  itemKind: 3
+  baseId: base.armor.gauntlets
+  heroId: 
+  effectId: effect.hands_of_the_pillarwright
+  fixedAffixes:
+  - affixId: affix.core.maximum_health
+    band: 2
+    offPool: 0
+  - affixId: affix.core.attack_speed
+    band: 2
+    offPool: 0
+  - affixId: affix.core.cast_speed
+    band: 2
+    offPool: 0
+  - affixId: affix.core.critical_chance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.resource_generation
+    band: 2
+    offPool: 0
+  openOptions: []
+  modifierIds:
+  - GEN-30
+  - GEN-25
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 1
+  uniqueSourceRef: the_first_forgotten
+  minDropILvl: 35
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "As m\xE3os que ergueram os Pilares."
+  loreEn: The hands that raised the Pillars.
+  build: 
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

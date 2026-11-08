@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: helm_of_the_forgotten_king
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.universal.helm_of_the_forgotten_king
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.universal.helm_of_the_forgotten_king.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 14811334d7b389be
+  sourceDoc: "02 \xA73.12.5"
+  nameEn: Helm of the Forgotten King
+  catalogNo: U8
+  itemKind: 3
+  baseId: base.armor.helm
+  heroId: 
+  effectId: effect.helm_of_the_forgotten_king
+  fixedAffixes:
+  - affixId: affix.core.maximum_health
+    band: 2
+    offPool: 0
+  - affixId: affix.core.cooldown_reduction
+    band: 2
+    offPool: 0
+  - affixId: affix.core.critical_chance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.status_resistance
+    band: 2
+    offPool: 0
+  - affixId: affix.core.experience_gain
+    band: 2
+    offPool: 0
+  openOptions: []
+  modifierIds:
+  - GEN-28
+  - GEN-27
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 1
+  uniqueSourceRef: the_first_forgotten
+  minDropILvl: 35
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: O rei esquecido lembra de todos que o derrotaram.
+  loreEn: The forgotten king remembers everyone who defeated him.
+  build: 
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2418309a5dfbc0d4c9206749ea2adefb, type: 3}
+  m_Name: ashfang
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.NamedItemDefinition
+  stableId: item.kael.ashfang
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: item.kael.ashfang.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 7e9e9cb0ac4e924b
+  sourceDoc: "02 \xA73.12.1"
+  nameEn: Ashfang
+  catalogNo: K1
+  itemKind: 1
+  baseId: base.kael.greatsword
+  heroId: kael
+  effectId: effect.ashfang
+  fixedAffixes:
+  - affixId: affix.core.strength
+    band: 2
+    offPool: 0
+  - affixId: affix.core.attack_speed
+    band: 2
+    offPool: 0
+  - affixId: affix.core.ember_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.critical_chance
+    band: 2
+    offPool: 0
+  openOptions:
+  - affixId: affix.core.area_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.physical_damage
+    band: 2
+    offPool: 0
+  - affixId: affix.core.resource_generation
+    band: 2
+    offPool: 0
+  modifierIds:
+  - KAE-CS-01
+  - KAE-IL-10
+  affinityBits: 0
+  setId: 
+  uniqueSourceKind: 0
+  uniqueSourceRef: 
+  minDropILvl: 10
+  subtitlePt: 
+  subtitleEn: 
+  lorePt: "Forjada no primeiro inc\xEAndio ap\xF3s o Sundering; ainda morde o ar."
+  loreEn: Forged in the first fire after the Sundering; it still bites the air.
+  build: Inferno
+  effectMoreDeclared: 0
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,35 @@
+id,name_pt,name_en,slot,category,family,hero_id,tags,implicit_affix_id,implicit_factor,armor_factor,droppable,dps_factor,implicit_affinity,secondary_implicit_stat,secondary_implicit_at_100,implicit_effect_id,source_doc
+base.kael.greatsword,Espada Grande,Greatsword,MainHand,Greatsword,None,kael,Attack|Melee,affix.core.area_damage,0.5,0,true,0.9,,,,,02 §3.5
+base.kael.dual_axes,Machados Duplos,Dual Axes,MainHand,Dual Axes,None,kael,Attack|Melee,affix.core.resource_generation,0.5,0,true,1.0,,,,,02 §3.5
+base.kael.warhammer,Martelo de Guerra,Warhammer,MainHand,Warhammer,None,kael,Attack|Melee,affix.core.stagger_damage,0.5,0,true,0.9,,,,,02 §3.5
+base.kael.longsword,Espada Longa,Longsword,MainHand,Longsword,None,kael,Attack|Melee,affix.core.critical_chance,0.5,0,true,1.0,,,,,02 §3.5
+base.kael.heavy_blade,Lâmina Pesada,Heavy Blade,MainHand,Heavy Blade,None,kael,Attack|Melee,affix.core.armor_penetration,0.5,0,true,1.05,,,,,02 §3.5
+base.kael.warbrand,Warbrand,Warbrand,OffHand,Warbrand,None,kael,,affix.core.block_chance,0.5,0,true,,,,,,02 §3.6
+base.armor.helm,Elmo,Helm,Head,Helm,Plate,,,,0,1.5,true,,,,,,"02 §3.7, §3.4"
+base.armor.hood,Capuz,Hood,Head,Hood,Leather,,,,0,1.0,true,,,DodgeChance,1.5,,"02 §3.7, §3.4"
+base.armor.circlet,Diadema,Circlet,Head,Circlet,Vestment,,,,0,0.6,true,,,ShieldStrength,4,,"02 §3.7, §3.4"
+base.armor.cuirass,Peitoral,Cuirass,Chest,Cuirass,Plate,,,,0,1.5,true,,,,,,"02 §3.7, §3.4"
+base.armor.jerkin,Gibão,Jerkin,Chest,Jerkin,Leather,,,,0,1.0,true,,,DodgeChance,2,,"02 §3.7, §3.4"
+base.armor.robe,Manto,Robe,Chest,Robe,Vestment,,,,0,0.6,true,,,ShieldStrength,6,,"02 §3.7, §3.4"
+base.armor.gauntlets,Manoplas,Gauntlets,Hands,Gauntlets,Plate,,,,0,1.5,true,,,,,,"02 §3.7, §3.4"
+base.armor.grips,Luvas de Couro,Grips,Hands,Grips,Leather,,,,0,1.0,true,,,DodgeChance,1,,"02 §3.7, §3.4"
+base.armor.wraps,Faixas,Wraps,Hands,Wraps,Vestment,,,,0,0.6,true,,,ShieldStrength,3,,"02 §3.7, §3.4"
+base.armor.greaves,Grevas,Greaves,Legs,Greaves,Plate,,,,0,1.5,true,,,,,,"02 §3.7, §3.4"
+base.armor.leggings,Calças de Couro,Leggings,Legs,Leggings,Leather,,,,0,1.0,true,,,DodgeChance,1.5,,"02 §3.7, §3.4"
+base.armor.tassets,Escarcelas,Tassets,Legs,Tassets,Vestment,,,,0,0.6,true,,,ShieldStrength,4,,"02 §3.7, §3.4"
+base.armor.sabatons,Sabatons,Sabatons,Feet,Sabatons,Plate,,,,0,1.5,true,,,,,,"02 §3.7, §3.4"
+base.armor.boots,Botas,Boots,Feet,Boots,Leather,,,,0,1.0,true,,,DodgeChance,1,,"02 §3.7, §3.4"
+base.armor.treads,Sandálias de Tecido,Treads,Feet,Treads,Vestment,,,,0,0.6,true,,,ShieldStrength,3,,"02 §3.7, §3.4"
+base.ring.band,Band,Band,Ring,Band,None,,,affix.core.critical_chance,0.5,0,true,,,,,,02 §3.8
+base.ring.signet,Signet,Signet,Ring,Signet,None,,,affix.core.resource_generation,0.5,0,true,,,,,,02 §3.8
+base.ring.loop,Loop,Loop,Ring,Loop,None,,,affix.core.elemental_resistance,0.5,0,true,,,,,,02 §3.8
+base.amulet.pendant,Pendant,Pendant,Amulet,Pendant,None,,,affix.core.skill_damage,0.5,0,true,,,,,,02 §3.8
+base.amulet.torc,Torc,Torc,Amulet,Torc,None,,,affix.core.armor,0.5,0,true,,,,,,02 §3.8
+base.amulet.locket,Locket,Locket,Amulet,Locket,None,,,affix.core.duration_of_effects,0.5,0,true,,,,,,02 §3.8
+base.relic.cinder,Cinder,Cinder (Ember),Relic,Cinder,None,,,affix.core.status_potency,0.5,0,true,,Ember,,,,02 §3.8
+base.relic.rime_shard,Rime Shard,Rime Shard (Frost),Relic,Rime Shard,None,,,affix.core.status_potency,0.5,0,true,,Frost,,,,02 §3.8
+base.relic.stormglass,Stormglass,Stormglass (Storm),Relic,Stormglass,None,,,affix.core.status_potency,0.5,0,true,,Storm,,,,02 §3.8
+base.relic.lodestone,Lodestone,Lodestone (Void),Relic,Lodestone,None,,,affix.core.status_potency,0.5,0,true,,Void,,,,02 §3.8
+base.relic.bell,Bell,Bell (Echo),Relic,Bell,None,,,affix.core.status_potency,0.5,0,true,,Echo,,,,02 §3.8
+base.relic.reliquary,Reliquary,Reliquary (Ruin),Relic,Reliquary,None,,,affix.core.status_potency,0.5,0,true,,Ruin,,,,02 §3.8
+base.relic.keystone,Keystone,Keystone,Relic,Keystone,None,,,affix.core.status_potency,0.5,0,false,,,,,,02 §3.8

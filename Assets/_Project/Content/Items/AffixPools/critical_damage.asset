@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69e53ee0184caa4e98b08ad59b57704, type: 3}
+  m_Name: critical_damage
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Items.AffixPoolDefinition
+  stableId: pool.core.critical_damage
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: pool.core.critical_damage.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 38689a8acec66e49
+  sourceDoc: "02 \xA73.9.3; 01 \xA73.9.4"
+  nameEn: critical_damage pool
+  affixId: affix.core.critical_damage
+  slotWeights:
+  - 20
+  - 0
+  - 0
+  - 0
+  - 10
+  - 0
+  - 0
+  - 10
+  - 10
+  - 0
+  restriction: 
+  references:
+    version: 2
+    RefIds: []
