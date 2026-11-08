@@ -1,0 +1,480 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04e52a7c96adb5148abe813db03f339a, type: 3}
+  m_Name: EnemyScaling
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Enemies.EnemyScalingDefinition
+  stableId: enemy.scaling.curve
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: enemy.scaling.curve.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 8706380bb2b64715
+  sourceDoc: 06 3.13 R53
+  nameEn: Enemy Scaling
+  entries:
+  - level: 1
+    tier: 0
+    stdHp: 36
+    stdDamage: 20
+  - level: 2
+    tier: 0
+    stdHp: 37.728
+    stdDamage: 20.96
+  - level: 3
+    tier: 0
+    stdHp: 39.5389
+    stdDamage: 21.9661
+  - level: 4
+    tier: 0
+    stdHp: 41.4368
+    stdDamage: 23.0205
+  - level: 5
+    tier: 0
+    stdHp: 43.4258
+    stdDamage: 24.1254
+  - level: 6
+    tier: 0
+    stdHp: 45.5102
+    stdDamage: 25.2835
+  - level: 7
+    tier: 0
+    stdHp: 47.6947
+    stdDamage: 26.4971
+  - level: 8
+    tier: 0
+    stdHp: 49.9841
+    stdDamage: 27.7689
+  - level: 9
+    tier: 0
+    stdHp: 52.3833
+    stdDamage: 29.1018
+  - level: 10
+    tier: 0
+    stdHp: 54.8977
+    stdDamage: 30.4987
+  - level: 11
+    tier: 0
+    stdHp: 57.5328
+    stdDamage: 31.9627
+  - level: 12
+    tier: 0
+    stdHp: 60.2943
+    stdDamage: 33.4969
+  - level: 13
+    tier: 0
+    stdHp: 63.1885
+    stdDamage: 35.1047
+  - level: 14
+    tier: 0
+    stdHp: 66.2215
+    stdDamage: 36.7897
+  - level: 15
+    tier: 0
+    stdHp: 69.4002
+    stdDamage: 38.5556
+  - level: 16
+    tier: 0
+    stdHp: 72.7314
+    stdDamage: 40.4063
+  - level: 17
+    tier: 0
+    stdHp: 76.2225
+    stdDamage: 42.3458
+  - level: 18
+    tier: 0
+    stdHp: 79.8811
+    stdDamage: 44.3784
+  - level: 19
+    tier: 0
+    stdHp: 83.7154
+    stdDamage: 46.5086
+  - level: 20
+    tier: 0
+    stdHp: 87.7338
+    stdDamage: 48.741
+  - level: 21
+    tier: 0
+    stdHp: 91.945
+    stdDamage: 51.0806
+  - level: 22
+    tier: 0
+    stdHp: 96.3584
+    stdDamage: 53.5324
+  - level: 23
+    tier: 0
+    stdHp: 100.9836
+    stdDamage: 56.102
+  - level: 24
+    tier: 0
+    stdHp: 105.8308
+    stdDamage: 58.7949
+  - level: 25
+    tier: 1
+    stdHp: 110.9107
+    stdDamage: 71.689
+  - level: 26
+    tier: 1
+    stdHp: 116.2344
+    stdDamage: 72.836
+  - level: 27
+    tier: 1
+    stdHp: 121.8136
+    stdDamage: 74.0014
+  - level: 28
+    tier: 1
+    stdHp: 127.6607
+    stdDamage: 75.1854
+  - level: 29
+    tier: 1
+    stdHp: 133.7884
+    stdDamage: 76.3883
+  - level: 30
+    tier: 1
+    stdHp: 140.2102
+    stdDamage: 77.6106
+  - level: 31
+    tier: 1
+    stdHp: 146.9403
+    stdDamage: 78.8523
+  - level: 32
+    tier: 1
+    stdHp: 153.9935
+    stdDamage: 80.114
+  - level: 33
+    tier: 1
+    stdHp: 161.3851
+    stdDamage: 81.3958
+  - level: 34
+    tier: 1
+    stdHp: 169.1316
+    stdDamage: 82.6981
+  - level: 35
+    tier: 1
+    stdHp: 177.2499
+    stdDamage: 84.0213
+  - level: 36
+    tier: 1
+    stdHp: 185.7579
+    stdDamage: 85.3656
+  - level: 37
+    tier: 1
+    stdHp: 194.6743
+    stdDamage: 86.7315
+  - level: 38
+    tier: 1
+    stdHp: 204.0187
+    stdDamage: 88.1192
+  - level: 39
+    tier: 1
+    stdHp: 213.8116
+    stdDamage: 89.5291
+  - level: 40
+    tier: 1
+    stdHp: 224.0745
+    stdDamage: 90.9616
+  - level: 41
+    tier: 1
+    stdHp: 234.8301
+    stdDamage: 92.4169
+  - level: 42
+    tier: 1
+    stdHp: 246.102
+    stdDamage: 93.8956
+  - level: 43
+    tier: 1
+    stdHp: 257.9149
+    stdDamage: 95.3979
+  - level: 44
+    tier: 1
+    stdHp: 270.2948
+    stdDamage: 96.9243
+  - level: 45
+    tier: 1
+    stdHp: 283.2689
+    stdDamage: 98.4751
+  - level: 46
+    tier: 1
+    stdHp: 296.8658
+    stdDamage: 100.0507
+  - level: 47
+    tier: 1
+    stdHp: 311.1154
+    stdDamage: 101.6515
+  - level: 48
+    tier: 1
+    stdHp: 326.0489
+    stdDamage: 103.2779
+  - level: 49
+    tier: 1
+    stdHp: 341.6993
+    stdDamage: 104.9304
+  - level: 50
+    tier: 2
+    stdHp: 358.1008
+    stdDamage: 133.2616
+  - level: 51
+    tier: 2
+    stdHp: 375.2897
+    stdDamage: 135.3938
+  - level: 52
+    tier: 2
+    stdHp: 393.3036
+    stdDamage: 137.5601
+  - level: 53
+    tier: 2
+    stdHp: 412.1822
+    stdDamage: 139.761
+  - level: 54
+    tier: 2
+    stdHp: 431.9669
+    stdDamage: 141.9972
+  - level: 55
+    tier: 2
+    stdHp: 452.7013
+    stdDamage: 144.2692
+  - level: 56
+    tier: 2
+    stdHp: 474.431
+    stdDamage: 146.5775
+  - level: 57
+    tier: 2
+    stdHp: 497.2037
+    stdDamage: 148.9227
+  - level: 58
+    tier: 2
+    stdHp: 521.0695
+    stdDamage: 151.3055
+  - level: 59
+    tier: 2
+    stdHp: 546.0808
+    stdDamage: 153.7264
+  - level: 60
+    tier: 2
+    stdHp: 572.2927
+    stdDamage: 156.186
+  - level: 61
+    tier: 2
+    stdHp: 599.7627
+    stdDamage: 158.685
+  - level: 62
+    tier: 2
+    stdHp: 628.5513
+    stdDamage: 161.2239
+  - level: 63
+    tier: 2
+    stdHp: 658.7218
+    stdDamage: 163.8035
+  - level: 64
+    tier: 2
+    stdHp: 690.3404
+    stdDamage: 166.4244
+  - level: 65
+    tier: 2
+    stdHp: 723.4768
+    stdDamage: 169.0872
+  - level: 66
+    tier: 2
+    stdHp: 758.2037
+    stdDamage: 171.7925
+  - level: 67
+    tier: 2
+    stdHp: 794.5974
+    stdDamage: 174.5412
+  - level: 68
+    tier: 2
+    stdHp: 832.7381
+    stdDamage: 177.3339
+  - level: 69
+    tier: 2
+    stdHp: 872.7095
+    stdDamage: 180.1712
+  - level: 70
+    tier: 2
+    stdHp: 914.5996
+    stdDamage: 183.054
+  - level: 71
+    tier: 2
+    stdHp: 958.5004
+    stdDamage: 185.9828
+  - level: 72
+    tier: 2
+    stdHp: 1004.5084
+    stdDamage: 188.9586
+  - level: 73
+    tier: 2
+    stdHp: 1052.7249
+    stdDamage: 191.9819
+  - level: 74
+    tier: 2
+    stdHp: 1103.2556
+    stdDamage: 195.0536
+  - level: 75
+    tier: 3
+    stdHp: 1156.2119
+    stdDamage: 264.2326
+  - level: 76
+    tier: 3
+    stdHp: 1211.71
+    stdDamage: 268.4603
+  - level: 77
+    tier: 3
+    stdHp: 1269.8721
+    stdDamage: 272.7557
+  - level: 78
+    tier: 3
+    stdHp: 1330.826
+    stdDamage: 277.1198
+  - level: 79
+    tier: 3
+    stdHp: 1394.7056
+    stdDamage: 281.5537
+  - level: 80
+    tier: 3
+    stdHp: 1461.6515
+    stdDamage: 286.0586
+  - level: 81
+    tier: 3
+    stdHp: 1531.8107
+    stdDamage: 290.6355
+  - level: 82
+    tier: 3
+    stdHp: 1605.3376
+    stdDamage: 295.2857
+  - level: 83
+    tier: 3
+    stdHp: 1682.3939
+    stdDamage: 300.0102
+  - level: 84
+    tier: 3
+    stdHp: 1763.1488
+    stdDamage: 304.8104
+  - level: 85
+    tier: 4
+    stdHp: 1824.859
+    stdDamage: 310.9066
+  - level: 86
+    tier: 4
+    stdHp: 1888.729
+    stdDamage: 317.1248
+  - level: 87
+    tier: 4
+    stdHp: 1954.8346
+    stdDamage: 323.4672
+  - level: 88
+    tier: 4
+    stdHp: 2023.2538
+    stdDamage: 329.9366
+  - level: 89
+    tier: 4
+    stdHp: 2094.0676
+    stdDamage: 336.5353
+  - level: 90
+    tier: 4
+    stdHp: 2167.36
+    stdDamage: 343.266
+  - level: 91
+    tier: 4
+    stdHp: 2243.2175
+    stdDamage: 350.1314
+  - level: 92
+    tier: 4
+    stdHp: 2321.7302
+    stdDamage: 357.134
+  - level: 93
+    tier: 4
+    stdHp: 2402.9907
+    stdDamage: 364.2767
+  - level: 94
+    tier: 4
+    stdHp: 2487.0955
+    stdDamage: 371.5622
+  - level: 95
+    tier: 4
+    stdHp: 2574.1438
+    stdDamage: 378.9934
+  - level: 96
+    tier: 4
+    stdHp: 2664.239
+    stdDamage: 386.5733
+  - level: 97
+    tier: 4
+    stdHp: 2757.4873
+    stdDamage: 394.3048
+  - level: 98
+    tier: 4
+    stdHp: 2853.9993
+    stdDamage: 402.1909
+  - level: 99
+    tier: 4
+    stdHp: 2953.8892
+    stdDamage: 410.2347
+  - level: 100
+    tier: 4
+    stdHp: 3057.2754
+    stdDamage: 418.4394
+  - level: 101
+    tier: 4
+    stdHp: 3164.28
+    stdDamage: 426.8082
+  - level: 102
+    tier: 4
+    stdHp: 3275.0298
+    stdDamage: 435.3443
+  - level: 103
+    tier: 4
+    stdHp: 3389.6558
+    stdDamage: 444.0512
+  - level: 104
+    tier: 4
+    stdHp: 3508.2937
+    stdDamage: 452.9322
+  - level: 105
+    tier: 4
+    stdHp: 3631.084
+    stdDamage: 461.9909
+  - level: 106
+    tier: 4
+    stdHp: 3758.172
+    stdDamage: 471.2307
+  - level: 107
+    tier: 4
+    stdHp: 3889.708
+    stdDamage: 480.6553
+  - level: 108
+    tier: 4
+    stdHp: 4025.848
+    stdDamage: 490.2684
+  - level: 109
+    tier: 4
+    stdHp: 4166.7524
+    stdDamage: 500.0738
+  - level: 110
+    tier: 4
+    stdHp: 4312.589
+    stdDamage: 510.0753
+  references:
+    version: 2
+    RefIds: []

@@ -1562,6 +1562,70 @@ MonoBehaviour:
     m_Localized: Room weights - Stratum III
     m_Metadata:
       m_Items: []
+  - m_Id: 211799529521152
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211800280301568
+    m_Localized: Veteran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211800724897792
+    m_Localized: Nightmare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211801182076928
+    m_Localized: Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211803728019456
+    m_Localized: Lunge Bite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211804252307456
+    m_Localized: Death Spark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211804768206848
+    m_Localized: Combo Strike 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805196025856
+    m_Localized: Combo Strike 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805577707520
+    m_Localized: Overhead Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805992943616
+    m_Localized: Slag Throw
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211806399791104
+    m_Localized: Kiln Slam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211809818148864
+    m_Localized: Cinder Husk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810212413440
+    m_Localized: Ashborn Marauder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810598289408
+    m_Localized: Slag Hurler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810996748288
+    m_Localized: Kiln Brute
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212067004481536
+    m_Localized: Enemy Scaling
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

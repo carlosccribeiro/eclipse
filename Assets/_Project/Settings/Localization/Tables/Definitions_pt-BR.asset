@@ -1562,6 +1562,70 @@ MonoBehaviour:
     m_Localized: Pesos de salas - Estrato III
     m_Metadata:
       m_Items: []
+  - m_Id: 211799529521152
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211800280301568
+    m_Localized: Veterano
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211800724897792
+    m_Localized: Pesadelo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211801182076928
+    m_Localized: Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211803728019456
+    m_Localized: Mordida em Investida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211804252307456
+    m_Localized: Fagulha da Morte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211804768206848
+    m_Localized: Combo Golpe 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805196025856
+    m_Localized: Combo Golpe 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805577707520
+    m_Localized: Golpe Overhead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211805992943616
+    m_Localized: "Arremesso de Esc\xF3ria"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211806399791104
+    m_Localized: Pancada do Forno
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211809818148864
+    m_Localized: Casca de Brasa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810212413440
+    m_Localized: Saqueador Cinzento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810598289408
+    m_Localized: "Arremessador de Esc\xF3ria"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 211810996748288
+    m_Localized: Bruto da Fornalha
+    m_Metadata:
+      m_Items: []
+  - m_Id: 212067004481536
+    m_Localized: Curva de Escala de Inimigos
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9731ce8a17839478a7e0661725783a, type: 3}
+  m_Name: cinder_husk
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Enemies.EnemyDefinition
+  stableId: enemy.ashen.cinder_husk
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: enemy.ashen.cinder_husk.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 4eabdfcd4f1f9bad
+  sourceDoc: "09 \xA75.1 / 09 \xA74"
+  nameEn: Cinder Husk
+  archetype: 0
+  faction: Hollow
+  hpMult: 0.3
+  damageMult: 0.6
+  threatPoints: 1
+  massClass: 0
+  staggerThreshold: 0
+  moveSpeed: 5
+  baseElement: 1
+  secondaryElement: 1
+  resistances:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  statusResistance: 0
+  lootClass: 0
+  tagBits: 131077
+  preferredRangeMin: 0
+  preferredRangeMax: 1
+  reposition: 0
+  retreatBelowMeters: 0
+  retreatCooldownSeconds: 0
+  frontPlateReduction: 0
+  frontPlateArcDegrees: 0
+  hfsmTemplate: hfsm.fodder
+  attacks:
+  - {fileID: 11400000, guid: 1df675088ca6a1f46862fe6220f4a66a, type: 2}
+  - {fileID: 11400000, guid: a4cb51ca897036a4ebd4821a3e8987d2, type: 2}
+  references:
+    version: 2
+    RefIds: []
