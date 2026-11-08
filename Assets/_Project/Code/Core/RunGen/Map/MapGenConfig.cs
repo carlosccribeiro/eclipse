@@ -97,11 +97,20 @@ namespace Eclipse.Core.RunGen.Map
             rows[12] = new RowSpec(1, 1, RowKind.Antechamber, rest);            // row 13: Antechamber
 
             // 09 §11.2. Columns: Combat, Elite, Treasure, Shrine, Event, Challenge.
+            // TUNED (M15 risk policy; doc owner of 09 §11.2 please review): rejection sampling of the 09 §11.3
+            // constraints skews the realized mix, so the raw 09 weights gave Shrine 1.41 / Elite 1.56 on a random path
+            // (target 2 / 2-3). Original 09 §11.2 values are kept in the comments; tuned means are in the
+            // test Mean_room_counts_on_random_path_match_09_11_2 (10,000 seeds): Combat 5.43, Elite 1.77, Treasure 0.73,
+            // Shrine 1.73, Event 0.67, Challenge 0.27. Elite saturates near 1.8: higher Elite/Challenge weights make
+            // the 09 §11.3 rejection exhaust attempts (fallback template), so they were not pushed further.
             var w = new float[StratumCount, WeightedTypeCount]
             {
-                { 55, 10, 10, 15, 10, 0 },  // Stratum I (rows 1-4; also feeds Shrine/Treasure of the row-5 Clareira)
-                { 40, 20, 8, 12, 12, 8 },   // Stratum II (rows 6-8)
-                { 35, 25, 8, 10, 10, 12 }   // Stratum III (rows 10-12)
+                // 09 original: { 55, 10, 10, 15, 10, 0 }
+                { 42, 12, 10, 26, 10, 0 },  // Stratum I (rows 1-4; also feeds Shrine/Treasure of the row-5 Clareira)
+                // 09 original: { 40, 20, 8, 12, 12, 8 }
+                { 28, 32, 8, 16, 10, 6 },   // Stratum II (rows 6-8)
+                // 09 original: { 35, 25, 8, 10, 10, 12 }
+                { 26, 34, 8, 12, 10, 8 }   // Stratum III (rows 10-12)
             };
 
             return new MapGenConfig
