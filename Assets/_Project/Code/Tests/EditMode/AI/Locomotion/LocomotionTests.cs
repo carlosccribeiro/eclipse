@@ -89,6 +89,35 @@ namespace Eclipse.Tests.EditMode.AI.Locomotion
         }
 
         [Test]
+        public void Separation_CoincidentAgentsPressingOnOneTargetSeparateInFewTicks()
+        {
+            int a = _data.Register(float2.zero, 0.4f, 4f);
+            int b = _data.Register(float2.zero, 0.4f, 4f);
+            _data.SetSteering(a, SteeringMode.Seek, new float2(10f, 0f));
+            _data.SetSteering(b, SteeringMode.Seek, new float2(10f, 0f));
+            Run(10);
+            Assert.GreaterOrEqual(math.distance(_data.GetPosition(a), _data.GetPosition(b)), 0.8f * 0.9f);
+        }
+
+        [Test]
+        public void Separation_CrowdOnOneTargetConvergesToAlmostNoOverlap()
+        {
+            using (var data = new LocomotionData(64, 1))
+            {
+                const int n = 40;
+                var target = new float2(0f, 0f);
+                for (int i = 0; i < n; i++)
+                {
+                    int id = data.Register(new float2((i % 8) * 0.3f - 1f, (i / 8) * 0.3f - 1f), 0.4f, 4.2f);
+                    data.SetSteering(id, SteeringMode.Arrive, target);
+                }
+                for (int t = 0; t < 600; t++) LocomotionStepper.Step(data, _cfg, Dt, true);
+                int pairs = n * (n - 1) / 2;
+                Assert.LessOrEqual(data.CountOverlaps(0.4f * 0.9f), pairs / 20, "more than 5% of pairs still overlap");
+            }
+        }
+
+        [Test]
         public void Avoidance_CoincidentAgentsSeparate()
         {
             int a = _data.Register(float2.zero, 0.4f, 4f);

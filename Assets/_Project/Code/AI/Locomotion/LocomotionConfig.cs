@@ -29,5 +29,15 @@ namespace Eclipse.AI.Locomotion
 
         /// <summary>Extra personal space added to the sum of radii for avoidance, m (TUNED).</summary>
         public float AvoidanceMargin = 0.1f;
+
+        /// <summary>
+        /// Fraction of each pair's penetration resolved per tick by moving positions directly (0..1; each agent takes this share of the penetration, so 0.5 resolves a pair in one tick when both are free).
+        /// Velocity avoidance alone is cancelled by seek when agents press on one target, so overlap needs a positional fix.
+        /// 1.0 (not 0.5) because an agent pinned against a Wall cannot yield: its neighbour must take the whole share or seek wins at equilibrium (TUNED).
+        /// </summary>
+        public float SeparationStrength = 1f;
+
+        /// <summary>Largest positional separation applied to one agent in one tick, m (TUNED).</summary>
+        public float SeparationMaxStep = 0.15f;
     }
 }

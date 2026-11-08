@@ -16,6 +16,8 @@ namespace Eclipse.AI.Locomotion
 
         public NativeArray<float2> Position;
         public NativeArray<float2> Velocity;
+        /// <summary>Per-tick positional separation written by <see cref="SeparationJob"/> and applied by the integration.</summary>
+        public NativeArray<float2> Correction;
         public NativeArray<float2> Target;
         public NativeArray<float> Radius;
         public NativeArray<float> MaxSpeed;
@@ -41,6 +43,7 @@ namespace Eclipse.AI.Locomotion
             Capacity = Math.Max(1, capacity);
             Position = new NativeArray<float2>(Capacity, Allocator.Persistent);
             Velocity = new NativeArray<float2>(Capacity, Allocator.Persistent);
+            Correction = new NativeArray<float2>(Capacity, Allocator.Persistent);
             Target = new NativeArray<float2>(Capacity, Allocator.Persistent);
             Radius = new NativeArray<float>(Capacity, Allocator.Persistent);
             MaxSpeed = new NativeArray<float>(Capacity, Allocator.Persistent);
@@ -63,6 +66,7 @@ namespace Eclipse.AI.Locomotion
             }
             Position[index] = position;
             Velocity[index] = float2.zero;
+            Correction[index] = float2.zero;
             Target[index] = position;
             Radius[index] = radius;
             MaxSpeed[index] = maxSpeed;
@@ -167,6 +171,7 @@ namespace Eclipse.AI.Locomotion
         {
             Grow(ref Position, newCapacity);
             Grow(ref Velocity, newCapacity);
+            Grow(ref Correction, newCapacity);
             Grow(ref Target, newCapacity);
             Grow(ref Radius, newCapacity);
             Grow(ref MaxSpeed, newCapacity);
@@ -190,6 +195,7 @@ namespace Eclipse.AI.Locomotion
             if (!IsCreated) return;
             Position.Dispose();
             Velocity.Dispose();
+            Correction.Dispose();
             Target.Dispose();
             Radius.Dispose();
             MaxSpeed.Dispose();

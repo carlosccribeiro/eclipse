@@ -15,6 +15,8 @@ namespace Eclipse.AI.Locomotion
         public float OrbitRadialWeight;
         public float AvoidanceWeight;
         public float AvoidanceMargin;
+        public float SeparationStrength;
+        public float SeparationMaxStep;
         public float DeltaTime;
         public int Count;
 
@@ -27,6 +29,8 @@ namespace Eclipse.AI.Locomotion
             OrbitRadialWeight = c.OrbitRadialWeight,
             AvoidanceWeight = c.AvoidanceWeight,
             AvoidanceMargin = c.AvoidanceMargin,
+            SeparationStrength = c.SeparationStrength,
+            SeparationMaxStep = c.SeparationMaxStep,
             DeltaTime = dt,
             Count = count,
         };
@@ -97,6 +101,10 @@ namespace Eclipse.AI.Locomotion
                 // Coincident agents separate along +/-X by index so the result is deterministic and opposed.
                 float2 n = dd > 1e-5f ? d / dd : new float2(i < j ? 1f : -1f, 0f);
                 push += n * ((minDist - dd) / minDist);
+                // Contact: drop the part of the desired velocity that leans on this neighbour, so a crowd pressing on one
+                // point (or on a Wall) stops compressing itself instead of letting seek cancel the separation.
+                float into = math.dot(desired, n);
+                if (into < 0f) desired -= n * into;
             }
             desired += push * (P.AvoidanceWeight * cap);
 
@@ -116,6 +124,44 @@ namespace Eclipse.AI.Locomotion
         }
     }
 
+    /// <summary>
+    /// Positional penetration resolution: every agent is pushed out of each neighbour closer than the sum of radii.
+    /// Reads Position only and writes Correction[i] only (no read/write race); coincident agents separate along +/-X by index.
+    /// </summary>
+    [BurstCompile]
+    public struct SeparationJob : IJobParallelFor
+    {
+        public SteeringParams P;
+        [ReadOnly] public NativeArray<float2> Position;
+        [ReadOnly] public NativeArray<float> Radius;
+        [ReadOnly] public NativeArray<byte> Flags;
+        public NativeArray<float2> Correction;
+
+        public void Execute(int i)
+        {
+            float2 sum = float2.zero;
+            if ((Flags[i] & LocomotionData.FlagActive) != 0)
+            {
+                float2 pos = Position[i];
+                float ri = Radius[i];
+                for (int j = 0; j < P.Count; j++)
+                {
+                    if (j == i || (Flags[j] & LocomotionData.FlagActive) == 0) continue;
+                    float2 d = pos - Position[j];
+                    float minDist = ri + Radius[j];
+                    float dSq = math.lengthsq(d);
+                    if (dSq >= minDist * minDist) continue;
+                    float dd = math.sqrt(dSq);
+                    float2 n = dd > 1e-5f ? d / dd : new float2(i < j ? 1f : -1f, 0f);
+                    sum += n * ((minDist - dd) * P.SeparationStrength);
+                }
+                float len = math.length(sum);
+                if (len > P.SeparationMaxStep) sum *= P.SeparationMaxStep / len;
+            }
+            Correction[i] = sum;
+        }
+    }
+
     /// <summary>Integrates position and pushes agents out of Wall rectangles. Writes Position[i]/Velocity[i] only.</summary>
     [BurstCompile]
     public struct IntegrateJob : IJobParallelFor
@@ -125,13 +171,14 @@ namespace Eclipse.AI.Locomotion
         [ReadOnly] public NativeArray<float> Radius;
         [ReadOnly] public NativeArray<byte> Flags;
         [ReadOnly] public NativeArray<float4> Walls;
+        [ReadOnly] public NativeArray<float2> Correction;
         public NativeArray<float2> Position;
         public NativeArray<float2> Velocity;
 
         public void Execute(int i)
         {
             if ((Flags[i] & LocomotionData.FlagActive) == 0) return;
-            float2 pos = Position[i] + Velocity[i] * DeltaTime;
+            float2 pos = Position[i] + Velocity[i] * DeltaTime + Correction[i];
             float2 vel = Velocity[i];
             float r = Radius[i];
 
@@ -200,6 +247,14 @@ namespace Eclipse.AI.Locomotion
                 Flags = data.Flags,
                 Velocity = data.Velocity,
             };
+            var separate = new SeparationJob
+            {
+                P = steer.P,
+                Position = data.Position,
+                Radius = data.Radius,
+                Flags = data.Flags,
+                Correction = data.Correction,
+            };
             var move = new IntegrateJob
             {
                 DeltaTime = dt,
@@ -207,6 +262,7 @@ namespace Eclipse.AI.Locomotion
                 Radius = data.Radius,
                 Flags = data.Flags,
                 Walls = data.Walls,
+                Correction = data.Correction,
                 Position = data.Position,
                 Velocity = data.Velocity,
             };
@@ -214,11 +270,13 @@ namespace Eclipse.AI.Locomotion
             if (inline)
             {
                 steer.Run(n);
+                separate.Run(n);
                 move.Run(n);
             }
             else
             {
                 JobHandle h = steer.Schedule(n, BatchSize);
+                h = separate.Schedule(n, BatchSize, h);
                 move.Schedule(n, BatchSize, h).Complete();
             }
         }
