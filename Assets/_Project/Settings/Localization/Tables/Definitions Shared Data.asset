@@ -1299,6 +1299,46 @@ MonoBehaviour:
     m_Key: pity.core.ascension.name
     m_Metadata:
       m_Items: []
+  - m_Id: 96589774880768
+    m_Key: feedback.shared.heavy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96590680850432
+    m_Key: feedback.shared.medium.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96591138029568
+    m_Key: feedback.shared.light.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96593738498048
+    m_Key: attack.kael.greatsword.1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594191482880
+    m_Key: attack.kael.greatsword.2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594615107584
+    m_Key: attack.kael.greatsword.3.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594967429120
+    m_Key: attack.kael.greatsword.heavy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96595378470912
+    m_Key: attack.kael.greatsword.dash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96597534343168
+    m_Key: weapon.kael.greatsword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101854691753984
+    m_Key: combat.states.default.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

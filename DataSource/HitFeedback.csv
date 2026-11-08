@@ -1,0 +1,4 @@
+id,name_pt,name_en,weight_class,crit_hitstop_bonus_f,min_hitstop_spacing_ms,shake_trauma,shake_trauma_crit,trauma_decay_per_s,flash_f,squash_s,source_doc
+feedback.shared.heavy,Feedback Pesado,Heavy Feedback,Heavy,2,100,0.15,0.25,1.5,2,0,06 §3.11
+feedback.shared.medium,Feedback Médio,Medium Feedback,Medium,2,100,0,0,1.5,2,0.1,06 §3.11
+feedback.shared.light,Feedback Leve,Light Feedback,Light,2,100,0,0,1.5,2,0.1,06 §3.11

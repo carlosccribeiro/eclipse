@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24bc656271361b4c9fdea1c27efab1d, type: 3}
+  m_Name: CombatRuntimeConfig
+  m_EditorClassIdentifier: Eclipse.Gameplay::Eclipse.Gameplay.Combat.Integration.CombatRuntimeConfig
+  combatStates: {fileID: 11400000, guid: a0b608332d877d64ca7ed9b443635b1e, type: 2}
+  armorMitigationCap: 0.75
+  physicalResistanceCap: 0.3
+  resistanceCap: 0.75
+  resistanceFloor: -0.5
+  dodgeCap: 0.4
+  blockCap: 0.5
+  damageReductionCap: 0.4
+  blockAmount: 0.4
+  difficultyResPenalty: 0
+  resistanceFloorUnderStatus: -0.2
+  graceSeconds: 0.25
+  heavyGraceSeconds: 0.8
+  heavyHitHealthFraction: 0.2
+  tickIntervalSeconds: 0.5
+  lowHealthFraction: 0
+  deathSlowMotionScale: 0.3
+  deathSlowMotionSeconds: 0.5
+  reviveHealthFraction: 0.5
+  reviveInvulnerabilitySeconds: 3
+  maxRevivesPerBossRoom: 1
+  flaskCharges: 3
+  flaskHealFraction: 0.35
+  flaskHealSeconds: 1
+  kaelMaxHealth: 240
+  kaelArmor: 100
+  kaelCriticalChance: 0.05
+  kaelCriticalDamage: 0.5
+  difficulty: 0
+  rngSeed: 20260101
+  attackerLevel: 1
+  dummyMaxHealth: 1000
+  dummyArmorPercent: 0
+  testAttackIntervalSeconds: 2
+  testAttackWindupSeconds: 0.6
+  testAttackActiveFrames: 4
+  testAttackRecoveryFrames: 20
+  testAttackRadius: 2.5
+  testAttackArcDegrees: 120
+  testAttackHealthFraction: 0.1
