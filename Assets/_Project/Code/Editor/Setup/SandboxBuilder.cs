@@ -44,7 +44,9 @@ namespace Eclipse.Editor.Setup
             Material heavy = Mat("Greybox_DummyHeavy", LitShader, new Color(0.75f, 0.2f, 0.2f));
             Material medium = Mat("Greybox_DummyMedium", LitShader, new Color(0.85f, 0.75f, 0.2f));
 
-            BuildKaelPrefab(kael, nose);
+            // Prefab internals get random fileIDs on every rebuild: keep the existing Kael prefab once it carries the combat
+            // components (M05 T10) so a second Run changes no file; delete the .prefab to regenerate.
+            if (!KaelPrefabHasCombat()) BuildKaelPrefab(kael, nose);
             BuildBootstrapPrefab();
             CombatSandboxContentBuilder.BuildPrefabs(); // M05 T10: combat components on Kael, CombatWorld and TrainingDummy prefabs
             // Scene object fileIDs are random per creation: rebuild only when missing or when it lacks the combat content
@@ -53,6 +55,12 @@ namespace Eclipse.Editor.Setup
                 BuildScene(floor, wall, cover, pillar, heavy, medium);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+        }
+
+        private static bool KaelPrefabHasCombat()
+        {
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(KaelPrefabPath);
+            return prefab != null && prefab.GetComponent<Eclipse.Gameplay.Combat.Attacks.AttackController>() != null;
         }
 
         private static bool SceneHasCombatContent() =>

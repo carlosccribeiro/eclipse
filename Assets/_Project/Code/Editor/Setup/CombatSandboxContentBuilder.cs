@@ -86,6 +86,11 @@ namespace Eclipse.Editor.Setup
         private static void AugmentKael()
         {
             var root = PrefabUtility.LoadPrefabContents(SandboxBuilder.KaelPrefabPath);
+            if (root.GetComponent<AttackController>() != null)
+            {
+                PrefabUtility.UnloadPrefabContents(root); // already augmented: stay idempotent (delete the prefab to regenerate)
+                return;
+            }
             try
             {
                 var weapon = AssetDatabase.LoadAssetAtPath<WeaponDefinition>(WeaponPath);
