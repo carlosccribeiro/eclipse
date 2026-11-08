@@ -6,6 +6,8 @@
         "Eclipse.Data",
         "Eclipse.Gameplay",
         "Unity.AI.Navigation",
+        "Unity.Burst",
+        "Unity.Collections",
         "Unity.Mathematics"
     ],
     "includePlatforms": [],
