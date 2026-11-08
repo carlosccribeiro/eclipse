@@ -159,7 +159,7 @@ namespace Eclipse.Tests.PlayMode.Combat.Delivery
                 var result = new GcResult();
                 yield return GcProbe.Measure(result, () => scheduler.StepManual(1), 30, 180);
                 Assert.AreEqual(2000, manager.ActiveCount, "all projectiles still flying");
-                GcProbe.AssertClean(result);
+                GcProbe.AssertClean(result, engineBookkeepingOnRunner: true);
             }
             finally
             {
