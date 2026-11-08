@@ -136,7 +136,8 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | M12 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Items (modelo, `ItemMath`) e Loot (gerador de 12 passos, pity); 15 CSVs + 35 nomeados (K1–K16, U1–U19). dotnet 460/460, EditMode 564/564, validador 0 erros. Raridade com chances absolutas de 05 §5.4; pendências no Log do M12 |
 | M05 | ✅ concluído | 2026-11-08 | Contratos de combate congelados (`Gameplay/Combat/Contracts`), Greatsword do Kael na frame data de 06, hit detection, dano recebido, estados/Stagger, projéteis/áreas/DoT, feedback, pool, CombatSandbox. dotnet 462/462, EditMode 813/813, PlayMode 65/65 (Combat 46). Pendente: checagem manual; lacunas (lunge, Forte/Dash) no Log do M05 |
 | M15 | ✅ concluído | 2026-11-08 | `Eclipse.Core.RunGen`: `MapGenerator` (13 linhas + chefe, 7 restrições de 09 §11.3), `EncounterPlanner` (orçamento, ondas, limites, receitas), `EncounterRuntimeRules`; 6 CSVs `DataSource/run` + SOs; Run Map Previewer. dotnet RunGen 24/24, EditMode 658/658. Pesos do mapa ajustados (TUNED) e divergências de 09 no Log do M15 |
-| M06–M11, M13–M14, M16–M32 | ⏳ não iniciado | 2026-11-07 | |
+| M07 | ✅ concluído | 2026-11-08 | `Eclipse.AI`: HFSM+Utility, tokens, locomoção Burst, telegraph, 4 inimigos Ashen Wastes, AISandbox, soak 200 (gameplay+IA média 2,6 ms). EditMode 1012/1012, PlayMode AI 17/17. Pendente: soak no hardware alvo (GC ≠ 0, física p99 > 2 ms), desvios de TTK/letalidade ao M14, teste visual do telegraph |
+| M06, M08–M11, M13–M14, M16–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
 Legenda: ⏳ não iniciado · 🔄 em andamento · ✅ concluído · ❌ bloqueado (com motivo).
