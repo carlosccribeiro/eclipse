@@ -1,0 +1,30 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement class="rmp-root">
+        <ui:VisualElement class="rmp-toolbar">
+            <ui:UnsignedLongField name="seed-field" label="Seed" value="1" class="rmp-field" />
+            <ui:TextField name="region-field" label="Region" value="ashen_wastes" class="rmp-field" />
+            <ui:DropdownField name="difficulty-field" label="Difficulty" class="rmp-field" />
+            <ui:IntegerField name="ascension-field" label="Ascension" value="0" class="rmp-field" />
+            <ui:Button name="generate-button" text="Generate" class="rmp-button" />
+        </ui:VisualElement>
+        <ui:Label name="config-label" class="rmp-note" />
+        <ui:Label name="summary-label" class="rmp-summary" />
+        <ui:VisualElement class="rmp-body">
+            <ui:ScrollView name="graph-scroll" class="rmp-graph-scroll">
+                <ui:VisualElement name="graph" class="rmp-graph" />
+            </ui:ScrollView>
+            <ui:VisualElement class="rmp-side">
+                <ui:Label text="Legend" class="rmp-title" />
+                <ui:VisualElement name="legend" class="rmp-legend" />
+                <ui:Label text="Encounter plan (click a Combat or Elite node)" class="rmp-title" />
+                <ui:Label name="plan-label" class="rmp-plan" />
+                <ui:Label text="Batch" class="rmp-title" />
+                <ui:VisualElement class="rmp-toolbar">
+                    <ui:IntegerField name="batch-count" label="Seeds" value="1000" class="rmp-field" />
+                    <ui:Button name="batch-button" text="Run batch" class="rmp-button" />
+                </ui:VisualElement>
+                <ui:Label name="batch-label" class="rmp-plan" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,4 @@
+id,name_pt,name_en,stratum,combat,elite,treasure,shrine,event,challenge,source_doc
+roomweights.core.stratum_1,Pesos de salas - Estrato I,Room weights - Stratum I,1,42,12,10,26,10,0,09 §11.2 (TUNED; original 55/10/10/15/10/0)
+roomweights.core.stratum_2,Pesos de salas - Estrato II,Room weights - Stratum II,2,28,32,8,16,10,6,09 §11.2 (TUNED; original 40/20/8/12/12/8)
+roomweights.core.stratum_3,Pesos de salas - Estrato III,Room weights - Stratum III,3,26,34,8,12,10,8,09 §11.2 (TUNED; original 35/25/8/10/10/12)

@@ -1,0 +1,8 @@
+id,name_pt,name_en,slots,filler,weights,max_casters_override,max_summoners_override,source_doc
+encrecipe.core.swarm,Enxame,Swarm,Summoner:1:1:0|Fodder:1:0:70,1|0|0|0|0|0|0|0,:1:13:2,0,0,"09 §10.4 (GAP: filler/row ranges are placeholders)"
+encrecipe.core.phalanx,Falange,Phalanx,Tank:1:1:0|Support:1:1:0|Standard:1:0:45,0.5|3|0|0|0|0|0|0,:2:13:1.5,0,0,"09 §10.4 (GAP: filler/row ranges are placeholders)"
+encrecipe.core.siege,Cerco,Siege,Tank:1:2:0|Ranged:1:0:35,0.5|0.5|3|1|0|0|0|0,:3:13:1.2,0,0,"09 §10.4 (GAP: filler/row ranges are placeholders)"
+encrecipe.core.ambush,Emboscada,Ambush,Assassin:2:2:0,2|2|0.5|0|0|0|0|0,:4:13:1,0,0,"09 §10.4 (GAP: filler/row ranges are placeholders)"
+encrecipe.core.ritual,Ritual,Ritual,Caster:2:2:0,1|2|0|0|0|0|0|0,:3:13:1,0,0,"09 §10.4 (GAP: filler/row ranges are placeholders)"
+encrecipe.core.brood,Ninhada,Brood,Summoner:2:2:0,1|0|0|0|0|0|0|0,:5:13:1,0,2,"09 §10.4 (GAP: filler/row ranges are placeholders)"
+encrecipe.core.mixed_patrol,Patrulha Mista,Mixed Patrol,,3|3|2|1|1|0.5|1|1,:1:13:3,0,0,"09 §10.4 (GAP: filler/row ranges are placeholders)"

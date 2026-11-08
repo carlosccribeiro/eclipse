@@ -1,0 +1,14 @@
+id,name_pt,name_en,row,min_nodes,max_nodes,kind,allowed,source_doc
+maprow.core.row_01,Linha 1,Row 1,1,2,2,AllCombat,Combat,09 §11.1
+maprow.core.row_02,Linha 2,Row 2,2,2,3,Weighted,Combat|Shrine|Event|Treasure,09 §11.1
+maprow.core.row_03,Linha 3,Row 3,3,2,3,Weighted,Combat|Shrine|Event|Treasure|Elite,09 §11.1
+maprow.core.row_04,Linha 4,Row 4,4,2,3,Weighted,Combat|Shrine|Event|Treasure|Elite,09 §11.1
+maprow.core.row_05,Linha 5 (Clareira),Row 5 (Clearing),5,2,3,Clearing,Rest|Shrine|Treasure,09 §11.1
+maprow.core.row_06,Linha 6,Row 6,6,3,4,Weighted,Combat|Elite|Treasure|Shrine|Event|Challenge,09 §11.1
+maprow.core.row_07,Linha 7,Row 7,7,3,4,Weighted,Combat|Elite|Treasure|Shrine|Event|Challenge,09 §11.1
+maprow.core.row_08,Linha 8,Row 8,8,3,4,Weighted,Combat|Elite|Treasure|Shrine|Event|Challenge,09 §11.1
+maprow.core.row_09,Linha 9 (Guardian),Row 9 (Guardian),9,1,1,Guardian,Guardian,09 §11.1
+maprow.core.row_10,Linha 10,Row 10,10,2,4,Weighted,Combat|Elite|Treasure|Shrine|Event|Challenge,09 §11.1
+maprow.core.row_11,Linha 11,Row 11,11,2,4,Weighted,Combat|Elite|Treasure|Shrine|Event|Challenge,09 §11.1
+maprow.core.row_12,Linha 12,Row 12,12,2,4,Weighted,Combat|Elite|Treasure|Shrine|Event|Challenge,09 §11.1
+maprow.core.row_13,Linha 13 (Antecâmara),Row 13 (Antechamber),13,1,1,Antechamber,Rest,09 §11.1

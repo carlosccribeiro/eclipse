@@ -60,9 +60,11 @@ DataSource/            CSV versionados (fonte dos SOs; convenção em DataSource
 tools/CoreTests/       projeto dotnet que compila Eclipse.Core e roda os testes rápidos
 docs/                  GDD (docs/gdd), roadmap (docs/ROADMAP.md), planos de módulo (docs/roadmap), relatórios (docs/roadmap/reports)
 ```
-(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/<Área>/` com namespace `Eclipse.Core.<Área>.Tests` (compilados também por `tools/CoreTests`; filtro `--filter FullyQualifiedName~Eclipse.Core.<Área>`). Subpastas do Core: `Ids, Tags, Random, Time, Events, Definitions, DataTables, Stats, Attributes, Damage, CrowdControl, Procs, Items, Loot` (`DataTables` = `CsvTable`/`CsvRow`, parser CSV RFC 4180).
+(Criada no módulo M00; atualize aqui se mudar.) Projeto Unity na raiz do repo. Setup idempotente das configurações: `Assets/_Project/Code/Editor/Setup/ProjectBootstrap.cs` (`Eclipse.Editor.Setup.ProjectBootstrap.Run`). 13 asmdefs `Eclipse.*` (Core, Data, Gameplay, AI, Run, Meta, Save, UI, Audio, Platform, Editor, Tests.EditMode, Tests.PlayMode); testes de Core em `Tests/EditMode/Core/<Área>/` com namespace `Eclipse.Core.<Área>.Tests` (compilados também por `tools/CoreTests`; filtro `--filter FullyQualifiedName~Eclipse.Core.<Área>`). Subpastas do Core: `Ids, Tags, Random, Time, Events, Definitions, DataTables, Stats, Attributes, Damage, CrowdControl, Procs, Items, Loot, RunGen` (`DataTables` = `CsvTable`/`CsvRow`, parser CSV RFC 4180).
 
 Gameplay (M04): `Gameplay/{Simulation,Physics,Input,Player,Entities,Events,Camera}`. `TickScheduler` (`Advance`/`StepManual`) é movido por `GameplayServices.FixedUpdate`; `EntityClock.Freeze(n)` para hit-stop local. Camadas físicas só em `PhysicsLayers` (módulos seguintes não editam TagManager/DynamicsManager). Input: `Settings/Input/EclipseInput.inputactions` + wrapper manual `EclipseInput.cs` (refazer ao mudar o asset); `InputBuffer` 9 f. Valores de esquiva/câmera/movimento só nos SOs (`DodgeConfig`, `IsoCameraSettings`, `MovementProfile`), criados por scripts idempotentes em `Code/Editor/Setup/*Creator.cs`. Namespace da câmera: `Eclipse.Gameplay.Cameras`. Cena de teste: `Assets/_Project/Scenes/Sandbox/CombatSandbox.unity` (gerada por `SandboxBuilder.Run`; para regenerar, apague o `.unity`).
+
+Geração de run (M15): `Eclipse.Core.RunGen.Map` (`MapGenerator.Generate(seed, ctx)` → `RunMap` com `Hash()`; `MapConstraints.Validate` lista violações de 09 §11.3 e o próprio gerador a usa; `MapPathAnalysis`) e `Eclipse.Core.RunGen.Encounters` (`EncounterPlanner.Plan`, `EncounterRuntimeRules`, `EncounterConfig`). Streams `Map` e `Encounter`. Dados em `DataSource/run/*.csv` → `Code/Data/Run` (`ToCore`) → `Content/RunGen`; pesos de sala **TUNED** (originais de 09 §11.2 em comentário no `MapGenConfig`). Testes com `[Category("RunGen")]` em `Tests/EditMode/Core/RunGen/` (10.000 seeds sob dotnet, 500 no Unity): `dotnet test tools/CoreTests --filter Category=RunGen`. Janela `Eclipse/Run Map Previewer` em `Code/Editor/RunMapPreviewer/`.
 
 Pipeline de dados (M02): `Eclipse.Data.Definitions` (`Definition` base SO, `DefinitionRegistry`, `IdRemapAsset`), `Eclipse.Editor.DataPipeline` (`TableImporter<T>`, `DataPipeline`, `LocalizationWriter`), `Eclipse.Editor.Validation` (`DataValidator` + regras em `Rules/`). Saída em `Assets/_Project/Content/**` (+ `DefinitionRegistry.asset`, `IdRemap.asset`) e String Table `Definitions` em `Assets/_Project/Settings/Localization/`. `Assets/AddressableAssetsData/` é versionado.
 
@@ -92,7 +94,7 @@ dotnet test tools/CoreTests
 ```
 `$UNITY_EXE` = `C:\Program Files\Unity\Hub\Editor\6000.3.28f1\Editor\Unity.exe`.
 
-Filtro de testes: acrescente `-testFilter "Eclipse.Tests.PlayMode.Player"` (ou o namespace desejado) ao comando de testes do §6.
+Categorias NUnit (ex.: `dotnet test tools/CoreTests --filter Category=RunGen`) também filtram. Filtro de testes do Unity: acrescente `-testFilter "Eclipse.Tests.PlayMode.Player"` (ou o namespace desejado) ao comando de testes do §6.
 
 ## 7. Fluxo de trabalho por módulo
 
@@ -135,5 +137,6 @@ Não coloque aqui status de módulo (vai no ROADMAP) nem detalhes de design (vã
 - `m_LayerCollisionMatrix` do DynamicsManager grava os bytes de cada linha invertidos; edite via script/Unity, não à mão sem conferir (`PhysicsLayersTests`).
 - `Eclipse.Gameplay.Physics`/`...Cameras`: nomes de namespace que colidem com `UnityEngine.Physics`/`Camera` exigem alias ou qualificação (`UPhysics`, `UnityEngine.Camera`).
 - Importer do `.inputactions` não gera wrapper em batchmode (`m_GenerateWrapperCode: 0`); o wrapper é mantido à mão.
+- Comparações de float em regras do Core (ex.: "exatamente 30%") divergem entre .NET e Mono do Unity; use epsilon ou inteiros/double e teste no EditMode.
 - Mais de uma instância Unity de worktrees distintos pode rodar ao mesmo tempo; o lock é por projeto.
 - Combate: buffers de física `NonAlloc` pré-alocados e nada de `string` montada por frame (ex.: texto de debug só quando o overlay lê); `Eclipse.Gameplay.Player.HitResult` e `Combat.HitResult` colidem (usar alias). O teste de 0 B/frame no PlayMode usa tolerância (o Editor gera ruído em 0,6–3% dos frames); 0 B estrito só vale no `dotnet test`/build de Player. Testes PlayMode de combate compartilham a `CombatSandbox` carregada: use pontos distantes para alvos de teste. `AttackController` (prioridade -95) roda antes do `DodgeController` (-90).

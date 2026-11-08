@@ -1342,6 +1342,226 @@ MonoBehaviour:
     m_Localized: Estados de Combate
     m_Metadata:
       m_Items: []
+  - m_Id: 205550809284608
+    m_Localized: "Or\xE7amento base"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359936
+    m_Localized: "Or\xE7amento por linha"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359937
+    m_Localized: Densidade Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359938
+    m_Localized: Densidade Veteran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359939
+    m_Localized: Densidade Nightmare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359940
+    m_Localized: Densidade Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359941
+    m_Localized: Densidade Ascension (base)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359942
+    m_Localized: "Densidade Ascension (por n\xEDvel)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359943
+    m_Localized: Densidade Ascension (teto)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359944
+    m_Localized: Multiplicador Elite Arena
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359945
+    m_Localized: "Parcela m\xEDnima de Elite na Elite Arena"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359946
+    m_Localized: "\xDAltima linha com 2 ondas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359947
+    m_Localized: "Divis\xE3o em 2 ondas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359948
+    m_Localized: "Divis\xE3o em 3 ondas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359949
+    m_Localized: "Fra\xE7\xE3o viva para pr\xF3xima onda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359950
+    m_Localized: "Tempo m\xE1x. para pr\xF3xima onda (s)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359951
+    m_Localized: "Dist\xE2ncia m\xEDnima de spawn (m)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359952
+    m_Localized: "Dura\xE7\xE3o do portal de spawn (s)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054912
+    m_Localized: Recompensa de porta - Equipamento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054913
+    m_Localized: Recompensa de porta - Rift Shards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054914
+    m_Localized: Recompensa de porta - Aether Dust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054915
+    m_Localized: Recompensa de porta - Blessing menor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054916
+    m_Localized: Recompensa de porta - Cura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552356982784
+    m_Localized: "M\xE1x. unidades vivas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177088
+    m_Localized: "M\xE1x. PA vivo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177089
+    m_Localized: "M\xE1x. casters por onda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177090
+    m_Localized: "M\xE1x. summoners por onda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177091
+    m_Localized: "M\xE1x. parcela de especialistas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177092
+    m_Localized: "M\xEDn. front line por onda"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177093
+    m_Localized: "M\xE1x. tanks (in\xEDcio)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177094
+    m_Localized: "M\xE1x. tanks (fim)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177095
+    m_Localized: "\xDAltima linha do teto inicial de tanks"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270784
+    m_Localized: Enxame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270785
+    m_Localized: Falange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270786
+    m_Localized: Cerco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270787
+    m_Localized: Emboscada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270788
+    m_Localized: Ritual
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270789
+    m_Localized: Ninhada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270790
+    m_Localized: Patrulha Mista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336000
+    m_Localized: Linha 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336001
+    m_Localized: Linha 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336002
+    m_Localized: Linha 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336003
+    m_Localized: Linha 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336004
+    m_Localized: Linha 5 (Clareira)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336005
+    m_Localized: Linha 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336006
+    m_Localized: Linha 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336007
+    m_Localized: Linha 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336008
+    m_Localized: Linha 9 (Guardian)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336009
+    m_Localized: Linha 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336010
+    m_Localized: Linha 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336011
+    m_Localized: Linha 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336012
+    m_Localized: "Linha 13 (Antec\xE2mara)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553892098048
+    m_Localized: Pesos de salas - Estrato I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553892098049
+    m_Localized: Pesos de salas - Estrato II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553892098050
+    m_Localized: Pesos de salas - Estrato III
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

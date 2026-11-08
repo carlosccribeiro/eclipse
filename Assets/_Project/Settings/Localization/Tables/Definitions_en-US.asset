@@ -1342,6 +1342,226 @@ MonoBehaviour:
     m_Localized: Combat States
     m_Metadata:
       m_Items: []
+  - m_Id: 205550809284608
+    m_Localized: Base budget
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359936
+    m_Localized: Per-row budget
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359937
+    m_Localized: Density Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359938
+    m_Localized: Density Veteran
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359939
+    m_Localized: Density Nightmare
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359940
+    m_Localized: Density Eclipse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359941
+    m_Localized: Density Ascension base
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359942
+    m_Localized: Density Ascension per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359943
+    m_Localized: Density Ascension cap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359944
+    m_Localized: Elite Arena multiplier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359945
+    m_Localized: Elite Arena min Elite share
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359946
+    m_Localized: Last row with two waves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359947
+    m_Localized: Two-wave split
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359948
+    m_Localized: Three-wave split
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359949
+    m_Localized: Alive fraction for next wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359950
+    m_Localized: Max seconds to next wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359951
+    m_Localized: Min spawn distance (m)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551048359952
+    m_Localized: Spawn portal duration (s)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054912
+    m_Localized: Door reward - Equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054913
+    m_Localized: Door reward - Rift Shards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054914
+    m_Localized: Door reward - Aether Dust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054915
+    m_Localized: Door reward - Lesser Blessing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205551862054916
+    m_Localized: Door reward - Heal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552356982784
+    m_Localized: Max live units
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177088
+    m_Localized: Max live PA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177089
+    m_Localized: Max casters per wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177090
+    m_Localized: Max summoners per wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177091
+    m_Localized: Max specialist share
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177092
+    m_Localized: Min frontline per wave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177093
+    m_Localized: Max tanks early
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177094
+    m_Localized: Max tanks late
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552361177095
+    m_Localized: Last row of early tank cap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270784
+    m_Localized: Swarm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270785
+    m_Localized: Phalanx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270786
+    m_Localized: Siege
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270787
+    m_Localized: Ambush
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270788
+    m_Localized: Ritual
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270789
+    m_Localized: Brood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205552881270790
+    m_Localized: Mixed Patrol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336000
+    m_Localized: Row 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336001
+    m_Localized: Row 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336002
+    m_Localized: Row 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336003
+    m_Localized: Row 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336004
+    m_Localized: Row 5 (Clearing)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336005
+    m_Localized: Row 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336006
+    m_Localized: Row 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336007
+    m_Localized: Row 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336008
+    m_Localized: Row 9 (Guardian)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336009
+    m_Localized: Row 10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336010
+    m_Localized: Row 11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336011
+    m_Localized: Row 12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553422336012
+    m_Localized: Row 13 (Antechamber)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553892098048
+    m_Localized: Room weights - Stratum I
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553892098049
+    m_Localized: Room weights - Stratum II
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205553892098050
+    m_Localized: Room weights - Stratum III
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
