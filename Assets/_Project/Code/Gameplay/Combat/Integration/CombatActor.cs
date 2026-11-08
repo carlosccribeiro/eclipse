@@ -50,6 +50,7 @@ namespace Eclipse.Gameplay.Combat.Integration
         private int _lastHp = -1, _lastStagger = -1;
         private StaggerState _lastState = (StaggerState)(-1);
         private string _debugLine = string.Empty;
+        private bool _lineDirty;
 
         public bool IsPlayer => kind == ActorKind.Player;
         public bool IsBoss => isBoss;
@@ -65,7 +66,14 @@ namespace Eclipse.Gameplay.Combat.Integration
         public CombatWorld World => _world;
         /// <summary>Target Armor% when this actor is hit by the player (01 3.4.2). Players mitigate through the incoming pipeline instead.</summary>
         public float ArmorPercent { get; set; }
-        public string DebugLine => _debugLine;
+        public string DebugLine
+        {
+            get
+            {
+                if (_lineDirty) BuildDebugLine();
+                return _debugLine;
+            }
+        }
         /// <summary>Sum of all damage received (sandbox read-out; also lets infinite-health dummies be measured).</summary>
         public float TotalDamageTaken { get; set; }
 
@@ -188,6 +196,7 @@ namespace Eclipse.Gameplay.Combat.Integration
             Flask.Tick();
         }
 
+        // Only the cheap change detection runs per tick; the text is built when the overlay actually reads it (0 B GC otherwise).
         private void UpdateDebugLine()
         {
             int hp = Mathf.CeilToInt(Entity.Health.Current);
@@ -197,10 +206,16 @@ namespace Eclipse.Gameplay.Combat.Integration
             _lastHp = hp;
             _lastStagger = stg;
             _lastState = st;
+            _lineDirty = true;
+        }
+
+        private void BuildDebugLine()
+        {
+            _lineDirty = false;
             _debugLine = Stagger != null
-                ? string.Concat(_mass != null ? _mass.MassClass.ToString() : "?", "  HP ", hp.ToString(), infiniteHealth ? " (inf)" : string.Empty,
-                    "\nSTG ", stg.ToString(), "/", Mathf.RoundToInt(Stagger.StaggerMax).ToString(), "  ", st.ToString())
-                : string.Concat("HP ", hp.ToString());
+                ? string.Concat(_mass != null ? _mass.MassClass.ToString() : "?", "  HP ", _lastHp.ToString(), infiniteHealth ? " (inf)" : string.Empty,
+                    "\nSTG ", _lastStagger.ToString(), "/", Mathf.RoundToInt(Stagger.StaggerMax).ToString(), "  ", _lastState.ToString())
+                : string.Concat("HP ", _lastHp.ToString());
         }
 
         // IImpactVisual
