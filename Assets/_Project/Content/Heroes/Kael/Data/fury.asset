@@ -31,8 +31,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: 1afcf7ca7abd0bf0
-  sourceDoc: "08 \xA73.2 / 08 \xA74.1"
+  importedHash: b1017a7bdb8cc80e
+  sourceDoc: "08 \xA73.2 / 08 \xA74.1 / 08 \xA74.2"
   nameEn: Fury
   kind: 0
   baseMaximum: 100
@@ -58,6 +58,16 @@ MonoBehaviour:
     value: 15
   - key: kill
     value: 3
+  - key: embers_fury_step
+    value: 10
+  - key: embers_increased_pct_per_step
+    value: 2
+  - key: resolve_health_threshold_pct
+    value: 35
+  - key: resolve_damage_reduction_pct
+    value: 15
+  - key: resolve_resource_generation_pct
+    value: 25
   references:
     version: 2
     RefIds: []
