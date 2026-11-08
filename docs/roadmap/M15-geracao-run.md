@@ -1,5 +1,5 @@
 # M15 — Geração de run (mapa de nós e Encounter Director)
-Fase 3 · Onda 4 · Status: ⏳ não iniciado
+Fase 3 · Onda 4 · Status: ✅ concluído (2026-11-08)
 Depende de: M01 · Desbloqueia: M16 · Paralelo com: M05
 Branch: modulo/M15-geracao-run
 Docs de referência: 09 §10 (orçamento de ameaça, ondas, limites, receitas), 09 §11 (mapa de nós, pesos, restrições), 09 §14 regra 6 dos eventos (via 09 §11.3), 10 §3.1 (Estratos e pontos de progressão), 11 §3.11 (mapa e Encounter Director), 11 §3.15 item 6 (Run Map Previewer), 00 §5 R33, CLAUDE.md §4
@@ -35,13 +35,13 @@ Entregar, em C# puro (`Eclipse.Core`), o gerador determinístico do mapa da run 
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | Modelo e gerador do mapa de nós | execução | executor | — | `Assets/_Project/Code/Core/RunGen/Map/*.cs` | ⏳ |
-| T2 | Planejador de encontros (orçamento, ondas, limites, receitas) | execução | executor | — | `Assets/_Project/Code/Core/RunGen/Encounters/*.cs` | ⏳ |
-| T3 | Testes de propriedade do mapa (10k seeds) | execução | executor | T1 | `tools/CoreTests/RunGen/MapGeneratorTests.cs`, `Assets/_Project/Code/Tests/EditMode/RunGen/MapGeneratorEditModeTests.cs` | ⏳ |
-| T4 | Testes de propriedade de encontros (10k) | execução | executor | T2 | `tools/CoreTests/RunGen/EncounterPlannerTests.cs`, `Assets/_Project/Code/Tests/EditMode/RunGen/EncounterPlannerEditModeTests.cs` | ⏳ |
-| T5 | Dados: SOs de configuração, CSVs e importadores | execução | executor | T1, T2 | `Assets/_Project/Code/Data/Run/*.cs`, `DataSource/run/*.csv`, `Assets/_Project/Code/Editor/DataPipeline/Importers/RunGenImporters.cs` | ⏳ |
-| T6 | Run Map Previewer (janela de editor) | execução | executor | T5 | `Assets/_Project/Code/Editor/RunMapPreviewer/*` | ⏳ |
-| T7 | Revisão, integração e documentação | integração | principal | T3, T4, T6 | `docs/roadmap/M15-geracao-run.md`, `docs/ROADMAP.md`, `CLAUDE.md` (se aplicável) | ⏳ |
+| T1 | Modelo e gerador do mapa de nós | execução | executor | — | `Assets/_Project/Code/Core/RunGen/Map/*.cs` | ✅ |
+| T2 | Planejador de encontros (orçamento, ondas, limites, receitas) | execução | executor | — | `Assets/_Project/Code/Core/RunGen/Encounters/*.cs` | ✅ |
+| T3 | Testes de propriedade do mapa (10k seeds) | execução | executor | T1 | `tools/CoreTests/RunGen/MapGeneratorTests.cs`, `Assets/_Project/Code/Tests/EditMode/RunGen/MapGeneratorEditModeTests.cs` | ✅ |
+| T4 | Testes de propriedade de encontros (10k) | execução | executor | T2 | `tools/CoreTests/RunGen/EncounterPlannerTests.cs`, `Assets/_Project/Code/Tests/EditMode/RunGen/EncounterPlannerEditModeTests.cs` | ✅ |
+| T5 | Dados: SOs de configuração, CSVs e importadores | execução | executor | T1, T2 | `Assets/_Project/Code/Data/Run/*.cs`, `DataSource/run/*.csv`, `Assets/_Project/Code/Editor/DataPipeline/Importers/RunGenImporters.cs` | ✅ |
+| T6 | Run Map Previewer (janela de editor) | execução | executor | T5 | `Assets/_Project/Code/Editor/RunMapPreviewer/*` | ✅ |
+| T7 | Revisão, integração e documentação | integração | principal | T3, T4, T6 | `docs/roadmap/M15-geracao-run.md`, `docs/ROADMAP.md`, `CLAUDE.md` (se aplicável) | ✅ |
 
 ## Ondas internas
 1. T1 ∥ T2 (pastas `Map/` e `Encounters/` disjuntas)
@@ -154,3 +154,12 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 Plano criado.
+- 2026-11-08 Concluído (T1–T7). dotnet `--filter Category=RunGen` 24/24 (10.000 seeds de mapa; >12.700 planos de encontro); EditMode 658/658; dados importados 2× sem diff; `Code/Gameplay/**` intocado.
+- Desvio de layout: os testes ficaram em `Tests/EditMode/Core/RunGen/` (arquivo único compartilhado por dotnet e EditMode, pois `CoreTests.csproj` só compila `Core/**` e `Tests/EditMode/Core/**`), não em `tools/CoreTests/RunGen/`. Contagem de seeds: 10.000 sob dotnet, 500 no Unity.
+- Desvio T5: cada linha de CSV vira um SO; `ToCore` é estático (`MapGenConfigDefinition.ToCore(linhas)`, `EncounterConfigDefinition.ToCore(configs, receitas)`). Contadores de tentativas ficam nos defaults do Core, fora do CSV.
+- **Divergência com 09 §11.1 (avisar dono do 09):** "cada nó liga a 1–2 nós da próxima linha" + "todo nó alcançável" limita cada linha a no máx. tamanho anterior + 1. A linha 10 (após o Guardian único) sempre tem 2 nós (doc: 2–4) e a linha 6 tem 3–4. Precisa de nota de design ou de relaxar o limite de ligações.
+- **Pesos TUNED (09 §11.2):** as restrições de 09 §11.3 enviesam a amostragem; com os pesos originais Shrine ficava em 1,41 por caminho. Pesos do `MapGenConfig`/`room_weights.csv` ajustados (originais em comentário). Médias medidas em 10.000 seeds: Combat 5,43 · Elite 1,77 · Treasure 0,73 · Shrine 1,73 · Event 0,67 · Challenge 0,27 — dentro da tolerância ±0,5, porém Elite, Treasure, Shrine e Event abaixo da faixa nominal. Subir Elite/Challenge faz a rejeição cair no template de fallback (61 seeds com Elite 38/40). Revisão pelo dono do 09/design recomendada.
+- Rejeição: média de 48,5 tentativas e 10,5 reconstruções de linha por mapa (1.000 seeds, ~2,8 ms/mapa); fallback usado 0 vezes. Funciona, mas indica restrições apertadas; vale revisar se o mapa ganhar tipos.
+- Lacunas de 09 registradas (placeholders no código/CSV): pesos das recompensas de porta (30/20/15/25/10 para Equipamento/Rift Shards/Aether Dust/Blessing Lesser/Cura); pesos de filler e faixas de linha das receitas de §10.4 (inclui Mixed Patrol). Restrição 7 interpretada como "existe caminho com ≥2 portas de Equipamento e ≥2 de Blessing Lesser" (todos os caminhos têm o mesmo comprimento). Unidades vivas de ondas anteriores não entram no teto de 40 PA (por onda). `UnderBudget` = sobrou PA gastável; medido 0% nos testes.
+- Regra de próxima onda: comparação com epsilon 1e-4 (0,30f não é exato; Mono e .NET divergiam em "exatamente 30%").
+- Pendente: a janela do Previewer não foi vista renderizada (batchmode `-nographics`); o ramo `EditorWindow.GetWindow` do teste só roda com gráficos. Conferir manualmente em `Eclipse/Run Map Previewer`.

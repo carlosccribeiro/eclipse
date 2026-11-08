@@ -134,7 +134,8 @@ Para execução sem aprovação intermediária, troque "peça minha aprovação 
 | M03 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Stats (StatBlock, DR/caps), Attributes, Damage (ofensivo/recebido), CrowdControl, Procs. Exemplo 01 §3.12 reproduzido. dotnet 299/299, EditMode 297/297. Pendências no Log do M03 |
 | M04 | ✅ concluído | 2026-11-07 | Tick 60 Hz, Input+InputBuffer 9 f, motor/mira, esquiva 06 §3.7, câmera Cinemachine+dither, CombatSandbox. EditMode 403/403, PlayMode 19/19. Pendente: checagem manual (ver Log) |
 | M12 | ✅ concluído | 2026-11-07 | `Eclipse.Core`: Items (modelo, `ItemMath`) e Loot (gerador de 12 passos, pity); 15 CSVs + 35 nomeados (K1–K16, U1–U19). dotnet 460/460, EditMode 564/564, validador 0 erros. Raridade com chances absolutas de 05 §5.4; pendências no Log do M12 |
-| M05–M11, M13–M32 | ⏳ não iniciado | 2026-11-07 | |
+| M15 | ✅ concluído | 2026-11-08 | `Eclipse.Core.RunGen`: `MapGenerator` (13 linhas + chefe, 7 restrições de 09 §11.3), `EncounterPlanner` (orçamento, ondas, limites, receitas), `EncounterRuntimeRules`; 6 CSVs `DataSource/run` + SOs; Run Map Previewer. dotnet RunGen 24/24, EditMode 658/658. Pesos do mapa ajustados (TUNED) e divergências de 09 no Log do M15 |
+| M05–M11, M13–M14, M16–M32 | ⏳ não iniciado | 2026-11-07 | |
 | A00 | ⏳ não iniciado | 2026-11-07 | |
 
 Legenda: ⏳ não iniciado · 🔄 em andamento · ✅ concluído · ❌ bloqueado (com motivo).
