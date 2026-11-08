@@ -46,12 +46,17 @@ namespace Eclipse.Editor.Setup
 
             BuildKaelPrefab(kael, nose);
             BuildBootstrapPrefab();
-            // Scene object fileIDs are random per creation: rebuild only when missing (delete the .unity to regenerate).
-            if (AssetDatabase.LoadAssetAtPath<SceneAsset>(ScenePath) == null)
+            CombatSandboxContentBuilder.BuildPrefabs(); // M05 T10: combat components on Kael, CombatWorld and TrainingDummy prefabs
+            // Scene object fileIDs are random per creation: rebuild only when missing or when it lacks the combat content
+            // (M05 T10); otherwise delete the .unity to regenerate. Saving over the same path keeps the .meta (GUID).
+            if (AssetDatabase.LoadAssetAtPath<SceneAsset>(ScenePath) == null || !SceneHasCombatContent())
                 BuildScene(floor, wall, cover, pillar, heavy, medium);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
         }
+
+        private static bool SceneHasCombatContent() =>
+            System.Array.IndexOf(AssetDatabase.GetDependencies(ScenePath, false), CombatSandboxContentBuilder.WorldPrefabPath) >= 0;
 
         private static void BuildKaelPrefab(Material body, Material noseMat)
         {
@@ -151,8 +156,8 @@ namespace Eclipse.Editor.Setup
             Block(arena, "LowCover_C", PrimitiveType.Cube, new Vector3(4f, 0.5f, 9f), new Vector3(3f, 1f, 1f), PhysicsLayers.LowCover, coverM);
             // Pillar sits on the camera line to the spawn point (yaw 45, pitch 50) to exercise the occlusion dither.
             Block(arena, "Pillar_Environment", PrimitiveType.Cylinder, new Vector3(-2f, 4f, -2f), new Vector3(2f, 4f, 2f), PhysicsLayers.Environment, pillarM);
-            Dummy(arena, "Dummy_Heavy", PrimitiveType.Cube, new Vector3(6f, 0.75f, 0f), new Vector3(1.5f, 1.5f, 1.5f), MassClass.Heavy, heavyM);
-            Dummy(arena, "Dummy_Medium", PrimitiveType.Capsule, new Vector3(0f, 1f, 6f), new Vector3(1f, 1f, 1f), MassClass.Medium, mediumM);
+            // M05 T10: the M04 primitive dummies are replaced by the TrainingDummy prefabs and the CombatWorld.
+            CombatSandboxContentBuilder.PlaceCombatContent(arena);
 
             PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(BootstrapPrefabPath));
             var kael = (GameObject)PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>(KaelPrefabPath));
