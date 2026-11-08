@@ -4,6 +4,8 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+# Editor build scripts live in Code/Editor/Build (M07 T9); the generic rule above must not hide them
+!Assets/_Project/Code/Editor/Build/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 [Mm]emoryCaptures/

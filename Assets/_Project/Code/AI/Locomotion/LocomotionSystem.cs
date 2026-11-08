@@ -59,7 +59,8 @@ namespace Eclipse.AI.Locomotion
         void FixedUpdate()
         {
             if (_data == null) return;
-            LocomotionStepper.Step(_data, _config, Time.fixedDeltaTime);
+            using (Eclipse.AI.Diagnostics.AiMarkers.Locomotion.Auto())
+                LocomotionStepper.Step(_data, _config, Time.fixedDeltaTime);
         }
 
         void OnDestroy()

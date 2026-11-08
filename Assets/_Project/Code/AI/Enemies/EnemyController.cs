@@ -225,6 +225,11 @@ namespace Eclipse.AI.Enemies
 
         public void Tick(in SimulationFrame frame)
         {
+            using (Eclipse.AI.Diagnostics.AiMarkers.EnemyTick.Auto()) TickInner(in frame);
+        }
+
+        private void TickInner(in SimulationFrame frame)
+        {
             if (!_ready) return;
             CombatEntity entity = actor.Entity;
             if (!entity.Clock.Advance())
