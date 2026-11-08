@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: 388a99861d19445a
+  importedHash: 141f5b9918adf0be
   sourceDoc: "06 \xA73.6.2 / 08 \xA74.3"
   nameEn: Greatsword - Strike 1
   weaponId: weapon.kael.greatsword
@@ -53,8 +53,8 @@ MonoBehaviour:
     procCoefficient: 1
     damageMultiplier: 1.1
     damageMultiplierMax: 1.1
-    lungeMinMeters: 0
-    lungeMaxMeters: 0
+    lungeMinMeters: 0.5
+    lungeMaxMeters: 1
     lungeConeDegrees: 60
     hitGroup: 0
     rehitIntervalFrames: 0

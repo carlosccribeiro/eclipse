@@ -31,7 +31,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  importedHash: b8c4deb9b3a28198
+  importedHash: 9eb2e98a99cadd16
   sourceDoc: "06 \xA73.6.1"
   nameEn: Greatsword - Dash Attack
   weaponId: weapon.kael.greatsword
@@ -41,9 +41,9 @@ MonoBehaviour:
     startupFrames: 10
     activeFrames: 6
     recoveryFrames: 18
-    shape: 0
-    radius: 0
-    arcDegrees: 0
+    shape: 1
+    radius: 2.5
+    arcDegrees: 90
     length: 0
     width: 0
     offset: {x: 0, y: 0, z: 0}
