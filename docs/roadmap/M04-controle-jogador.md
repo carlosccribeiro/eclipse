@@ -1,5 +1,5 @@
 # M04 — Controle do jogador (input, câmera, movimento, esquiva)
-Fase 1 · Onda 3 · Status: ⏳ não iniciado
+Fase 1 · Onda 3 · Status: ✅ concluído (pendente: checagem manual do usuário)
 Depende de: M01 (e M00) · Desbloqueia: M05 · Paralelo com: M12 (Core/Items — pastas disjuntas)
 Branch: modulo/M04-controle-jogador
 Docs de referência: 06-combate §2 (decisões 1, 2, 9, 10, 15, 18), §3.4, §3.5 (movimento durante ataques), §3.7, §3.11 (câmera); 08-herois §3.1 (Movement Speed); 01-atributos (piso de Movement Speed); 11-arquitetura §3.1, §3.3, §3.9; 00 §5 R04, R05, R06
@@ -32,15 +32,15 @@ Ataques, hitboxes e dano (M05); habilidades (M08); HUD (M06); remapeamento de te
 ## Tarefas
 | ID | Tarefa | Tipo | Executor | Depende | Escreve | Status |
 |----|--------|------|----------|---------|---------|--------|
-| T1 | Tick fixo 60 Hz, `TickScheduler`, `EntityClock` | execução | executor | — | `Assets/_Project/Code/Gameplay/Simulation/*`, `ProjectSettings/TimeManager.asset`, `Assets/_Project/Code/Tests/EditMode/Gameplay/Simulation/*` | ⏳ |
-| T2 | Camadas físicas e matriz de colisão | execução | executor | — | `ProjectSettings/TagManager.asset`, `ProjectSettings/DynamicsManager.asset`, `Assets/_Project/Code/Gameplay/Physics/PhysicsLayers.cs` | ⏳ |
-| T3 | Input System: actions, wrapper e `InputBuffer` | execução | executor | T1 | `Assets/_Project/Settings/Input/EclipseInput.inputactions`, `Assets/_Project/Code/Gameplay/Input/*`, `Assets/_Project/Code/Tests/EditMode/Gameplay/Input/*` | ⏳ |
-| T4 | Player controller: movimento e mira | execução | executor | T1, T2, T3 | `Assets/_Project/Code/Gameplay/Player/PlayerMotor.cs`, `.../Player/PlayerAim.cs`, `.../Player/MovementProfile.cs`, `Assets/_Project/Code/Gameplay/Entities/MassClass.cs`, `.../Entities/IMassBody.cs` | ⏳ |
-| T5 | Esquiva universal + API de i-frames/Perfect Dodge | execução | executor | T4 | `Assets/_Project/Code/Gameplay/Player/DodgeController.cs`, `.../Player/InvulnerabilityState.cs`, `.../Player/DodgeConfig.cs` | ⏳ |
-| T6 | Câmera isométrica Cinemachine + oclusão por dither | execução | executor | T4 | `Assets/_Project/Code/Gameplay/Camera/*`, `Assets/_Project/Art/Shaders/OcclusionDither.shadergraph`, `Assets/_Project/Settings/Camera/*` | ⏳ |
-| T7 | Cena Combat Sandbox greybox + prefabs de bootstrap e jogador | execução | executor | T4, T5, T6 | `Assets/_Project/Scenes/Sandbox/CombatSandbox.unity`, `Assets/_Project/Content/Heroes/Kael/Prefabs/Kael_Greybox.prefab`, `Assets/_Project/Content/Shared/Prefabs/GameplayBootstrap.prefab` | ⏳ |
-| T8 | Testes PlayMode de movimento, esquiva e câmera | execução | executor | T5, T6, T7 | `Assets/_Project/Code/Tests/PlayMode/Player/*` | ⏳ |
-| T9 | Revisão final e integração | integração | principal | T1–T8 | `docs/roadmap/M04-controle-jogador.md`, `docs/ROADMAP.md`, `CLAUDE.md` | ⏳ |
+| T1 | Tick fixo 60 Hz, `TickScheduler`, `EntityClock` | execução | executor | — | `Assets/_Project/Code/Gameplay/Simulation/*`, `ProjectSettings/TimeManager.asset`, `Assets/_Project/Code/Tests/EditMode/Gameplay/Simulation/*` | ✅ |
+| T2 | Camadas físicas e matriz de colisão | execução | executor | — | `ProjectSettings/TagManager.asset`, `ProjectSettings/DynamicsManager.asset`, `Assets/_Project/Code/Gameplay/Physics/PhysicsLayers.cs` | ✅ |
+| T3 | Input System: actions, wrapper e `InputBuffer` | execução | executor | T1 | `Assets/_Project/Settings/Input/EclipseInput.inputactions`, `Assets/_Project/Code/Gameplay/Input/*`, `Assets/_Project/Code/Tests/EditMode/Gameplay/Input/*` | ✅ |
+| T4 | Player controller: movimento e mira | execução | executor | T1, T2, T3 | `Assets/_Project/Code/Gameplay/Player/PlayerMotor.cs`, `.../Player/PlayerAim.cs`, `.../Player/MovementProfile.cs`, `Assets/_Project/Code/Gameplay/Entities/MassClass.cs`, `.../Entities/IMassBody.cs` | ✅ |
+| T5 | Esquiva universal + API de i-frames/Perfect Dodge | execução | executor | T4 | `Assets/_Project/Code/Gameplay/Player/DodgeController.cs`, `.../Player/InvulnerabilityState.cs`, `.../Player/DodgeConfig.cs` | ✅ |
+| T6 | Câmera isométrica Cinemachine + oclusão por dither | execução | executor | T4 | `Assets/_Project/Code/Gameplay/Camera/*`, `Assets/_Project/Art/Shaders/OcclusionDither.shadergraph`, `Assets/_Project/Settings/Camera/*` | ✅ |
+| T7 | Cena Combat Sandbox greybox + prefabs de bootstrap e jogador | execução | executor | T4, T5, T6 | `Assets/_Project/Scenes/Sandbox/CombatSandbox.unity`, `Assets/_Project/Content/Heroes/Kael/Prefabs/Kael_Greybox.prefab`, `Assets/_Project/Content/Shared/Prefabs/GameplayBootstrap.prefab` | ✅ |
+| T8 | Testes PlayMode de movimento, esquiva e câmera | execução | executor | T5, T6, T7 | `Assets/_Project/Code/Tests/PlayMode/Player/*` | ✅ |
+| T9 | Revisão final e integração | integração | principal | T1–T8 | `docs/roadmap/M04-controle-jogador.md`, `docs/ROADMAP.md`, `CLAUDE.md` | ✅ |
 
 ## Ondas internas
 1. T1 ∥ T2
@@ -164,3 +164,6 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 
 ## Log
 - 2026-11-07 Plano criado.
+- 2026-11-07 Implementado T1–T8 (commits `feat(M04)` em `modulo/M04-controle-jogador`). Verificação final: EditMode 403/403, PlayMode 19/19 (18 Player + smoke), 0 `error CS` nos logs. `dotnet test` não rodado (Core intocado).
+- Decisões/desvios: (1) `OcclusionDither` é shader HLSL URP (`.shader`), não `.shadergraph` (JSON manual frágil). (2) Não existia `EntityEvents` no M01: `OnDodge`/`OnPerfectDodge` em `Gameplay/Events/DodgeEvents.cs`, via `EventBus<T>`. (3) Ease-out da esquiva = quadrática (`easeOutPower = 2`, no `DodgeConfig`). (4) Perfect Dodge = impacto nos 6 frames a partir do início das i-frames (`PerfectDodgeWindowFrames`, só dado) — **confirmada pelo usuário em 2026-11-07**. (5) Desambiguação LB+RB: ombro espera `ChordWindowFrames` = 3 frames (valor não vem do GDD). (6) `PlayerAim.ChestHeight` = 1,2 m (placeholder; GDD não define). (7) Namespace da câmera é `Eclipse.Gameplay.Cameras` (evita conflito com `UnityEngine.Camera`). (8) `EclipseInput.cs` é wrapper escrito à mão; refazer se o `.inputactions` mudar. (9) Testes PlayMode usam eventos sintéticos no `PlayerInputReader`, não `InputTestFixture`.
+- Pendências: `MovementLock` não cobre `MoveDuringCast` 50% (06 §3.5) — M05; look-ahead com stick fica ~nulo (aim a 1 m); parâmetros de feel da câmera (suavização, shake offset, fade) são placeholders; `PlayerInputReader.Bind` com dispositivos reais sem teste automático; cena fora dos Build Settings; Gameplay de checagem manual (andar/mirar/esquivar com teclado e gamepad na `CombatSandbox`) **não feita**. Regenerar a cena: apagar `CombatSandbox.unity` e rodar `Eclipse.Editor.Setup.SandboxBuilder.Run`.
