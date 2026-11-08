@@ -74,6 +74,11 @@ namespace Eclipse.Gameplay.Skills
             dir.y = 0f;
             dir = dir.sqrMagnitude < 1e-8f ? ctx.Forward : dir.normalized;
 
+            // The combat receiver (CombatReceiver) already publishes OnHitDealt/OnCritDealt for a landed hit; publish here only when the
+            // receiver did not, so a hit is never announced twice (double Fury, double Triggers).
+            int hitsBefore = ctx.Events != null ? ctx.Events.Count<OnHitDealt>() : 0;
+            int critsBefore = ctx.Events != null ? ctx.Events.Count<OnCritDealt>() : 0;
+            float staggerBefore = target.Stagger != null ? target.Stagger.StaggerCurrent : 0f;
             DamageOutcome o = target.Receiver.ReceiveHit(hit, dir);
             if (o.Result != HitResult.Hit) return;
 
@@ -81,12 +86,14 @@ namespace Eclipse.Gameplay.Skills
             ctx.Controller?.ReportHit(target.Id, o.FinalDamage, ctx.Frame);
             if (ctx.Events != null)
             {
-                ctx.Events.Publish(new OnHitDealt(ctx.Frame, ctx.Generation, ctx.Caster.Id, target.Id, o.FinalDamage, damageType,
-                    hit.IsCrit, hit.Flags, target.Position));
-                if (hit.IsCrit)
+                if (ctx.Events.Count<OnHitDealt>() == hitsBefore)
+                    ctx.Events.Publish(new OnHitDealt(ctx.Frame, ctx.Generation, ctx.Caster.Id, target.Id, o.FinalDamage, damageType,
+                        hit.IsCrit, hit.Flags, target.Position));
+                if (hit.IsCrit && ctx.Events.Count<OnCritDealt>() == critsBefore)
                     ctx.Events.Publish(new OnCritDealt(ctx.Frame, ctx.Generation, ctx.Caster.Id, target.Id, o.FinalDamage, damageType));
             }
-            if (hit.StaggerValue > 0f && target.Stagger != null)
+            // CombatReceiver also accumulates the hit's Stagger; add it here only if the bar did not move.
+            if (hit.StaggerValue > 0f && target.Stagger != null && target.Stagger.StaggerCurrent <= staggerBefore)
                 target.Stagger.AddStagger(hit.StaggerValue, ctx.Caster.Id, ctx.Generation);
         }
     }
