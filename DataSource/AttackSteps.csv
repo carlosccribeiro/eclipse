@@ -1,0 +1,6 @@
+id,name_pt,name_en,weapon_id,kind,combo_index,startup_f,active_f,recovery_f,shape,radius_m,arc_deg,length_m,width_m,offset_x,offset_y,offset_z,stagger,stagger_max,hitstop_f,proc_coef,damage_pct,damage_pct_max,lunge_min_m,lunge_max_m,lunge_cone_deg,hit_group,rehit_f,tracking,commit,charge_min_f,charge_max_f,source_doc
+attack.kael.greatsword.1,Espada Grande - Golpe 1,Greatsword - Strike 1,weapon.kael.greatsword,Basic,1,20,6,40,Sector,2.8,120,,,0,0,0,15,15,5,1.0,110,110,,,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.3
+attack.kael.greatsword.2,Espada Grande - Golpe 2,Greatsword - Strike 2,weapon.kael.greatsword,Basic,2,20,6,40,Sector,2.8,120,,,0,0,0,15,15,5,1.0,110,110,,,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.3
+attack.kael.greatsword.3,Espada Grande - Golpe 3,Greatsword - Strike 3,weapon.kael.greatsword,Basic,3,26,8,34,Sector,2.8,120,,,0,0,0,35,35,8,1.0,160,160,,,60,0,0,false,false,0,0,06 §3.6.2 / 08 §4.3
+attack.kael.greatsword.heavy,Espada Grande - Golpe Forte,Greatsword - Heavy,weapon.kael.greatsword,Heavy,0,36,6,26,Cone,3,,,,0,0,0,60,100,10,1.0,280,420,,,60,0,0,false,false,36,72,06 §3.6.2 / 08 §4.3
+attack.kael.greatsword.dash,Espada Grande - Ataque de Esquiva,Greatsword - Dash Attack,weapon.kael.greatsword,Dash,0,10,6,18,None,,,,,0,0,0,20,20,5,1.0,100,100,,,60,0,0,false,false,0,0,06 §3.6.1

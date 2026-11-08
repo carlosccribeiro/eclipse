@@ -1,0 +1,2 @@
+id,name_pt,name_en,hero_id,base_id,weight_class,aps,weapon_power_ilvl1,combo_reset_s,basic_chain,heavy_id,dash_id,feedback_id,source_doc
+weapon.kael.greatsword,Espada Grande,Greatsword,kael,base.kael.greatsword,Heavy,0.9,9,0.8,attack.kael.greatsword.1|attack.kael.greatsword.2|attack.kael.greatsword.3,attack.kael.greatsword.heavy,attack.kael.greatsword.dash,feedback.shared.heavy,02 §3.4 / 06 §3.6 / 08 §4.3

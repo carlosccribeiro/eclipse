@@ -1302,6 +1302,42 @@ MonoBehaviour:
     m_Localized: Pity Ascension
     m_Metadata:
       m_Items: []
+  - m_Id: 96589774880768
+    m_Localized: Feedback Pesado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96590680850432
+    m_Localized: "Feedback M\xE9dio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96591138029568
+    m_Localized: Feedback Leve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96593738498048
+    m_Localized: Espada Grande - Golpe 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594191482880
+    m_Localized: Espada Grande - Golpe 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594615107584
+    m_Localized: Espada Grande - Golpe 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594967429120
+    m_Localized: Espada Grande - Golpe Forte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96595378470912
+    m_Localized: Espada Grande - Ataque de Esquiva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96597534343168
+    m_Localized: Espada Grande
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

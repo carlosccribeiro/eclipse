@@ -1302,6 +1302,42 @@ MonoBehaviour:
     m_Localized: Ascension pity
     m_Metadata:
       m_Items: []
+  - m_Id: 96589774880768
+    m_Localized: Heavy Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96590680850432
+    m_Localized: Medium Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96591138029568
+    m_Localized: Light Feedback
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96593738498048
+    m_Localized: Greatsword - Strike 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594191482880
+    m_Localized: Greatsword - Strike 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594615107584
+    m_Localized: Greatsword - Strike 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96594967429120
+    m_Localized: Greatsword - Heavy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96595378470912
+    m_Localized: Greatsword - Dash Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96597534343168
+    m_Localized: Greatsword
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

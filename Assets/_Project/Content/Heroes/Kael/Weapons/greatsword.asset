@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3f7733e7dbe8c4b8fce2362fb46472, type: 3}
+  m_Name: greatsword
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Combat.WeaponDefinition
+  stableId: weapon.kael.greatsword
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: weapon.kael.greatsword.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 81ddabd8166f94e7
+  sourceDoc: "02 \xA73.4 / 06 \xA73.6 / 08 \xA74.3"
+  nameEn: Greatsword
+  heroId: kael
+  baseId: base.kael.greatsword
+  weightClass: 0
+  attacksPerSecond: 0.9
+  weaponPowerILvl1: 9
+  comboResetSeconds: 0.8
+  basicChain:
+  - {fileID: 11400000, guid: 1f0612d5e241b8c439df27842a21d361, type: 2}
+  - {fileID: 11400000, guid: 11fcac3fbd997514a89840b7a0e869fc, type: 2}
+  - {fileID: 11400000, guid: 26166d771f319eb419298f258875529f, type: 2}
+  heavy: {fileID: 11400000, guid: 7daeabf7fd190da45a2454277822501b, type: 2}
+  dashAttack: {fileID: 11400000, guid: 47c3d3bf13f74704dbeda5e7bfbdddce, type: 2}
+  feedback: {fileID: 11400000, guid: 2206cbf1d9ef7c0499642d6d01a15abe, type: 2}
+  references:
+    version: 2
+    RefIds: []
