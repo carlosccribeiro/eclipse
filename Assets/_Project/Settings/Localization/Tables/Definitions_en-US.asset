@@ -1562,6 +1562,34 @@ MonoBehaviour:
     m_Localized: Room weights - Stratum III
     m_Metadata:
       m_Items: []
+  - m_Id: 210683668496384
+    m_Localized: Fury
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210693898403840
+    m_Localized: Cleaving Strike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210695152500736
+    m_Localized: Infernal Leap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210697027354624
+    m_Localized: Burning Chains
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210697698443264
+    m_Localized: Ashen Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210698730242048
+    m_Localized: Worldbreaker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210711472537600
+    m_Localized: Kael
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

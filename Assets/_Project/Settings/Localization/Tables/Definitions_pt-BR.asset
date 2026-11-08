@@ -1562,6 +1562,34 @@ MonoBehaviour:
     m_Localized: Pesos de salas - Estrato III
     m_Metadata:
       m_Items: []
+  - m_Id: 210683668496384
+    m_Localized: "F\xFAria"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210693898403840
+    m_Localized: Golpe Fendente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210695152500736
+    m_Localized: Salto Infernal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210697027354624
+    m_Localized: Correntes Ardentes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210697698443264
+    m_Localized: Guarda de Cinzas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210698730242048
+    m_Localized: Quebra-Mundo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210711472537600
+    m_Localized: Kael
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

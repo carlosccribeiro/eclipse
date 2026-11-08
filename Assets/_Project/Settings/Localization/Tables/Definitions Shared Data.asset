@@ -1559,6 +1559,34 @@ MonoBehaviour:
     m_Key: roomweights.core.stratum_3.name
     m_Metadata:
       m_Items: []
+  - m_Id: 210683668496384
+    m_Key: resource.fury.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210693898403840
+    m_Key: skill.kael.cleaving_strike.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210695152500736
+    m_Key: skill.kael.infernal_leap.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210697027354624
+    m_Key: skill.kael.burning_chains.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210697698443264
+    m_Key: skill.kael.ashen_guard.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210698730242048
+    m_Key: skill.kael.worldbreaker.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 210711472537600
+    m_Key: hero.kael.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

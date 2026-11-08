@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23ba928f45751c54a96bedfc6f637bbb, type: 3}
+  m_Name: worldbreaker
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Skills.SkillDefinition
+  stableId: skill.kael.worldbreaker
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: skill.kael.worldbreaker.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: f3eace3916907316
+  sourceDoc: "08 \xA74.4 / 06 \xA73.11 / M08 premissas (stacks de Ruin provis\xF3rio)"
+  nameEn: Worldbreaker
+  heroId: hero.kael
+  slot: 6
+  tagBits: 12584993
+  costResourceId: resource.fury
+  costAmount: 0
+  costAllResource: 1
+  costMinimum: 50
+  resourceGain: 0
+  cooldownSeconds: 90
+  damageCoefficient: 6
+  damageCoefficientPerResource: 0.06
+  moveDuringCastPercent: 0
+  commit: 0
+  tracking: 0
+  modifierSlots: 2
+  parameters:
+  - key: radius_m
+    value: 7
+  - key: fissure_count
+    value: 6
+  - key: ruin_vulnerability_s
+    value: 6
+  - key: ruin_stacks_per_fissure
+    value: 1
+  - key: ruin_stacks_max
+    value: 5
+  - key: hitstop_f
+    value: 6
+  - key: shake
+    value: 0.5
+  delivery:
+    rid: -2
+  effects: []
+  triggers: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
