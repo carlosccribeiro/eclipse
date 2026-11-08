@@ -161,7 +161,7 @@ Ao final, atualize o Status e o Log do módulo, a tabela de status de docs/ROADM
 ## Log
 - 2026-11-07 Plano criado.
 - 2026-11-08 Implementado T1–T8 (commits `feat(M08)` T1–T7 e `test(M08)` T8). Critérios 1–6 atendidos. Saídas: comando de dados 0 erros (1 aviso: modifiers.csv ausente, pré-existente), EditMode 1052/1052, PlayMode Skills 14/14, PlayMode completo 78/79.
-- **Falha aberta:** `ComboGcTests` (M05) bimodal (34 hits passa, 21 falha; ≥40 esperado). Não confirmado se é pré-existente; o teste depende de tempo real. Decidir limiar no M05/M06.
+- **`ComboGcTests` (M05) falha também na base `d1c7d2b`, sem o M08:** 3/3 execuções com 28 hits (esperado ≥40; 21 hit frames). Não é regressão do M08; o limiar de 40 hits do teste está desatualizado ou o combo da sandbox do M05 tem outro ritmo. Resolver no M05/M06.
 - **Ajuste em teste M05:** `SandboxCombatRun` zera números de `KaelPassives` (Embers of Rage) para manter o combo de 160%.
 - **Bug corrigido:** `DamageEffect` duplicava `OnHitDealt`/`OnCritDealt`/Stagger com o `CombatReceiver` real. Verificar se `AreaDeliverer` (Combat, l.116) tem o mesmo problema (M05).
 - **Provisórios (TUNED, confirmar com dono do 08):** frames windup/active/recovery Cleaving 14/6/26, Leap 8/30/20, Chains 12/4/22, Ashen 6/90/18, Worldbreaker 30/6/40; cone do Chains 60°; arco do contra-ataque do Ashen 120°; largura das fissuras 1,5 m; `unstoppable_s` do Worldbreaker 1,3; Stagger das habilidades 0; multiplicador de dano por golpe 100% nas 4 armas novas; Ruin do Worldbreaker 1 stack por fissura, máx. 5, 6 s (lacuna de 08 §4.4).
