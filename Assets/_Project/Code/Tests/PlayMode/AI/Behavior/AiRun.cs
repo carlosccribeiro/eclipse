@@ -77,6 +77,7 @@ namespace Eclipse.Tests.PlayMode.AI.Behavior
         public void PlacePlayer(Vector3 position, Vector3 facing)
         {
             Motor.Teleport(position);
+            Player.Entity.Position = position; // the shell only mirrors it on the next tick; keep the AI and the harness from reading a stale spot
             Motor.SetFacing(facing);
             UnityEngine.Physics.SyncTransforms();
         }

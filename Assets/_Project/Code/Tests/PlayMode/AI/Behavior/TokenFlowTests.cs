@@ -122,7 +122,7 @@ namespace Eclipse.Tests.PlayMode.AI.Behavior
 
             int maxBusy = 0, maxTokens = 0, ticksWithAttackers = 0, attackStarts = 0;
             var wasBusy = new bool[count];
-            for (int t = 0; t < 1800; t++) // 30 s
+            for (int t = 0; t < 5400; t++) // 90 s: with 10 enemies and 3 tokens the number of attack starts varies between runs (3 to 12 per 30 s), so the sample window is wide enough for the floor of 5
             {
                 _run.Tick();
                 int busy = 0;
@@ -139,7 +139,7 @@ namespace Eclipse.Tests.PlayMode.AI.Behavior
                 Assert.LessOrEqual(busy, 3, "more than 3 attackers in tick " + t);
                 Assert.LessOrEqual(_run.Enemy.Tokens.ActiveMelee, 3, "more than 3 melee tokens held in tick " + t);
             }
-            Debug.Log("[M07 T10] ten melee, 30 s: max simultaneous attackers " + maxBusy + ", max melee tokens " + maxTokens
+            Debug.Log("[M07 T10] ten melee, 90 s: max simultaneous attackers " + maxBusy + ", max melee tokens " + maxTokens
                 + ", ticks with attackers " + ticksWithAttackers + ", attack starts " + attackStarts);
             Assert.GreaterOrEqual(maxBusy, 1, "nobody attacked in 30 s: the test would be vacuous");
             Assert.GreaterOrEqual(attackStarts, 5, "too few attacks for the sample to mean anything");
