@@ -1299,6 +1299,226 @@ MonoBehaviour:
     m_Key: pity.core.ascension.name
     m_Metadata:
       m_Items: []
+  - m_Id: 102992124084224
+    m_Key: encdens.core.base_budget.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102992883253248
+    m_Key: encdens.core.per_row_budget.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102993357209600
+    m_Key: encdens.core.density_normal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102994166710272
+    m_Key: encdens.core.density_veteran.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102994841993216
+    m_Key: encdens.core.density_nightmare.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102995303366656
+    m_Key: encdens.core.density_eclipse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102995760545792
+    m_Key: encdens.core.density_ascension_base.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102996196753408
+    m_Key: encdens.core.density_ascension_per_level.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102996708458496
+    m_Key: encdens.core.density_ascension_cap.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102997224357888
+    m_Key: encdens.core.elite_arena_mult.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102997815754752
+    m_Key: encdens.core.elite_arena_min_elite_share.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102998381985792
+    m_Key: encdens.core.two_wave_last_row.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102998990159872
+    m_Key: encdens.core.two_wave_split.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102999493476352
+    m_Key: encdens.core.three_wave_split.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103000068096000
+    m_Key: encdens.core.next_wave_alive_fraction.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103000617549824
+    m_Key: encdens.core.next_wave_max_seconds.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103001179586560
+    m_Key: encdens.core.min_spawn_distance_meters.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103001750011904
+    m_Key: encdens.core.spawn_portal_seconds.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103005113843712
+    m_Key: doorreward.core.equipment.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103005612965888
+    m_Key: doorreward.core.rift_shards.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103006124670976
+    m_Key: doorreward.core.aether_dust.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103006636376064
+    m_Key: doorreward.core.blessing_lesser.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103007122915328
+    m_Key: doorreward.core.heal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103011019423744
+    m_Key: enclimit.core.max_live_units.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103011732455424
+    m_Key: enclimit.core.max_live_pa.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103012223188992
+    m_Key: enclimit.core.max_casters_per_wave.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103012697145344
+    m_Key: enclimit.core.max_summoners_per_wave.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103013175296000
+    m_Key: enclimit.core.max_specialist_share.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103013645058048
+    m_Key: enclimit.core.min_frontline_per_wave.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103014408421376
+    m_Key: enclimit.core.max_tanks_early.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103014953680896
+    m_Key: enclimit.core.max_tanks_late.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103015440220160
+    m_Key: enclimit.core.tank_cap_last_early_row.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103017596092416
+    m_Key: encrecipe.core.swarm.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103018032300032
+    m_Key: encrecipe.core.phalanx.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103018439147520
+    m_Key: encrecipe.core.siege.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103018908909568
+    m_Key: encrecipe.core.ambush.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103019378671616
+    m_Key: encrecipe.core.ritual.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103019844239360
+    m_Key: encrecipe.core.brood.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103020330778624
+    m_Key: encrecipe.core.mixed_patrol.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103022599897088
+    m_Key: maprow.core.row_01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103023140962304
+    m_Key: maprow.core.row_02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103023782690816
+    m_Key: maprow.core.row_03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103024327950336
+    m_Key: maprow.core.row_04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103024772546560
+    m_Key: maprow.core.row_05.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103025171005440
+    m_Key: maprow.core.row_06.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103025556881408
+    m_Key: maprow.core.row_07.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103025946951680
+    m_Key: maprow.core.row_08.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103026345410560
+    m_Key: maprow.core.row_09.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103026773229568
+    m_Key: maprow.core.row_10.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103027217825792
+    m_Key: maprow.core.row_11.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103027666616320
+    m_Key: maprow.core.row_12.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103028119601152
+    m_Key: maprow.core.row_13.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103030426468352
+    m_Key: roomweights.core.stratum_1.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103030913007616
+    m_Key: roomweights.core.stratum_2.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103031332438016
+    m_Key: roomweights.core.stratum_3.name
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

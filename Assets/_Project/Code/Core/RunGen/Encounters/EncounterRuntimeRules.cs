@@ -11,7 +11,8 @@ namespace Eclipse.Core.RunGen.Encounters
         {
             if (secondsSinceWaveStart >= cfg.NextWaveMaxSeconds) return true;
             if (currentWaveThreat <= 0f) return true;
-            return aliveThreat < cfg.NextWaveAliveFraction * currentWaveThreat;
+            // Epsilon: 0.30f is not exactly 0.3, and Mono/.NET round the product differently; "exactly 30%" must not count as below.
+            return aliveThreat < cfg.NextWaveAliveFraction * currentWaveThreat - 1e-4f;
         }
 
         public static bool ShouldSpawnNextWave(float aliveThreat, float currentWaveThreat, float secondsSinceWaveStart) =>

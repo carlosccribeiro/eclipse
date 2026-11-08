@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa636b45fc440c4dba57dbe9fa8b523, type: 3}
+  m_Name: swarm
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Run.EncounterRecipeDefinition
+  stableId: encrecipe.core.swarm
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: encrecipe.core.swarm.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: 24b6b9875b3bb903
+  sourceDoc: "09 \xA710.4 (GAP: filler/row ranges are placeholders)"
+  nameEn: Swarm
+  slots:
+  - archetype: 5
+    minCount: 1
+    maxCount: 1
+    targetShare: 0
+  - archetype: 0
+    minCount: 1
+    maxCount: 0
+    targetShare: 0.7
+  fillerWeights:
+  - 1
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  rowWeights:
+  - regionId: 
+    minRow: 1
+    maxRow: 13
+    weight: 2
+  maxCastersOverride: 0
+  maxSummonersOverride: 0
+  references:
+    version: 2
+    RefIds: []

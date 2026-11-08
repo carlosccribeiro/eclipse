@@ -1,0 +1,10 @@
+id,name_pt,name_en,key,values,value_kind,source_doc
+enclimit.core.max_live_units,Máx. unidades vivas,Max live units,max_live_units,24,Number,09 §10.3
+enclimit.core.max_live_pa,Máx. PA vivo,Max live PA,max_live_pa,40,Number,09 §10.3
+enclimit.core.max_casters_per_wave,Máx. casters por onda,Max casters per wave,max_casters_per_wave,2,Number,09 §10.3
+enclimit.core.max_summoners_per_wave,Máx. summoners por onda,Max summoners per wave,max_summoners_per_wave,1,Number,09 §10.3
+enclimit.core.max_specialist_share,Máx. parcela de especialistas,Max specialist share,max_specialist_share,40,Percent,09 §10.3
+enclimit.core.min_frontline_per_wave,Mín. front line por onda,Min frontline per wave,min_frontline_per_wave,1,Number,09 §10.3
+enclimit.core.max_tanks_early,Máx. tanks (início),Max tanks early,max_tanks_early,1,Number,09 §10.3
+enclimit.core.max_tanks_late,Máx. tanks (fim),Max tanks late,max_tanks_late,2,Number,09 §10.3
+enclimit.core.tank_cap_last_early_row,Última linha do teto inicial de tanks,Last row of early tank cap,tank_cap_last_early_row,6,Number,09 §10.3

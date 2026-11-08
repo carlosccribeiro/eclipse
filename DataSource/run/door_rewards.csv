@@ -1,0 +1,6 @@
+id,name_pt,name_en,reward,weight,source_doc
+doorreward.core.equipment,Recompensa de porta - Equipamento,Door reward - Equipment,Equipment,30,"09 §9 (GAP: frequencies are placeholders, MapGenConfig.CreateDefault)"
+doorreward.core.rift_shards,Recompensa de porta - Rift Shards,Door reward - Rift Shards,RiftShards,20,"09 §9 (GAP: placeholder frequency)"
+doorreward.core.aether_dust,Recompensa de porta - Aether Dust,Door reward - Aether Dust,AetherDust,15,"09 §9 (GAP: placeholder frequency)"
+doorreward.core.blessing_lesser,Recompensa de porta - Blessing menor,Door reward - Lesser Blessing,BlessingLesser,25,"09 §9 (GAP: placeholder frequency)"
+doorreward.core.heal,Recompensa de porta - Cura,Door reward - Heal,Heal,10,"09 §9 (GAP: placeholder frequency)"

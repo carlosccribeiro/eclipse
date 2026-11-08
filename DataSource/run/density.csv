@@ -1,0 +1,19 @@
+id,name_pt,name_en,key,values,value_kind,source_doc
+encdens.core.base_budget,Orçamento base,Base budget,base_budget,20,Number,09 §10.1
+encdens.core.per_row_budget,Orçamento por linha,Per-row budget,per_row_budget,3,Number,09 §10.1
+encdens.core.density_normal,Densidade Normal,Density Normal,density_normal,1.0,Number,09 §10.1
+encdens.core.density_veteran,Densidade Veteran,Density Veteran,density_veteran,1.1,Number,09 §10.1
+encdens.core.density_nightmare,Densidade Nightmare,Density Nightmare,density_nightmare,1.2,Number,09 §10.1
+encdens.core.density_eclipse,Densidade Eclipse,Density Eclipse,density_eclipse,1.3,Number,09 §10.1
+encdens.core.density_ascension_base,Densidade Ascension (base),Density Ascension base,density_ascension_base,1.3,Number,09 §10.1
+encdens.core.density_ascension_per_level,Densidade Ascension (por nível),Density Ascension per level,density_ascension_per_level,0.005,Number,09 §10.1
+encdens.core.density_ascension_cap,Densidade Ascension (teto),Density Ascension cap,density_ascension_cap,1.8,Number,09 §10.1
+encdens.core.elite_arena_mult,Multiplicador Elite Arena,Elite Arena multiplier,elite_arena_mult,1.2,Number,09 §10.1
+encdens.core.elite_arena_min_elite_share,Parcela mínima de Elite na Elite Arena,Elite Arena min Elite share,elite_arena_min_elite_share,50,Percent,09 §10.1
+encdens.core.two_wave_last_row,Última linha com 2 ondas,Last row with two waves,two_wave_last_row,4,Number,09 §10.2
+encdens.core.two_wave_split,Divisão em 2 ondas,Two-wave split,two_wave_split,55|45,Percent,09 §10.2
+encdens.core.three_wave_split,Divisão em 3 ondas,Three-wave split,three_wave_split,40|35|25,Percent,09 §10.2
+encdens.core.next_wave_alive_fraction,Fração viva para próxima onda,Alive fraction for next wave,next_wave_alive_fraction,30,Percent,09 §10.2
+encdens.core.next_wave_max_seconds,Tempo máx. para próxima onda (s),Max seconds to next wave,next_wave_max_seconds,25,Number,09 §10.2
+encdens.core.min_spawn_distance_meters,Distância mínima de spawn (m),Min spawn distance (m),min_spawn_distance_meters,8,Number,09 §10.2
+encdens.core.spawn_portal_seconds,Duração do portal de spawn (s),Spawn portal duration (s),spawn_portal_seconds,0.8,Number,09 §10.2

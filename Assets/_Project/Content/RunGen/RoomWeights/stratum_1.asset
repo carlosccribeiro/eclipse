@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f3e37ef7bc32447b7fcc3031cbce46, type: 3}
+  m_Name: stratum_1
+  m_EditorClassIdentifier: Eclipse.Data::Eclipse.Data.Run.MapGenConfigDefinition
+  stableId: roomweights.core.stratum_1
+  displayName:
+    m_TableReference:
+      m_TableCollectionName: Definitions
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: roomweights.core.stratum_1.name
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  importedHash: b1b567f4ff1293b4
+  sourceDoc: "09 \xA711.2 (TUNED; original 55/10/10/15/10/0)"
+  nameEn: Room weights - Stratum I
+  section: 0
+  stratum: 1
+  weights:
+  - 42
+  - 12
+  - 10
+  - 26
+  - 10
+  - 0
+  row: 0
+  minNodes: 0
+  maxNodes: 0
+  kind: 0
+  allowedMask: 0
+  reward: 0
+  rewardWeight: 0
+  references:
+    version: 2
+    RefIds: []
